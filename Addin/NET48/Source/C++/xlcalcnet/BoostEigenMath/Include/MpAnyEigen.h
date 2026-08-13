@@ -1,0 +1,903 @@
+/*
+
+mp_arb:
+	implement own (soft) emax and corresponding nextabove. Based on that:
+	mpAny_maxval_prec
+	mpAny_machine_epsilon_prec
+	mpAny_machine_epsilon_x
+
+
+
+mp_decr:
+	mpAny_maxval_prec
+	mpAny_machine_epsilon_prec
+	mpAny_machine_epsilon_x
+	mpAny_cplx_abs_from_real_and_imag
+	mpAny_cplx_sqrt_from_real_and_imag
+
+
+mp_fmpq:
+	mpAny_sqrt
+	mpAny_log
+	mpAny_pow
+	mpAny_is_nan
+	mpAny_is_finite
+	mpAny_maxval_prec
+	mpAny_machine_epsilon_prec
+	mpAny_machine_epsilon_x
+
+mp_arb:
+	Use arf basic arithmetic where appropiate. Use set_radius_to_zero where needed.
+
+
+
+	Part of the code in this file has been derived from the file mpreal.h, as distributed
+	with Eigen version 3.2.1 in the folder \unsupported\test\mpreal(dated 2014-02-26).
+	This version of Eigen is available at https://bitbucket.org/eigen/eigen/src .
+	The file mpreal.h contains the following copyright notice:
+
+
+	------ Begin of the copyright notice of mpreal.h (Eigen version 3.2.1)--------
+
+	Multi-precision floating point number class for C++.
+	Based on MPFR library:    http://mpfr.org
+
+	Project homepage:    http://www.holoborodko.com/pavel/mpfr
+	Contact e-mail:      pavel@holoborodko.com
+
+	Copyright (c) 2008-2012 Pavel Holoborodko
+
+	Contributors:
+	Dmitriy Gubanov, Konstantin Holoborodko, Brian Gladman,
+	Helmut Jarausch, Fokko Beekhof, Ulrich Mutze, Heinz van Saanen,
+	Pere Constans, Peter van Hoof, Gael Guennebaud, Tsai Chia Cheng,
+	Alexei Zubanov, Jauhien Piatlicki, Victor Berger, John Westwood.
+
+	****************************************************************************
+	This library is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2.1 of the License, or (at your option) any later version.
+
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+	****************************************************************************
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions
+	are met:
+
+	1. Redistributions of source code must retain the above copyright
+	notice, this list of conditions and the following disclaimer.
+
+	2. Redistributions in binary form must reproduce the above copyright
+	notice, this list of conditions and the following disclaimer in the
+	documentation and/or other materials provided with the distribution.
+
+	3. The name of the author may not be used to endorse or promote products
+	derived from this software without specific prior written permission.
+
+	THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+	ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+	IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+	ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+	FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+	DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+	OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+	HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+	LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+	OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+	SUCH DAMAGE.
+
+	------- End of the copyright notice of mpreal.h (Eigen version 3.2.1)------
+
+
+	Another part of the code in this file has been derived from the file mprealsupport.h,
+	as distributed with Eigen version 3.4.0. The file mprealsupport.h contains
+	the following copyright notice:
+
+	------- Begin of the copyright notice of mprealsupport.h (Eigen version 3.4.0) -------
+
+	This file is part of a joint effort between Eigen, a lightweight C++ template library
+	for linear algebra, and MPFR C++, a C++ interface to MPFR library (http:www.holoborodko.com/pavel/)
+
+	Copyright (C) 2010-2012 Pavel Holoborodko <pavel@holoborodko.com>
+	Copyright (C) 2010 Konstantin Holoborodko <konstantin@holoborodko.com>
+	Copyright (C) 2010 Gael Guennebaud <gael.guennebaud@inria.fr>
+
+	This Source Code Form is subject to the terms of the Mozilla
+	Public License v. 2.0. If a copy of the MPL was not distributed
+	with this file, You can obtain one at http:mozilla.org/MPL/2.0/.
+
+	------- End of the copyright notice of mprealsupport.h (Eigen version 3.4.0) --------
+
+*/
+
+
+#ifndef __MPANYEIGEN_H__
+#define __MPANYEIGEN_H__
+
+#include <stdint.h>
+#include <Eigen/Core>
+#include "mpAny.h"
+
+
+
+namespace mpAny {
+
+	class mpscalar {
+	private:
+		mpScalarPtr mp;
+
+	public:
+
+		// Constructors
+		mpscalar();
+		mpscalar(const mpscalar& u);
+		mpscalar(const mpScalarPtr u);
+		mpscalar(const double u);
+		mpscalar(const int32_t u);
+		mpscalar(const uint32_t u);
+		mpscalar(const uint64_t u);
+		mpscalar(const int64_t u);
+
+		~mpscalar();
+
+		// Operations
+
+		// =
+		mpscalar& operator=(const mpscalar& v);
+		mpscalar& operator=(const double v);
+		mpscalar& operator=(const int32_t v);
+		mpscalar& operator=(const uint32_t v);
+
+		// +
+		mpscalar& operator+=(const mpscalar& v);
+		mpscalar& operator+=(const int32_t u);
+		mpscalar& operator+=(const uint32_t u);
+		mpscalar& operator+=(const double u);
+
+		const mpscalar operator+() const;
+		mpscalar& operator++ ();
+		const mpscalar  operator++ (int32_t);
+
+		// -
+		mpscalar& operator-=(const mpscalar& v);
+		mpscalar& operator-=(const int32_t u);
+		mpscalar& operator-=(const uint32_t u);
+		mpscalar& operator-=(const double u);
+		const mpscalar operator-() const;
+		mpscalar& operator-- ();
+		const mpscalar  operator-- (int32_t);
+
+		// *
+		mpscalar& operator*=(const mpscalar& v);
+		mpscalar& operator*=(const int32_t v);
+		mpscalar& operator*=(const uint32_t v);
+		mpscalar& operator*=(const double v);
+
+		// /
+		mpscalar& operator/=(const mpscalar& v);
+		mpscalar& operator/=(const int32_t v);
+		mpscalar& operator/=(const uint32_t v);
+		mpscalar& operator/=(const int64_t v);
+		mpscalar& operator/=(const uint64_t v);
+		mpscalar& operator/=(const double u);
+
+
+		// Boolean Operators
+		friend bool operator >  (const mpscalar& a, const mpscalar& b);
+		friend bool operator >= (const mpscalar& a, const mpscalar& b);
+		friend bool operator <  (const mpscalar& a, const mpscalar& b);
+		friend bool operator <= (const mpscalar& a, const mpscalar& b);
+		friend bool operator == (const mpscalar& a, const mpscalar& b);
+		friend bool operator != (const mpscalar& a, const mpscalar& b);
+		friend bool operator == (const mpscalar& a, const int32_t b);
+		friend bool operator == (const mpscalar& a, const uint32_t b);
+		friend bool operator == (const mpscalar& a, const double b);
+
+		// Type Conversion operators
+		double  toDouble() const;
+		int  toInt() const;
+
+		mpScalarPtr scalar_ptr();
+		mpScalarPtr scalar_ptr()    const;
+		mpScalarPtr scalar_srcptr() const;
+
+		friend const mpscalar abs(const mpscalar& v);
+		friend const mpscalar fabs(const mpscalar& v);
+		friend const mpscalar sqrt(const mpscalar& v);
+		friend const mpscalar ceil(const mpscalar& v);
+		friend const mpscalar exp(const mpscalar& v);
+		friend const mpscalar log(const mpscalar& v);
+		friend const mpscalar sin(const mpscalar& v);
+		friend const mpscalar cos(const mpscalar& v);
+		friend const mpscalar acos(const mpscalar& v);
+		friend const mpscalar pow(const mpscalar& a, const mpscalar& b);
+		friend const mpscalar atan2(const mpscalar& a, const mpscalar& b);
+		friend void swap(mpscalar& x, mpscalar& y);
+		friend const mpscalar random();
+		//friend const mpscalar random(unsigned int seed = 0);
+
+	};
+
+	// Constructors & converters
+	inline mpscalar::mpscalar()
+	{
+		mp = mpAny_init_func();
+		mpAny_set_ui(mp, 0);
+	}
+
+	inline mpscalar::mpscalar(const mpscalar& u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set(mp, u.mp);
+	}
+
+	inline mpscalar::mpscalar(const mpScalarPtr u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set(mp, u);
+	}
+
+
+	inline mpscalar::mpscalar(const double u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set_d(mp, u);
+	}
+
+
+
+
+
+	inline mpscalar::mpscalar(const uint32_t u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set_ui(mp, u);
+	}
+
+	inline mpscalar::mpscalar(const int32_t u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set_si(mp, u);
+	}
+
+	inline mpscalar::mpscalar(const uint64_t u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set_ui64(mp, u);
+	}
+
+	inline mpscalar::mpscalar(const int64_t u)
+	{
+		mp = mpAny_init_func();
+		mpAny_set_si64(mp, u);
+	}
+
+
+	inline mpscalar::~mpscalar()
+	{
+		mpAny_clear(mp);
+	}
+
+	// internal namespace used by Eigen
+	namespace internal {
+		template <typename ArgumentType> struct result_type {};
+		template <> struct result_type<mpscalar> { typedef mpscalar type; };
+		template <> struct result_type<double> { typedef mpscalar type; };
+		template <> struct result_type<int32_t> { typedef mpscalar type; };
+		template <> struct result_type<uint32_t> { typedef mpscalar type; };
+		template <> struct result_type<int64_t  > { typedef mpscalar type; };
+		template <> struct result_type<uint64_t > { typedef mpscalar type; };
+	}
+
+	// + Addition
+	template <typename Rhs>
+	inline const typename internal::result_type<Rhs>::type
+		operator+(const mpscalar& lhs, const Rhs& rhs) { return mpscalar(lhs) += rhs; }
+
+	template <typename Lhs>
+	inline const typename internal::result_type<Lhs>::type
+		operator+(const Lhs& lhs, const mpscalar& rhs) { return mpscalar(rhs) += lhs; }
+
+	// - Subtraction
+	template <typename Rhs>
+	inline const typename internal::result_type<Rhs>::type
+		operator-(const mpscalar& lhs, const Rhs& rhs) { return mpscalar(lhs) -= rhs; }
+
+	template <typename Lhs>
+	inline const typename internal::result_type<Lhs>::type
+		operator-(const Lhs& lhs, const mpscalar& rhs) { return mpscalar(lhs) -= rhs; }
+
+	// * Multiplication
+	template <typename Rhs>
+	inline const typename internal::result_type<Rhs>::type
+		operator*(const mpscalar& lhs, const Rhs& rhs) { return mpscalar(lhs) *= rhs; }
+
+	template <typename Lhs>
+	inline const typename internal::result_type<Lhs>::type
+		operator*(const Lhs& lhs, const mpscalar& rhs) { return mpscalar(rhs) *= lhs; }
+
+	// / Division
+	template <typename Rhs>
+	inline const typename internal::result_type<Rhs>::type
+		operator/(const mpscalar& lhs, const Rhs& rhs) { return mpscalar(lhs) /= rhs; }
+
+	template <typename Lhs>
+	inline const typename internal::result_type<Lhs>::type
+		operator/(const Lhs& lhs, const mpscalar& rhs) { return mpscalar(lhs) /= rhs; }
+
+
+	inline mpscalar machine_epsilon(long prec = mpAny_get_default_prec());
+	inline mpscalar machine_epsilon(const mpscalar& x);
+	inline mpscalar maxval(long prec = mpAny_get_default_prec());
+
+	inline bool isEqualFuzzy(const mpscalar& a, const mpscalar& b, const mpscalar& eps);
+
+	const mpscalar(max)(const mpscalar& x, const mpscalar& y);
+	const mpscalar(min)(const mpscalar& x, const mpscalar& y);
+
+
+
+
+	//////////////////////////////////////////////////////////////////////////
+	// Implementation
+	//////////////////////////////////////////////////////////////////////////
+
+	// Operators - Assignment
+	inline mpscalar& mpscalar::operator=(const mpscalar& v)
+	{
+		if (this != &v) { mpAny_set(mp, v.mp); }
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator=(const double v)
+	{
+		mpAny_set_d(mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator=(const uint32_t v)
+	{
+		mpAny_set_ui(mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator=(const int32_t v)
+	{
+		mpAny_set_si(mp, v);
+		return *this;
+	}
+
+
+	// + Addition
+	inline mpscalar& mpscalar::operator+=(const mpscalar& v)
+	{
+		mpAny_add(mp, mp, v.mp);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator+=(const uint32_t u)
+	{
+		mpAny_add_ui(mp, mp, u);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator+=(const int32_t u)
+	{
+		mpAny_add_si(mp, mp, u);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator+=(const double u)
+	{
+		mpAny_add_d(mp, mp, u);
+		return *this;
+	}
+
+	inline const mpscalar mpscalar::operator+()const { return mpscalar(*this); }
+
+	inline const mpscalar operator+(const mpscalar& a, const mpscalar& b)
+	{
+		mpscalar c;
+		mpAny_add(c.scalar_ptr(), a.scalar_srcptr(), b.scalar_srcptr());
+		return c;
+	}
+
+	inline mpscalar& mpscalar::operator++()
+	{
+		return *this += 1;
+	}
+
+	inline const mpscalar mpscalar::operator++ (int32_t)
+	{
+		mpscalar x(*this);
+		*this += 1;
+		return x;
+	}
+
+	inline mpscalar& mpscalar::operator--()
+	{
+		return *this -= 1;
+	}
+
+	inline const mpscalar mpscalar::operator-- (int32_t)
+	{
+		mpscalar x(*this);
+		*this -= 1;
+		return x;
+	}
+
+	// - Subtraction
+	inline mpscalar& mpscalar::operator-=(const mpscalar& v)
+	{
+		mpAny_sub(mp, mp, v.mp);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator-=(const uint32_t v)
+	{
+		mpAny_sub_ui(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator-=(const int32_t v)
+	{
+		mpAny_sub_si(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator-=(const double v)
+	{
+		mpAny_sub_d(mp, mp, v);
+		return *this;
+	}
+
+	inline const mpscalar mpscalar::operator-()const
+	{
+		mpscalar u(*this);
+		mpAny_neg(u.mp, u.mp);
+		return u;
+	}
+
+	inline const mpscalar operator-(const mpscalar& a, const mpscalar& b)
+	{
+		mpscalar c;
+		mpAny_sub(c.scalar_ptr(), a.scalar_srcptr(), b.scalar_srcptr());
+		return c;
+	}
+
+	// * Multiplication
+	inline mpscalar& mpscalar::operator*= (const mpscalar& v)
+	{
+		mpAny_mul(mp, mp, v.mp);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator*=(const uint32_t v)
+	{
+		mpAny_mul_ui(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator*=(const int32_t v)
+	{
+		mpAny_mul_si(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator*=(const double v)
+	{
+		mpAny_mul_d(mp, mp, v);
+		return *this;
+	}
+
+	inline const mpscalar operator*(const mpscalar& a, const mpscalar& b)
+	{
+		mpscalar c;
+		mpAny_mul(c.scalar_ptr(), a.scalar_srcptr(), b.scalar_srcptr());
+		return c;
+	}
+
+	// / Division
+	inline mpscalar& mpscalar::operator/=(const mpscalar& v)
+	{
+		mpAny_div(mp, mp, v.mp);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator/=(const uint32_t v)
+	{
+		mpAny_div_ui(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator/=(const int32_t v)
+	{
+		mpAny_div_si(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator/=(const uint64_t v)
+	{
+		mpAny_div_ui64(mp, mp, v);
+		return *this;
+	}
+
+	inline mpscalar& mpscalar::operator/=(const int64_t v)
+	{
+		mpAny_div_si64(mp, mp, v);
+		return *this;
+	}
+
+
+	inline mpscalar& mpscalar::operator/=(const double v)
+	{
+		mpAny_div_d(mp, mp, v);
+		return *this;
+	}
+
+	inline const mpscalar operator/(const mpscalar& a, const mpscalar& b)
+	{
+		mpscalar c;
+		mpAny_div(c.scalar_ptr(), a.scalar_srcptr(), b.scalar_srcptr());
+		return c;
+	}
+
+	//Boolean operators
+	inline bool operator >   (const mpscalar& a, const mpscalar& b) { return (mpAny_cmp(a.mp, b.mp) > 0); }
+	inline bool operator >=  (const mpscalar& a, const mpscalar& b) { return (mpAny_cmp(a.mp, b.mp) >= 0); }
+	inline bool operator <   (const mpscalar& a, const mpscalar& b) { return (mpAny_cmp(a.mp, b.mp) < 0); }
+	inline bool operator <=  (const mpscalar& a, const mpscalar& b) { return (mpAny_cmp(a.mp, b.mp) <= 0); }
+	inline bool operator ==  (const mpscalar& a, const mpscalar& b) { return (mpAny_cmp(a.mp, b.mp) == 0); }
+	inline bool operator !=  (const mpscalar& a, const mpscalar& b) { return (mpAny_cmp(a.mp, b.mp) != 0); }
+
+	inline bool operator == (const mpscalar& a, const uint32_t b) { return (a == mpscalar(b)); }
+	inline bool operator == (const mpscalar& a, const int32_t b) { return (a == mpscalar(b)); }
+	inline bool operator == (const mpscalar& a, const double b) { return (a == mpscalar(b)); }
+
+
+	// Type Converters
+	inline double  mpscalar::toDouble()  const { return  mpAny_get_d((void*)scalar_srcptr()); }
+	inline int  mpscalar::toInt()  const { return  int(mpAny_get_d((void*)scalar_srcptr())); }
+	inline mpScalarPtr  mpscalar::scalar_ptr() { return (void*)mp; }
+	inline mpScalarPtr  mpscalar::scalar_ptr() const { return (void*)mp; }
+	inline mpScalarPtr  mpscalar::scalar_srcptr() const { return (void*)mp; }
+
+
+	// Functions needed by Eigen
+	inline mpscalar machine_epsilon(long prec)
+	{
+		mpscalar res;
+		mpAny_machine_epsilon_prec((void*)(res.scalar_srcptr()), prec);
+		return res;
+	}
+
+	inline mpscalar machine_epsilon(const mpscalar& x)
+	{
+		mpscalar res;
+		mpAny_machine_epsilon_x((void*)(res.scalar_srcptr()), (void*)(x.scalar_srcptr()));
+		return res;
+	}
+
+	inline mpscalar maxval(long prec)
+	{
+		mpscalar res;
+		mpAny_maxval_prec((void*)(res.scalar_srcptr()), prec);
+		return res;
+	}
+
+	inline bool isEqualFuzzy(const mpscalar& a, const mpscalar& b, const mpscalar& eps)
+	{
+		return abs(a - b) <= (min)(abs(a), abs(b)) * eps;
+	}
+
+
+	inline bool isnan(const mpscalar& a)
+	{
+		return mpAny_is_nan((void*)(a.scalar_srcptr()));
+	}
+
+
+	inline bool isinf(const mpAny::mpscalar& a)
+	{
+		return (!(mpAny_is_finite((void*)(a.scalar_srcptr())))  ||  !(mpAny_is_nan((void*)(a.scalar_srcptr()))));
+	}
+
+
+	inline const mpscalar sqrt(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_sqrt(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar fabs(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_abs(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar abs(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_abs(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar ceil(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_ceil(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar exp(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_exp(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar log(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_log(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar sin(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_sin(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar cos(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_cos(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar acos(const mpscalar& x)
+	{
+		mpscalar y;
+		mpAny_acos(y.scalar_ptr(), x.scalar_srcptr());
+		return y;
+	}
+
+	inline const mpscalar pow(const mpscalar& a, const mpscalar& b)
+	{
+		mpscalar x(a);
+		mpAny_pow(x.mp, x.mp, b.mp);
+		return x;
+	}
+
+	inline const mpscalar atan2(const mpscalar& a, const mpscalar& b)
+	{
+		mpscalar x(a);
+		mpAny_atan2(x.mp, x.mp, b.mp);
+		return x;
+	}
+
+	inline const mpscalar random()
+	{
+		return mpAny::mpscalar(std::rand() / (double)RAND_MAX);
+	}
+
+//	inline const mpscalar random(unsigned int seed)
+//	{
+//		if (seed != 0) std::srand(seed);
+//		return mpAny::mpscalar(std::rand() / (double)RAND_MAX);
+//	}
+
+	inline void swap(mpscalar& a, mpscalar& b) { mpAny_swap(a.mp, b.mp); }
+	inline const mpscalar(max)(const mpscalar& x, const mpscalar& y) { return (x > y ? x : y); }
+	inline const mpscalar(min)(const mpscalar& x, const mpscalar& y) { return (x < y ? x : y); }
+
+
+} // End of namespace mpAny
+
+
+
+namespace std {
+	template <>
+	inline void swap(mpAny::mpscalar& x, mpAny::mpscalar& y)
+	{
+		return mpAny::swap(x, y);
+	}
+
+
+	inline bool isfinite(const mpAny::mpscalar& a)
+	{
+		return mpAny_is_finite((void*)(a.scalar_srcptr()));
+	}
+
+	inline bool isinf(const mpAny::mpscalar& a)
+	{
+		return (!(mpAny_is_finite((void*)(a.scalar_srcptr())))  ||  !(mpAny_is_nan((void*)(a.scalar_srcptr()))));
+	}
+
+
+
+	inline bool isnan(const mpAny::mpscalar& a)
+	{
+		return mpAny_is_nan((void*)(a.scalar_srcptr()));
+	}
+
+
+	inline mpAny::mpscalar abs(const complex<mpAny::mpscalar> a)
+	{
+		mpAny::mpscalar result;
+		mpAny_cplx_abs_from_real_and_imag((void*)(result.scalar_ptr()),
+			(void*)(std::real(a).scalar_srcptr()), (void*)(std::imag(a).scalar_srcptr()));
+		return result;
+	};
+
+	inline complex<mpAny::mpscalar> sqrt(const complex<mpAny::mpscalar> a)
+	{
+		mpAny::mpscalar result_re, result_im;
+		mpAny_cplx_sqrt_from_real_and_imag((void*)(result_re.scalar_ptr()), (void*)(result_im.scalar_ptr()),
+			(void*)(std::real(a).scalar_srcptr()), (void*)(std::imag(a).scalar_srcptr()));
+		complex<mpAny::mpscalar> result(result_re, result_im);
+		return result;
+	};
+
+
+	inline complex<mpAny::mpscalar> sin(const complex<mpAny::mpscalar> a)
+	{
+		mpAny::mpscalar result_re, result_im;
+		mpAny_cplx_sqrt_from_real_and_imag((void*)(result_re.scalar_ptr()), (void*)(result_im.scalar_ptr()),
+			(void*)(std::real(a).scalar_srcptr()), (void*)(std::imag(a).scalar_srcptr()));
+		complex<mpAny::mpscalar> result(result_re, result_im);
+		return result;
+	};
+
+
+} // End of namespace std
+
+
+
+namespace Eigen {
+	template<> struct NumTraits<mpAny::mpscalar>
+		: GenericNumTraits<mpAny::mpscalar>
+	{
+		enum {
+			IsInteger = 0,
+			IsSigned = 1,
+			IsComplex = 0,
+			RequireInitialization = 1,
+			//ReadCost = 10,
+			//AddCost = 10,
+			//MulCost = 40
+			ReadCost = HugeCost,
+			AddCost = HugeCost,
+			MulCost = HugeCost
+		};
+		typedef mpAny::mpscalar Real;
+		typedef mpAny::mpscalar NonInteger;
+		inline static Real highest(long Precision = mpAny_get_default_prec()) { return  mpAny::maxval(Precision); }
+		inline static Real lowest(long Precision = mpAny_get_default_prec()) { return -mpAny::maxval(Precision); }
+		inline static Real epsilon(long Precision = mpAny_get_default_prec()) { return mpAny::machine_epsilon(Precision); }
+		inline static Real epsilon(const Real& x) { return mpAny::machine_epsilon(x); }
+		inline static Real dummy_precision()
+		{
+			long weak_prec = ((mpAny_get_default_prec() - 1) * 90) / 100;
+			return mpAny::machine_epsilon(weak_prec);
+		}
+	};  //End NumTraits
+
+		namespace internal {
+
+
+			template<> inline mpAny::mpscalar random<mpAny::mpscalar>()
+			{
+				return mpAny::random();
+			}
+
+			template<> inline mpAny::mpscalar random<mpAny::mpscalar>(const mpAny::mpscalar& a, const mpAny::mpscalar& b)
+			{
+				return a + (b - a) * random<mpAny::mpscalar>();
+			}
+
+			inline bool isMuchSmallerThan(const mpAny::mpscalar& a, const mpAny::mpscalar& b, const mpAny::mpscalar& eps)
+			{
+				return mpAny::abs(a) <= mpAny::abs(b) * eps;
+			}
+
+			inline bool isApprox(const mpAny::mpscalar& a, const mpAny::mpscalar& b, const mpAny::mpscalar& eps)
+			{
+				return mpAny::isEqualFuzzy(a, b, eps);
+			}
+
+			inline bool isApproxOrLessThan(const mpAny::mpscalar& a, const mpAny::mpscalar& b, const mpAny::mpscalar& eps)
+			{
+				return a <= b || mpAny::isEqualFuzzy(a, b, eps);
+			}
+
+            template<>
+            struct default_digits_impl<mpAny::mpscalar, false, false> // Floating point
+            {
+              //EIGEN_DEVICE_FUNC EIGEN_CONSTEXPR
+              static int run() {
+                typedef typename NumTraits<mpAny::mpscalar>::Real Real;
+                return (ceil(-log(NumTraits<Real>::epsilon())/log(static_cast<Real>(2)))).toInt();
+              }
+            };
+
+			// Specialize GEBP kernel and traits
+			template<>
+			class gebp_traits<mpAny::mpscalar, mpAny::mpscalar, false, false>
+			{
+			public:
+				typedef mpAny::mpscalar ResScalar;
+				enum {
+					Vectorizable = false,
+					LhsPacketSize = 1,
+					RhsPacketSize = 1,
+					ResPacketSize = 1,
+					NumberOfRegisters = 1,
+					nr = 1,
+					mr = 1,
+					LhsProgress = 1,
+					RhsProgress = 1
+				};
+				typedef ResScalar LhsPacket;
+				typedef ResScalar RhsPacket;
+				typedef ResScalar ResPacket;
+				typedef LhsPacket LhsPacket4Packing;
+			};
+
+
+			template<typename Index, typename DataMapper, bool ConjugateLhs, bool ConjugateRhs>
+			struct gebp_kernel<mpAny::mpscalar, mpAny::mpscalar, Index, DataMapper, 1, 1, ConjugateLhs, ConjugateRhs>
+			{
+				typedef mpAny::mpscalar mpscalar;
+
+				EIGEN_DONT_INLINE
+					void operator()(const DataMapper& res, const mpscalar* blockA, const mpscalar* blockB,
+						Index rows, Index depth, Index cols, const mpscalar& alpha,
+						Index strideA = -1, Index strideB = -1, Index offsetA = 0, Index offsetB = 0)
+				{
+					if (rows == 0 || cols == 0 || depth == 0)
+						return;
+
+					mpscalar  acc1(0), tmp(0);
+
+					if (strideA == -1) strideA = depth;
+					if (strideB == -1) strideB = depth;
+
+					for (Index i = 0; i < rows; ++i)
+					{
+						for (Index j = 0; j < cols; ++j)
+						{
+							const mpscalar *A = blockA + i * strideA + offsetA;
+							const mpscalar *B = blockB + j * strideB + offsetB;
+
+							acc1 = 0;
+							for (Index k = 0; k < depth; k++)
+							{
+								mpAny_mul(tmp.scalar_ptr(), A[k].scalar_srcptr(), B[k].scalar_srcptr());
+								mpAny_add(acc1.scalar_ptr(), acc1.scalar_ptr(), tmp.scalar_ptr());
+							}
+							mpAny_mul(acc1.scalar_ptr(), acc1.scalar_srcptr(), alpha.scalar_srcptr());
+							mpAny_add(res(i, j).scalar_ptr(), res(i, j).scalar_srcptr(), acc1.scalar_srcptr());
+						}
+					}
+				}
+			};
+		} /* end of namespace internal */
+} /* end of namespace Eigen */
+
+#endif /* __MPANYEIGEN_H__ */
+
+

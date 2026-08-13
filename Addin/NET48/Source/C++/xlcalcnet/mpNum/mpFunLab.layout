@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="ArbPrecNetGCCK8" />
+	<File name="UseQReal.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="39431" topLine="1720" />
+		</Cursor>
+	</File>
+	<File name="UseArb.cpp" open="0" top="0" tabpos="14" split="0" active="1" splitpos="1912" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12052" topLine="611" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_Arb.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="34389" topLine="779" />
+		</Cursor>
+	</File>
+	<File name="UseSReal.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="69884" topLine="3290" />
+		</Cursor>
+	</File>
+	<File name="Helperfunctions.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="1887" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="107306" topLine="5067" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_OReal.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="560" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="UseMpfr.cpp" open="0" top="0" tabpos="12" split="0" active="1" splitpos="1908" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="127319" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_SReal.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="46512" topLine="1125" />
+		</Cursor>
+	</File>
+	<File name="Include\HelperFunctions.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="2226" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="173" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="UseFReal.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="1910" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="35573" topLine="1627" />
+		</Cursor>
+	</File>
+	<File name="UseAnyEigenMat.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18871" topLine="504" />
+		</Cursor>
+	</File>
+	<File name="mpAny.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7437" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_Mpfr.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="39246" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="UseOReal.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="597" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_QReal.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="45961" topLine="1056" />
+		</Cursor>
+	</File>
+	<File name="UseXReal.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="39848" topLine="1673" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_Scalar.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2549" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="ConversionsShort.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="2231" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="35138" topLine="1284" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_FReal.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="45548" topLine="1065" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_XReal.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="2224" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="23850" topLine="585" />
+		</Cursor>
+	</File>
+	<File name="Include\mpNumC_Main.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2178" topLine="97" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

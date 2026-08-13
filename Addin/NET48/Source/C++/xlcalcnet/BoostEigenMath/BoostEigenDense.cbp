@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="BoostEigenDenseSparse" />
+		<Option pch_mode="2" />
+		<Option compiler="gnu_gcc_492_compiler_tdm" />
+		<Build>
+			<Target title="LibWin64_MpAny">
+				<Option output="../../../local/xlcalcnet2/lib/EigenDenseMpAny" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../../local/xlcalcnet2/obj/libEigenDenseMpAny" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=k8" />
+					<Add option="-Os" />
+					<Add option="-Wall" />
+					<Add option="-std=gnu++20" />
+					<Add option="-m64" />
+					<Add option="-Wno-deprecated-declarations" />
+					<Add option="-Wno-sign-compare" />
+					<Add option="-Wno-unused-but-set-variable" />
+					<Add option="-Wno-unused-variable" />
+					<Add option="-fvisibility=hidden" />
+					<Add option="-Wno-maybe-uninitialized" />
+					<Add option="-DUse_MpAny" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DWIN64" />
+					<Add directory="Include" />
+					<Add directory="../Include" />
+					<Add directory="../Extra" />
+					<Add directory="../../Boost" />
+					<Add directory="../../MP64/eigen" />
+					<Add directory="../../../local/xlcalcnet2/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m64" />
+				</Linker>
+			</Target>
+			<Target title="Maps1">
+				<Option output="../../../local/xlcalcnet2/lib/Maps1" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../../local/xlcalcnet2/obj/libMaps1" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=k8" />
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add option="-std=gnu++20" />
+					<Add option="-m64" />
+					<Add option="-Wno-sign-compare" />
+					<Add option="-Wno-unused-but-set-variable" />
+					<Add option="-Wno-unused-local-typedefs" />
+					<Add option="-DUse_Double" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DWIN32" />
+					<Add directory="Include" />
+					<Add directory="../Include" />
+					<Add directory="../../MP64/eigen" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-m64" />
+				</Linker>
+			</Target>
+			<Target title="BoostMpfr">
+				<Option output="../../../local/xlcalcnet2/lib/BoostMpfr" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../../local/xlcalcnet2/obj/libBoostMpfr" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-march=k8" />
+					<Add option="-Os" />
+					<Add option="-std=c++20" />
+					<Add option="-m64" />
+					<Add option="-Wno-maybe-uninitialized" />
+					<Add option="-Wno-reorder" />
+					<Add option="-Wno-unused-but-set-variable" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DBOOST_DISABLE_THREADS" />
+					<Add directory="Include" />
+					<Add directory="../Include" />
+					<Add directory="../../../local/xlcalcnet2/include" />
+					<Add directory="../../Boost" />
+					<Add directory="../../MP64/eigen" />
+					<Add directory="../Extra" />
+					<Add directory="../Extra/CppNumericalSolvers" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+				</Linker>
+			</Target>
+			<Target title="BoostMpfr2">
+				<Option output="../../../local/xlcalcnet2/lib/BoostMpfr2" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../../../local/xlcalcnet2/obj/libBoostMpfr2" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-march=k8" />
+					<Add option="-Os" />
+					<Add option="-std=c++20" />
+					<Add option="-m64" />
+					<Add option="-Wno-maybe-uninitialized" />
+					<Add option="-Wno-reorder" />
+					<Add option="-Wno-unused-but-set-variable" />
+					<Add option="-DBUILD_DLL" />
+					<Add directory="Include" />
+					<Add directory="../Include" />
+					<Add directory="../../../local/xlcalcnet2/include" />
+					<Add directory="../../Boost" />
+					<Add directory="../../MP64/eigen" />
+					<Add directory="../Extra" />
+					<Add directory="../Extra/CppNumericalSolvers" />
+				</Compiler>
+				<Linker>
+					<Add option="-m64" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="../Extra" />
+		</Compiler>
+		<Unit filename="BoostEigenFFTW.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="BoostEigenLinAlgNew.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="BoostEigenMaps1.cpp">
+			<Option target="Maps1" />
+		</Unit>
+		<Unit filename="BoostEigenMatrixCplx.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="BoostEigenMatrixReal.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="BoostEigenMixed.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="BoostMpfr.cpp">
+			<Option target="BoostMpfr" />
+		</Unit>
+		<Unit filename="BoostMpfr2.cpp">
+			<Option target="BoostMpfr2" />
+		</Unit>
+		<Unit filename="Include/BoostMpfr.h">
+			<Option target="BoostMpfr" />
+		</Unit>
+		<Unit filename="Include/BoostMpfr2.h">
+			<Option target="BoostMpfr2" />
+		</Unit>
+		<Unit filename="Include/MpAnyEigen.h">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="Include/libBoostEigen.h">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="Include/libBoostEigenDense.h">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="Include/libEigenSparse.h">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="Include/mpAny.h">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="Include/mp_BoostEigenConstants.h">
+			<Option target="LibWin64_MpAny" />
+			<Option target="Maps1" />
+		</Unit>
+		<Unit filename="SparseMatrixCplx.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="SparseMatrixCplx_LinAlg.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="SparseMatrixReal.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="SparseMatrixReal_LinAlg.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Unit filename="SparseTripletList.cpp">
+			<Option target="LibWin64_MpAny" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
