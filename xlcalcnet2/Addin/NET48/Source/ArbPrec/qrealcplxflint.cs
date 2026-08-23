@@ -67,6 +67,20 @@ namespace ArbPrecNet
         }
 
 
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/realctx/*' />
+        public static qflint realctx
+        {
+            get { return new qflint(); }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/CplxCtx/*' />
+        public static qflintc cplxctx
+        {
+            get { return new qflintc(); }
+        }
+
+
 
 
 

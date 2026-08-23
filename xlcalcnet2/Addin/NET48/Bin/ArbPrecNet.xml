@@ -2282,7 +2282,7 @@
                 Returns the corresponding real context context
             </summary>
         </member>
-        <member name="P:ArbPrecNet.aflint.CplxCtx">
+        <member name="P:ArbPrecNet.aflint.cplxctx">
             <summary>
                 Returns the corresponding complex context context
             </summary>
@@ -4627,6 +4627,16 @@
         </member>
         <member name="P:ArbPrecNet.dflint.fmtname">
             <!-- No matching elements were found for the following include tag --><include file="docs.xml" path="docs/members[@name=&quot;Contexts&quot;]/fmtname/*" />
+        </member>
+        <member name="P:ArbPrecNet.dflint.realctx">
+            <summary>
+                Returns the corresponding real context context
+            </summary>
+        </member>
+        <member name="P:ArbPrecNet.dflint.cplxctx">
+            <summary>
+                Returns the corresponding complex context context
+            </summary>
         </member>
         <member name="M:ArbPrecNet.dflint.fma(System.Double,System.Double,System.Double)">
             <summary>
@@ -8705,7 +8715,7 @@
                 Returns the corresponding real context context
             </summary>
         </member>
-        <member name="P:ArbPrecNet.mflint.CplxCtx">
+        <member name="P:ArbPrecNet.mflint.cplxctx">
             <summary>
                 Returns the corresponding complex context context
             </summary>
@@ -13956,12 +13966,17 @@
                 Returns true if the underlying data type is supports a negative zero, and false otherwise
             </summary>
         </member>
-        <member name="P:ArbPrecNet.mreal.SupportsBoost">
+        <member name="P:ArbPrecNet.mreal.supportsboost">
             <summary>
                 Returns true if the underlying data type is supports Boost, and false otherwise
             </summary>
         </member>
-        <member name="P:ArbPrecNet.mreal.CplxCtx">
+        <member name="P:ArbPrecNet.mreal.realctx">
+            <summary>
+                Returns the corresponding real context context
+            </summary>
+        </member>
+        <member name="P:ArbPrecNet.mreal.cplxctx">
             <summary>
                 Returns the corresponding complex context context
             </summary>
@@ -16853,6 +16868,16 @@
         </member>
         <member name="P:ArbPrecNet.oflint.fmtname">
             <!-- No matching elements were found for the following include tag --><include file="docs.xml" path="docs/members[@name=&quot;Contexts&quot;]/fmtname/*" />
+        </member>
+        <member name="P:ArbPrecNet.oflint.realctx">
+            <summary>
+                Returns the corresponding real context context
+            </summary>
+        </member>
+        <member name="P:ArbPrecNet.oflint.cplxctx">
+            <summary>
+                Returns the corresponding complex context context
+            </summary>
         </member>
         <member name="M:ArbPrecNet.oflint.fma(FixedPrecNet.Octuple,FixedPrecNet.Octuple,FixedPrecNet.Octuple)">
             <summary>
@@ -20858,6 +20883,16 @@
         </member>
         <member name="P:ArbPrecNet.qflint.fmtname">
             <!-- No matching elements were found for the following include tag --><include file="docs.xml" path="docs/members[@name=&quot;Contexts&quot;]/fmtname/*" />
+        </member>
+        <member name="P:ArbPrecNet.qflint.realctx">
+            <summary>
+                Returns the corresponding real context context
+            </summary>
+        </member>
+        <member name="P:ArbPrecNet.qflint.cplxctx">
+            <summary>
+                Returns the corresponding complex context context
+            </summary>
         </member>
         <member name="M:ArbPrecNet.qflint.fma(FixedPrecNet.Quadruple,FixedPrecNet.Quadruple,FixedPrecNet.Quadruple)">
             <summary>
@@ -25440,6 +25475,16 @@
         <member name="P:ArbPrecNet.sflint.fmtname">
             <!-- No matching elements were found for the following include tag --><include file="docs.xml" path="docs/members[@name=&quot;Contexts&quot;]/fmtname/*" />
         </member>
+        <member name="P:ArbPrecNet.sflint.realctx">
+            <summary>
+                Returns the corresponding real context context
+            </summary>
+        </member>
+        <member name="P:ArbPrecNet.sflint.cplxctx">
+            <summary>
+                Returns the corresponding complex context context
+            </summary>
+        </member>
         <member name="M:ArbPrecNet.sflint.fma(System.Single,System.Single,System.Single)">
             <summary>
                 Returns the fma of x and y
@@ -29450,6 +29495,16 @@
         </member>
         <member name="P:ArbPrecNet.eflint.fmtname">
             <!-- No matching elements were found for the following include tag --><include file="docs.xml" path="docs/members[@name=&quot;Contexts&quot;]/fmtname/*" />
+        </member>
+        <member name="P:ArbPrecNet.eflint.realctx">
+            <summary>
+                Returns the corresponding real context context
+            </summary>
+        </member>
+        <member name="P:ArbPrecNet.eflint.cplxctx">
+            <summary>
+                Returns the corresponding complex context context
+            </summary>
         </member>
         <member name="M:ArbPrecNet.eflint.fma(FixedPrecNet.Extended,FixedPrecNet.Extended,FixedPrecNet.Extended)">
             <summary>

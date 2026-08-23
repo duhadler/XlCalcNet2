@@ -70,6 +70,21 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/realctx/*' />
+        public static dflint realctx
+        {
+            get { return new dflint(); }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/CplxCtx/*' />
+        public static dflintc cplxctx
+        {
+            get { return new dflintc(); }
+        }
+
+
+
 
         #region Basic floating point functions
 

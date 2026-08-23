@@ -49,6 +49,8 @@ namespace ArbPrecNet
         }
 
 
+
+
         #region Basic Functions
 
 
@@ -113,7 +115,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Contexts"]/CplxCtx/*' />
-        public static mflintc CplxCtx
+        public static mflintc cplxctx
         {
             get { return new mflintc(); }
         }

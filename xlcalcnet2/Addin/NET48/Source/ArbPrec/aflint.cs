@@ -1162,7 +1162,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Contexts"]/CplxCtx/*' />
-        public static aflintc CplxCtx
+        public static aflintc cplxctx
         {
             get { return new aflintc(); }
         }

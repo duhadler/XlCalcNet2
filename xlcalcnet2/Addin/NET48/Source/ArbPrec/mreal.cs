@@ -650,16 +650,21 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Contexts"]/SupportsBoost/*' />
-        public static bool SupportsBoost
+        public static bool supportsboost
         {
             get { return true; }
         }
 
 
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/realctx/*' />
+        public static mreal realctx
+        {
+            get { return new mreal(); }
+        }
 
 
         /// <include file="docs.xml" path='docs/members[@name="Contexts"]/CplxCtx/*' />
-        public static mcplx CplxCtx
+        public static mcplx cplxctx
         {
             get { return new mcplx(); }
         }
