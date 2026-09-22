@@ -1099,7 +1099,7 @@ namespace ArbPrecNet
             Console.WriteLine("DE_Integration");
 
             string ds = "";
-            var pi = aflint.pi();
+            var pi = aflint.pi;
             var p2 = pi / 2;
             Arb K = new Arb(), d = new Arb(), C1 = new Arb(), C2 = new Arb(), epsabs = new Arb(), h = new Arb(), n = new Arb(), hmin = new Arb(), C1Final = new Arb(), epsabsFinal = new Arb();
             double radX = 0.0, radY = 0.0;
@@ -1174,7 +1174,7 @@ namespace ArbPrecNet
             Arb res = new Arb(), sum = new Arb(), u = new Arb(), t = new Arb(), f = new Arb(), PHI2 = new Arb(), c = new Arb(), b1 = new Arb(), b2 = new Arb();
             Arb x1 = new Arb(), e1 = new Arb(), e2 = new Arb(), e3 = new Arb(), fp1 = new Arb(), fm1 = new Arb(), su = new Arb(), cu = new Arb(), eu1 = new Arb(), eu2 = new Arb();
             int kk;
-            sum = aflint.zero();
+            sum = aflint.zero;
             // c = p2 * ((b-a)/2) ^ (alpha+beta-1) 
             b1 = (b - a) / 2;
             b2 = (b + a) / 2;
@@ -1201,7 +1201,7 @@ namespace ArbPrecNet
                     fm1 = aflint.pow(fm1, beta);
                 PHI2 = c * cu * fp1 * fm1;
                 t = f * b1 + b2;
-                var tc = aflintc.t(t, aflint.zero());
+                var tc = aflintc.t(t, aflint.zero);
                 // Console.WriteLine("in Int, t: {0}, tc: {1}", t, tc)
                 // sum = sum + g(t) * PHI2
                 sum = sum + func(tc).real * PHI2;
@@ -1262,7 +1262,7 @@ namespace ArbPrecNet
             ba2 = (b - a) / 2;
             x_re.Mid = (b + a) / 2;
             x_re.Rad = ba2 * radX;
-            x_im.Mid = aflint.zero();
+            x_im.Mid = aflint.zero;
             x_im.Rad = ba2 * radY;
             //x.Real = x_re;
             //x.Imag = x_im;
@@ -1311,6 +1311,22 @@ namespace ArbPrecNet
         public static String fmtname
         {
             get { return "aflintc"; }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/prec/*' />
+        public static Int32 prec
+        {
+            set { ArbPrec.SetPrec((uint)value); }
+            get { return (int)ArbPrec.GetPrec(); }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/dps/*' />
+        public static Int32 dps
+        {
+            set { ArbPrec.SetDps(value); }
+            get { return (int)ArbPrec.GetDps(); }
         }
 
 
@@ -1657,7 +1673,7 @@ namespace ArbPrecNet
         #region Basic Arithmetic and Comparisons
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/add/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/add/*' />
         public static ArbC add(ArbC x, ArbC y)
         {
             return x + y;
@@ -1676,7 +1692,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/subtract/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/subtract/*' />
         public static ArbC subtract(ArbC x, ArbC y)
         {
             return x - y;
@@ -1694,7 +1710,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Sub(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/multiply/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/multiply/*' />
         public static ArbC multiply(ArbC x, ArbC y)
         {
             return x * y;
@@ -1712,7 +1728,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Mul(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/divide/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/divide/*' />
         public static ArbC divide(ArbC x, ArbC y)
         {
             return x / y;
@@ -1731,14 +1747,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/Cmp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/Cmp/*' />
         public static bool Cmp(ArbC x, ArbC y)
         {
             return true;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CmpAbs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CmpAbs/*' />
         public static bool CmpAbs(ArbC x, ArbC y)
         {
             return true;
@@ -1778,35 +1794,35 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/iszero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/iszero/*' />
         public static bool iszero(ArbC z)
         {
             return (z.real == aflint.t(0)) && (z.imag == aflint.t(0));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isone/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(ArbC z)
         {
             return (z.real == aflint.t(1)) && (z.imag == aflint.t(0));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinf/*' />
         public static bool isinf(ArbC z)
         {
             return (aflint.isinf(z.real)) || (aflint.isinf(z.imag));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnan/*' />
         public static bool isnan(ArbC z)
         {
             return (aflint.isnan(z.real)) || (aflint.isnan(z.imag));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isfinite/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isfinite/*' />
         public static bool isfinite(ArbC z)
         {
             return (aflint.isfinite(z.real)) && (aflint.isfinite(z.imag));
@@ -1814,32 +1830,44 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/zero/*' />
-        public static ArbC zero()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zero/*' />
+        public static ArbC zero
         {
-            return aflintc.t(0d, 0d);
+            get
+            {
+                return aflintc.t(0d, 0d);
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/one/*' />
-        public static ArbC one()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/one/*' />
+        public static ArbC one
         {
-            return aflintc.t(1d, 0d);
+            get
+            {
+                return aflintc.t(1d, 0d);
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/onej/*' />
-        public static ArbC onej()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/onej/*' />
+        public static ArbC onej
         {
-            return aflintc.t(0d, 1d);
+            get
+            {
+                return aflintc.t(0d, 1d);
+            }
         }
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/nan/*' />
-        public static ArbC nan()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nan/*' />
+        public static ArbC nan
         {
-            return aflintc.t(aflint.nan(), aflint.nan());
+            get
+            {
+                return aflintc.t(aflint.nan, aflint.nan);
+            }
         }
 
 
@@ -1852,7 +1880,7 @@ namespace ArbPrecNet
         #region Complex components
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Arb abs(ArbC x)
         {
             var res = new Arb();
@@ -1862,36 +1890,36 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Acb_Abs", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_Acb_Abs(IntPtr res, IntPtr x);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Arb abs(dynamic x)
         {
             return abs(t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Arb fabs(ArbC x)
         {
             return abs(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Arb fabs(dynamic x)
         {
             return fabs(t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static ArbC sign(ArbC z)
         {
-            if (iszero(z)) return zero();
+            if (iszero(z)) return zero;
             else return z / abs(z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static ArbC sign(dynamic z)
         {
             return sign(t(z));
@@ -1899,14 +1927,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Arb real(ArbC z)
         {
             return z.real;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Arb real(dynamic x)
         {
             return real(t(x));
@@ -1914,14 +1942,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Arb imag(ArbC z)
         {
             return z.imag;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Arb imag(dynamic x)
         {
             return imag(t(x));
@@ -1931,7 +1959,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Arb phase(ArbC x)
         {
             var res = new Arb();
@@ -1942,7 +1970,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Arg(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Arb phase(dynamic x)
         {
             return phase(t(x));
@@ -1952,7 +1980,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static ArbC conj(ArbC x)
         {
             var res = new ArbC();
@@ -1963,7 +1991,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Conj(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static ArbC conj(dynamic x)
         {
             return conj(t(x));
@@ -1971,13 +1999,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Arb, Arb> polar(ArbC x)
         {
             return new Tuple<Arb, Arb>(abs(x), phase(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Arb, Arb> polar(dynamic x)
         {
             return polar(aflintc.t(x));
@@ -1985,13 +2013,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static ArbC rect(Arb r, Arb phi)
         {
             return r * expj(phi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static ArbC rect(dynamic r, dynamic phi)
         {
             return rect(aflint.t(r), aflint.t(phi));
@@ -2010,7 +2038,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static ArbC sqrt(ArbC x)
         {
             var res = new ArbC();
@@ -2021,7 +2049,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Sqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static ArbC sqrt(dynamic x)
         {
             return sqrt(t(x));
@@ -2029,7 +2057,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static ArbC sqrt1pm1(ArbC x)
         {
             var res = new ArbC();
@@ -2040,7 +2068,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Sqrt1pm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static ArbC sqrt1pm1(dynamic x)
         {
             return cbrt(aflintc.t(x));
@@ -2051,14 +2079,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static ArbC rsqrt(ArbC x)
         {
             return 1.0 / sqrt(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static ArbC rsqrt(dynamic x)
         {
             return rsqrt(t(x));
@@ -2066,7 +2094,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static ArbC cbrt(ArbC x)
         {
             ArbC ks = aflintc.t(3);
@@ -2074,7 +2102,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static ArbC cbrt(dynamic x)
         {
             return cbrt(t(x));
@@ -2083,15 +2111,15 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/unitroot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/unitroot/*' />
         public static ArbC unitroot(Int32 k)
         {
             ArbC ks = aflintc.t(k);
-            return aflintc.pow(one(), one() / ks);
+            return aflintc.pow(one, one / ks);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/unitroot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/unitroot/*' />
         public static ArbC unitroot(dynamic x)
         {
             return unitroot(t(x));
@@ -2099,7 +2127,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static ArbC root_si(ArbC x, Int32 n)
         {
             var res = new ArbC();
@@ -2110,7 +2138,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Root_Si(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static ArbC root_si(dynamic x, Int32 n)
         {
             return root_si(t(x), n);
@@ -2181,8 +2209,8 @@ namespace ArbPrecNet
                 Arb SqrtQr = aflint.sqrt(Qr);
                 Arb theta = aflint.acos(Rr / (SqrtQr * SqrtQr * SqrtQr));
                 x1 = -2 * SqrtQr * aflint.cos((theta) / 3) - a / 3;
-                x2 = -2 * SqrtQr * aflint.cos((theta + 2 * aflint.pi()) / 3) - a / 3;
-                x3 = -2 * SqrtQr * aflint.cos((theta - 2 * aflint.pi()) / 3) - a / 3;
+                x2 = -2 * SqrtQr * aflint.cos((theta + 2 * aflint.pi) / 3) - a / 3;
+                x3 = -2 * SqrtQr * aflint.cos((theta - 2 * aflint.pi) / 3) - a / 3;
             }
             else
             {
@@ -2194,8 +2222,8 @@ namespace ArbPrecNet
                     D = -D;
                 }
                 ArbC A = -aflintc.cbrt(R + D);
-                ArbC B = aflintc.zero();
-                if (A != aflintc.zero())
+                ArbC B = aflintc.zero;
+                if (A != aflintc.zero)
                 {
                     B = Q / A;
                 }
@@ -2203,8 +2231,8 @@ namespace ArbPrecNet
                 Console.WriteLine("B: {0}", B);
 
                 x1 = (A + B) - a / 3;
-                x2 = -0.5 * (A + B) - a / 3 + 0.5 * aflintc.onej() * aflint.sqrt(3) * (A - B);
-                x3 = -0.5 * (A + B) - a / 3 - 0.5 * aflintc.onej() * aflint.sqrt(3) * (A - B);
+                x2 = -0.5 * (A + B) - a / 3 + 0.5 * aflintc.onej * aflint.sqrt(3) * (A - B);
+                x3 = -0.5 * (A + B) - a / 3 - 0.5 * aflintc.onej * aflint.sqrt(3) * (A - B);
             }
             return new Tuple<ArbC, ArbC, ArbC>(x1, x2, x3);
         }
@@ -2313,7 +2341,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static ArbC exp(ArbC x)
         {
             //MessageBox.Show("C#, ArbC: " + x.ToString());
@@ -2325,7 +2353,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Exp(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static ArbC exp(dynamic x)
         {
             return exp(t(x));
@@ -2333,7 +2361,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static ArbC expj(ArbC x)
         {
             var res = new ArbC();
@@ -2344,7 +2372,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Expj(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static ArbC expj(dynamic x)
         {
             return expj(t(x));
@@ -2353,7 +2381,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static ArbC expjpi(ArbC x)
         {
             var res = new ArbC();
@@ -2364,7 +2392,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Expjpi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static ArbC expjpi(dynamic x)
         {
             return expjpi(aflintc.t(x));
@@ -2372,7 +2400,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static ArbC exp10(ArbC x)
         {
             var res = new ArbC();
@@ -2383,7 +2411,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Exp10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static ArbC exp10(dynamic x)
         {
             return exp10(aflintc.t(x));
@@ -2392,7 +2420,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static ArbC exp2(ArbC x)
         {
             var res = new ArbC();
@@ -2403,7 +2431,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Exp2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static ArbC exp2(dynamic x)
         {
             return exp2(aflintc.t(x));
@@ -2411,7 +2439,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static ArbC expm1(ArbC x)
         {
             var res = new ArbC();
@@ -2422,7 +2450,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Expm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static ArbC expm1(dynamic x)
         {
             return expm1(aflintc.t(x));
@@ -2431,7 +2459,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static ArbC exp10m1(ArbC x)
         {
             var res = new ArbC();
@@ -2442,7 +2470,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Exp10m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static ArbC exp10m1(dynamic x)
         {
             return exp10m1(aflintc.t(x));
@@ -2450,7 +2478,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static ArbC exp2m1(ArbC x)
         {
             var res = new ArbC();
@@ -2461,7 +2489,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Exp2m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static ArbC exp2m1(dynamic x)
         {
             return exp2m1(aflintc.t(x));
@@ -2469,7 +2497,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static ArbC exprel(ArbC x)
         {
             var res = new ArbC();
@@ -2480,7 +2508,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ExpRel(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static ArbC exprel(dynamic x)
         {
             return exprel(aflintc.t(x));
@@ -2500,7 +2528,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static ArbC log(ArbC x)
         {
             var res = new ArbC();
@@ -2511,7 +2539,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Log(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static ArbC log(dynamic x)
         {
             return log(t(x));
@@ -2519,7 +2547,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static ArbC log1p(ArbC x)
         {
             var res = new ArbC();
@@ -2530,14 +2558,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Log1p(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static ArbC log1p(dynamic x)
         {
             return log1p(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static ArbC log2(ArbC x)
         {
             var res = new ArbC();
@@ -2548,7 +2576,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Log2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static ArbC log2(dynamic x)
         {
             return log2(aflintc.t(x));
@@ -2556,7 +2584,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static ArbC log10(ArbC x)
         {
             var res = new ArbC();
@@ -2567,7 +2595,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Log10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static ArbC log10(dynamic x)
         {
             return log10(t(x));
@@ -2575,7 +2603,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static ArbC logbase(ArbC x, ArbC b)
         {
             var res = new ArbC();
@@ -2586,7 +2614,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static ArbC logbase(dynamic x, dynamic b)
         {
             return logbase(aflintc.t(x), aflintc.t(b));
@@ -2598,7 +2626,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static ArbC log10p1(ArbC x)
         {
             var res = new ArbC();
@@ -2609,7 +2637,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Log10p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static ArbC log10p1(dynamic x)
         {
             return log10p1(aflintc.t(x));
@@ -2617,7 +2645,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static ArbC log2p1(ArbC x)
         {
             var res = new ArbC();
@@ -2628,7 +2656,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Log2p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static ArbC log2p1(dynamic x)
         {
             return log2p1(aflintc.t(x));
@@ -2636,7 +2664,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static ArbC lambert_wk(ArbC x, int branch)
         {
             var res = new ArbC();
@@ -2647,7 +2675,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LambertW_ui(IntPtr res, IntPtr x, int branch);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static ArbC lambert_wk(dynamic x, int branch)
         {
             return lambert_wk(aflintc.t(x), branch);
@@ -2656,25 +2684,25 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static ArbC lambert_w0(ArbC x)
         {
             return lambert_wk(aflintc.t(x), 0);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static ArbC lambert_w0(dynamic x)
         {
             return lambert_w0(aflintc.t(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static ArbC lambert_wm1(ArbC x)
         {
             return lambert_wk(aflintc.t(x), -1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static ArbC lambert_wm1(dynamic x)
         {
             return lambert_wm1(aflintc.t(x));
@@ -2696,7 +2724,7 @@ namespace ArbPrecNet
         #region Power functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static ArbC sqr(ArbC x)
         {
             var res = new ArbC();
@@ -2707,7 +2735,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Square(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static ArbC sqr(dynamic x)
         {
             return sqr(aflintc.t(x));
@@ -2715,7 +2743,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static ArbC cube(ArbC x)
         {
             var res = new ArbC();
@@ -2726,7 +2754,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Cube(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static ArbC cube(dynamic x)
         {
             return cube(aflintc.t(x));
@@ -2734,7 +2762,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static ArbC hypot(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -2745,7 +2773,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypot(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static ArbC hypot(dynamic x, dynamic y)
         {
             return hypot(aflintc.t(x), aflintc.t(y));
@@ -2753,7 +2781,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static ArbC pow_si(ArbC x, Int32 n)
         {
             var res = new ArbC();
@@ -2764,21 +2792,21 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Pow_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static ArbC pow_si(dynamic x, Int32 n)
         {
             return pow_si(aflintc.t(x), n);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static ArbC compound_si(ArbC x, Int32 n)
         {
             return pow1p(t(x), t(n));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static ArbC compound_si(dynamic x, Int32 n)
         {
             return pow1p(t(x), t(n));
@@ -2786,7 +2814,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static ArbC pow(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -2797,7 +2825,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Pow(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static ArbC pow(dynamic x, dynamic y)
         {
             return pow(aflintc.t(x), aflintc.t(y));
@@ -2806,7 +2834,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static ArbC powm1(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -2817,7 +2845,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Powm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static ArbC powm1(dynamic x, dynamic y)
         {
             return powm1(aflintc.t(x), aflintc.t(y));
@@ -2825,7 +2853,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static ArbC pow1p(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -2836,7 +2864,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Pow1p(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static ArbC pow1p(dynamic x, dynamic y)
         {
             return pow1p(aflintc.t(x), aflintc.t(y));
@@ -2844,7 +2872,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static ArbC pow1pm1(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -2855,7 +2883,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Pow1pm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static ArbC pow1pm1(dynamic x, dynamic y)
         {
             return pow1pm1(aflintc.t(x), aflintc.t(y));
@@ -2873,7 +2901,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static ArbC sin(ArbC x)
         {
             var res = new ArbC();
@@ -2884,7 +2912,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Sin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static ArbC sin(dynamic x)
         {
             return sin(t(x));
@@ -2892,7 +2920,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static ArbC cos(ArbC x)
         {
             var res = new ArbC();
@@ -2903,7 +2931,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Cos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static ArbC cos(dynamic x)
         {
             return cos(t(x));
@@ -2914,7 +2942,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static ArbC tan(ArbC x)
         {
             var res = new ArbC();
@@ -2927,7 +2955,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static ArbC tan(dynamic x)
         {
             return tan(t(x));
@@ -2935,7 +2963,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static ArbC cot(ArbC x)
         {
             var res = new ArbC();
@@ -2946,7 +2974,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Cot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static ArbC cot(dynamic x)
         {
             return cot(aflintc.t(x));
@@ -2954,7 +2982,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static ArbC sec(ArbC x)
         {
             var res = new ArbC();
@@ -2965,7 +2993,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Sec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static ArbC sec(dynamic x)
         {
             return sec(aflintc.t(x));
@@ -2973,7 +3001,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static ArbC csc(ArbC x)
         {
             var res = new ArbC();
@@ -2984,7 +3012,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Csc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static ArbC csc(dynamic x)
         {
             return csc(aflintc.t(x));
@@ -2992,7 +3020,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static ArbC sinc(ArbC x)
         {
             var res = new ArbC();
@@ -3003,7 +3031,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Sinc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static ArbC sinc(dynamic x)
         {
             return sinc(aflintc.t(x));
@@ -3012,7 +3040,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static ArbC sinpi(ArbC x)
         {
             var res = new ArbC();
@@ -3023,7 +3051,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_SinPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static ArbC sinpi(dynamic x)
         {
             return sinpi(aflintc.t(x));
@@ -3032,7 +3060,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static ArbC cospi(ArbC x)
         {
             var res = new ArbC();
@@ -3043,7 +3071,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CosPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static ArbC cospi(dynamic x)
         {
             return cospi(aflintc.t(x));
@@ -3053,7 +3081,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static ArbC tanpi(ArbC x)
         {
             var res = new ArbC();
@@ -3064,7 +3092,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_TanPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static ArbC tanpi(dynamic x)
         {
             return tanpi(aflintc.t(x));
@@ -3073,7 +3101,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static ArbC cscpi(ArbC x)
         {
             var res = new ArbC();
@@ -3084,7 +3112,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CscPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static ArbC cscpi(dynamic x)
         {
             return cscpi(aflintc.t(x));
@@ -3093,7 +3121,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static ArbC secpi(ArbC x)
         {
             var res = new ArbC();
@@ -3104,7 +3132,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_SecPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static ArbC secpi(dynamic x)
         {
             return secpi(aflintc.t(x));
@@ -3113,7 +3141,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static ArbC cotpi(ArbC x)
         {
             var res = new ArbC();
@@ -3124,7 +3152,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CotPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static ArbC cotpi(dynamic x)
         {
             return cotpi(aflintc.t(x));
@@ -3133,7 +3161,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static ArbC sincpi(ArbC x)
         {
             var res = new ArbC();
@@ -3144,7 +3172,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_SincPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static ArbC sincpi(dynamic x)
         {
             return sincpi(aflintc.t(x));
@@ -3161,7 +3189,7 @@ namespace ArbPrecNet
         #region Hyperbolic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static ArbC cosh(ArbC x)
         {
             var res = new ArbC();
@@ -3172,7 +3200,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Cosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static ArbC cosh(dynamic x)
         {
             return cosh(t(x));
@@ -3181,7 +3209,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static ArbC sinh(ArbC x)
         {
             var res = new ArbC();
@@ -3192,7 +3220,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Sinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static ArbC sinh(dynamic x)
         {
             return sinh(t(x));
@@ -3201,7 +3229,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static ArbC tanh(ArbC x)
         {
             var res = new ArbC();
@@ -3212,7 +3240,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Tanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static ArbC tanh(dynamic x)
         {
             return tanh(t(x));
@@ -3222,7 +3250,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static ArbC csch(ArbC x)
         {
             var res = new ArbC();
@@ -3233,7 +3261,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Csch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static ArbC csch(dynamic x)
         {
             return csch(aflintc.t(x));
@@ -3242,7 +3270,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static ArbC sech(ArbC x)
         {
             var res = new ArbC();
@@ -3253,7 +3281,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Sech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static ArbC sech(dynamic x)
         {
             return sech(aflintc.t(x));
@@ -3262,7 +3290,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static ArbC coth(ArbC x)
         {
             var res = new ArbC();
@@ -3273,7 +3301,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Coth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static ArbC coth(dynamic x)
         {
             return coth(aflintc.t(x));
@@ -3295,7 +3323,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static ArbC acos(ArbC x)
         {
             var res = new ArbC();
@@ -3306,7 +3334,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static ArbC acos(dynamic x)
         {
             return acos(t(x));
@@ -3315,7 +3343,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static ArbC asin(ArbC x)
         {
             var res = new ArbC();
@@ -3326,7 +3354,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Asin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static ArbC asin(dynamic x)
         {
             return asin(t(x));
@@ -3335,7 +3363,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static ArbC atan(ArbC x)
         {
             var res = new ArbC();
@@ -3346,7 +3374,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Atan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static ArbC atan(dynamic x)
         {
             return atan(t(x));
@@ -3354,7 +3382,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static ArbC acsc(ArbC x)
         {
             var res = new ArbC();
@@ -3365,14 +3393,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Acsc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static ArbC acsc(dynamic x)
         {
             return acsc(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static ArbC asec(ArbC x)
         {
             var res = new ArbC();
@@ -3383,14 +3411,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Asec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static ArbC asec(dynamic x)
         {
             return asec(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static ArbC acot(ArbC x)
         {
             var res = new ArbC();
@@ -3401,7 +3429,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Acot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static ArbC acot(dynamic x)
         {
             return acot(aflintc.t(x));
@@ -3419,7 +3447,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static ArbC acosh(ArbC x)
         {
             var res = new ArbC();
@@ -3430,7 +3458,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static ArbC acosh(dynamic x)
         {
             return acosh(t(x));
@@ -3440,7 +3468,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static ArbC asinh(ArbC x)
         {
             var res = new ArbC();
@@ -3451,7 +3479,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Asinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static ArbC asinh(dynamic x)
         {
             return asinh(t(x));
@@ -3459,7 +3487,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static ArbC atanh(ArbC x)
         {
             var res = new ArbC();
@@ -3470,7 +3498,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Atanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static ArbC atanh(dynamic x)
         {
             return atanh(t(x));
@@ -3478,7 +3506,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static ArbC acsch(ArbC x)
         {
             var res = new ArbC();
@@ -3489,7 +3517,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Acsch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static ArbC acsch(dynamic x)
         {
             return acsch(aflintc.t(x));
@@ -3497,7 +3525,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static ArbC asech(ArbC x)
         {
             var res = new ArbC();
@@ -3508,7 +3536,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Asech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static ArbC asech(dynamic x)
         {
             return asech(aflintc.t(x));
@@ -3516,7 +3544,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static ArbC acoth(ArbC x)
         {
             var res = new ArbC();
@@ -3527,7 +3555,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Acoth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static ArbC acoth(dynamic x)
         {
             return acoth(aflintc.t(x));
@@ -3545,7 +3573,7 @@ namespace ArbPrecNet
         #region Gamma and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static ArbC gamma(ArbC x)
         {
             var res = new ArbC();
@@ -3556,7 +3584,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Gamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static ArbC gamma(dynamic x)
         {
             return gamma(aflintc.t(x));
@@ -3564,7 +3592,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static ArbC lgamma(ArbC x)
         {
             var res = new ArbC();
@@ -3575,7 +3603,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Lgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static ArbC lgamma(dynamic x)
         {
             return lgamma(aflintc.t(x));
@@ -3583,7 +3611,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static ArbC rgamma(ArbC x)
         {
             var res = new ArbC();
@@ -3594,7 +3622,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Rgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static ArbC rgamma(dynamic x)
         {
             return rgamma(aflintc.t(x));
@@ -3604,13 +3632,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static ArbC gamma1pm1(ArbC x)
         {
             return gamma(x + 1) - 1;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static ArbC gamma1pm1(dynamic x)
         {
             return gamma1pm1(aflintc.t(x));
@@ -3619,13 +3647,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static ArbC factorial(ArbC x)
         {
             return gamma(x + 1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static ArbC factorial(dynamic x)
         {
             return factorial(aflintc.t(x));
@@ -3637,13 +3665,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static ArbC doublefactorial(ArbC x)
         {
-            return exp2(x / 2) * pow(aflint.pi() / 2, (cospi(x) - 1) / 4) * gamma(x / 2 + 1);
+            return exp2(x / 2) * pow(aflint.pi / 2, (cospi(x) - 1) / 4) * gamma(x / 2 + 1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static ArbC doublefactorial(dynamic x)
         {
             return doublefactorial(aflintc.t(x));
@@ -3651,7 +3679,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static ArbC rising_factorial(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -3662,7 +3690,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_RisingFactorial(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static ArbC rising_factorial(dynamic x, dynamic y)
         {
             return rising_factorial(aflintc.t(x), aflintc.t(y));
@@ -3673,13 +3701,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static ArbC falling_factorial(ArbC a, ArbC n)
         {
             return rising_factorial(a - n + 1, n);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static ArbC falling_factorial(dynamic a, dynamic n)
         {
             return falling_factorial(aflintc.t(a), aflintc.t(n));
@@ -3689,13 +3717,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static ArbC gamma_ratio(ArbC a, ArbC b)
         {
             return gamma(a) / gamma(b);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static ArbC gamma_ratio(dynamic a, dynamic b)
         {
             return gamma_ratio(aflintc.t(a), aflintc.t(b));
@@ -3705,13 +3733,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static ArbC gamma_delta_ratio(ArbC a, ArbC delta)
         {
             return gamma(a) / gamma(a + delta);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static ArbC gamma_delta_ratio(dynamic a, dynamic delta)
         {
             return gamma_delta_ratio(aflintc.t(a), aflintc.t(delta));
@@ -3720,7 +3748,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static ArbC beta(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -3731,7 +3759,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Beta(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static ArbC beta(dynamic x, dynamic y)
         {
             return beta(aflintc.t(x), aflintc.t(y));
@@ -3739,165 +3767,18 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static ArbC binomial(ArbC n, ArbC k)
         {
             return gamma(n + 1) / (gamma(k + 1) * gamma(n - k + 1));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static ArbC binomial(dynamic n, dynamic k)
         {
             return binomial(aflintc.t(n), aflintc.t(k));
         }
 
-
-
-
-        #endregion
-
-
-
-
-
-
-
-        #region Matrix Creation
-
-
-
-        /// <summary>
-        /// Converts from a complex scalar of type ArbC
-        /// </summary>
-        public static ArbMatC mat_t(ArbC x)
-        {
-            var matA = new ArbMatC();
-            matA[0, 0] = x;
-            return matA;
-        }
-
-
-
-        /// <summary>
-        /// Converts from a real matrix of type ArbMat
-        /// </summary>
-        public static ArbMatC mat_t(ArbMat matA)
-        {
-            var x = mat_zeros(matA.rows, matA.cols);
-            Interop.Lib_ConvertMatrixAndPoly(x.mpPtr, constants.mp_conv_mat_set_real_part_in_complex, constants.mp_apc, constants.mp_apc, matA.mpPtr);
-            return x;
-        }
-
-        /// <summary>
-        /// Makes a deep copy from a complex matrix of type ArbMatC
-        /// </summary>
-        public static ArbMatC mat_t(ArbMatC matA)
-        {
-            var matX = mat_zeros(matA.rows, matA.cols);
-            matX = +matA;
-            return matX;
-        }
-
-
-
-        /// <summary>
-        /// Returns SetZero
-        /// </summary>
-        public static ArbMatC mat_zeros(int n, int m)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setZero, n, m);
-            return resout;
-        }
-
-
-
-        /// <summary>
-        /// Returns SetOnes
-        /// </summary>
-        public static ArbMatC mat_ones(int n, int m)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setOnes, n, m);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns SetIdentity
-        /// </summary>
-        public static ArbMatC mat_identity(int n, int m)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setIdentity, n, m);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns SetIdentity
-        /// </summary>
-        public static ArbMatC mat_eye(int n, int m)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setIdentity, n, m);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns Random
-        /// </summary>
-        public static ArbMatC mat_random(int n, int m)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandom_nm, n, m);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns RandomSym
-        /// </summary>
-        public static ArbMatC mat_random_symmetric(int n)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandomSymmetric, n, n);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns RandomSa
-        /// </summary>
-        public static ArbMatC mat_random_selfadjoint(int n)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandomSA, n, n);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns RandomSaPosdef
-        /// </summary>
-        public static ArbMatC mat_random_selfadjoint_posdef(int n)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandomSAPosDef, n, n);
-            return resout;
-        }
-
-
-        /// <summary>
-        /// Returns FillLinear
-        /// </summary>
-        public static ArbMatC mat_fill_linear(int n, int m)
-        {
-            var resout = new ArbMatC();
-            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_FillLinear, n, m);
-            return resout;
-        }
 
 
 
@@ -3919,7 +3800,7 @@ namespace ArbPrecNet
 
         #region Elliptic conversions
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/QfromK/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/QfromK/*' />
         internal static ArbC QfromK(ArbC k)
         {
             var res = new ArbC();
@@ -3930,7 +3811,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_QfromK(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/QfromK/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/QfromK/*' />
         internal static ArbC QfromK(dynamic k)
         {
             return QfromK(aflintc.t(k));
@@ -3939,7 +3820,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/TfromUQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/TfromUQ/*' />
         internal static ArbC TfromUQ(ArbC u, ArbC q)
         {
             var res = new ArbC();
@@ -3950,7 +3831,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_TfromUQ(IntPtr res, IntPtr u, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/TfromUQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/TfromUQ/*' />
         internal static ArbC TfromUQ(dynamic n, dynamic k)
         {
             return TfromUQ(aflintc.t(n), aflintc.t(k));
@@ -3958,7 +3839,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/SnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/SnTQ/*' />
         internal static ArbC SnTQ(ArbC t, ArbC q)
         {
             var res = new ArbC();
@@ -3969,7 +3850,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_SnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/SnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/SnTQ/*' />
         internal static ArbC SnTQ(dynamic t, dynamic q)
         {
             return SnTQ(aflintc.t(t), aflintc.t(q));
@@ -3977,7 +3858,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CnTQ/*' />
         internal static ArbC CnTQ(ArbC t, ArbC q)
         {
             var res = new ArbC();
@@ -3988,7 +3869,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_CnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CnTQ/*' />
         internal static ArbC CnTQ(dynamic t, dynamic q)
         {
             return CnTQ(aflintc.t(t), aflintc.t(q));
@@ -3996,7 +3877,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/DnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/DnTQ/*' />
         internal static ArbC DnTQ(ArbC t, ArbC q)
         {
             var res = new ArbC();
@@ -4007,7 +3888,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/DnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/DnTQ/*' />
         internal static ArbC DnTQ(dynamic t, dynamic q)
         {
             return DnTQ(aflintc.t(t), aflintc.t(q));
@@ -4017,13 +3898,10 @@ namespace ArbPrecNet
 
 
 
-
-
-
         #region Carlson symmetric elliptic integrals
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static ArbC elliptic_rc(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -4034,14 +3912,14 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Elliptic_RC(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static ArbC elliptic_rc(dynamic x, dynamic y)
         {
             return elliptic_rc(aflintc.t(x), aflintc.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static ArbC elliptic_rf(ArbC x, ArbC y, ArbC z)
         {
             var res = new ArbC();
@@ -4052,7 +3930,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Elliptic_RF(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static ArbC elliptic_rf(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rf(aflintc.t(x), aflintc.t(y), aflintc.t(z));
@@ -4062,7 +3940,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static ArbC elliptic_rg(ArbC x, ArbC y, ArbC z)
         {
             var res = new ArbC();
@@ -4073,7 +3951,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Elliptic_RG(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static ArbC elliptic_rg(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rg(aflintc.t(x), aflintc.t(y), aflintc.t(z));
@@ -4082,7 +3960,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static ArbC elliptic_rd(ArbC x, ArbC y, ArbC z)
         {
             var res = new ArbC();
@@ -4093,7 +3971,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Elliptic_RD(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static ArbC elliptic_rd(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rd(aflintc.t(x), aflintc.t(y), aflintc.t(z));
@@ -4101,7 +3979,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static ArbC elliptic_rj(ArbC x, ArbC y, ArbC z, ArbC w)
         {
             var res = new ArbC();
@@ -4112,7 +3990,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Elliptic_RJ(IntPtr res, IntPtr x, IntPtr y, IntPtr z, IntPtr w);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static ArbC elliptic_rj(dynamic x, dynamic y, dynamic z, dynamic w)
         {
             return elliptic_rj(aflintc.t(x), aflintc.t(y), aflintc.t(z), aflintc.t(w));
@@ -4130,7 +4008,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static ArbC m_elliptic_k(ArbC m)
         {
             var res = new ArbC();
@@ -4141,7 +4019,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_MEllipticK(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static ArbC m_elliptic_k(dynamic x)
         {
             return m_elliptic_k(aflintc.t(x));
@@ -4150,7 +4028,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static ArbC m_elliptic_e(ArbC m)
         {
             var res = new ArbC();
@@ -4161,7 +4039,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_MEllipticE(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static ArbC m_elliptic_e(dynamic x)
         {
             return m_elliptic_e(aflintc.t(x));
@@ -4170,7 +4048,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static ArbC m_elliptic_pi(ArbC n, ArbC m)
         {
             var res = new ArbC();
@@ -4181,7 +4059,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_MEllipticPi(IntPtr res, IntPtr n, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static ArbC m_elliptic_pi(dynamic x, dynamic y)
         {
             return m_elliptic_pi(aflintc.t(x), aflintc.t(y));
@@ -4190,7 +4068,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static ArbC m_elliptic_f(ArbC phi, ArbC m)
         {
             var res = new ArbC();
@@ -4201,7 +4079,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_MEllipticF(IntPtr res, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static ArbC m_elliptic_f(dynamic phi, dynamic m)
         {
             return m_elliptic_f(aflintc.t(phi), aflintc.t(m));
@@ -4209,7 +4087,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static ArbC m_elliptic_e_inc(ArbC phi, ArbC m)
         {
             var res = new ArbC();
@@ -4220,7 +4098,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_MEllipticEInc(IntPtr res, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static ArbC m_elliptic_e_inc(dynamic phi, dynamic m)
         {
             return m_elliptic_e_inc(aflintc.t(phi), aflintc.t(m));
@@ -4228,7 +4106,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static ArbC m_elliptic_pi_inc(ArbC n, ArbC phi, ArbC m)
         {
             var res = new ArbC();
@@ -4239,7 +4117,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_MEllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static ArbC m_elliptic_pi_inc(dynamic n, dynamic phi, dynamic m)
         {
             return m_elliptic_pi_inc(aflintc.t(n), aflintc.t(phi), aflintc.t(m));
@@ -4258,7 +4136,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static ArbC elliptic_k(ArbC k)
         {
             var res = new ArbC();
@@ -4269,7 +4147,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticK(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static ArbC elliptic_k(dynamic k)
         {
             return elliptic_k(aflintc.t(k));
@@ -4278,7 +4156,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static ArbC elliptic_e(ArbC k)
         {
             var res = new ArbC();
@@ -4289,7 +4167,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticE(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static ArbC elliptic_e(dynamic k)
         {
             return elliptic_e(aflintc.t(k));
@@ -4298,7 +4176,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static ArbC elliptic_pi(ArbC n, ArbC k)
         {
             var res = new ArbC();
@@ -4309,7 +4187,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticPi(IntPtr res, IntPtr n, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static ArbC elliptic_pi(dynamic n, dynamic k)
         {
             return elliptic_pi(aflintc.t(n), aflintc.t(k));
@@ -4318,7 +4196,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static ArbC elliptic_f(ArbC phi, ArbC k)
         {
             var res = new ArbC();
@@ -4329,7 +4207,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticF(IntPtr res, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static ArbC elliptic_f(dynamic phi, dynamic k)
         {
             return elliptic_f(aflintc.t(phi), aflintc.t(k));
@@ -4337,7 +4215,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static ArbC elliptic_e_inc(ArbC phi, ArbC k)
         {
             var res = new ArbC();
@@ -4348,7 +4226,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticEInc(IntPtr res, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static ArbC elliptic_e_inc(dynamic phi, dynamic k)
         {
             return elliptic_e_inc(aflintc.t(phi), aflintc.t(k));
@@ -4356,7 +4234,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static ArbC elliptic_pi_inc(ArbC n, ArbC phi, ArbC k)
         {
             var res = new ArbC();
@@ -4367,7 +4245,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static ArbC elliptic_pi_inc(dynamic n, dynamic phi, dynamic k)
         {
             return elliptic_pi_inc(aflintc.t(n), aflintc.t(phi), aflintc.t(k));
@@ -4376,7 +4254,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static ArbC agm(ArbC x, ArbC y)
         {
             var res = new ArbC();
@@ -4387,7 +4265,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Agm(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static ArbC agm(dynamic x, dynamic y)
         {
             return agm(aflintc.t(x), aflintc.t(y));
@@ -4402,7 +4280,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static ArbC jacobi_sn(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4413,7 +4291,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiSN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static ArbC jacobi_sn(dynamic x, dynamic k)
         {
             return jacobi_sn(aflintc.t(x), aflintc.t(k));
@@ -4421,7 +4299,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static ArbC jacobi_cn(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4432,7 +4310,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiCN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static ArbC jacobi_cn(dynamic x, dynamic k)
         {
             return jacobi_cn(aflintc.t(x), aflintc.t(k));
@@ -4440,7 +4318,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static ArbC jacobi_dn(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4451,7 +4329,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiDN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static ArbC jacobi_dn(dynamic x, dynamic k)
         {
             return jacobi_dn(aflintc.t(x), aflintc.t(k));
@@ -4459,7 +4337,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static ArbC jacobi_ns(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4470,7 +4348,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiNS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static ArbC jacobi_ns(dynamic x, dynamic k)
         {
             return jacobi_ns(aflintc.t(x), aflintc.t(k));
@@ -4478,7 +4356,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static ArbC jacobi_nc(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4489,7 +4367,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiNC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static ArbC jacobi_nc(dynamic x, dynamic k)
         {
             return jacobi_nc(aflintc.t(x), aflintc.t(k));
@@ -4497,7 +4375,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static ArbC jacobi_nd(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4508,7 +4386,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiND(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static ArbC jacobi_nd(dynamic x, dynamic k)
         {
             return jacobi_nd(aflintc.t(x), aflintc.t(k));
@@ -4516,7 +4394,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static ArbC jacobi_sc(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4527,7 +4405,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiSC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static ArbC jacobi_sc(dynamic x, dynamic k)
         {
             return jacobi_sc(aflintc.t(x), aflintc.t(k));
@@ -4535,7 +4413,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static ArbC jacobi_sd(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4546,7 +4424,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiSD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static ArbC jacobi_sd(dynamic x, dynamic k)
         {
             return jacobi_sd(aflintc.t(x), aflintc.t(k));
@@ -4554,7 +4432,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static ArbC jacobi_dc(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4565,7 +4443,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiDC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static ArbC jacobi_dc(dynamic x, dynamic k)
         {
             return jacobi_dc(aflintc.t(x), aflintc.t(k));
@@ -4573,7 +4451,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static ArbC jacobi_ds(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4584,7 +4462,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiDS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static ArbC jacobi_ds(dynamic x, dynamic k)
         {
             return jacobi_ds(aflintc.t(x), aflintc.t(k));
@@ -4592,7 +4470,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static ArbC jacobi_cs(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4603,7 +4481,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiCS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static ArbC jacobi_cs(dynamic x, dynamic k)
         {
             return jacobi_cs(aflintc.t(x), aflintc.t(k));
@@ -4611,7 +4489,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static ArbC jacobi_cd(ArbC x, ArbC k)
         {
             var res = new ArbC();
@@ -4622,7 +4500,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_JacobiCD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static ArbC jacobi_cd(dynamic x, dynamic k)
         {
             return jacobi_cd(aflintc.t(x), aflintc.t(k));
@@ -4641,7 +4519,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static ArbC jacobi_theta1(ArbC x, ArbC q)
         {
             var res = new ArbC();
@@ -4652,7 +4530,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta1Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static ArbC jacobi_theta1(dynamic x, dynamic q)
         {
             return jacobi_theta1(aflintc.t(x), aflintc.t(q));
@@ -4661,7 +4539,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static ArbC jacobi_theta2(ArbC x, ArbC q)
         {
             var res = new ArbC();
@@ -4672,7 +4550,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta2Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static ArbC jacobi_theta2(dynamic x, dynamic q)
         {
             return jacobi_theta2(aflintc.t(x), aflintc.t(q));
@@ -4681,7 +4559,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static ArbC jacobi_theta3(ArbC x, ArbC q)
         {
             var res = new ArbC();
@@ -4692,7 +4570,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta3Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static ArbC jacobi_theta3(dynamic x, dynamic q)
         {
             return jacobi_theta3(aflintc.t(x), aflintc.t(q));
@@ -4701,7 +4579,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static ArbC jacobi_theta4(ArbC x, ArbC q)
         {
             var res = new ArbC();
@@ -4712,7 +4590,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta4Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static ArbC jacobi_theta4(dynamic x, dynamic q)
         {
             return jacobi_theta4(aflintc.t(x), aflintc.t(q));
@@ -4722,7 +4600,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta1Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta1Tau/*' />
         internal static ArbC JacobiTheta1Tau(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -4733,7 +4611,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta1QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta1Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta1Tau/*' />
         internal static ArbC JacobiTheta1Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta1Tau(aflintc.t(z), aflintc.t(tau));
@@ -4742,7 +4620,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta2Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta2Tau/*' />
         internal static ArbC JacobiTheta2Tau(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -4753,7 +4631,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta2QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta2Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta2Tau/*' />
         internal static ArbC JacobiTheta2Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta2Tau(aflintc.t(z), aflintc.t(tau));
@@ -4762,7 +4640,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta3Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta3Tau/*' />
         internal static ArbC JacobiTheta3Tau(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -4773,7 +4651,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta3QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta3Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta3Tau/*' />
         internal static ArbC JacobiTheta3Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta3Tau(aflintc.t(z), aflintc.t(tau));
@@ -4782,7 +4660,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta4Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta4Tau/*' />
         internal static ArbC JacobiTheta4Tau(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -4793,7 +4671,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_Theta4QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta4Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta4Tau/*' />
         internal static ArbC JacobiTheta4Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta4Tau(aflintc.t(z), aflintc.t(tau));
@@ -4813,7 +4691,7 @@ namespace ArbPrecNet
         #region Conversions of parameters of Weierstrass P
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<ArbC, ArbC> elliptic_invariants_from_roots(ArbC e1, ArbC e2)
         {
             ArbC e3 = -e1 - e2;
@@ -4822,7 +4700,7 @@ namespace ArbPrecNet
             return new Tuple<ArbC, ArbC>(g2, g3);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<ArbC, ArbC> elliptic_invariants_from_roots(dynamic e1, dynamic e2)
         {
             return elliptic_invariants_from_roots(aflintc.t(e1), aflintc.t(e2));
@@ -4830,13 +4708,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<ArbC, ArbC> elliptic_invariants_from_tau(ArbC tau)
         {
             return new Tuple<ArbC, ArbC>(EllipticInvariantG2(tau), EllipticInvariantG3(tau));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<ArbC, ArbC> elliptic_invariants_from_tau(dynamic tau)
         {
             return elliptic_invariants_from_tau(aflintc.t(tau));
@@ -4844,13 +4722,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<ArbC, ArbC, ArbC> elliptic_roots_from_tau(ArbC tau)
         {
             return new Tuple<ArbC, ArbC, ArbC>(EllipticRootE1(tau), EllipticRootE2(tau), EllipticRootE3(tau));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<ArbC, ArbC, ArbC> elliptic_roots_from_tau(dynamic tau)
         {
             return elliptic_roots_from_tau(aflintc.t(tau));
@@ -4860,7 +4738,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2/*' />
         public static ArbC EllipticInvariantG2(ArbC tau)
         {
             var res = new ArbC();
@@ -4871,7 +4749,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticInvariantG2(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2/*' />
         public static ArbC EllipticInvariantG2(dynamic k)
         {
             return EllipticInvariantG2(aflintc.t(k));
@@ -4880,7 +4758,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG3/*' />
         public static ArbC EllipticInvariantG3(ArbC tau)
         {
             var res = new ArbC();
@@ -4891,7 +4769,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticInvariantG3(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG3/*' />
         public static ArbC EllipticInvariantG3(dynamic k)
         {
             return EllipticInvariantG3(aflintc.t(k));
@@ -4899,7 +4777,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE1/*' />
         public static ArbC EllipticRootE1(ArbC tau)
         {
             var res = new ArbC();
@@ -4910,7 +4788,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticRootE1(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE1/*' />
         public static ArbC EllipticRootE1(dynamic k)
         {
             return EllipticRootE1(aflintc.t(k));
@@ -4918,7 +4796,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE2/*' />
         public static ArbC EllipticRootE2(ArbC tau)
         {
             var res = new ArbC();
@@ -4929,7 +4807,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticRootE2(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE2/*' />
         public static ArbC EllipticRootE2(dynamic k)
         {
             return EllipticRootE2(aflintc.t(k));
@@ -4937,7 +4815,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE3/*' />
         public static ArbC EllipticRootE3(ArbC tau)
         {
             var res = new ArbC();
@@ -4948,7 +4826,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_EllipticRootE3(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE3/*' />
         public static ArbC EllipticRootE3(dynamic k)
         {
             return EllipticRootE3(aflintc.t(k));
@@ -4968,7 +4846,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_p_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_p_t/*' />
         public static ArbC weierstrass_p_t(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -4979,7 +4857,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_WeierstrassP(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_p_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_p_t/*' />
         public static ArbC weierstrass_p_t(dynamic z, dynamic tau)
         {
             return weierstrass_p_t(aflintc.t(z), aflintc.t(tau));
@@ -4988,7 +4866,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/WeierstrassPInv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
         public static ArbC WeierstrassPInv(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -4999,7 +4877,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/WeierstrassPInv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
         public static ArbC WeierstrassPInv(dynamic z, dynamic tau)
         {
             return WeierstrassPInv(aflintc.t(z), aflintc.t(tau));
@@ -5007,7 +4885,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_zeta_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_zeta_t/*' />
         public static ArbC weierstrass_zeta_t(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -5018,7 +4896,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_WeierstrassPZeta(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_zeta_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_zeta_t/*' />
         public static ArbC weierstrass_zeta_t(dynamic z, dynamic tau)
         {
             return weierstrass_zeta_t(aflintc.t(z), aflintc.t(tau));
@@ -5027,7 +4905,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_sigma_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_sigma_t/*' />
         public static ArbC weierstrass_sigma_t(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -5038,7 +4916,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_WeierstrassPSigma(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_sigma_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_sigma_t/*' />
         public static ArbC weierstrass_sigma_t(dynamic z, dynamic tau)
         {
             return weierstrass_sigma_t(aflintc.t(z), aflintc.t(tau));
@@ -5046,7 +4924,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_pprime_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pprime_t/*' />
         public static ArbC weierstrass_pprime_t(ArbC z, ArbC tau)
         {
             var res = new ArbC();
@@ -5057,7 +4935,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_WeierstrassPPrime(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_pprime_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pprime_t/*' />
         public static ArbC weierstrass_pprime_t(dynamic z, dynamic tau)
         {
             return weierstrass_pprime_t(aflintc.t(z), aflintc.t(tau));
@@ -5077,7 +4955,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dedekind_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dedekind_eta/*' />
         public static ArbC dedekind_eta(ArbC tau)
         {
             var res = new ArbC();
@@ -5088,7 +4966,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DedekindEta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dedekind_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dedekind_eta/*' />
         public static ArbC dedekind_eta(dynamic k)
         {
             return dedekind_eta(aflintc.t(k));
@@ -5096,7 +4974,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/klein_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static ArbC klein_j(ArbC tau)
         {
             var res = new ArbC();
@@ -5107,7 +4985,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_KleinJ(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/klein_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static ArbC klein_j(dynamic k)
         {
             return klein_j(aflintc.t(k));
@@ -5115,7 +4993,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_lambda/*' />
         public static ArbC modular_lambda(ArbC tau)
         {
             var res = new ArbC();
@@ -5126,7 +5004,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_ModularLambda(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_lambda/*' />
         public static ArbC modular_lambda(dynamic k)
         {
             return modular_lambda(aflintc.t(k));
@@ -5134,7 +5012,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_delta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_delta/*' />
         public static ArbC modular_delta(ArbC tau)
         {
             var res = new ArbC();
@@ -5145,7 +5023,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_ModularDelta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_delta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_delta/*' />
         public static ArbC modular_delta(dynamic k)
         {
             return modular_delta(aflintc.t(k));
@@ -5165,7 +5043,7 @@ namespace ArbPrecNet
         #region Lerch’s transcendent: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static ArbC lerch_phi(ArbC z, ArbC s, ArbC a)
         {
             var res = new ArbC();
@@ -5176,7 +5054,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LerchPhi(IntPtr res, IntPtr z, IntPtr s, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static ArbC lerch_phi(dynamic z, dynamic s, dynamic a)
         {
             return lerch_phi(aflintc.t(z), aflintc.t(s), aflintc.t(a));
@@ -5184,7 +5062,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static ArbC lerch_zeta(ArbC lambda1, ArbC alpha, ArbC s)
         {
             var res = new ArbC();
@@ -5195,7 +5073,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LerchZeta(IntPtr res, IntPtr lambda1, IntPtr alpha, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static ArbC lerch_zeta(dynamic lambda1, dynamic alpha, dynamic s)
         {
             return lerch_zeta(aflintc.t(lambda1), aflintc.t(alpha), aflintc.t(s));
@@ -5211,7 +5089,7 @@ namespace ArbPrecNet
         #region Polygamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static ArbC polygamma(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5222,7 +5100,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Polygamma(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static ArbC polygamma(dynamic s, dynamic z)
         {
             return polygamma(aflintc.t(s), aflintc.t(z));
@@ -5230,7 +5108,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static ArbC trigamma(ArbC x)
         {
             var res = new ArbC();
@@ -5241,7 +5119,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Trigamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static ArbC trigamma(dynamic x)
         {
             return trigamma(aflintc.t(x));
@@ -5249,7 +5127,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static ArbC digamma(ArbC x)
         {
             var res = new ArbC();
@@ -5260,7 +5138,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Digamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static ArbC digamma(dynamic x)
         {
             return digamma(aflintc.t(x));
@@ -5270,7 +5148,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static ArbC harmonic(ArbC x)
         {
             var res = new ArbC();
@@ -5281,7 +5159,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Harmonic(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static ArbC harmonic(dynamic x)
         {
             return harmonic(aflintc.t(x));
@@ -5298,7 +5176,7 @@ namespace ArbPrecNet
         #region Polylogarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static ArbC polylog(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5309,7 +5187,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Polylog(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static ArbC polylog(dynamic s, dynamic z)
         {
             return polylog(aflintc.t(s), aflintc.t(z));
@@ -5318,7 +5196,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static ArbC trilog(ArbC x)
         {
             var res = new ArbC();
@@ -5329,7 +5207,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Trilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static ArbC trilog(dynamic x)
         {
             return trilog(aflintc.t(x));
@@ -5337,7 +5215,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static ArbC dilog(ArbC x)
         {
             var res = new ArbC();
@@ -5348,7 +5226,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Dilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static ArbC dilog(dynamic x)
         {
             return dilog(aflintc.t(x));
@@ -5356,7 +5234,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static ArbC clausen_sin(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5367,7 +5245,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ClausenSin(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static ArbC clausen_sin(dynamic s, dynamic z)
         {
             return clausen_sin(aflintc.t(s), aflintc.t(z));
@@ -5375,7 +5253,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static ArbC clausen_cos(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5386,7 +5264,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ClausenCos(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static ArbC clausen_cos(dynamic s, dynamic z)
         {
             return clausen_cos(aflintc.t(s), aflintc.t(z));
@@ -5395,7 +5273,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static ArbC clausen2(ArbC x)
         {
             var res = new ArbC();
@@ -5406,7 +5284,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Clausen2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static ArbC clausen2(dynamic x)
         {
             return clausen2(aflintc.t(x));
@@ -5414,7 +5292,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static ArbC bose_einstein(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5425,7 +5303,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BoseEinstein(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static ArbC bose_einstein(dynamic s, dynamic z)
         {
             return bose_einstein(aflintc.t(s), aflintc.t(z));
@@ -5433,7 +5311,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static ArbC fermi_dirac(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5444,7 +5322,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_FermiDirac(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static ArbC fermi_dirac(dynamic s, dynamic z)
         {
             return fermi_dirac(aflintc.t(s), aflintc.t(z));
@@ -5452,7 +5330,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static ArbC legendre_chi(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5463,7 +5341,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LegendreChi(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static ArbC legendre_chi(dynamic s, dynamic z)
         {
             return legendre_chi(aflintc.t(s), aflintc.t(z));
@@ -5471,7 +5349,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static ArbC inverse_tan_integral(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -5482,7 +5360,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_InverseTanIntegral(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static ArbC inverse_tan_integral(dynamic s, dynamic z)
         {
             return inverse_tan_integral(aflintc.t(s), aflintc.t(z));
@@ -5499,7 +5377,7 @@ namespace ArbPrecNet
         #region Hurwitz zeta function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static ArbC hurwitz_zeta(ArbC s, ArbC a)
         {
             var res = new ArbC();
@@ -5510,7 +5388,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_HurwitzZeta(IntPtr res, IntPtr s, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static ArbC hurwitz_zeta(dynamic s, dynamic a)
         {
             return hurwitz_zeta(aflintc.t(s), aflintc.t(a));
@@ -5519,7 +5397,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static ArbC harmonic2(ArbC z, ArbC r)
         {
             var res = new ArbC();
@@ -5530,7 +5408,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Harmonic2(IntPtr res, IntPtr z, IntPtr r);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static ArbC harmonic2(dynamic z, dynamic r)
         {
             return harmonic2(aflintc.t(z), aflintc.t(r));
@@ -5541,7 +5419,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
         public static ArbC bernpoly(ArbC x, Int32 n)
         {
             var res = new ArbC();
@@ -5551,7 +5429,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Acb_Acb_BernoulliPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_Acb_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
         public static ArbC bernpoly(dynamic x, Int32 n)
         {
             return bernpoly(aflintc.t(x), n);
@@ -5559,7 +5437,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static ArbC eulerpoly(ArbC x, Int32 n)
         {
             var res = new ArbC();
@@ -5569,7 +5447,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Acb_Acb_EulerPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_Acb_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static ArbC eulerpoly(dynamic x, Int32 n)
         {
             return eulerpoly(aflintc.t(x), n);
@@ -5578,7 +5456,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static ArbC barnes_g(ArbC x)
         {
             var res = new ArbC();
@@ -5589,7 +5467,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static ArbC barnes_g(dynamic x)
         {
             return barnes_g(aflintc.t(x));
@@ -5597,7 +5475,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static ArbC logbarnes_g(ArbC x)
         {
             var res = new ArbC();
@@ -5608,7 +5486,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LogBarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static ArbC logbarnes_g(dynamic x)
         {
             return logbarnes_g(aflintc.t(x));
@@ -5616,7 +5494,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static ArbC hyperfactorial(ArbC x)
         {
             var res = new ArbC();
@@ -5627,7 +5505,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hyperfactorial(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static ArbC hyperfactorial(dynamic x)
         {
             return hyperfactorial(aflintc.t(x));
@@ -5635,7 +5513,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static ArbC superfactorial(ArbC x)
         {
             var res = new ArbC();
@@ -5646,7 +5524,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Superfactorial(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static ArbC superfactorial(dynamic x)
         {
             return superfactorial(aflintc.t(x));
@@ -5662,7 +5540,7 @@ namespace ArbPrecNet
         #region Riemann zeta function, and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static ArbC zeta(ArbC x)
         {
             var res = new ArbC();
@@ -5673,14 +5551,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Zeta(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static ArbC zeta(dynamic x)
         {
             return zeta(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static ArbC zetam1(ArbC x)
         {
             var res = new ArbC();
@@ -5691,7 +5569,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Zetam1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static ArbC zetam1(dynamic x)
         {
             return zetam1(aflintc.t(x));
@@ -5699,7 +5577,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static ArbC hardy_theta(ArbC tau)
         {
             var res = new ArbC();
@@ -5710,7 +5588,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_HardyTheta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static ArbC hardy_theta(dynamic k)
         {
             return hardy_theta(aflintc.t(k));
@@ -5718,7 +5596,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static ArbC hardy_z(ArbC tau)
         {
             var res = new ArbC();
@@ -5729,7 +5607,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_HardyZ(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static ArbC hardy_z(dynamic k)
         {
             return hardy_z(aflintc.t(k));
@@ -5738,7 +5616,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static ArbC riemann_xi(ArbC tau)
         {
             var res = new ArbC();
@@ -5749,7 +5627,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DirichletXi(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static ArbC riemann_xi(dynamic k)
         {
             return riemann_xi(aflintc.t(k));
@@ -5757,7 +5635,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static ArbC dirichlet_eta(ArbC tau)
         {
             var res = new ArbC();
@@ -5768,7 +5646,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DirichletEta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static ArbC dirichlet_eta(dynamic k)
         {
             return dirichlet_eta(aflintc.t(k));
@@ -5776,7 +5654,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static ArbC dirichlet_etam1(ArbC tau)
         {
             var res = new ArbC();
@@ -5787,7 +5665,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DirichletEtam1(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static ArbC dirichlet_etam1(dynamic k)
         {
             return dirichlet_etam1(aflintc.t(k));
@@ -5795,7 +5673,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static ArbC dirichlet_beta(ArbC tau)
         {
             var res = new ArbC();
@@ -5806,7 +5684,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DirichletBeta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static ArbC dirichlet_beta(dynamic k)
         {
             return dirichlet_beta(aflintc.t(k));
@@ -5814,7 +5692,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static ArbC dirichlet_lambda(ArbC tau)
         {
             var res = new ArbC();
@@ -5825,7 +5703,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_DirichletLambda(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static ArbC dirichlet_lambda(dynamic k)
         {
             return dirichlet_lambda(aflintc.t(k));
@@ -5833,7 +5711,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta_zero/*' />
         public static ArbC zeta_zero(Int32 n)
         {
             var res = new ArbC();
@@ -5857,7 +5735,7 @@ namespace ArbPrecNet
         #region 0F1: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static ArbC hyperg_0f1(ArbC a, ArbC x)
         {
             var res = new ArbC();
@@ -5868,7 +5746,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom0F1(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static ArbC hyperg_0f1(dynamic a, dynamic x)
         {
             return hyperg_0f1(aflintc.t(a), aflintc.t(x));
@@ -5877,7 +5755,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static ArbC hyperg_0f1r(ArbC a, ArbC x)
         {
             var res = new ArbC();
@@ -5888,7 +5766,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom0F1r(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static ArbC hyperg_0f1r(dynamic a, dynamic x)
         {
             return hyperg_0f1r(aflintc.t(a), aflintc.t(x));
@@ -5904,7 +5782,7 @@ namespace ArbPrecNet
         #region 0F1: Bessel functions and modified Bessel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static ArbC bessel_jv(ArbC nu, ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -5916,7 +5794,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BesselJ(IntPtr res, IntPtr nu, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static ArbC bessel_jv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv(aflintc.t(nu), aflintc.t(x), scaled);
@@ -5925,7 +5803,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static ArbC bessel_yv(ArbC nu, ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -5937,7 +5815,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BesselY(IntPtr res, IntPtr nu, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static ArbC bessel_yv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv(aflintc.t(nu), aflintc.t(x), scaled);
@@ -5946,7 +5824,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static ArbC bessel_iv(ArbC nu, ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -5958,7 +5836,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BesselI(IntPtr res, IntPtr nu, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static ArbC bessel_iv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv(aflintc.t(nu), aflintc.t(x), scaled);
@@ -5966,7 +5844,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static ArbC bessel_kv(ArbC nu, ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -5978,7 +5856,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BesselK(IntPtr res, IntPtr nu, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static ArbC bessel_kv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv(aflintc.t(nu), aflintc.t(x), scaled);
@@ -5988,13 +5866,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static ArbC bessel_jv_prime(ArbC nu, ArbC x, bool scaled = false)
         {
             return (bessel_jv(nu - 1, x, scaled) - bessel_jv(nu + 1, x, scaled)) / 2;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static ArbC bessel_jv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv_prime(aflintc.t(nu), aflintc.t(x), scaled);
@@ -6002,13 +5880,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static ArbC bessel_yv_prime(ArbC nu, ArbC x, bool scaled = false)
         {
             return (bessel_yv(nu - 1, x, scaled) - bessel_yv(nu + 1, x, scaled)) / 2;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static ArbC bessel_yv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv_prime(aflintc.t(nu), aflintc.t(x), scaled);
@@ -6016,13 +5894,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static ArbC bessel_iv_prime(ArbC nu, ArbC x, bool scaled = false)
         {
             return (bessel_iv(nu - 1, x, scaled) + bessel_iv(nu + 1, x, scaled)) / 2;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static ArbC bessel_iv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv_prime(aflintc.t(nu), aflintc.t(x), scaled);
@@ -6030,13 +5908,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static ArbC bessel_kv_prime(ArbC nu, ArbC x, bool scaled = false)
         {
             return -(bessel_kv(nu - 1, x, scaled) + bessel_kv(nu + 1, x, scaled)) / 2;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static ArbC bessel_kv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv_prime(aflintc.t(nu), aflintc.t(x), scaled);
@@ -6060,15 +5938,15 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static ArbC sph_bessel_jn(ArbC n, ArbC x, bool scaled = false)
         {
-            var res = bessel_jv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi());
+            var res = bessel_jv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi);
             if (scaled) res *= exp(-abs(x.imag));
             return res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static ArbC sph_bessel_jn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn(aflintc.t(n), aflintc.t(x), scaled);
@@ -6077,15 +5955,15 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static ArbC sph_bessel_yn(ArbC n, ArbC x, bool scaled = false)
         {
-            var res = bessel_yv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi());
+            var res = bessel_yv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi);
             if (scaled) res *= exp(-abs(x.imag));
             return res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static ArbC sph_bessel_yn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn(aflintc.t(n), aflintc.t(x), scaled);
@@ -6094,15 +5972,15 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static ArbC sph_bessel_in(ArbC n, ArbC x, bool scaled = false)
         {
-            var res = bessel_iv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi());
+            var res = bessel_iv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi);
             if (scaled) res *= exp(-abs(x.real));
             return res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static ArbC sph_bessel_in(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in(aflintc.t(n), aflintc.t(x), scaled);
@@ -6111,15 +5989,15 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static ArbC sph_bessel_kn(ArbC n, ArbC x, bool scaled = false)
         {
-            var res = bessel_kv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi());
+            var res = bessel_kv(n + 0.5, x) / aflintc.sqrt(2 * x / aflint.pi);
             if (scaled) res *= exp(x);
             return res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static ArbC sph_bessel_kn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn(aflintc.t(n), aflintc.t(x), scaled);
@@ -6175,7 +6053,7 @@ namespace ArbPrecNet
         #region 0F1: Spherical Bessel functions, first derivative
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn_prime/*' />
         public static ArbC sph_bessel_jn_prime(ArbC n, ArbC x, bool scaled = false)
         {
             if (aflintc.abs(2 * n + 1) > aflint.t(0.1))
@@ -6184,7 +6062,7 @@ namespace ArbPrecNet
                 return (sph_bessel_jn(n - 1, x, scaled) - (n + 1) * sph_bessel_jn(n, x, scaled) / x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn_prime/*' />
         public static ArbC sph_bessel_jn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn_prime(aflintc.t(n), aflintc.t(x), scaled);
@@ -6192,7 +6070,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn_prime/*' />
         public static ArbC sph_bessel_yn_prime(ArbC n, ArbC x, bool scaled = false)
         {
             if (aflintc.abs(2 * n + 1) > aflint.t(0.1))
@@ -6201,7 +6079,7 @@ namespace ArbPrecNet
                 return (sph_bessel_yn(n - 1, x) - (n + 1) * sph_bessel_yn(n, x) / x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn_prime/*' />
         public static ArbC sph_bessel_yn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn_prime(aflintc.t(n), aflintc.t(x), scaled);
@@ -6209,7 +6087,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in_prime/*' />
         public static ArbC sph_bessel_in_prime(ArbC n, ArbC x, bool scaled = false)
         {
             if (aflintc.abs(2 * n + 1) > aflint.t(0.1))
@@ -6218,7 +6096,7 @@ namespace ArbPrecNet
                 return (sph_bessel_in(n - 1, x, scaled) - (n + 1) * sph_bessel_in(n, x, scaled) / x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in_prime/*' />
         public static ArbC sph_bessel_in_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in_prime(aflintc.t(n), aflintc.t(x), scaled);
@@ -6226,7 +6104,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn_prime/*' />
         public static ArbC sph_bessel_kn_prime(ArbC n, ArbC x, bool scaled = false)
         {
             if (aflintc.abs(2 * n + 1) > aflint.t(0.1))
@@ -6235,7 +6113,7 @@ namespace ArbPrecNet
                 return -sph_bessel_kn(n - 1, x, scaled) - (n + 1) * sph_bessel_kn(n, x, scaled) / x;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn_prime/*' />
         public static ArbC sph_bessel_kn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn_prime(aflintc.t(n), aflintc.t(x), scaled);
@@ -6258,8 +6136,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
         public static ArbC hankel_h1(ArbC v, ArbC x, bool scaled = false)
         {
-            var res = bessel_jv(v, x) + aflintc.onej() * bessel_yv(v, x);
-            if (scaled) res *= exp(-aflintc.onej() * x);
+            var res = bessel_jv(v, x) + aflintc.onej * bessel_yv(v, x);
+            if (scaled) res *= exp(-aflintc.onej * x);
             return res;
         }
 
@@ -6274,8 +6152,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
         public static ArbC hankel_h2(ArbC v, ArbC x, bool scaled = false)
         {
-            var res = bessel_jv(v, x) - aflintc.onej() * bessel_yv(v, x);
-            if (scaled) res *= exp(aflintc.onej() * x);
+            var res = bessel_jv(v, x) - aflintc.onej * bessel_yv(v, x);
+            if (scaled) res *= exp(aflintc.onej * x);
             return res;
         }
 
@@ -6290,7 +6168,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
         public static ArbC sph_hankel_h1(ArbC n, ArbC x, bool scaled = false)
         {
-            var res = hankel_h1(n + 0.5, x, scaled) / aflintc.sqrt(2 * x / aflint.pi());
+            var res = hankel_h1(n + 0.5, x, scaled) / aflintc.sqrt(2 * x / aflint.pi);
             return res;
         }
 
@@ -6305,7 +6183,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
         public static ArbC sph_hankel_h2(ArbC n, ArbC x, bool scaled = false)
         {
-            var res = hankel_h2(n + 0.5, x, scaled) / aflintc.sqrt(2 * x / aflint.pi());
+            var res = hankel_h2(n + 0.5, x, scaled) / aflintc.sqrt(2 * x / aflint.pi);
             return res;
         }
 
@@ -6331,7 +6209,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static ArbC airy_ai(ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -6343,7 +6221,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_AiryAi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static ArbC airy_ai(dynamic x, bool scaled = false)
         {
             return airy_ai(aflintc.t(x), scaled);
@@ -6352,7 +6230,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static ArbC airy_ai_prime(ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -6364,7 +6242,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_AiryAiPrime(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static ArbC airy_ai_prime(dynamic x, bool scaled = false)
         {
             return airy_ai_prime(aflintc.t(x), scaled);
@@ -6373,7 +6251,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static ArbC airy_bi(ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -6385,7 +6263,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_AiryBi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static ArbC airy_bi(dynamic x, bool scaled = false)
         {
             return airy_bi(aflintc.t(x), scaled);
@@ -6393,7 +6271,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static ArbC airy_bi_prime(ArbC x, bool scaled = false)
         {
             var res = new ArbC();
@@ -6405,7 +6283,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_AiryBiPrime(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static ArbC airy_bi_prime(dynamic x, bool scaled = false)
         {
             return airy_bi_prime(aflintc.t(x), scaled);
@@ -6425,7 +6303,7 @@ namespace ArbPrecNet
         public static ArbC kelvin_ber(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC ia = aflintc.onej() * a;
+            ArbC ia = aflintc.onej * a;
             var res = 0.5 * (bessel_jv(v, x * (-a + ia)) + bessel_jv(v, x * (-a - ia)));
             if (scaled) res *= exp(-aflintc.abs(x) / sqrt(2));
             return res;
@@ -6443,7 +6321,7 @@ namespace ArbPrecNet
         public static ArbC kelvin_bei(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC i = aflintc.onej();
+            ArbC i = aflintc.onej;
             ArbC ia = i * a;
             var res = 0.5 * (bessel_jv(v, x * (-a + ia)) - bessel_jv(v, x * (-a - ia))) / i;
             if (scaled) res *= exp(-aflintc.abs(x) / sqrt(2));
@@ -6462,9 +6340,9 @@ namespace ArbPrecNet
         public static ArbC kelvin_ker(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC i = aflintc.onej();
+            ArbC i = aflintc.onej;
             ArbC ia = i * a;
-            ArbC p = 0.5 * i * v * aflint.pi();
+            ArbC p = 0.5 * i * v * aflint.pi;
             ArbC e1 = aflintc.exp(-p);
             ArbC e2 = aflintc.exp(p);
             var res = 0.5 * (e1 * bessel_kv(v, x * (a + ia)) + e2 * bessel_kv(v, x * (a - ia)));
@@ -6484,9 +6362,9 @@ namespace ArbPrecNet
         public static ArbC kelvin_kei(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC i = aflintc.onej();
+            ArbC i = aflintc.onej;
             ArbC ia = i * a;
-            ArbC p = 0.5 * i * v * aflint.pi();
+            ArbC p = 0.5 * i * v * aflint.pi;
             ArbC e1 = aflintc.exp(-p);
             ArbC e2 = aflintc.exp(p);
             var res = 0.5 * (e1 * bessel_kv(v, x * (a + ia)) - e2 * bessel_kv(v, x * (a - ia))) / i;
@@ -6508,7 +6386,7 @@ namespace ArbPrecNet
         public static ArbC kelvin_ber_prime(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC ia = aflintc.onej() * a;
+            ArbC ia = aflintc.onej * a;
             ArbC a1 = -a + ia;
             ArbC a2 = -a - ia;
             var res = 0.5 * (a1 * bessel_jv_prime(v, x * a1) + a2 * bessel_jv_prime(v, x * a2));
@@ -6528,7 +6406,7 @@ namespace ArbPrecNet
         public static ArbC kelvin_bei_prime(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC i = aflintc.onej();
+            ArbC i = aflintc.onej;
             ArbC ia = i * a;
             ArbC a1 = -a + ia;
             ArbC a2 = -a - ia;
@@ -6549,9 +6427,9 @@ namespace ArbPrecNet
         public static ArbC kelvin_ker_prime(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC i = aflintc.onej();
+            ArbC i = aflintc.onej;
             ArbC ia = i * a;
-            ArbC p = 0.5 * i * v * aflint.pi();
+            ArbC p = 0.5 * i * v * aflint.pi;
             ArbC e1 = aflintc.exp(-p);
             ArbC e2 = aflintc.exp(p);
             ArbC a1 = a + ia;
@@ -6573,9 +6451,9 @@ namespace ArbPrecNet
         public static ArbC kelvin_kei_prime(ArbC v, ArbC x, bool scaled = false)
         {
             ArbC a = t(0.5 * aflint.sqrt(2));
-            ArbC i = aflintc.onej();
+            ArbC i = aflintc.onej;
             ArbC ia = i * a;
-            ArbC p = 0.5 * i * v * aflint.pi();
+            ArbC p = 0.5 * i * v * aflint.pi;
             ArbC e1 = aflintc.exp(-p);
             ArbC e2 = aflintc.exp(p);
             ArbC a1 = a + ia;
@@ -6608,7 +6486,7 @@ namespace ArbPrecNet
         #region 1F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static ArbC hyperg_1f1(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -6619,7 +6497,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom1F1(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static ArbC hyperg_1f1(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1(aflintc.t(a), aflintc.t(b), aflintc.t(x));
@@ -6628,7 +6506,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static ArbC hyperg_1f1r(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -6639,7 +6517,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom1F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static ArbC hyperg_1f1r(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1r(aflintc.t(a), aflintc.t(b), aflintc.t(x));
@@ -6648,7 +6526,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static ArbC hyperg_u(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -6659,7 +6537,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_HypgeomU(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static ArbC hyperg_u(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_u(aflintc.t(a), aflintc.t(b), aflintc.t(x));
@@ -6667,7 +6545,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static ArbC hermite_h(ArbC n, ArbC x)
         {
             var res = new ArbC();
@@ -6678,7 +6556,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_HermiteH(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static ArbC hermite_h(dynamic n, dynamic x)
         {
             return hermite_h(aflintc.t(n), aflintc.t(x));
@@ -6686,14 +6564,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static ArbC hermite_he(ArbC n, ArbC x)
         {
             return exp2(-n / 2) * hermite_h(n, x / sqrt(2));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static ArbC hermite_he(dynamic n, dynamic x)
         {
             return hermite_he(aflintc.t(n), aflintc.t(x));
@@ -6703,7 +6581,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static ArbC laguerre_l(ArbC n, ArbC m, ArbC x)
         {
             var res = new ArbC();
@@ -6714,7 +6592,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LaguerreL(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static ArbC laguerre_l(dynamic n, dynamic m, dynamic x)
         {
             return laguerre_l(aflintc.t(n), aflintc.t(m), aflintc.t(x));
@@ -6728,22 +6606,22 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static ArbC besselpoly(ArbC n, ArbC x, bool scaled = false)
         {
             if (aflintc.iszero(x))
             {
                 var h = aflintc.t(aflint.sqrt(aflint.epsilon()));
-                var res1 = besselpoly_(n, h * (1 + aflintc.onej()));
-                var res2 = besselpoly_(n, -h * (1 + aflintc.onej()));
+                var res1 = besselpoly_(n, h * (1 + aflintc.onej));
+                var res2 = besselpoly_(n, -h * (1 + aflintc.onej));
                 if (aflint.sign(res1.real) == aflint.sign(res2.real)) return (res1 + res2) / 2;
-                else return aflintc.nan();
+                else return aflintc.nan;
             }
             return besselpoly_(n, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static ArbC besselpoly(dynamic n, dynamic x, bool scaled = false)
         {
             return besselpoly(aflintc.t(n), aflintc.t(x), scaled);
@@ -6751,29 +6629,29 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static ArbC besseltheta_(ArbC n, ArbC x)
         {
             return exp2(n + 1) * pow(x, 2 * n + 1) * aflintc.hyperg_u(n + 1, 2 * n + 2, 2 * x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static ArbC besseltheta(ArbC n, ArbC x, bool scaled = false)
         {
             if (aflintc.iszero(x))
             {
                 var h = aflintc.t(aflint.sqrt(aflint.epsilon()));
-                ArbC res1 = besseltheta_(n, h * (1 + aflintc.onej()));
-                ArbC res2 = besseltheta_(n, -h * (1 + aflintc.onej()));
+                ArbC res1 = besseltheta_(n, h * (1 + aflintc.onej));
+                ArbC res2 = besseltheta_(n, -h * (1 + aflintc.onej));
                 if (aflint.sign(res1.real) == aflint.sign(res2.real)) return (res1 + res2) / 2;
-                else return aflintc.nan();
+                else return aflintc.nan;
             }
             return besseltheta_(n, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static ArbC besseltheta(dynamic n, dynamic x, bool scaled = false)
         {
             return besseltheta(aflintc.t(n), aflintc.t(x), scaled);
@@ -6791,7 +6669,7 @@ namespace ArbPrecNet
         #region 1F1: Incomplete gamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static ArbC gamma_upper(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -6802,7 +6680,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_GammaUpper(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static ArbC gamma_upper(dynamic s, dynamic z)
         {
             return gamma_upper(aflintc.t(s), aflintc.t(z));
@@ -6812,7 +6690,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static ArbC gamma_q(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -6823,7 +6701,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_GammaQ(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static ArbC gamma_q(dynamic s, dynamic z)
         {
             return gamma_q(aflintc.t(s), aflintc.t(z));
@@ -6834,7 +6712,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static ArbC gamma_lower(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -6845,7 +6723,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_GammaLower(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static ArbC gamma_lower(dynamic s, dynamic z)
         {
             return gamma_lower(aflintc.t(s), aflintc.t(z));
@@ -6853,7 +6731,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static ArbC gamma_p(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -6864,7 +6742,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_GammaP(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static ArbC gamma_p(dynamic s, dynamic z)
         {
             return gamma_p(aflintc.t(s), aflintc.t(z));
@@ -6872,7 +6750,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static ArbC gamma_p_prime(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -6883,7 +6761,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_GammaPPrime(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static ArbC gamma_p_prime(dynamic s, dynamic z)
         {
             return gamma_p_prime(aflintc.t(s), aflintc.t(z));
@@ -6899,7 +6777,7 @@ namespace ArbPrecNet
         #region 1F1: Coulomb, Whittaker and parabolic cylinder functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static ArbC coulomb_f(ArbC l, ArbC eta, ArbC x)
         {
             var res = new ArbC();
@@ -6910,7 +6788,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoulombF(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static ArbC coulomb_f(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_f(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
@@ -6919,7 +6797,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static ArbC coulomb_g(ArbC l, ArbC eta, ArbC x)
         {
             var res = new ArbC();
@@ -6930,7 +6808,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoulombG(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static ArbC coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
@@ -6940,7 +6818,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hpos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
         public static ArbC coulomb_hpos(ArbC l, ArbC eta, ArbC x)
         {
             var res = new ArbC();
@@ -6951,7 +6829,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hpos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
         public static ArbC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_hpos(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
@@ -6960,7 +6838,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hneg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
         public static ArbC coulomb_hneg(ArbC l, ArbC eta, ArbC x)
         {
             var res = new ArbC();
@@ -6971,7 +6849,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hneg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
         public static ArbC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_hneg(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
@@ -6979,14 +6857,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/whittaker_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/whittaker_m/*' />
         public static ArbC whittaker_m(ArbC k, ArbC m, ArbC x)
         {
             return exp(-0.5 * x) * pow(x, 0.5 + m) * hyperg_1f1(0.5 + m - k, 1 + 2 * m, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/whittaker_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/whittaker_m/*' />
         public static ArbC whittaker_m(dynamic k, dynamic m, dynamic x)
         {
             return whittaker_m(aflintc.t(k), aflintc.t(m), aflintc.t(x));
@@ -6995,14 +6873,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/whittaker_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/whittaker_w/*' />
         public static ArbC whittaker_w(ArbC k, ArbC m, ArbC x)
         {
             return exp(-0.5 * x) * pow(x, 0.5 + m) * hyperg_u(0.5 + m - k, 1 + 2 * m, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/whittaker_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/whittaker_w/*' />
         public static ArbC whittaker_w(dynamic k, dynamic m, dynamic x)
         {
             return whittaker_w(aflintc.t(k), aflintc.t(m), aflintc.t(x));
@@ -7011,13 +6889,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfu/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfu/*' />
         public static ArbC pcfu(ArbC a, ArbC z)
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
             ArbPrec.SetDps((int)OldPrec + 40);
-            Arb p = aflint.pi();
+            Arb p = aflint.pi;
             p = aflint.sqrt(p);
             ArbC U1 = p / (aflintc.exp2(0.5 * a + 0.25) * aflintc.gamma(0.75 + 0.5 * a));
             ArbC U2 = -p / (aflintc.exp2(0.5 * a - 0.25) * aflintc.gamma(0.25 + 0.5 * a));
@@ -7029,7 +6907,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfu/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfu/*' />
         public static ArbC pcfu(dynamic a, dynamic z)
         {
             return pcfu(aflintc.t(a), aflintc.t(z));
@@ -7037,14 +6915,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfd/*' />
         public static ArbC pcfd(ArbC n, ArbC z)
         {
             return pcfu(-n - 0.5, z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfd/*' />
         public static ArbC pcfd(dynamic n, dynamic z)
         {
             return pcfd(aflintc.t(n), aflintc.t(z));
@@ -7052,10 +6930,10 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfv/*' />
         public static ArbC pcfv(ArbC a, ArbC z)
         {
-            Arb p = aflint.pi();
+            Arb p = aflint.pi;
             ArbC res = aflintc.gamma(a + 0.5) * aflintc.pcfu(a, -z);
             res = res - aflintc.sin(p * a) * aflintc.pcfu(a, z);
             res = res / p;
@@ -7063,21 +6941,21 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfv/*' />
         public static ArbC pcfv(dynamic a, dynamic z)
         {
             return pcfv(aflintc.t(a), aflintc.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfw/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfw/*' />
         public static ArbC pcfw(ArbC a, ArbC z)
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
             ArbPrec.SetDps((int)OldPrec + 40);
-            ArbC j05 = aflintc.onej() / 2;
-            ArbC j025 = aflintc.onej() / 4;
+            ArbC j05 = aflintc.onej / 2;
+            ArbC j025 = aflintc.onej / 4;
             ArbC W1a = aflintc.gamma(0.25 + j05 * a) / aflintc.gamma(0.75 + j05 * a);
             ArbC W1 = aflintc.exp2(-0.75) * aflintc.sqrt(aflintc.fabs(W1a));
             ArbC W2a = aflintc.gamma(0.75 + j05 * a) / aflintc.gamma(0.25 + j05 * a);
@@ -7090,7 +6968,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pcfw/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pcfw/*' />
         public static ArbC pcfw(dynamic a, dynamic z)
         {
             return pcfw(aflintc.t(a), aflintc.t(z));
@@ -7107,7 +6985,7 @@ namespace ArbPrecNet
         #region 1F1: Error function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static ArbC erf(ArbC x)
         {
             var res = new ArbC();
@@ -7118,7 +6996,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Erf(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static ArbC erf(dynamic x)
         {
             return erf(aflintc.t(x));
@@ -7126,7 +7004,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static ArbC erfc(ArbC x)
         {
             var res = new ArbC();
@@ -7137,7 +7015,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Erfc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static ArbC erfc(dynamic x)
         {
             return erfc(aflintc.t(x));
@@ -7147,7 +7025,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static ArbC erfi(ArbC x)
         {
             var res = new ArbC();
@@ -7158,7 +7036,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Erfi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static ArbC erfi(dynamic x)
         {
             return erfi(aflintc.t(x));
@@ -7168,14 +7046,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static ArbC dawson(ArbC x)
         {
-            return erfi(x) * exp(-x * x) * aflint.sqrt(aflint.pi()) / 2;
+            return erfi(x) * exp(-x * x) * aflint.sqrt(aflint.pi) / 2;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static ArbC dawson(dynamic x)
         {
             return dawson(aflintc.t(x));
@@ -7185,14 +7063,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/faddeeva/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />
         public static ArbC faddeeva(ArbC x)
         {
-            return erfc(-aflintc.onej() * x) * exp(-x * x);
+            return erfc(-aflintc.onej * x) * exp(-x * x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/faddeeva/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />
         public static ArbC faddeeva(dynamic x)
         {
             return faddeeva(aflintc.t(x));
@@ -7204,7 +7082,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static ArbC fresnel_s(ArbC x)
         {
             var res = new ArbC();
@@ -7215,7 +7093,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_FresnelS(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static ArbC fresnel_s(dynamic x)
         {
             return fresnel_s(aflintc.t(x));
@@ -7223,7 +7101,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static ArbC fresnel_c(ArbC x)
         {
             var res = new ArbC();
@@ -7234,7 +7112,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_FresnelC(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static ArbC fresnel_c(dynamic x)
         {
             return fresnel_c(aflintc.t(x));
@@ -7242,7 +7120,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static ArbC ndens(ArbC x)
         {
             var res = new ArbC();
@@ -7253,7 +7131,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Ndens(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static ArbC ndens(dynamic x)
         {
             return ndens(aflintc.t(x));
@@ -7261,7 +7139,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static ArbC ndis(ArbC x)
         {
             var res = new ArbC();
@@ -7272,7 +7150,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Ndis(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static ArbC ndis(dynamic x)
         {
             return ndis(aflintc.t(x));
@@ -7290,7 +7168,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static ArbC cosh_integral(ArbC x)
         {
             var res = new ArbC();
@@ -7301,7 +7179,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoshIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static ArbC cosh_integral(dynamic x)
         {
             return cosh_integral(aflintc.t(x));
@@ -7309,7 +7187,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static ArbC cos_integral(ArbC x)
         {
             var res = new ArbC();
@@ -7320,7 +7198,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CosIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static ArbC cos_integral(dynamic x)
         {
             return cos_integral(aflintc.t(x));
@@ -7330,7 +7208,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static ArbC exp_integral_en(ArbC s, ArbC z)
         {
             var res = new ArbC();
@@ -7341,7 +7219,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ExpIntegralE(IntPtr res, IntPtr z, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static ArbC exp_integral_en(dynamic s, dynamic z)
         {
             return exp_integral_en(aflintc.t(s), aflintc.t(z));
@@ -7349,14 +7227,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static ArbC exp_integral_e1(ArbC x)
         {
             return exp_integral_en(aflintc.t(1), x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static ArbC exp_integral_e1(dynamic x)
         {
             return exp_integral_e1(aflintc.t(x));
@@ -7364,7 +7242,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static ArbC exp_integral_ei(ArbC x)
         {
             var res = new ArbC();
@@ -7375,7 +7253,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ExpIntegralEi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static ArbC exp_integral_ei(dynamic x)
         {
             return exp_integral_ei(aflintc.t(x));
@@ -7383,7 +7261,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static ArbC sin_integral(ArbC x)
         {
             var res = new ArbC();
@@ -7394,7 +7272,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_SinIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static ArbC sin_integral(dynamic x)
         {
             return sin_integral(aflintc.t(x));
@@ -7402,7 +7280,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static ArbC sinh_integral(ArbC x)
         {
             var res = new ArbC();
@@ -7413,7 +7291,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_SinhIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static ArbC sinh_integral(dynamic x)
         {
             return sinh_integral(aflintc.t(x));
@@ -7422,7 +7300,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static ArbC log_integral(ArbC x)
         {
             var res = new ArbC();
@@ -7433,7 +7311,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LogIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static ArbC log_integral(dynamic x)
         {
             return log_integral(aflintc.t(x));
@@ -7441,7 +7319,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static ArbC log_integral_offset(ArbC x)
         {
             var res = new ArbC();
@@ -7452,7 +7330,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LogIntegralOffset(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static ArbC log_integral_offset(dynamic x)
         {
             return log_integral_offset(aflintc.t(x));
@@ -7475,7 +7353,7 @@ namespace ArbPrecNet
         #region 2F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static ArbC hyperg_2f1(ArbC a, ArbC b, ArbC c, ArbC x)
         {
             var res = new ArbC();
@@ -7486,7 +7364,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom2F1(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static ArbC hyperg_2f1(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1(aflintc.t(a), aflintc.t(b), aflintc.t(c), aflintc.t(x));
@@ -7494,7 +7372,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static ArbC hyperg_2f1r(ArbC a, ArbC b, ArbC c, ArbC x)
         {
             var res = new ArbC();
@@ -7505,7 +7383,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom2F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static ArbC hyperg_2f1r(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1r(aflintc.t(a), aflintc.t(b), aflintc.t(c), aflintc.t(x));
@@ -7521,7 +7399,7 @@ namespace ArbPrecNet
         #region 2F1-related orthogonal polynomials
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static ArbC chebyshev_t(ArbC n, ArbC x)
         {
             var res = new ArbC();
@@ -7532,7 +7410,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ChebyshevT(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static ArbC chebyshev_t(dynamic n, dynamic x)
         {
             return chebyshev_t(aflintc.t(n), aflintc.t(x));
@@ -7540,7 +7418,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static ArbC chebyshev_u(ArbC n, ArbC x)
         {
             var res = new ArbC();
@@ -7551,7 +7429,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_ChebyshevU(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static ArbC chebyshev_u(dynamic n, dynamic x)
         {
             return chebyshev_u(aflintc.t(n), aflintc.t(x));
@@ -7561,26 +7439,26 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_v/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_v/*' />
         public static ArbC chebyshev_v(ArbC v, ArbC x)
         {
             return expjpi(v) * (2 * v + 1) * hyperg_2f1(-v, v + 1, aflintc.t(1.5), (1 + x) / 2);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_v/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_v/*' />
         public static ArbC chebyshev_v(dynamic v, dynamic x)
         {
             return chebyshev_v(aflintc.t(v), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_w/*' />
         public static ArbC chebyshev_w(ArbC v, ArbC x)
         {
             return expjpi(v) * hyperg_2f1(-v, v + 1, aflintc.t(0.5), (1 + x) / 2);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_w/*' />
         public static ArbC chebyshev_w(dynamic v, dynamic x)
         {
             return chebyshev_w(aflintc.t(v), aflintc.t(x));
@@ -7592,7 +7470,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static ArbC gegenbauer_c(ArbC n, ArbC m, ArbC x)
         {
             var res = new ArbC();
@@ -7603,7 +7481,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_GegenbauerC(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static ArbC gegenbauer_c(dynamic n, dynamic m, dynamic x)
         {
             return gegenbauer_c(aflintc.t(n), aflintc.t(m), aflintc.t(x));
@@ -7611,7 +7489,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static ArbC jacobi_p(ArbC n, ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -7622,7 +7500,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_JacobiP(IntPtr res, IntPtr n, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static ArbC jacobi_p(dynamic n, dynamic a, dynamic b, dynamic x)
         {
             return jacobi_p(aflintc.t(n), aflintc.t(a), aflintc.t(b), aflintc.t(x));
@@ -7631,7 +7509,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         internal static ArbC legendre_plm2(ArbC n, ArbC m, ArbC x)
         {
             var res = new ArbC();
@@ -7642,7 +7520,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LegendreP(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         internal static ArbC legendre_plm3(ArbC n, ArbC m, ArbC x)
         {
             var res = new ArbC();
@@ -7653,10 +7531,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LegendrePv(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static ArbC legendre_plm(ArbC n, ArbC m, ArbC x, int type = 1)
         {
-            ArbC res = aflintc.nan();
+            ArbC res = aflintc.nan;
             switch (type)
             {
                 case 2: res = legendre_plm2(n, m, x); break;
@@ -7670,20 +7548,20 @@ namespace ArbPrecNet
             return res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static ArbC legendre_plm(dynamic n, dynamic m, dynamic x, int type=1)
         {
             return legendre_plm(aflintc.t(n), aflintc.t(m), aflintc.t(x), type);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static ArbC legendre_p(ArbC n, ArbC x)
         {
             return legendre_plm(n, aflintc.t(0), x, 1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static ArbC legendre_p(dynamic n, dynamic x)
         {
             return legendre_p(aflintc.t(n), aflintc.t(x));
@@ -7691,7 +7569,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         internal static ArbC legendre_qlm2(ArbC n, ArbC m, ArbC x)
         {
             var res = new ArbC();
@@ -7702,7 +7580,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LegendreQ(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         internal static ArbC legendre_qlm3(ArbC n, ArbC m, ArbC x)
         {
             var res = new ArbC();
@@ -7713,10 +7591,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_LegendreQv(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static ArbC legendre_qlm(ArbC n, ArbC m, ArbC x, int type = 1)
         {
-            ArbC res = aflintc.nan();
+            ArbC res = aflintc.nan;
             switch (type)
             {
                 case 2: res = legendre_qlm2(n, m, x); break;
@@ -7730,20 +7608,20 @@ namespace ArbPrecNet
             return res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static ArbC legendre_qlm(dynamic n, dynamic m, dynamic x, int type = 1)
         {
             return legendre_qlm(aflintc.t(n), aflintc.t(m), aflintc.t(x), type);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static ArbC legendre_q(ArbC n, ArbC x)
         {
             return legendre_qlm(n, aflintc.t(0), x, 1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static ArbC legendre_q(dynamic n, dynamic x)
         {
             return legendre_q(aflintc.t(n), aflintc.t(x));
@@ -7755,7 +7633,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static ArbC spherical_y(ArbC n, ArbC m, ArbC theta, ArbC phi)
         {
             var res = new ArbC();
@@ -7766,7 +7644,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_SphericalY(IntPtr res, IntPtr n, IntPtr m, IntPtr theta, IntPtr phi);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static ArbC spherical_y(dynamic n, dynamic m, dynamic theta, dynamic phi)
         {
             return spherical_y(aflintc.t(n), aflintc.t(m), aflintc.t(theta), aflintc.t(phi));
@@ -7783,7 +7661,7 @@ namespace ArbPrecNet
         #region 2F1-Incomplete beta Function
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static ArbC beta_lower(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -7794,14 +7672,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BetaLower(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static ArbC beta_lower(dynamic a, dynamic b, dynamic x)
         {
             return beta_lower(aflintc.t(a), aflintc.t(b), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static ArbC ibeta(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -7812,14 +7690,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Ibeta(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static ArbC ibeta(dynamic a, dynamic b, dynamic x)
         {
             return ibeta(aflintc.t(a), aflintc.t(b), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static ArbC ibetac(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -7830,14 +7708,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Ibetac(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static ArbC ibetac(dynamic a, dynamic b, dynamic x)
         {
             return ibetac(aflintc.t(a), aflintc.t(b), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static ArbC ibeta_prime(ArbC a, ArbC b, ArbC x)
         {
             var res = new ArbC();
@@ -7848,7 +7726,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_IbetaPrime(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static ArbC ibeta_prime(dynamic a, dynamic b, dynamic x)
         {
             return ibeta_prime(aflintc.t(a), aflintc.t(b), aflintc.t(x));
@@ -7867,7 +7745,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static ArbC hyperg_1f2(ArbC a1, ArbC b1, ArbC b2, ArbC x)
         {
             var res = new ArbC();
@@ -7878,7 +7756,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom1F2(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static ArbC hyperg_1f2(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2(aflintc.t(a1), aflintc.t(b1), aflintc.t(b2), aflintc.t(x));
@@ -7886,7 +7764,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static ArbC hyperg_1f2r(ArbC a1, ArbC b1, ArbC b2, ArbC x)
         {
             var res = new ArbC();
@@ -7897,7 +7775,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Hypgeom1F2r(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static ArbC hyperg_1f2r(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2r(aflintc.t(a1), aflintc.t(b1), aflintc.t(b2), aflintc.t(x));
@@ -7915,26 +7793,26 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static ArbC airy_gi(ArbC x)
         {
-            return 1 * airy_bi(x) / 3 - (x * x) * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x * x * x / 9) / (2 * aflint.pi());
+            return 1 * airy_bi(x) / 3 - (x * x) * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x * x * x / 9) / (2 * aflint.pi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static ArbC airy_gi(dynamic x)
         {
             return airy_gi(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static ArbC airy_hi(ArbC x)
         {
-            return 2 * airy_bi(x) / 3 + (x * x) * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x * x * x / 9) / (2 * aflint.pi());
+            return 2 * airy_bi(x) / 3 + (x * x) * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x * x * x / 9) / (2 * aflint.pi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static ArbC airy_hi(dynamic x)
         {
             return airy_hi(aflintc.t(x));
@@ -7942,30 +7820,30 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static ArbC airy_gi_prime(ArbC x)
         {
             ArbC x3 = x * x * x;
             ArbC x4 = x3 * x;
-            return airy_bi_prime(x) / 3 - 1 / (40 * aflint.pi()) * (40 * x * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflintc.t(7) / 3, aflintc.t(8) / 3, x3 / 9)));
+            return airy_bi_prime(x) / 3 - 1 / (40 * aflint.pi) * (40 * x * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflintc.t(7) / 3, aflintc.t(8) / 3, x3 / 9)));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static ArbC airy_gi_prime(dynamic x)
         {
             return airy_gi_prime(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static ArbC airy_hi_prime(ArbC x)
         {
             ArbC x3 = x * x * x;
             ArbC x4 = x3 * x;
-            return 2 * airy_bi_prime(x) / 3 + 1 / (40 * aflint.pi()) * (40 * x * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflintc.t(7) / 3, aflintc.t(8) / 3, x3 / 9)));
+            return 2 * airy_bi_prime(x) / 3 + 1 / (40 * aflint.pi) * (40 * x * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflintc.t(7) / 3, aflintc.t(8) / 3, x3 / 9)));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static ArbC airy_hi_prime(dynamic x)
         {
             return airy_hi_prime(aflintc.t(x));
@@ -7986,27 +7864,27 @@ namespace ArbPrecNet
         #region Struve functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static ArbC struve_h(ArbC v, ArbC x)
         {
             return pow(x / 2, v + 1) * hyperg_1f2r(1, aflintc.t(1.5), aflintc.t(v + 1.5), -x * x / 4);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static ArbC struve_h(dynamic v, dynamic x)
         {
             return struve_h(aflintc.t(v), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static ArbC struve_l(ArbC v, ArbC x)
         {
-            ArbC i = aflintc.onej();
-            return -i * exp(-aflint.pi() * v * i / 2) * struve_h(v, i * x);
+            ArbC i = aflintc.onej;
+            return -i * exp(-aflint.pi * v * i / 2) * struve_h(v, i * x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static ArbC struve_l(dynamic v, dynamic x)
         {
             return struve_l(aflintc.t(v), aflintc.t(x));
@@ -8018,7 +7896,7 @@ namespace ArbPrecNet
             return struve_h(v, x) - bessel_yv(v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static ArbC struve_k(dynamic v, dynamic x)
         {
             return struve_k(aflintc.t(v), aflintc.t(x));
@@ -8030,7 +7908,7 @@ namespace ArbPrecNet
             return struve_l(v, x) - bessel_iv(v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_m/*' />
         public static ArbC struve_m(dynamic v, dynamic x)
         {
             return struve_m(aflintc.t(v), aflintc.t(x));
@@ -8044,7 +7922,7 @@ namespace ArbPrecNet
         #region Anger, Weber and Lommel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static ArbC anger_j(ArbC v, ArbC x)
         {
             ArbC f1 = hyperg_1f2r(1, 0.5 * (3 - v), 0.5 * (3 + v), -x * x / 4);
@@ -8053,14 +7931,14 @@ namespace ArbPrecNet
             return res1;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static ArbC anger_j(dynamic v, dynamic x)
         {
             return anger_j(aflintc.t(v), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static ArbC weber_e(ArbC v, ArbC x)
         {
             ArbC f1 = hyperg_1f2r(1, 0.5 * (3 - v), 0.5 * (3 + v), -x * x / 4);
@@ -8069,14 +7947,14 @@ namespace ArbPrecNet
             return res1;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static ArbC weber_e(dynamic v, dynamic x)
         {
             return weber_e(aflintc.t(v), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static ArbC lommel_s1(ArbC mu, ArbC nu, ArbC x)
         {
             ArbC f1 = pow(x, mu + 1) / ((mu - nu + 1) * (mu + nu + 1));
@@ -8085,14 +7963,14 @@ namespace ArbPrecNet
             return res1;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static ArbC lommel_s1(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s1(aflintc.t(mu), aflintc.t(nu), aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static ArbC lommel_s2(ArbC mu, ArbC nu, ArbC x)
         {
             ArbC f1 = lommel_s1(mu, nu, x);
@@ -8101,7 +7979,7 @@ namespace ArbPrecNet
             return f1 + res1 * res2;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static ArbC lommel_s2(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s2(aflintc.t(mu), aflintc.t(nu), aflintc.t(x));
@@ -8117,6 +7995,469 @@ namespace ArbPrecNet
 
 
         #endregion
+
+
+
+
+        #region Eigen 
+
+
+        #region Matrix Creation
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
+        public static ArbMatC mat_t(ArbC x)
+        {
+            var matA = new ArbMatC();
+            matA[0, 0] = x;
+            return matA;
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
+        public static ArbMatC mat_t(ArbMat matA)
+        {
+            var x = mat_zeros(matA.rows, matA.cols);
+            Interop.Lib_ConvertMatrixAndPoly(x.mpPtr, constants.mp_conv_mat_set_real_part_in_complex, constants.mp_apc, constants.mp_apc, matA.mpPtr);
+            return x;
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
+        public static ArbMatC mat_t(ArbMatC matA)
+        {
+            var matX = mat_zeros(matA.rows, matA.cols);
+            matX = +matA;
+            return matX;
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_zeros/*' />
+        public static ArbMatC mat_zeros(int n, int m)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setZero, n, m);
+            return resout;
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_ones/*' />
+        public static ArbMatC mat_ones(int n, int m)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setOnes, n, m);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_identity/*' />
+        public static ArbMatC mat_identity(int n, int m)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setIdentity, n, m);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_identity/*' />
+        public static ArbMatC mat_eye(int n, int m)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setIdentity, n, m);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random/*' />
+        public static ArbMatC mat_random(int n, int m)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandom_nm, n, m);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random_symmetric/*' />
+        public static ArbMatC mat_random_symmetric(int n)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandomSymmetric, n, n);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random_selfadjoint/*' />
+        public static ArbMatC mat_random_selfadjoint(int n)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandomSA, n, n);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random_selfadjoint_posdef/*' />
+        public static ArbMatC mat_random_selfadjoint_posdef(int n)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_setRandomSAPosDef, n, n);
+            return resout;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_fill_linear/*' />
+        public static ArbMatC mat_fill_linear(int n, int m)
+        {
+            var resout = new ArbMatC();
+            Interop.Call_Eigen_SetSpecialValue(constants.mp_eigen, constants.mp_apc, resout, constants.mp_FillLinear, n, m);
+            return resout;
+        }
+
+
+
+        #endregion
+
+
+
+
+        #region Read-only properties
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_rows/*' />
+        public static int mat_rows(ArbMatC matA)
+        {
+            return matA.rows;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_cols/*' />
+        public static int mat_cols(ArbMatC matA)
+        {
+            return matA.cols;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_cols/*' />
+        public static int mat_size(ArbMatC matA)
+        {
+            return matA.size;
+        }
+
+
+        #endregion
+
+
+
+        #region Accessing and setting parts of a matrix
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_block/*' />
+        public static ArbMatC mat_get_block(ArbMatC matA, int i, int j, int p, int q)
+        {
+            return matA.get_Block(i, j, p, q);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_block/*' />
+        public static void mat_set_block(ArbMatC matA, int i, int j, int p, int q, ArbMatC matB)
+        {
+            matA.set_Block(i, j, p, q, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_row/*' />
+        public static ArbMatC mat_get_row(ArbMatC matA, int i)
+        {
+            return matA.get_Row(i);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_row/*' />
+        public static void mat_set_row(ArbMatC matA, int i, ArbMatC matB)
+        {
+            matA.set_Row(i, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_col/*' />
+        public static ArbMatC mat_get_col(ArbMatC matA, int i)
+        {
+            return matA.get_Col(i);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_col/*' />
+        public static void mat_set_col(ArbMatC matA, int i, ArbMatC matB)
+        {
+            matA.set_Col(i, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_diagonal/*' />
+        public static ArbMatC mat_get_diagonal(ArbMatC matA, int q = 0)
+        {
+            return matA.get_Diagonal(q);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_diagonal/*' />
+        public static void mat_set_diagonal(ArbMatC matA, int q, ArbMatC matB)
+        {
+            matA.set_Diagonal(q, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_triangular_view/*' />
+        public static ArbMatC mat_get_triangular_view(ArbMatC matA, int view = 1)
+        {
+            return matA.get_TriangularView(view);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_triangular_view/*' />
+        public static void mat_set_triangular_view(ArbMatC matA, int view, ArbMatC matB)
+        {
+            matA.set_TriangularView(view, matB);
+        }
+
+
+
+        #endregion
+
+
+
+
+        #region Changing the shape of a matrix and/or the order of coefficients
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_sort/*' />
+        public static void mat_sort(ArbMatC matA, int sort_order = 0, int sort_criterion = 1)
+        {
+            matA.Sort(sort_order, sort_criterion);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_sort_rows_by_col/*' />
+        public static void mat_sort_rows_by_col(ArbMatC matA, int column_to_sort_by = 0, int sort_order = 0, int sort_criterion = 1)
+        {
+            matA.SortRowsByCol(column_to_sort_by, sort_order, sort_criterion);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_resize/*' />
+        public static void mat_resize(ArbMatC matA, int r, int c)
+        {
+            matA.Resize(r, c);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_resize_like/*' />
+        public static void mat_resize_like(ArbMatC matA, ArbMatC matB)
+        {
+            matA.ResizeLike(matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_conservative_resize/*' />
+        public static void mat_conservative_resize(ArbMatC matA, int r, int c)
+        {
+            matA.ConservativeResize(r, c);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_as_diagonal/*' />
+        public static ArbMatC mat_as_diagonal(ArbMatC matA)
+        {
+            return matA.AsDiagonal();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_adjoint/*' />
+        public static ArbMatC mat_adjoint(ArbMatC matA)
+        {
+            return matA.Adjoint();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_conjugate/*' />
+        public static ArbMatC mat_conjugate(ArbMatC matA)
+        {
+            return matA.Conjugate();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_transpose/*' />
+        public static ArbMatC mat_transpose(ArbMatC matA)
+        {
+            return matA.Transpose();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_reverse_full/*' />
+        public static ArbMatC mat_reverse_full(ArbMatC matA)
+        {
+            return matA.ReverseFull();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_reverse_row_wise/*' />
+        public static ArbMatC mat_reverse_row_wise(ArbMatC matA)
+        {
+            return matA.ReverseRowwise();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_reverse_col_wise/*' />
+        public static ArbMatC mat_reverse_col_wise(ArbMatC matA)
+        {
+            return matA.ReverseColwise();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_replicate_full/*' />
+        public static ArbMatC mat_replicate_full(ArbMatC matA, int vertical, int horizontal)
+        {
+            return matA.ReplicateFull(vertical, horizontal);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_replicate_row_wise/*' />
+        public static ArbMatC mat_replicate_row_wise(ArbMatC matA, int horizontal)
+        {
+            return matA.ReplicateRowwise(horizontal);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_replicate_col_wise/*' />
+        public static ArbMatC mat_replicate_col_wise(ArbMatC matA, int vertical)
+        {
+            return matA.ReplicateColwise(vertical);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_concat_horizontal/*' />
+        public static ArbMatC mat_concat_horizontal(ArbMatC matA, ArbMatC matB)
+        {
+            return matA.ConcatHorizontal(matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_concat_vertical/*' />
+        public static ArbMatC mat_concat_vertical(ArbMatC matA, ArbMatC matB)
+        {
+            return matA.ConcatVertical(matB);
+        }
+
+
+
+        #endregion
+
+
+
+        #region Basic arithmetic operations
+
+
+
+
+
+        #endregion
+
+
+
+
+
+        #region Standard decompositions and linear solving
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_ldlt/*' />
+        public static ArbMatMapC mat_ldlt(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.LDLT(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_partial_piv_lu/*' />
+        public static ArbMatMapC mat_partial_piv_lu(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.PartialPivLU(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_full_piv_lu/*' />
+        public static ArbMatMapC mat_full_piv_lu(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.FullPivLU(query, matB);
+        }
+
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_llt/*' />
+        //public static ArbMatMapC mat_llt(ArbMatC matA, string query, [Optional] ArbMatC matB)
+        //{
+        //    return matA.LLT(query, matB);
+        //}
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_llt/*' />
+        public static ArbMatMapC mat_llt(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.LLT(query, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_householder_qr/*' />
+        public static ArbMatMapC mat_householder_qr(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.HouseholderQR(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_col_piv_householder_qr/*' />
+        public static ArbMatMapC mat_col_piv_householder_qr(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.ColPivHouseholderQR(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_full_piv_householder_qr/*' />
+        public static ArbMatMapC mat_full_piv_householder_qr(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.FullPivHouseholderQR(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_cod_householder_qr/*' />
+        public static ArbMatMapC mat_cod_householder_qr(ArbMatC matA, string query, ArbMatC matB)
+        {
+            return matA.COD(query, matB);
+        }
+
+
+
+
+        #endregion
+
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
 
 
     }

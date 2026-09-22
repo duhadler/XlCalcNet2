@@ -97,14 +97,14 @@ namespace ArbPrecNet
         #region General functions for real numbers
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fma/*' />
         public static Single fma(Single x, Single y, Single z)
         {
             return sreal.fma(x, y, z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fma/*' />
         public static Single fma(dynamic x, dynamic y, dynamic z)
         {
             return sreal.fma(x, y, z);
@@ -113,28 +113,28 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmax/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmax/*' />
         public static Single fmax(Single x, Single y)
         {
             return sreal.fmax(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmax/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmax/*' />
         public static Single fmax(dynamic x, dynamic y)
         {
             return sreal.fmax(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmin/*' />
         public static Single fmin(Single x, Single y)
         {
             return sreal.fmin(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmin/*' />
         public static Single fmin(dynamic x, dynamic y)
         {
             return sreal.fmin(x, y);
@@ -148,53 +148,74 @@ namespace ArbPrecNet
         #region Machine constants
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/zero/*' />
-        public static Single zero()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zero/*' />
+        public static Single zero
         {
-            return sreal.zero();
+            get
+            {
+                return sreal.zero;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/negzero/*' />
-        public static Single negzero()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/negzero/*' />
+        public static Single negzero
         {
-            return sreal.negzero();
+            get
+            {
+                return sreal.negzero;
+            }
         }
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/one/*' />
-        public static Single one()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/one/*' />
+        public static Single one
         {
-            return sreal.one();
+            get
+            {
+                return sreal.one;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/onej/*' />
-        public static SingleC onej()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/onej/*' />
+        public static SingleC onej
         {
-            return sreal.onej();
+            get
+            {
+                return sreal.onej;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isposinf/*' />
-        public static Single inf()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isposinf/*' />
+        public static Single inf
         {
-            return sreal.inf();
+            get
+            {
+                return sreal.inf;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/neginf/*' />
-        public static Single neginf()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/neginf/*' />
+        public static Single neginf
         {
-            return sreal.neginf();
+            get
+            {
+                return sreal.neginf;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/nan/*' />
-        public static Single nan()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nan/*' />
+        public static Single nan
         {
-            return sreal.nan();
+            get
+            {
+                return sreal.nan;
+            }
         }
 
 
@@ -206,14 +227,14 @@ namespace ArbPrecNet
         #region Properties of numbers
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/signbit/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/signbit/*' />
         public static int signbit(Single x)
         {
             return sreal.signbit(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/signbit/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/signbit/*' />
         public static int signbit(dynamic x)
         {
             return sreal.signbit(x);
@@ -221,14 +242,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isfinite/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isfinite/*' />
         public static bool isfinite(Single x)
         {
             return sreal.isfinite(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isfinite/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isfinite/*' />
         public static bool isfinite(dynamic x)
         {
             return sreal.isfinite(x);
@@ -237,14 +258,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinf/*' />
         public static bool isinf(Single x)
         {
             return sreal.isinf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinf/*' />
         public static bool isinf(dynamic x)
         {
             return sreal.isinf(x);
@@ -252,14 +273,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isposinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isposinf/*' />
         public static bool isposinf(Single x)
         {
             return sreal.isposinf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isposinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isposinf/*' />
         public static bool isposinf(dynamic x)
         {
             return sreal.isposinf(x);
@@ -267,14 +288,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isneginf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isneginf/*' />
         public static bool isneginf(Single x)
         {
             return sreal.isneginf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isneginf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isneginf/*' />
         public static bool isneginf(dynamic x)
         {
             return sreal.isneginf(x);
@@ -282,14 +303,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnan/*' />
         public static bool isnan(Single x)
         {
             return sreal.isnan(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isnan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnan/*' />
         public static bool isnan(dynamic x)
         {
             return sreal.isnan(x);
@@ -297,14 +318,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/iszero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/iszero/*' />
         public static bool iszero(Single x)
         {
             return sreal.iszero(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/iszero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/iszero/*' />
         public static bool iszero(dynamic x)
         {
             return sreal.iszero(x);
@@ -313,14 +334,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isone/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(Single x)
         {
             return sreal.isone(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isone/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(dynamic x)
         {
             return sreal.isone(x);
@@ -328,14 +349,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isinteger/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinteger/*' />
         public static bool isinteger(Single x)
         {
             return sreal.isinteger(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isinteger/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinteger/*' />
         public static bool isinteger(dynamic x)
         {
             return sreal.isinteger(x);
@@ -343,14 +364,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnumber/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
         public static bool isnumber(Single x)
         {
             return sreal.isnumber(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isnumber/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
         public static bool isnumber(dynamic x)
         {
             return sreal.isnumber(x);
@@ -358,14 +379,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isregular/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
         public static bool isregular(Single x)
         {
             return sreal.isregular(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isregular/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
         public static bool isregular(dynamic x)
         {
             return sreal.isregular(x);
@@ -373,14 +394,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnormal/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
         public static bool isnormal(Single x)
         {
             return sreal.isnormal(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isnormal/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
         public static bool isnormal(dynamic x)
         {
             return sreal.isnormal(x);
@@ -388,14 +409,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isunordered/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
         public static bool isunordered(Single x, Single y)
         {
             return sreal.isunordered(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isunordered/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
         public static bool isunordered(dynamic x, dynamic y)
         {
             return sreal.isunordered(x, y);
@@ -403,14 +424,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/fitsint32/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint32/*' />
         public static bool fitsint32(Single x)
         {
             return sreal.fitsint32(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fitsint32/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint32/*' />
         public static bool fitsint32(dynamic x)
         {
             return sreal.fitsint32(x);
@@ -418,14 +439,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/fitsint64/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint64/*' />
         public static bool fitsint64(Single x)
         {
             return sreal.fitsint32(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fitsint64/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint64/*' />
         public static bool fitsint64(dynamic x)
         {
             return sreal.fitsint32(x);
@@ -441,14 +462,14 @@ namespace ArbPrecNet
 
         #region Integer Related Functions
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nearbyint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nearbyint/*' />
         public static Single nearbyint(Single x)
         {
             return sreal.nearbyint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nearbyint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nearbyint/*' />
         public static Single nearbyint(dynamic x)
         {
             return sreal.nearbyint(x);
@@ -456,28 +477,28 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rint/*' />
         public static Single rint(Single x)
         {
             return sreal.rint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rint/*' />
         public static Single rint(dynamic x)
         {
             return sreal.rint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lrint/*' />
         public static Int32 lrint(Single x)
         {
             return sreal.lrint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lrint/*' />
         public static Int32 lrint(dynamic x)
         {
             return sreal.lrint(x);
@@ -485,14 +506,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llrint/*' />
         public static Int64 llrint(Single x)
         {
             return sreal.llrint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llrint/*' />
         public static Int64 llrint(dynamic x)
         {
             return sreal.llrint(x);
@@ -501,14 +522,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ceil/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ceil/*' />
         public static Single ceil(Single x)
         {
             return sreal.ceil(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ceil/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ceil/*' />
         public static Single ceil(dynamic x)
         {
             return sreal.ceil(x);
@@ -516,56 +537,56 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/floor/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/floor/*' />
         public static Single floor(Single x)
         {
             return sreal.floor(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/floor/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/floor/*' />
         public static Single floor(dynamic x)
         {
             return sreal.floor(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trunc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trunc/*' />
         public static Single trunc(Single x)
         {
             return sreal.trunc(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trunc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trunc/*' />
         public static Single trunc(dynamic x)
         {
             return sreal.trunc(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/round/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/round/*' />
         public static Single round(Single x)
         {
             return sreal.round(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/round/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/round/*' />
         public static Single round(dynamic x)
         {
             return sreal.round(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lround/*' />
         public static Int32 lround(Single x)
         {
             return sreal.lround(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lround/*' />
         public static Int32 lround(dynamic x)
         {
             return sreal.lround(x);
@@ -573,14 +594,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llround/*' />
         public static Int64 llround(Single x)
         {
             return sreal.llround(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llround/*' />
         public static Int64 llround(dynamic x)
         {
             return sreal.llround(x);
@@ -596,28 +617,28 @@ namespace ArbPrecNet
         #region Floating point functions for real numbers
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/copysign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/copysign/*' />
         public static Single copysign(Single x, Single y)
         {
             return sreal.copysign(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/copysign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/copysign/*' />
         public static Single copysign(dynamic x, dynamic y)
         {
             return sreal.copysign(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/frexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frexp/*' />
         public static Tuple<Single, Int32> frexp(Single x)
         {
             return sreal.frexp(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/frexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frexp/*' />
         public static Tuple<Single, Int32> frexp(dynamic x)
         {
             return sreal.frexp(x);
@@ -625,27 +646,27 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logb/*' />
         public static Single logb(Single x)
         {
             return sreal.logb(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logb/*' />
         public static Single logb(dynamic x)
         {
             return sreal.logb(x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ilogb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(Single x)
         {
             return sreal.ilogb(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ilogb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(dynamic x)
         {
             return sreal.ilogb(x);
@@ -653,14 +674,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ldexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ldexp/*' />
         public static Single ldexp(Single x, Int32 e)
         {
             return sreal.ldexp(x, e);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ldexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ldexp/*' />
         public static Single ldexp(dynamic x, dynamic e)
         {
             return sreal.ldexp(x, e);
@@ -668,14 +689,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbn/*' />
         public static Single scalbn(Single x, Int32 e)
         {
             return sreal.scalbn(x, e);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbn/*' />
         public static Single scalbn(dynamic x, dynamic e)
         {
             return sreal.scalbn(x, e);
@@ -683,14 +704,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbln/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbln/*' />
         public static Single scalbln(Single x, Int32 e)
         {
             return sreal.scalbln(x, e);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbln/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbln/*' />
         public static Single scalbln(dynamic x, dynamic e)
         {
             return sreal.scalbln(x, e);
@@ -698,14 +719,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fdim/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fdim/*' />
         public static Single fdim(Single x, Single y)
         {
             return sreal.fdim(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fdim/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fdim/*' />
         public static Single fdim(dynamic x, dynamic y)
         {
             return sreal.fdim(x, y);
@@ -719,14 +740,14 @@ namespace ArbPrecNet
         #region Fraction and remainder Related Functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Single, Single> modf(Single x)
         {
             return sreal.modf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Single, Single> modf(dynamic x)
         {
             return sreal.modf(x);
@@ -734,42 +755,42 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmod/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Single fmod(Single x, Single y)
         {
             return sreal.fmod(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmod/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Single fmod(dynamic x, dynamic y)
         {
             return sreal.fmod(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remainder/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Single remainder(Single x, Single y)
         {
             return sreal.remainder(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remainder/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Single remainder(dynamic x, dynamic y)
         {
             return sreal.remainder(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remquo/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Single, Int32> remquo(Single x, Single y)
         {
             return sreal.remquo(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remquo/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Single, Int32> remquo(dynamic x, dynamic y)
         {
             return sreal.remquo(x, y);
@@ -782,84 +803,84 @@ namespace ArbPrecNet
         #region Functions related to mantissa width and exponent range
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/epsilon/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/epsilon/*' />
         public static Single epsilon()
         {
             return sreal.epsilon();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ulp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ulp/*' />
         public static Single ulp(Single x)
         {
             return sreal.ulp(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ulp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ulp/*' />
         public static Single ulp(dynamic x)
         {
             return sreal.ulp(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/maxvalue/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/maxvalue/*' />
         public static Single maxvalue()
         {
             return sreal.maxvalue();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/lowestvalue/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lowestvalue/*' />
         public static Single lowestvalue()
         {
             return sreal.lowestvalue();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/minposvalue/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/minposvalue/*' />
         public static Single minposvalue()
         {
             return sreal.minposvalue();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextafter/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
         public static Single nextafter(Single x, Single y)
         {
             return sreal.nextafter(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextafter/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
         public static Single nextafter(dynamic x, dynamic y)
         {
             return sreal.nextafter(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextabove/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextabove/*' />
         public static Single nextabove(Single x)
         {
             return sreal.nextabove(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextabove/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextabove/*' />
         public static Single nextabove(dynamic x)
         {
             return sreal.nextabove(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextbelow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextbelow/*' />
         public static Single nextbelow(Single x)
         {
             return sreal.nextbelow(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextbelow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextbelow/*' />
         public static Single nextbelow(dynamic x)
         {
             return sreal.nextbelow(x);
@@ -873,85 +894,85 @@ namespace ArbPrecNet
         #region Mathematical Constants
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/degree/*' />
-        public static Single degree()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/degree/*' />
+        public static Single degree
         {
-            return sreal.degree();
+            get { return sreal.degree; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phi/*' />
-        public static Single phi()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phi/*' />
+        public static Single phi
         {
-            return sreal.phi();
+            get { return sreal.phi; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ln2/*' />
-        public static Single ln2()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ln2/*' />
+        public static Single ln2
         {
-            return sreal.ln2();
+            get { return sreal.ln2; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ln10/*' />
-        public static Single ln10()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ln10/*' />
+        public static Single ln10
         {
-            return sreal.ln10();
+            get { return sreal.ln10; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pi/*' />
-        public static Single pi()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pi/*' />
+        public static Single pi
         {
-            return sreal.pi();
-        }
-
-
-
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/e/*' />
-        public static Single e()
-        {
-            return sreal.e();
+            get { return sreal.pi; }
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/egamma/*' />
-        public static Single egamma()
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/e/*' />
+        public static Single e
         {
-            return sreal.egamma();
+            get { return sreal.e; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/apery/*' />
-        public static Single apery()
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/egamma/*' />
+        public static Single egamma
         {
-            return sreal.apery();
+            get { return sreal.egamma; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/catalan/*' />
-        public static Single catalan()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/apery/*' />
+        public static Single apery
         {
-            return sreal.catalan();
+            get { return sreal.apery; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/glaisher/*' />
-        public static Single glaisher()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/catalan/*' />
+        public static Single catalan
         {
-            return sreal.glaisher();
+            get { return sreal.catalan; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/khinchin/*' />
-        public static Single khinchin()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/glaisher/*' />
+        public static Single glaisher
         {
-            return sreal.khinchin();
+            get { return sreal.glaisher; }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/khinchin/*' />
+        public static Single khinchin
+        {
+            get { return sreal.khinchin; }
         }
 
 
@@ -973,14 +994,14 @@ namespace ArbPrecNet
         #region Complex components
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Single abs(Single x)
         {
             return Math.Abs(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Single abs(dynamic x)
         {
             return abs(sreal.t(x));
@@ -988,14 +1009,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Single fabs(Single x)
         {
             return Math.Abs(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Single fabs(dynamic x)
         {
             return fabs(sreal.t(x));
@@ -1003,14 +1024,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static Single sign(Single x)
         {
             return Math.Sign(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static Single sign(dynamic x)
         {
             return sign(sreal.t(x));
@@ -1018,14 +1039,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Single real(Single x)
         {
             return +x;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Single real(dynamic x)
         {
             return real(sreal.t(x));
@@ -1033,14 +1054,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Single imag(Single x)
         {
             return 0.0F;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Single imag(dynamic x)
         {
             return 0.0F;
@@ -1048,14 +1069,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Single phase(Single x)
         {
             return sreal.phase(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Single phase(dynamic x)
         {
             return sreal.phase(x);
@@ -1063,14 +1084,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static Single conj(Single x)
         {
             return +x;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static Single conj(dynamic x)
         {
             return conj(sreal.t(x));
@@ -1079,13 +1100,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Single, Single> polar(Single x)
         {
             return new Tuple<Single, Single>(abs(x), phase(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Single, Single> polar(dynamic x)
         {
             return polar(sreal.t(x));
@@ -1093,13 +1114,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static SingleC rect(Single r, Single phi)
         {
             return r * expj(phi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static SingleC rect(dynamic r, dynamic phi)
         {
             return rect(sreal.t(r), sreal.t(phi));
@@ -1119,7 +1140,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static Single sqrt(Single x)
         {
             ArbPrec.Init();
@@ -1132,7 +1153,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static Single sqrt(dynamic x)
         {
             return sqrt(sreal.t(x));
@@ -1140,7 +1161,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static Single rsqrt(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1151,7 +1172,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Rsqrt(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static Single rsqrt(dynamic x)
         {
             return rsqrt(sreal.t(x));
@@ -1160,7 +1181,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static Single cbrt(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1171,7 +1192,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Cbrt(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static Single cbrt(dynamic x)
         {
             return cbrt(sreal.t(x));
@@ -1179,7 +1200,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static Single sqrt1pm1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1190,7 +1211,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Sqrt1pm1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static Single sqrt1pm1(dynamic x)
         {
             return sqrt1pm1(sreal.t(x));
@@ -1200,7 +1221,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static Single root_si(Single x, Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1211,7 +1232,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Root_ui(ref Single res, ref Single x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static Single root_si(dynamic x, Int32 n)
         {
             return root_si(sreal.t(x), n);
@@ -1226,7 +1247,7 @@ namespace ArbPrecNet
         #region Exponential and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static Single exp(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1237,7 +1258,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Exp(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static Single exp(dynamic x)
         {
             return exp(sreal.t(x));
@@ -1247,28 +1268,28 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static SingleC expj(Single x)
         {
             return sflintc.expj(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static SingleC expj(dynamic x)
         {
             return sflintc.expj(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static SingleC expjpi(Single x)
         {
             return sflintc.expjpi(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static SingleC expjpi(dynamic x)
         {
             return sflintc.expjpi(x);
@@ -1279,7 +1300,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static Single exp10(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1290,14 +1311,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Exp10(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static Single exp10(dynamic x)
         {
             return exp10(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static Single exp2(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1308,14 +1329,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Exp2(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static Single exp2(dynamic x)
         {
             return exp2(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static Single expm1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1326,14 +1347,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Expm1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static Single expm1(dynamic x)
         {
             return expm1(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static Single exp10m1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1344,14 +1365,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Exp10m1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static Single exp10m1(dynamic x)
         {
             return exp10m1(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static Single exp2m1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1362,14 +1383,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Exp2m1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static Single exp2m1(dynamic x)
         {
             return exp2m1(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static Single exprel(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1380,7 +1401,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_ExpRel(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static Single exprel(dynamic x)
         {
             return exprel(sreal.t(x));
@@ -1396,7 +1417,7 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static Single logbase(Single x, Single b)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1407,14 +1428,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Logbase(ref Single res, ref Single x, ref Single b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static Single logbase(dynamic x, dynamic b)
         {
             return logbase(sreal.t(x), sreal.t(b));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static Single log(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1425,14 +1446,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static Single log(dynamic x)
         {
             return log(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static Single log10(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1443,14 +1464,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log10(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static Single log10(dynamic x)
         {
             return log10(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static Single log2(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1461,14 +1482,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log2(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static Single log2(dynamic x)
         {
             return log2(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static Single log1p(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1479,14 +1500,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log1p(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static Single log1p(dynamic x)
         {
             return log1p(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static Single log10p1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1497,14 +1518,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log10p1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static Single log10p1(dynamic x)
         {
             return log10p1(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static Single log2p1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1515,14 +1536,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log2p1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static Single log2p1(dynamic x)
         {
             return log2p1(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1mexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1mexp/*' />
         public static Single log1mexp(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1533,7 +1554,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Log1mexp(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1mexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1mexp/*' />
         public static Single log1mexp(dynamic x)
         {
             return log1mexp(sreal.t(x));
@@ -1550,7 +1571,7 @@ namespace ArbPrecNet
         #region Power functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static Single sqr(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1561,7 +1582,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Square(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static Single sqr(dynamic x)
         {
             return sqr(sreal.t(x));
@@ -1569,7 +1590,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static Single cube(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1580,14 +1601,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Cube(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static Single cube(dynamic x)
         {
             return cube(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static Single hypot(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1598,7 +1619,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypot(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static Single hypot(dynamic x, dynamic y)
         {
             return hypot(sreal.t(x), sreal.t(y));
@@ -1606,7 +1627,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static Single pow_si(Single x, Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1617,7 +1638,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Pow_si(ref Single res, ref Single x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static Single pow_si(dynamic x, Int32 n)
         {
             return pow_si(sreal.t(x), n);
@@ -1625,7 +1646,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static Single compound_si(Single x, Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1636,7 +1657,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Compound_si(ref Single res, ref Single x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static Single compound_si(dynamic x, Int32 n)
         {
             return compound_si(sreal.t(x), n);
@@ -1644,7 +1665,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static Single pow(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1655,14 +1676,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Pow(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static Single pow(dynamic x, dynamic y)
         {
             return pow(sreal.t(x), sreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static Single powm1(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1673,14 +1694,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Powm1(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static Single powm1(dynamic x, dynamic y)
         {
             return powm1(sreal.t(x), sreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static Single pow1p(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1691,14 +1712,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Pow1p(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static Single pow1p(dynamic x, dynamic y)
         {
             return pow1p(sreal.t(x), sreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static Single pow1pm1(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1709,7 +1730,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Pow1pm1(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static Single pow1pm1(dynamic x, dynamic y)
         {
             return pow1pm1(sreal.t(x), sreal.t(y));
@@ -1725,7 +1746,7 @@ namespace ArbPrecNet
         #region Trigonometric and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static Single sin(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1736,7 +1757,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Sin(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static Single sin(dynamic x)
         {
             return sin(sreal.t(x));
@@ -1744,7 +1765,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static Single cos(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1755,7 +1776,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Cos(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static Single cos(dynamic x)
         {
             return cos(sreal.t(x));
@@ -1764,7 +1785,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static Single tan(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1775,7 +1796,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Tan(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static Single tan(dynamic x)
         {
             return tan(sreal.t(x));
@@ -1783,7 +1804,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static Single cot(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1794,7 +1815,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Cot(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static Single cot(dynamic x)
         {
             return cot(sreal.t(x));
@@ -1802,7 +1823,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static Single sec(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1813,7 +1834,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Sec(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static Single sec(dynamic x)
         {
             return sec(sreal.t(x));
@@ -1821,7 +1842,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static Single csc(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1832,7 +1853,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Csc(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static Single csc(dynamic x)
         {
             return csc(sreal.t(x));
@@ -1840,7 +1861,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static Single sinc(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1851,7 +1872,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Sinc(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static Single sinc(dynamic x)
         {
             return sinc(sreal.t(x));
@@ -1860,7 +1881,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static Single sinpi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1871,7 +1892,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_SinPi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static Single sinpi(dynamic x)
         {
             return sinpi(sreal.t(x));
@@ -1880,7 +1901,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static Single cospi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1891,7 +1912,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_CosPi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static Single cospi(dynamic x)
         {
             return cospi(sreal.t(x));
@@ -1901,7 +1922,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static Single tanpi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1912,7 +1933,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_TanPi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static Single tanpi(dynamic x)
         {
             return tanpi(sreal.t(x));
@@ -1921,7 +1942,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static Single cotpi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1932,7 +1953,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_CotPi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static Single cotpi(dynamic x)
         {
             return cotpi(sreal.t(x));
@@ -1943,7 +1964,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static Single cscpi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1951,7 +1972,7 @@ namespace ArbPrecNet
             return 1/res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static Single cscpi(dynamic x)
         {
             return cscpi(sreal.t(x));
@@ -1959,7 +1980,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static Single secpi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1967,7 +1988,7 @@ namespace ArbPrecNet
             return 1 / res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static Single secpi(dynamic x)
         {
             return secpi(sreal.t(x));
@@ -1975,7 +1996,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static Single sincpi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -1986,7 +2007,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_SincPi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static Single sincpi(dynamic x)
         {
             return sincpi(sreal.t(x));
@@ -2001,7 +2022,7 @@ namespace ArbPrecNet
         #region Hyperbolic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static Single sinh(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2012,14 +2033,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Sinh(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static Single sinh(dynamic x)
         {
             return sinh(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static Single cosh(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2030,14 +2051,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Cosh(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static Single cosh(dynamic x)
         {
             return cosh(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static Single tanh(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2048,14 +2069,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Tanh(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static Single tanh(dynamic x)
         {
             return tanh(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static Single csch(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2066,14 +2087,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Csch(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static Single csch(dynamic x)
         {
             return csch(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static Single sech(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2084,14 +2105,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Sech(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static Single sech(dynamic x)
         {
             return sech(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static Single coth(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2102,7 +2123,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Coth(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static Single coth(dynamic x)
         {
             return coth(sreal.t(x));
@@ -2118,7 +2139,7 @@ namespace ArbPrecNet
         #region Inverse trigonometric functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static Single asin(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2129,14 +2150,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Asin(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static Single asin(dynamic x)
         {
             return asin(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static Single acos(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2147,14 +2168,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Acos(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static Single acos(dynamic x)
         {
             return acos(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan2/*' />
         public static Single atan2(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2165,14 +2186,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Atan2(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan2/*' />
         public static Single atan2(dynamic x, dynamic y)
         {
             return atan2(sreal.t(x), sreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static Single atan(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2183,14 +2204,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Atan(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static Single atan(dynamic x)
         {
             return atan(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static Single acsc(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2201,14 +2222,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Acsc(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static Single acsc(dynamic x)
         {
             return acsc(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static Single asec(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2219,14 +2240,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Asec(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static Single asec(dynamic x)
         {
             return asec(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static Single acot(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2237,7 +2258,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Acot(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static Single acot(dynamic x)
         {
             return acot(sreal.t(x));
@@ -2253,7 +2274,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static Single asinh(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2264,14 +2285,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Asinh(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static Single asinh(dynamic x)
         {
             return asinh(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static Single acosh(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2282,14 +2303,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Acosh(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static Single acosh(dynamic x)
         {
             return acosh(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static Single atanh(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2300,14 +2321,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Atanh(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static Single atanh(dynamic x)
         {
             return atanh(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static Single acsch(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2318,14 +2339,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Acsch(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static Single acsch(dynamic x)
         {
             return acsch(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static Single asech(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2336,14 +2357,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Asech(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static Single asech(dynamic x)
         {
             return asech(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static Single acoth(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2354,7 +2375,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Acoth(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static Single acoth(dynamic x)
         {
             return acoth(sreal.t(x));
@@ -2370,7 +2391,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static Single gamma(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2381,7 +2402,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Gamma(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static Single gamma(dynamic x)
         {
             return gamma(sreal.t(x));
@@ -2389,7 +2410,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static Single rgamma(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2400,7 +2421,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Rgamma(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static Single rgamma(dynamic x)
         {
             return rgamma(sreal.t(x));
@@ -2408,7 +2429,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static Single lgamma(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2419,7 +2440,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Lgamma(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static Single lgamma(dynamic x)
         {
             return lgamma(sreal.t(x));
@@ -2427,7 +2448,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static Single rising_factorial(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2438,7 +2459,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_RisingFactorial(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static Single rising_factorial(dynamic x, dynamic y)
         {
             return rising_factorial(sreal.t(x), sreal.t(y));
@@ -2446,7 +2467,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static Single beta(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2457,7 +2478,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Beta(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static Single beta(dynamic x, dynamic y)
         {
             return beta(sreal.t(x), sreal.t(y));
@@ -2468,13 +2489,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static Single gamma1pm1(Single x)
         {
             return aflint.SRealViaArbS1(aflint.gamma1pm1, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static Single gamma1pm1(dynamic x)
         {
             return gamma1pm1(sreal.t(x));
@@ -2482,13 +2503,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static Single factorial(Single x)
         {
             return aflint.SRealViaArbS1(aflint.factorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static Single factorial(dynamic x)
         {
             return factorial(sreal.t(x));
@@ -2496,13 +2517,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static Single doublefactorial(Single x)
         {
             return aflint.SRealViaArbS1(aflint.doublefactorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static Single doublefactorial(dynamic x)
         {
             return doublefactorial(sreal.t(x));
@@ -2510,13 +2531,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static Single falling_factorial(Single a, Single n)
         {
             return aflint.SRealViaArbS2(aflint.falling_factorial, a, n);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static Single falling_factorial(dynamic a, dynamic n)
         {
             return falling_factorial(sreal.t(a), sreal.t(n));
@@ -2524,13 +2545,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static Single gamma_ratio(Single a, Single b)
         {
             return aflint.SRealViaArbS2(aflint.gamma_ratio, a, b);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static Single gamma_ratio(dynamic a, dynamic b)
         {
             return gamma_ratio(sreal.t(a), sreal.t(b));
@@ -2538,13 +2559,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static Single gamma_delta_ratio(Single a, Single delta)
         {
             return aflint.SRealViaArbS2(aflint.gamma_delta_ratio, a, delta);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static Single gamma_delta_ratio(dynamic a, dynamic delta)
         {
             return gamma_delta_ratio(sreal.t(a), sreal.t(delta));
@@ -2552,13 +2573,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static Single binomial(Single n, Single k)
         {
             return aflint.SRealViaArbS2(aflint.binomial, n, k);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static Single binomial(dynamic n, dynamic k)
         {
             return binomial(sreal.t(n), sreal.t(k));
@@ -2576,7 +2597,7 @@ namespace ArbPrecNet
         #region Miscellaneous
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static Single lambert_w0(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2587,14 +2608,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LambertW0(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static Single lambert_w0(dynamic x)
         {
             return lambert_w0(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static Single lambert_wm1(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2605,7 +2626,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LambertWm1(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static Single lambert_wm1(dynamic x)
         {
             return lambert_wm1(sreal.t(x));
@@ -2614,20 +2635,20 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static SingleC lambert_wk(Single x, int k)
         {
             return sflintc.lambert_wk(scplx.t(x), k);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static SingleC lambert_wk(dynamic x, int k)
         {
             return lambert_wk(sreal.t(x), k);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static Single agm(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2638,7 +2659,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Agm(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static Single agm(dynamic x, dynamic y)
         {
             return agm(sreal.t(x), sreal.t(y));
@@ -2670,7 +2691,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static Single m_elliptic_k(Single m)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2681,7 +2702,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_MEllipticK(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static Single m_elliptic_k(dynamic x)
         {
             return m_elliptic_k(sreal.t(x));
@@ -2690,7 +2711,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static Single m_elliptic_e(Single m)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2701,7 +2722,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_MEllipticE(ref Single res, ref Single m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static Single m_elliptic_e(dynamic x)
         {
             return m_elliptic_e(sreal.t(x));
@@ -2710,7 +2731,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static Single m_elliptic_pi(Single n, Single m)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2721,7 +2742,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_MEllipticPi(ref Single res, ref Single n, ref Single m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static Single m_elliptic_pi(dynamic x, dynamic y)
         {
             return m_elliptic_pi(sreal.t(x), sreal.t(y));
@@ -2730,7 +2751,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static Single m_elliptic_f(Single phi, Single m)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2741,7 +2762,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_MEllipticF(ref Single res, ref Single phi, ref Single m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static Single m_elliptic_f(dynamic phi, dynamic m)
         {
             return m_elliptic_f(sreal.t(phi), sreal.t(m));
@@ -2749,7 +2770,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static Single m_elliptic_e_inc(Single phi, Single m)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2760,7 +2781,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_MEllipticEInc(ref Single res, ref Single phi, ref Single m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static Single m_elliptic_e_inc(dynamic phi, dynamic m)
         {
             return m_elliptic_e_inc(sreal.t(phi), sreal.t(m));
@@ -2768,7 +2789,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static Single m_elliptic_pi_inc(Single n, Single phi, Single m)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2779,7 +2800,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_MEllipticPiInc(ref Single res, ref Single n, ref Single phi, ref Single m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static Single m_elliptic_pi_inc(dynamic n, dynamic phi, dynamic m)
         {
             return m_elliptic_pi_inc(sreal.t(n), sreal.t(phi), sreal.t(m));
@@ -2796,7 +2817,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static Single elliptic_k(Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2807,7 +2828,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_EllipticK(ref Single res, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static Single elliptic_k(dynamic k)
         {
             return elliptic_k(sreal.t(k));
@@ -2816,7 +2837,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static Single elliptic_e(Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2827,7 +2848,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_EllipticE(ref Single res, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static Single elliptic_e(dynamic k)
         {
             return elliptic_e(sreal.t(k));
@@ -2836,7 +2857,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static Single elliptic_pi(Single n, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2847,7 +2868,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_EllipticPi(ref Single res, ref Single n, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static Single elliptic_pi(dynamic n, dynamic k)
         {
             return elliptic_pi(sreal.t(n), sreal.t(k));
@@ -2856,7 +2877,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static Single elliptic_f(Single phi, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2867,7 +2888,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_EllipticF(ref Single res, ref Single phi, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static Single elliptic_f(dynamic phi, dynamic k)
         {
             return elliptic_f(sreal.t(phi), sreal.t(k));
@@ -2875,7 +2896,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static Single elliptic_e_inc(Single phi, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2886,7 +2907,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_EllipticEInc(ref Single res, ref Single phi, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static Single elliptic_e_inc(dynamic phi, dynamic k)
         {
             return elliptic_e_inc(sreal.t(phi), sreal.t(k));
@@ -2894,7 +2915,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static Single elliptic_pi_inc(Single n, Single phi, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2905,7 +2926,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_EllipticPiInc(ref Single res, ref Single n, ref Single phi, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static Single elliptic_pi_inc(dynamic n, dynamic phi, dynamic k)
         {
             return elliptic_pi_inc(sreal.t(n), sreal.t(phi), sreal.t(k));
@@ -2920,7 +2941,7 @@ namespace ArbPrecNet
         #region Carlson symmetric elliptic integrals
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Single elliptic_rc(Single x, Single y)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2931,14 +2952,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Elliptic_RC(ref Single res, ref Single x, ref Single y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Single elliptic_rc(dynamic x, dynamic y)
         {
             return elliptic_rc(sreal.t(x), sreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Single elliptic_rf(Single x, Single y, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2949,7 +2970,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Elliptic_RF(ref Single res, ref Single x, ref Single y, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Single elliptic_rf(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rf(sreal.t(x), sreal.t(y), sreal.t(z));
@@ -2959,7 +2980,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static Single elliptic_rg(Single x, Single y, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2970,7 +2991,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Elliptic_RG(ref Single res, ref Single x, ref Single y, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static Single elliptic_rg(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rg(sreal.t(x), sreal.t(y), sreal.t(z));
@@ -2979,7 +3000,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static Single elliptic_rd(Single x, Single y, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -2990,7 +3011,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Elliptic_RD(ref Single res, ref Single x, ref Single y, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static Single elliptic_rd(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rd(sreal.t(x), sreal.t(y), sreal.t(z));
@@ -2998,7 +3019,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static Single elliptic_rj(Single x, Single y, Single z, Single w)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3009,7 +3030,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Elliptic_RJ(ref Single res, ref Single x, ref Single y, ref Single z, ref Single w);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static Single elliptic_rj(dynamic x, dynamic y, dynamic z, dynamic w)
         {
             return elliptic_rj(sreal.t(x), sreal.t(y), sreal.t(z), sreal.t(w));
@@ -3027,7 +3048,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static Single jacobi_theta1(Single x, Single q)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3038,7 +3059,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Theta1Q(ref Single res, ref Single x, ref Single q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static Single jacobi_theta1(dynamic x, dynamic q)
         {
             return jacobi_theta1(sreal.t(x), sreal.t(q));
@@ -3047,7 +3068,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static Single jacobi_theta2(Single x, Single q)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3058,7 +3079,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Theta2Q(ref Single res, ref Single x, ref Single q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static Single jacobi_theta2(dynamic x, dynamic q)
         {
             return jacobi_theta2(sreal.t(x), sreal.t(q));
@@ -3067,7 +3088,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static Single jacobi_theta3(Single x, Single q)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3078,7 +3099,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Theta3Q(ref Single res, ref Single x, ref Single q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static Single jacobi_theta3(dynamic x, dynamic q)
         {
             return jacobi_theta3(sreal.t(x), sreal.t(q));
@@ -3087,7 +3108,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static Single jacobi_theta4(Single x, Single q)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3098,7 +3119,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_Theta4Q(ref Single res, ref Single x, ref Single q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static Single jacobi_theta4(dynamic x, dynamic q)
         {
             return jacobi_theta4(sreal.t(x), sreal.t(q));
@@ -3115,7 +3136,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static Single jacobi_sn(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3126,7 +3147,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiSN(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static Single jacobi_sn(dynamic x, dynamic k)
         {
             return jacobi_sn(sreal.t(x), sreal.t(k));
@@ -3134,7 +3155,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static Single jacobi_cn(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3145,7 +3166,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiCN(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static Single jacobi_cn(dynamic x, dynamic k)
         {
             return jacobi_cn(sreal.t(x), sreal.t(k));
@@ -3153,7 +3174,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static Single jacobi_dn(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3164,7 +3185,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiDN(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static Single jacobi_dn(dynamic x, dynamic k)
         {
             return jacobi_dn(sreal.t(x), sreal.t(k));
@@ -3172,7 +3193,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static Single jacobi_ns(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3183,7 +3204,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiNS(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static Single jacobi_ns(dynamic x, dynamic k)
         {
             return jacobi_ns(sreal.t(x), sreal.t(k));
@@ -3191,7 +3212,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static Single jacobi_nc(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3202,7 +3223,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiNC(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static Single jacobi_nc(dynamic x, dynamic k)
         {
             return jacobi_nc(sreal.t(x), sreal.t(k));
@@ -3210,7 +3231,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static Single jacobi_nd(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3221,7 +3242,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiND(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static Single jacobi_nd(dynamic x, dynamic k)
         {
             return jacobi_nd(sreal.t(x), sreal.t(k));
@@ -3229,7 +3250,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static Single jacobi_sc(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3240,7 +3261,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiSC(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static Single jacobi_sc(dynamic x, dynamic k)
         {
             return jacobi_sc(sreal.t(x), sreal.t(k));
@@ -3248,7 +3269,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static Single jacobi_sd(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3259,7 +3280,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiSD(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static Single jacobi_sd(dynamic x, dynamic k)
         {
             return jacobi_sd(sreal.t(x), sreal.t(k));
@@ -3267,7 +3288,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static Single jacobi_dc(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3278,7 +3299,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiDC(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static Single jacobi_dc(dynamic x, dynamic k)
         {
             return jacobi_dc(sreal.t(x), sreal.t(k));
@@ -3286,7 +3307,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static Single jacobi_ds(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3297,7 +3318,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiDS(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static Single jacobi_ds(dynamic x, dynamic k)
         {
             return jacobi_ds(sreal.t(x), sreal.t(k));
@@ -3305,7 +3326,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static Single jacobi_cs(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3316,7 +3337,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiCS(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static Single jacobi_cs(dynamic x, dynamic k)
         {
             return jacobi_cs(sreal.t(x), sreal.t(k));
@@ -3324,7 +3345,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static Single jacobi_cd(Single x, Single k)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3335,7 +3356,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SReal_Arb_JacobiCD(ref Single res, ref Single x, ref Single k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static Single jacobi_cd(dynamic x, dynamic k)
         {
             return jacobi_cd(sreal.t(x), sreal.t(k));
@@ -3376,7 +3397,7 @@ namespace ArbPrecNet
         #region Lerch’s transcendent: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static Single lerch_phi(Single s, Single z, Single a)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3387,7 +3408,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LerchPhi(ref Single res, ref Single s, ref Single z, ref Single a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static Single lerch_phi(dynamic s, dynamic z, dynamic a)
         {
             return lerch_phi(sreal.t(s), sreal.t(z), sreal.t(a));
@@ -3395,7 +3416,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static SingleC lerch_zeta(Single lambda1, Single alpha, Single s)
         {
             var res = sflintc.lerch_zeta(lambda1, alpha, s);
@@ -3403,7 +3424,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static SingleC lerch_zeta(dynamic lambda1, dynamic alpha, dynamic s)
         {
             return lerch_zeta(sreal.t(lambda1), sreal.t(alpha), sreal.t(s));
@@ -3421,7 +3442,7 @@ namespace ArbPrecNet
         #region polygamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static Single polygamma(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3432,27 +3453,27 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Polygamma(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static Single polygamma(dynamic s, dynamic z)
         {
             return polygamma(sreal.t(s), sreal.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static Single trigamma(Single x)
         {
             return polygamma(1, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static Single trigamma(dynamic x)
         {
             return trigamma(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static Single digamma(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3463,7 +3484,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Digamma(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static Single digamma(dynamic x)
         {
             return digamma(sreal.t(x));
@@ -3472,7 +3493,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static Single harmonic(Single x)
         {
             SingleC res = sflintc.harmonic(x);
@@ -3480,7 +3501,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static Single harmonic(dynamic x)
         {
             return harmonic(sreal.t(x));
@@ -3495,7 +3516,7 @@ namespace ArbPrecNet
         #region Polylogarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static Single polylog(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3506,7 +3527,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Polylog(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static Single polylog(dynamic s, dynamic z)
         {
             return polylog(sreal.t(s), sreal.t(z));
@@ -3516,7 +3537,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static Single trilog(Single x)
         {
             SingleC res = sflintc.trilog(x);
@@ -3524,7 +3545,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static Single trilog(dynamic x)
         {
             return trilog(sreal.t(x));
@@ -3533,7 +3554,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static Single dilog(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3544,7 +3565,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Dilog(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static Single dilog(dynamic x)
         {
             return dilog(sreal.t(x));
@@ -3552,7 +3573,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static Single clausen_sin(Single s, Single z)
         {
             SingleC res = sflintc.clausen_sin(s, z);
@@ -3560,7 +3581,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static Single clausen_sin(dynamic s, dynamic z)
         {
             return clausen_sin(sreal.t(s), sreal.t(z));
@@ -3568,7 +3589,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static Single clausen_cos(Single s, Single z)
         {
             SingleC res = sflintc.clausen_cos(s, z);
@@ -3576,7 +3597,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static Single clausen_cos(dynamic s, dynamic z)
         {
             return clausen_cos(sreal.t(s), sreal.t(z));
@@ -3584,14 +3605,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static Single clausen2(Single x)
         {
             return clausen_sin(sreal.t(2), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static Single clausen2(dynamic x)
         {
             return clausen_sin(sreal.t(2), sreal.t(x));
@@ -3599,7 +3620,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static Single bose_einstein(Single s, Single z)
         {
             SingleC res = sflintc.bose_einstein(s, z);
@@ -3607,7 +3628,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static Single bose_einstein(dynamic s, dynamic z)
         {
             return bose_einstein(sreal.t(s), sreal.t(z));
@@ -3615,7 +3636,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static Single fermi_dirac(Single s, Single z)
         {
             SingleC res = sflintc.fermi_dirac(s, z);
@@ -3623,7 +3644,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static Single fermi_dirac(dynamic s, dynamic z)
         {
             return fermi_dirac(sreal.t(s), sreal.t(z));
@@ -3631,7 +3652,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static Single legendre_chi(Single s, Single z)
         {
             SingleC res = sflintc.legendre_chi(s, z);
@@ -3639,7 +3660,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static Single legendre_chi(dynamic s, dynamic z)
         {
             return legendre_chi(sreal.t(s), sreal.t(z));
@@ -3648,7 +3669,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static Single inverse_tan_integral(Single s, Single z)
         {
             SingleC res = sflintc.inverse_tan_integral(s, z);
@@ -3656,7 +3677,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static Single inverse_tan_integral(dynamic s, dynamic z)
         {
             return inverse_tan_integral(sreal.t(s), sreal.t(z));
@@ -3674,7 +3695,7 @@ namespace ArbPrecNet
         #region Hurwitz zeta function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static Single hurwitz_zeta(Single s, Single a)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3685,7 +3706,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_HurwitzZeta(ref Single res, ref Single s, ref Single a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static Single hurwitz_zeta(dynamic s, dynamic a)
         {
             return hurwitz_zeta(sreal.t(s), sreal.t(a));
@@ -3694,7 +3715,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static Single harmonic2(Single z, Single r)
         {
             SingleC res = sflintc.harmonic2(z, r);
@@ -3702,7 +3723,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static Single harmonic2(dynamic z, dynamic r)
         {
             return harmonic2(sreal.t(z), sreal.t(r));
@@ -3712,7 +3733,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernoulli/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
         public static Single bernoulli(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3724,7 +3745,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernoulli/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
         public static Single bernpoly(Single x, Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3734,14 +3755,14 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SReal_Arb_BernoulliPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_SReal_Arb_BernoulliPoly_ui(ref Single res, ref Single x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernoulli/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
         public static Single bernpoly(dynamic x, Int32 n)
         {
             return bernpoly(sreal.t(x), n);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulernum/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulernum/*' />
         public static Single eulernum(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3756,14 +3777,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static Single eulerpoly(Single x, Int32 n)
         {
             SingleC res = sflintc.eulerpoly(x, n);
             return res.real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static Single eulerpoly(dynamic x, Int32 n)
         {
             return eulerpoly(sreal.t(x), n);
@@ -3773,7 +3794,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static Single barnes_g(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3784,7 +3805,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_BarnesG(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static Single barnes_g(dynamic x)
         {
             return barnes_g(sreal.t(x));
@@ -3792,7 +3813,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static Single logbarnes_g(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3803,7 +3824,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LogBarnesG(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static Single logbarnes_g(dynamic x)
         {
             return logbarnes_g(sreal.t(x));
@@ -3812,7 +3833,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static Single hyperfactorial(Single x)
         {
             SingleC res = sflintc.hyperfactorial(x);
@@ -3820,7 +3841,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static Single hyperfactorial(dynamic x)
         {
             return hyperfactorial(sreal.t(x));
@@ -3828,7 +3849,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static Single superfactorial(Single x)
         {
             SingleC res = sflintc.superfactorial(x);
@@ -3836,7 +3857,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static Single superfactorial(dynamic x)
         {
             return superfactorial(sreal.t(x));
@@ -3855,7 +3876,7 @@ namespace ArbPrecNet
         #region Riemann zeta function, and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static Single zeta(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -3866,7 +3887,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Zeta(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static Single zeta(dynamic x)
         {
             return zeta(sreal.t(x));
@@ -3874,7 +3895,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static Single zetam1(Single x)
         {
             SingleC res = sflintc.zetam1(x);
@@ -3882,7 +3903,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static Single zetam1(dynamic x)
         {
             return zetam1(sreal.t(x));
@@ -3890,7 +3911,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static Single hardy_theta(Single x)
         {
             SingleC res = sflintc.hardy_theta(x);
@@ -3898,7 +3919,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static Single hardy_theta(dynamic x)
         {
             return hardy_theta(sreal.t(x));
@@ -3906,7 +3927,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static Single hardy_z(Single x)
         {
             SingleC res = sflintc.hardy_z(x);
@@ -3914,7 +3935,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static Single hardy_z(dynamic x)
         {
             return hardy_z(sreal.t(x));
@@ -3922,7 +3943,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static Single riemann_xi(Single x)
         {
             SingleC res = sflintc.riemann_xi(x);
@@ -3930,7 +3951,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static Single riemann_xi(dynamic x)
         {
             return riemann_xi(sreal.t(x));
@@ -3938,7 +3959,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static Single dirichlet_eta(Single x)
         {
             SingleC res = sflintc.dirichlet_eta(x);
@@ -3946,7 +3967,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static Single dirichlet_eta(dynamic x)
         {
             return dirichlet_eta(sreal.t(x));
@@ -3954,7 +3975,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static Single dirichlet_etam1(Single x)
         {
             SingleC res = sflintc.dirichlet_etam1(x);
@@ -3962,7 +3983,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static Single dirichlet_etam1(dynamic x)
         {
             return dirichlet_etam1(sreal.t(x));
@@ -3970,7 +3991,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static Single dirichlet_beta(Single x)
         {
             SingleC res = sflintc.dirichlet_beta(x);
@@ -3978,7 +3999,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static Single dirichlet_beta(dynamic x)
         {
             return dirichlet_beta(sreal.t(x));
@@ -3986,7 +4007,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static Single dirichlet_lambda(Single x)
         {
             SingleC res = sflintc.dirichlet_lambda(x);
@@ -3994,7 +4015,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static Single dirichlet_lambda(dynamic x)
         {
             return dirichlet_lambda(sreal.t(x));
@@ -4003,7 +4024,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/backlund_s/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/backlund_s/*' />
         //public static Single backlund_s(Single x)
         //{
         //    ArbPrec.Init(); Single res = 0.0F;
@@ -4014,7 +4035,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SReal_Arb_BacklundS(ref Single res, ref Single x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/backlund_s/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/backlund_s/*' />
         //public static Single backlund_s(dynamic x)
         //{
         //    return zeta(sreal.t(x));
@@ -4024,7 +4045,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/grampoint/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/grampoint/*' />
         //public static Single grampoint(Int32 n)
         //{
         //    ArbPrec.Init(); Single res = 0.0F;
@@ -4048,7 +4069,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bell/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bell/*' />
         public static Single bell(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4060,7 +4081,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/partitions/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/partitions/*' />
         public static Single partitions(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4072,7 +4093,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/primorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/primorial/*' />
         public static Single primorial(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4098,7 +4119,7 @@ namespace ArbPrecNet
         #region 0F1: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static Single hyperg_0f1(Single a, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4109,7 +4130,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom0F1(ref Single res, ref Single a, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static Single hyperg_0f1(dynamic a, dynamic x)
         {
             return hyperg_0f1(sreal.t(a), sreal.t(x));
@@ -4118,7 +4139,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static Single hyperg_0f1r(Single a, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4129,7 +4150,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom0F1r(ref Single res, ref Single a, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static Single hyperg_0f1r(dynamic a, dynamic x)
         {
             return hyperg_0f1r(sreal.t(a), sreal.t(x));
@@ -4146,13 +4167,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static Single bessel_jv(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_jv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static Single bessel_jv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv(sreal.t(nu), sreal.t(x), scaled);
@@ -4160,13 +4181,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static Single bessel_yv(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_yv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static Single bessel_yv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv(sreal.t(nu), sreal.t(x), scaled);
@@ -4174,13 +4195,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static Single bessel_iv(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_iv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static Single bessel_iv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv(sreal.t(nu), sreal.t(x), scaled);
@@ -4188,13 +4209,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static Single bessel_kv(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_kv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static Single bessel_kv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv(sreal.t(nu), sreal.t(x), scaled);
@@ -4208,13 +4229,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static Single bessel_jv_prime(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_jv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static Single bessel_jv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv_prime(sreal.t(nu), sreal.t(x), scaled);
@@ -4222,13 +4243,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static Single bessel_yv_prime(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_yv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static Single bessel_yv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv_prime(sreal.t(nu), sreal.t(x), scaled);
@@ -4236,13 +4257,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static Single bessel_iv_prime(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_iv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static Single bessel_iv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv_prime(sreal.t(nu), sreal.t(x), scaled);
@@ -4250,13 +4271,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static Single bessel_kv_prime(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.bessel_kv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static Single bessel_kv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv_prime(sreal.t(nu), sreal.t(x), scaled);
@@ -4278,30 +4299,30 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static Single sph_bessel_jn(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.zero();
-            if (sreal.isneginf(x)) return sreal.zero();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.zero;
+            if (sreal.isneginf(x)) return sreal.zero;
             if (x == 0.0)
             {
                 if (n >= 0)
                 {
-                    if ((n == 0)) return sreal.one();
-                    else return sreal.zero();
+                    if ((n == 0)) return sreal.one;
+                    else return sreal.zero;
                 }
                 else
                 {
-                    if (n % 2 == 0) return sreal.neginf(); else return sreal.nan();
+                    if (n % 2 == 0) return sreal.neginf; else return sreal.nan;
                 }
             }
             return sflintc.sph_bessel_jn(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static Single sph_bessel_jn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn(sreal.t(n), sreal.t(x), scaled);
@@ -4310,30 +4331,30 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static Single sph_bessel_yn(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.zero();
-            if (sreal.isneginf(x)) return sreal.zero();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.zero;
+            if (sreal.isneginf(x)) return sreal.zero;
             if (x == 0.0)
             {
                 if (n < 0)
                 {
-                    if ((n == -1)) return sreal.one();
-                    else return sreal.zero();
+                    if ((n == -1)) return sreal.one;
+                    else return sreal.zero;
                 }
                 else
                 {
-                    if (n % 2 != 0) return sreal.neginf(); else return sreal.nan();
+                    if (n % 2 != 0) return sreal.neginf; else return sreal.nan;
                 }
             }
             return sflintc.sph_bessel_yn(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static Single sph_bessel_yn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn(sreal.t(n), sreal.t(x), scaled);
@@ -4342,31 +4363,31 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static Single sph_bessel_in(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.inf();
-            if (sreal.isneginf(x)) return sreal.zero();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.inf;
+            if (sreal.isneginf(x)) return sreal.zero;
             if (x == 0.0)
             {
                 if (n >= 0)
                 {
-                    if ((n == 0)) return sreal.one();
-                    else return sreal.zero();
+                    if ((n == 0)) return sreal.one;
+                    else return sreal.zero;
                 }
                 else
                 {
-                    if (n % 2 == 0) return sreal.neginf(); else return sreal.nan();
+                    if (n % 2 == 0) return sreal.neginf; else return sreal.nan;
                 }
             }
 
             return sflintc.sph_bessel_in(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static Single sph_bessel_in(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in(sreal.t(n), sreal.t(x), scaled);
@@ -4375,30 +4396,30 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static Single sph_bessel_kn(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.zero();
-            if (sreal.isneginf(x)) return sreal.neginf();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.zero;
+            if (sreal.isneginf(x)) return sreal.neginf;
             if (x == 0.0)
             {
                 if (n >= 0)
                 {
-                    if (n % 2 == 0) return sreal.nan(); else return sreal.inf();
+                    if (n % 2 == 0) return sreal.nan; else return sreal.inf;
                 }
                 else
                 {
-                    if (n % 2 == 0) return sreal.inf(); else return sreal.nan();
+                    if (n % 2 == 0) return sreal.inf; else return sreal.nan;
                 }
             }
 
             return sflintc.sph_bessel_kn(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static Single sph_bessel_kn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn(sreal.t(n), sreal.t(x), scaled);
@@ -4408,13 +4429,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static Single besselpoly(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.besselpoly, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static Single besselpoly(dynamic nu, dynamic x, bool scaled = false)
         {
             return besselpoly(sreal.t(nu), sreal.t(x), scaled);
@@ -4423,13 +4444,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static Single besseltheta(Single nu, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2Bool1(aflint.besseltheta, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static Single besseltheta(dynamic nu, dynamic x, bool scaled = false)
         {
             return besseltheta(sreal.t(nu), sreal.t(x), scaled);
@@ -4454,18 +4475,18 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_jn_prime/*' />
         public static Single sph_bessel_jn_prime(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.zero();
-            if (sreal.isneginf(x)) return sreal.zero();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.zero;
+            if (sreal.isneginf(x)) return sreal.zero;
             if (x == 0.0)
             {
                 if (n == 1) return 1 / sreal.t(3);
-                if (n >= 0) return sreal.zero();
+                if (n >= 0) return sreal.zero;
                 else
                 {
-                    if (n % 2 != 0) return sreal.neginf(); else return sreal.nan();
+                    if (n % 2 != 0) return sreal.neginf; else return sreal.nan;
                 }
             }
             return sflintc.sph_bessel_jn_prime(n, x, scaled).real;
@@ -4483,18 +4504,18 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_yn_prime/*' />
         public static Single sph_bessel_yn_prime(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.zero();
-            if (sreal.isneginf(x)) return sreal.zero();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.zero;
+            if (sreal.isneginf(x)) return sreal.zero;
             if (x == 0.0)
             {
                 if (n == -2) return -1 / sreal.t(3);
-                if (n < 0) return sreal.zero();
+                if (n < 0) return sreal.zero;
                 else
                 {
-                    if (n % 2 == 0) return sreal.inf(); else return sreal.nan();
+                    if (n % 2 == 0) return sreal.inf; else return sreal.nan;
                 }
             }
             return sflintc.sph_bessel_yn_prime(n, x, scaled).real;
@@ -4512,20 +4533,20 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_in_prime/*' />
         public static Single sph_bessel_in_prime(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.inf();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.inf;
             if (sreal.isneginf(x))
             {
-                if (n % 2 == 0) return sreal.neginf(); else return sreal.inf();
+                if (n % 2 == 0) return sreal.neginf; else return sreal.inf;
             }
             if (x == 0.0)
             {
-                if (n == 0) return sreal.zero();
+                if (n == 0) return sreal.zero;
                 if (n < 0)
                 {
-                    if (n % 2 != 0) return sreal.neginf(); else return sreal.nan();
+                    if (n % 2 != 0) return sreal.neginf; else return sreal.nan;
                 }
             }
             return sflintc.sph_bessel_in_prime(n, x, scaled).real;
@@ -4543,15 +4564,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_kn_prime/*' />
         public static Single sph_bessel_kn_prime(Single n, Single x, bool scaled = false)
         {
-            if (!sreal.isinteger(n)) return sreal.nan();
+            if (!sreal.isinteger(n)) return sreal.nan;
 
-            if (sreal.isnan(x)) return sreal.nan();
-            if (sreal.isinf(x)) return sreal.zero();
-            if (sreal.isneginf(x)) return sreal.neginf();
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isinf(x)) return sreal.zero;
+            if (sreal.isneginf(x)) return sreal.neginf;
             if (x == 0.0)
             {
-                if (((n >= 0) && (n % 2 == 0)) || ((n < 0) && (n % 2 != 0))) return sreal.neginf();
-                else return sreal.nan();
+                if (((n >= 0) && (n % 2 == 0)) || ((n < 0) && (n % 2 != 0))) return sreal.neginf;
+                else return sreal.nan;
             }
             return sflintc.sph_bessel_kn_prime(n, x, scaled).real;
         }
@@ -4577,7 +4598,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
         public static SingleC hankel_h1(Single v, Single x)
         {
-            return bessel_jv(v, x) + scplx.onej() * bessel_yv(v, x);
+            return bessel_jv(v, x) + scplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
@@ -4591,7 +4612,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
         public static SingleC hankel_h2(Single v, Single x)
         {
-            return bessel_jv(v, x) - scplx.onej() * bessel_yv(v, x);
+            return bessel_jv(v, x) - scplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
@@ -4605,7 +4626,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
         public static SingleC sph_hankel_h1(int n, Single x)
         {
-            return sph_bessel_jn(n, x) + scplx.onej() * sph_bessel_yn(n, x);
+            return sph_bessel_jn(n, x) + scplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
@@ -4619,7 +4640,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
         public static SingleC sph_hankel_h2(int n, Single x)
         {
-            return sph_bessel_jn(n, x) - scplx.onej() * sph_bessel_yn(n, x);
+            return sph_bessel_jn(n, x) - scplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
@@ -4640,13 +4661,13 @@ namespace ArbPrecNet
         #region 0F1: Airy functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static Single airy_ai(Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS1Bool1(aflint.airy_ai, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static Single airy_ai(dynamic x, bool scaled = false)
         {
             return airy_ai(sreal.t(x), scaled);
@@ -4654,13 +4675,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static Single airy_ai_prime(Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS1Bool1(aflint.airy_ai_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static Single airy_ai_prime(dynamic x, bool scaled = false)
         {
             return airy_ai_prime(sreal.t(x), scaled);
@@ -4668,13 +4689,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static Single airy_bi(Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS1Bool1(aflint.airy_bi, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static Single airy_bi(dynamic x, bool scaled = false)
         {
             return airy_bi(sreal.t(x), scaled);
@@ -4682,13 +4703,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static Single airy_bi_prime(Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS1Bool1(aflint.airy_bi_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static Single airy_bi_prime(dynamic x, bool scaled = false)
         {
             return airy_bi_prime(sreal.t(x), scaled);
@@ -4696,7 +4717,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_zero/*' />
         public static Single airy_ai_zero(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4707,7 +4728,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_AiryAiZero(ref Single res, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime_zero/*' />
         public static Single airy_ai_prime_zero(UInt32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4718,7 +4739,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_AiryAiPrimeZero(ref Single res, UInt32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_zero/*' />
         public static Single airy_bi_zero(Int32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4729,7 +4750,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_AiryBiZero(ref Single res, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime_zero/*' />
         public static Single airy_bi_prime_zero(UInt32 n)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4878,7 +4899,7 @@ namespace ArbPrecNet
         #region 1F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static Single hyperg_1f1(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4889,7 +4910,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom1F1(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static Single hyperg_1f1(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1(sreal.t(a), sreal.t(b), sreal.t(x));
@@ -4898,7 +4919,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static Single hyperg_1f1r(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4909,7 +4930,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom1F1r(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static Single hyperg_1f1r(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1r(sreal.t(a), sreal.t(b), sreal.t(x));
@@ -4918,7 +4939,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static Single hyperg_u(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4929,7 +4950,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_HypgeomU(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static Single hyperg_u(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_u(sreal.t(a), sreal.t(b), sreal.t(x));
@@ -4937,7 +4958,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static Single hermite_h(Single n, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4948,7 +4969,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_HermiteH(ref Single res, ref Single n, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static Single hermite_h(dynamic n, dynamic x)
         {
             return hermite_h(sreal.t(n), sreal.t(x));
@@ -4956,14 +4977,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static Single hermite_he(Single n, Single x)
         {
             return exp2(-n / 2) * hermite_h(n, x / sqrt(2));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static Single hermite_he(dynamic n, dynamic x)
         {
             return hermite_he(sreal.t(n), sreal.t(x));
@@ -4973,7 +4994,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static Single laguerre_l(Single n, Single m, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -4984,7 +5005,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LaguerreL(ref Single res, ref Single n, ref Single m, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static Single laguerre_l(dynamic n, dynamic m, dynamic x)
         {
             return laguerre_l(sreal.t(n), sreal.t(m), sreal.t(x));
@@ -5002,7 +5023,7 @@ namespace ArbPrecNet
         #region 1F1: Incomplete gamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static Single gamma_upper(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5013,7 +5034,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_GammaUpper(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static Single gamma_upper(dynamic s, dynamic z)
         {
             return gamma_upper(sreal.t(s), sreal.t(z));
@@ -5021,7 +5042,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static Single gamma_q(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5032,7 +5053,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_GammaQ(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static Single gamma_q(dynamic s, dynamic z)
         {
             return gamma_q(sreal.t(s), sreal.t(z));
@@ -5040,7 +5061,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static Single gamma_lower(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5051,7 +5072,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_GammaLower(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static Single gamma_lower(dynamic s, dynamic z)
         {
             return gamma_lower(sreal.t(s), sreal.t(z));
@@ -5059,7 +5080,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static Single gamma_p(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5070,7 +5091,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_GammaP(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static Single gamma_p(dynamic s, dynamic z)
         {
             return gamma_p(sreal.t(s), sreal.t(z));
@@ -5078,7 +5099,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static Single gamma_p_prime(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5089,7 +5110,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_GammaPPrime(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static Single gamma_p_prime(dynamic s, dynamic z)
         {
             return gamma_p_prime(sreal.t(s), sreal.t(z));
@@ -5104,7 +5125,7 @@ namespace ArbPrecNet
         #region 1F1: Error function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Single erf(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5115,7 +5136,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Erf(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Single erf(dynamic x)
         {
             return erf(sreal.t(x));
@@ -5123,7 +5144,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Single erfc(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5134,7 +5155,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Erfc(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Single erfc(dynamic x)
         {
             return erfc(sreal.t(x));
@@ -5143,7 +5164,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Single erf_inv(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5154,7 +5175,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Erfinv(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Single erf_inv(dynamic x)
         {
             return erf_inv(sreal.t(x));
@@ -5162,7 +5183,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Single erfc_inv(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5173,7 +5194,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Erfcinv(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Single erfc_inv(dynamic x)
         {
             return erfc_inv(sreal.t(x));
@@ -5182,7 +5203,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static Single erfi(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5193,7 +5214,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Erfi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static Single erfi(dynamic x)
         {
             return erfi(sreal.t(x));
@@ -5201,13 +5222,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static Single dawson(Single x)
         {
             return aflint.SRealViaArbS1(aflint.dawson, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static Single dawson(dynamic x)
         {
             return dawson(sreal.t(x));
@@ -5216,7 +5237,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Single fresnel_s(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5227,7 +5248,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_FresnelS(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Single fresnel_s(dynamic x)
         {
             return fresnel_s(sreal.t(x));
@@ -5235,7 +5256,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static Single fresnel_c(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5246,7 +5267,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_FresnelC(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static Single fresnel_c(dynamic x)
         {
             return fresnel_c(sreal.t(x));
@@ -5254,7 +5275,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static Single ndens(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5265,7 +5286,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Ndens(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static Single ndens(dynamic x)
         {
             return ndens(sreal.t(x));
@@ -5273,7 +5294,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Single ndis(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5284,7 +5305,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Ndis(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Single ndis(dynamic x)
         {
             return ndis(sreal.t(x));
@@ -5300,7 +5321,7 @@ namespace ArbPrecNet
         #region 1F1: Exponential integrals and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static Single exp_integral_en(Single s, Single z)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5311,14 +5332,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_ExpIntegralE(ref Single res, ref Single s, ref Single z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static Single exp_integral_en(dynamic s, dynamic z)
         {
             return exp_integral_en(sreal.t(s), sreal.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static Single exp_integral_e1(Single z)
         {
             if (z < 0) return -exp_integral_ei(-z);
@@ -5326,7 +5347,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static Single exp_integral_e1(dynamic z)
         {
             return exp_integral_e1(sreal.t(z));
@@ -5334,7 +5355,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static Single exp_integral_ei(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5345,7 +5366,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_ExpIntegralEi(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static Single exp_integral_ei(dynamic x)
         {
             return exp_integral_ei(sreal.t(x));
@@ -5353,7 +5374,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static Single sin_integral(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5364,7 +5385,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_SinIntegral(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static Single sin_integral(dynamic x)
         {
             return sin_integral(sreal.t(x));
@@ -5372,7 +5393,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static Single cos_integral(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5383,7 +5404,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_CosIntegral(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static Single cos_integral(dynamic x)
         {
             return cos_integral(sreal.t(x));
@@ -5391,7 +5412,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static Single sinh_integral(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5402,7 +5423,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_SinhIntegral(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static Single sinh_integral(dynamic x)
         {
             return sinh_integral(sreal.t(x));
@@ -5411,7 +5432,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static Single cosh_integral(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5422,7 +5443,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_CoshIntegral(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static Single cosh_integral(dynamic x)
         {
             return cosh_integral(sreal.t(x));
@@ -5430,7 +5451,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static Single log_integral(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5441,7 +5462,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LogIntegral(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static Single log_integral(dynamic x)
         {
             return log_integral(sreal.t(x));
@@ -5449,7 +5470,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static Single log_integral_offset(Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5460,7 +5481,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_LogIntegralOffset(ref Single res, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static Single log_integral_offset(dynamic x)
         {
             return log_integral_offset(sreal.t(x));
@@ -5477,7 +5498,7 @@ namespace ArbPrecNet
         #region 1F1: Coulomb functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static Single coulomb_f(Single l, Single eta, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5488,7 +5509,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_CoulombF(ref Single res, ref Single l, ref Single eta, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static Single coulomb_f(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_f(sreal.t(l), sreal.t(eta), sreal.t(x));
@@ -5497,7 +5518,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static Single coulomb_g(Single l, Single eta, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5508,7 +5529,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_CoulombG(ref Single res, ref Single l, ref Single eta, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static Single coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(sreal.t(l), sreal.t(eta), sreal.t(x));
@@ -5627,7 +5648,7 @@ namespace ArbPrecNet
         #region 2F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static Single hyperg_2f1(Single a, Single b, Single c, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5638,7 +5659,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom2F1(ref Single res, ref Single a, ref Single b, ref Single c, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static Single hyperg_2f1(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1(sreal.t(a), sreal.t(b), sreal.t(c), sreal.t(x));
@@ -5646,7 +5667,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static Single hyperg_2f1r(Single a, Single b, Single c, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5657,7 +5678,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom2F1r(ref Single res, ref Single a, ref Single b, ref Single c, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static Single hyperg_2f1r(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1r(sreal.t(a), sreal.t(b), sreal.t(c), sreal.t(x));
@@ -5673,7 +5694,7 @@ namespace ArbPrecNet
         #region 2F1-related orthogonal polynomials
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static Single chebyshev_t(Single n, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5684,7 +5705,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_ChebyshevT(ref Single res, ref Single n, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static Single chebyshev_t(dynamic n, dynamic x)
         {
             return chebyshev_t(sreal.t(n), sreal.t(x));
@@ -5692,7 +5713,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static Single chebyshev_u(Single n, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5703,7 +5724,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_ChebyshevU(ref Single res, ref Single n, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static Single chebyshev_u(dynamic n, dynamic x)
         {
             return chebyshev_u(sreal.t(n), sreal.t(x));
@@ -5712,7 +5733,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_v/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_v/*' />
         public static Single chebyshev_v(Single n, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2(aflint.chebyshev_v, n, x);
@@ -5726,7 +5747,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_w/*' />
         public static Single chebyshev_w(Single n, Single x, bool scaled = false)
         {
             return aflint.SRealViaArbS2(aflint.chebyshev_w, n, x);
@@ -5742,7 +5763,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static Single gegenbauer_c(Single n, Single m, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5753,7 +5774,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_GegenbauerC(ref Single res, ref Single n, ref Single m, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static Single gegenbauer_c(dynamic n, dynamic m, dynamic x)
         {
             return gegenbauer_c(sreal.t(n), sreal.t(m), sreal.t(x));
@@ -5762,7 +5783,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static Single jacobi_p(Single n, Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5773,7 +5794,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_JacobiP(ref Single res, ref Single n, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static Single jacobi_p(dynamic n, dynamic a, dynamic b, dynamic x)
         {
             return jacobi_p(sreal.t(n), sreal.t(a), sreal.t(b), sreal.t(x));
@@ -5784,7 +5805,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static Single legendre_p(Single n, Single x)
         {
             return aflint.SRealViaArbS2(aflint.legendre_p, n, x);
@@ -5798,7 +5819,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static Single legendre_q(Single n, Single x)
         {
             return aflint.SRealViaArbS2(aflint.legendre_q, n, x);
@@ -5812,7 +5833,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static Single legendre_plm(Single n, Single m, Single x)
         {
             return aflint.SRealViaArbS3(aflint.legendre_plm, n, m, x);
@@ -5826,7 +5847,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static Single legendre_qlm(Single n, Single m, Single x)
         {
             return aflint.SRealViaArbS3(aflint.legendre_qlm, n, m, x);
@@ -5840,7 +5861,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/toroidal_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/toroidal_plm/*' />
         public static Single toroidal_plm(Single l, Single m, Single x)
         {
             return aflint.SRealViaArbS3(aflint.toroidal_plm, l, m, x);
@@ -5854,7 +5875,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/toroidal_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/toroidal_qlm/*' />
         public static Single toroidal_qlm(Single l, Single m, Single x)
         {
             return aflint.SRealViaArbS3(aflint.toroidal_qlm, l, m, x);
@@ -5870,14 +5891,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static SingleC spherical_y(Single n, Single m, Single theta, Single phi)
         {
             return sflintc.spherical_y(scplx.t(n), scplx.t(m), scplx.t(theta), scplx.t(phi));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static SingleC spherical_y(dynamic n, dynamic m, dynamic theta, dynamic phi)
         {
             return spherical_y(sreal.t(n), sreal.t(m), sreal.t(theta), sreal.t(phi));
@@ -5894,7 +5915,7 @@ namespace ArbPrecNet
         #region 2F1-Incomplete beta Function
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static Single beta_lower(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5905,14 +5926,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_BetaLower(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static Single beta_lower(dynamic a, dynamic b, dynamic x)
         {
             return beta_lower(sreal.t(a), sreal.t(b), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static Single ibeta(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5923,14 +5944,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Ibeta(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static Single ibeta(dynamic a, dynamic b, dynamic x)
         {
             return ibeta(sreal.t(a), sreal.t(b), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static Single ibetac(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5941,14 +5962,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Ibetac(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static Single ibetac(dynamic a, dynamic b, dynamic x)
         {
             return ibetac(sreal.t(a), sreal.t(b), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static Single ibeta_prime(Single a, Single b, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5959,7 +5980,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_IbetaPrime(ref Single res, ref Single a, ref Single b, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static Single ibeta_prime(dynamic a, dynamic b, dynamic x)
         {
             return ibeta_prime(sreal.t(a), sreal.t(b), sreal.t(x));
@@ -5974,7 +5995,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static Single hyperg_1f2(Single a1, Single b1, Single b2, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -5985,7 +6006,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom1F2(ref Single res, ref Single a1, ref Single b1, ref Single b2, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static Single hyperg_1f2(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2(sreal.t(a1), sreal.t(b1), sreal.t(b2), sreal.t(x));
@@ -5993,7 +6014,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static Single hyperg_1f2r(Single a1, Single b1, Single b2, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
@@ -6004,7 +6025,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Hypgeom1F2r(ref Single res, ref Single a1, ref Single b1, ref Single b2, ref Single x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static Single hyperg_1f2r(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2r(sreal.t(a1), sreal.t(b1), sreal.t(b2), sreal.t(x));
@@ -6022,52 +6043,52 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static Single airy_gi(Single x)
         {
             return aflint.SRealViaArbS1(aflint.airy_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static Single airy_gi(dynamic x)
         {
             return airy_gi(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static Single airy_hi(Single x)
         {
             return aflint.SRealViaArbS1(aflint.airy_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static Single airy_hi(dynamic x)
         {
             return airy_hi(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static Single airy_gi_prime(Single x)
         {
             return aflint.SRealViaArbS1(aflint.airy_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static Single airy_gi_prime(dynamic x)
         {
             return airy_gi_prime(sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static Single airy_hi_prime(Single x)
         {
             return aflint.SRealViaArbS1(aflint.airy_hi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static Single airy_hi_prime(dynamic x)
         {
             return airy_hi_prime(sreal.t(x));
@@ -6081,39 +6102,39 @@ namespace ArbPrecNet
         #region Struve functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static Single struve_h(Single v, Single x)
         {
             return aflint.SRealViaArbS2(aflint.struve_h, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static Single struve_h(dynamic v, dynamic x)
         {
             return struve_h(sreal.t(v), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static Single struve_l(Single v, Single x)
         {
             return aflint.SRealViaArbS2(aflint.struve_l, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static Single struve_l(dynamic v, dynamic x)
         {
             return struve_l(sreal.t(v), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static Single struve_k(Single v, Single x)
         {
             return aflint.SRealViaArbS2(aflint.struve_k, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static Single struve_k(dynamic v, dynamic x)
         {
             return struve_k(sreal.t(v), sreal.t(x));
@@ -6125,7 +6146,7 @@ namespace ArbPrecNet
             return aflint.SRealViaArbS2(aflint.struve_m, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_m/*' />
         public static Single struve_m(dynamic v, dynamic x)
         {
             return struve_m(sreal.t(v), sreal.t(x));
@@ -6139,52 +6160,52 @@ namespace ArbPrecNet
         #region Anger, Weber and Lommel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static Single anger_j(Single v, Single x)
         {
             return aflint.SRealViaArbS2(aflint.anger_j, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static Single anger_j(dynamic v, dynamic x)
         {
             return anger_j(sreal.t(v), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static Single weber_e(Single v, Single x)
         {
             return aflint.SRealViaArbS2(aflint.weber_e, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static Single weber_e(dynamic v, dynamic x)
         {
             return weber_e(sreal.t(v), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static Single lommel_s1(Single mu, Single nu, Single x)
         {
             return aflint.SRealViaArbS3(aflint.lommel_s1, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static Single lommel_s1(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s1(sreal.t(mu), sreal.t(nu), sreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static Single lommel_s2(Single mu, Single nu, Single x)
         {
             return aflint.SRealViaArbS3(aflint.lommel_s2, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static Single lommel_s2(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s2(sreal.t(mu), sreal.t(nu), sreal.t(x));
@@ -6385,13 +6406,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Single, Single> polar(SingleC x)
         {
             return new Tuple<Single, Single>(abs(x), phase(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Single, Single> polar(dynamic x)
         {
             return polar(scplx.t(x));
@@ -6399,13 +6420,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static SingleC rect(Single r, Single phi)
         {
             return r * expj(phi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static SingleC rect(dynamic r, dynamic phi)
         {
             return rect(sreal.t(r), sreal.t(phi));
@@ -6422,7 +6443,7 @@ namespace ArbPrecNet
         #region Roots and quadratic, cubic, and quartic 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static SingleC sqrt(SingleC x)
         {
             var res = new SingleC();
@@ -6433,7 +6454,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Sqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static SingleC sqrt(dynamic x)
         {
             return sqrt(scplx.t(x));
@@ -6441,7 +6462,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static SingleC rsqrt(SingleC x)
         {
             var res = new SingleC();
@@ -6452,7 +6473,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Rsqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static SingleC rsqrt(dynamic x)
         {
             return sqrt(scplx.t(x));
@@ -6461,7 +6482,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static SingleC cbrt(SingleC x)
         {
             var res = new SingleC();
@@ -6472,7 +6493,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Cbrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static SingleC cbrt(dynamic x)
         {
             return cbrt(scplx.t(x));
@@ -6481,7 +6502,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static SingleC sqrt1pm1(SingleC x)
         {
             var res = new SingleC();
@@ -6492,7 +6513,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Sqrt1pm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static SingleC sqrt1pm1(dynamic x)
         {
             return cbrt(scplx.t(x));
@@ -6500,7 +6521,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/unitroot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/unitroot/*' />
         public static SingleC unitroot(Int32 n)
         {
             var res = new SingleC();
@@ -6512,7 +6533,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static SingleC root_si(SingleC x, Int32 n)
         {
             var res = new SingleC();
@@ -6523,7 +6544,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Root_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static SingleC root_si(dynamic x, Int32 n)
         {
             return root_si(scplx.t(x), n);
@@ -6537,7 +6558,7 @@ namespace ArbPrecNet
         #region Exponential and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static SingleC exp(SingleC x)
         {
             var res = new SingleC();
@@ -6548,7 +6569,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Exp(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static SingleC exp(dynamic x)
         {
             return exp(scplx.t(x));
@@ -6556,7 +6577,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static SingleC expj(SingleC x)
         {
             var res = new SingleC();
@@ -6567,7 +6588,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Expj(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static SingleC expj(dynamic x)
         {
             return expj(scplx.t(x));
@@ -6575,7 +6596,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static SingleC expjpi(SingleC x)
         {
             var res = new SingleC();
@@ -6586,7 +6607,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Expjpi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static SingleC expjpi(dynamic x)
         {
             return expjpi(scplx.t(x));
@@ -6594,7 +6615,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static SingleC exp10(SingleC x)
         {
             var res = new SingleC();
@@ -6605,7 +6626,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Exp10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static SingleC exp10(dynamic x)
         {
             return exp10(scplx.t(x));
@@ -6613,7 +6634,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static SingleC exp2(SingleC x)
         {
             var res = new SingleC();
@@ -6624,7 +6645,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Exp2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static SingleC exp2(dynamic x)
         {
             return exp2(scplx.t(x));
@@ -6632,7 +6653,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static SingleC expm1(SingleC x)
         {
             var res = new SingleC();
@@ -6643,7 +6664,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Expm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static SingleC expm1(dynamic x)
         {
             return expm1(scplx.t(x));
@@ -6651,7 +6672,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static SingleC exp10m1(SingleC x)
         {
             var res = new SingleC();
@@ -6662,7 +6683,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Exp10m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static SingleC exp10m1(dynamic x)
         {
             return exp10m1(scplx.t(x));
@@ -6670,7 +6691,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static SingleC exp2m1(SingleC x)
         {
             var res = new SingleC();
@@ -6681,7 +6702,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Exp2m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static SingleC exp2m1(dynamic x)
         {
             return exp2m1(scplx.t(x));
@@ -6689,7 +6710,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static SingleC exprel(SingleC x)
         {
             var res = new SingleC();
@@ -6700,7 +6721,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ExpRel(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static SingleC exprel(dynamic x)
         {
             return exprel(scplx.t(x));
@@ -6716,7 +6737,7 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static SingleC logbase(SingleC x, SingleC b)
         {
             var res = new SingleC();
@@ -6727,7 +6748,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static SingleC logbase(dynamic x, dynamic b)
         {
             return logbase(scplx.t(x), scplx.t(b));
@@ -6735,7 +6756,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static SingleC log(SingleC x)
         {
             var res = new SingleC();
@@ -6746,7 +6767,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Log(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static SingleC log(dynamic x)
         {
             return log(scplx.t(x));
@@ -6754,7 +6775,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static SingleC log10(SingleC x)
         {
             var res = new SingleC();
@@ -6765,7 +6786,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Log10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static SingleC log10(dynamic x)
         {
             return log10(scplx.t(x));
@@ -6773,7 +6794,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static SingleC log2(SingleC x)
         {
             var res = new SingleC();
@@ -6784,7 +6805,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Log2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static SingleC log2(dynamic x)
         {
             return log2(scplx.t(x));
@@ -6792,7 +6813,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static SingleC log1p(SingleC x)
         {
             var res = new SingleC();
@@ -6803,7 +6824,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Log1p(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static SingleC log1p(dynamic x)
         {
             return log1p(scplx.t(x));
@@ -6811,7 +6832,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static SingleC log10p1(SingleC x)
         {
             var res = new SingleC();
@@ -6822,7 +6843,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Log10p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static SingleC log10p1(dynamic x)
         {
             return log10p1(scplx.t(x));
@@ -6830,7 +6851,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static SingleC log2p1(SingleC x)
         {
             var res = new SingleC();
@@ -6841,7 +6862,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Log2p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static SingleC log2p1(dynamic x)
         {
             return log2p1(scplx.t(x));
@@ -6856,7 +6877,7 @@ namespace ArbPrecNet
         #region Power functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static SingleC sqr(SingleC x)
         {
             var res = new SingleC();
@@ -6867,7 +6888,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Square(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static SingleC sqr(dynamic x)
         {
             return sqr(scplx.t(x));
@@ -6875,7 +6896,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static SingleC cube(SingleC x)
         {
             var res = new SingleC();
@@ -6886,7 +6907,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Cube(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static SingleC cube(dynamic x)
         {
             return cube(scplx.t(x));
@@ -6894,7 +6915,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static SingleC hypot(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -6905,7 +6926,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypot(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static SingleC hypot(dynamic x, dynamic y)
         {
             return hypot(scplx.t(x), scplx.t(y));
@@ -6913,7 +6934,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static SingleC pow_si(SingleC x, Int32 n)
         {
             var res = new SingleC();
@@ -6924,21 +6945,21 @@ namespace ArbPrecNet
         internal static extern int Lib_Arb_Arb_Pow_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static SingleC pow_si(dynamic x, Int32 n)
         {
             return pow_si(scplx.t(x), n);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static SingleC compound_si(SingleC x, Int32 n)
         {
             return pow1p(scplx.t(x), scplx.t(n));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static SingleC compound_si(dynamic x, Int32 n)
         {
             return pow1p(scplx.t(x), scplx.t(n));
@@ -6949,7 +6970,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static SingleC pow(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -6960,7 +6981,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Pow(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static SingleC pow(dynamic x, dynamic y)
         {
             return pow(scplx.t(x), scplx.t(y));
@@ -6968,7 +6989,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static SingleC powm1(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -6979,7 +7000,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Powm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static SingleC powm1(dynamic x, dynamic y)
         {
             return powm1(scplx.t(x), scplx.t(y));
@@ -6987,7 +7008,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static SingleC pow1p(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -6998,7 +7019,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Pow1p(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static SingleC pow1p(dynamic x, dynamic y)
         {
             return pow1p(scplx.t(x), scplx.t(y));
@@ -7006,7 +7027,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static SingleC pow1pm1(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -7017,7 +7038,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Pow1pm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static SingleC pow1pm1(dynamic x, dynamic y)
         {
             return pow1pm1(scplx.t(x), scplx.t(y));
@@ -7032,7 +7053,7 @@ namespace ArbPrecNet
         #region Trigonometric and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static SingleC sin(SingleC x)
         {
             var res = new SingleC();
@@ -7043,7 +7064,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Sin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static SingleC sin(dynamic x)
         {
             return sin(scplx.t(x));
@@ -7051,7 +7072,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static SingleC cos(SingleC x)
         {
             var res = new SingleC();
@@ -7062,7 +7083,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Cos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static SingleC cos(dynamic x)
         {
             return cos(scplx.t(x));
@@ -7071,7 +7092,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static SingleC tan(SingleC x)
         {
             var res = new SingleC();
@@ -7082,7 +7103,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Tan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static SingleC tan(dynamic x)
         {
             return tan(scplx.t(x));
@@ -7090,7 +7111,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static SingleC cot(SingleC x)
         {
             var res = new SingleC();
@@ -7101,7 +7122,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Cot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static SingleC cot(dynamic x)
         {
             return cot(scplx.t(x));
@@ -7109,7 +7130,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static SingleC sec(SingleC x)
         {
             var res = new SingleC();
@@ -7120,7 +7141,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Sec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static SingleC sec(dynamic x)
         {
             return sec(scplx.t(x));
@@ -7128,7 +7149,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static SingleC csc(SingleC x)
         {
             var res = new SingleC();
@@ -7139,7 +7160,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Csc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static SingleC csc(dynamic x)
         {
             return csc(scplx.t(x));
@@ -7147,7 +7168,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static SingleC sinc(SingleC x)
         {
             var res = new SingleC();
@@ -7158,7 +7179,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Sinc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static SingleC sinc(dynamic x)
         {
             return sinc(scplx.t(x));
@@ -7167,7 +7188,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static SingleC sinpi(SingleC x)
         {
             var res = new SingleC();
@@ -7178,7 +7199,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_SinPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static SingleC sinpi(dynamic x)
         {
             return sinpi(scplx.t(x));
@@ -7187,7 +7208,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static SingleC cospi(SingleC x)
         {
             var res = new SingleC();
@@ -7198,7 +7219,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CosPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static SingleC cospi(dynamic x)
         {
             return cospi(scplx.t(x));
@@ -7208,7 +7229,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static SingleC tanpi(SingleC x)
         {
             var res = new SingleC();
@@ -7219,7 +7240,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_TanPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static SingleC tanpi(dynamic x)
         {
             return tanpi(scplx.t(x));
@@ -7228,7 +7249,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static SingleC cotpi(SingleC x)
         {
             var res = new SingleC();
@@ -7239,7 +7260,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CotPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static SingleC cotpi(dynamic x)
         {
             return cotpi(scplx.t(x));
@@ -7248,7 +7269,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static SingleC cscpi(SingleC x)
         {
             var res = new SingleC();
@@ -7259,7 +7280,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CscPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static SingleC cscpi(dynamic x)
         {
             return cscpi(scplx.t(x));
@@ -7268,7 +7289,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static SingleC secpi(SingleC x)
         {
             var res = new SingleC();
@@ -7279,7 +7300,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_SecPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static SingleC secpi(dynamic x)
         {
             return secpi(scplx.t(x));
@@ -7288,7 +7309,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static SingleC sincpi(SingleC x)
         {
             var res = new SingleC();
@@ -7299,7 +7320,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_SincPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static SingleC sincpi(dynamic x)
         {
             return sincpi(scplx.t(x));
@@ -7314,7 +7335,7 @@ namespace ArbPrecNet
         #region Hyperbolic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static SingleC cosh(SingleC x)
         {
             var res = new SingleC();
@@ -7325,7 +7346,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Cosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static SingleC cosh(dynamic x)
         {
             return cosh(scplx.t(x));
@@ -7334,7 +7355,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static SingleC sinh(SingleC x)
         {
             var res = new SingleC();
@@ -7345,7 +7366,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Sinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static SingleC sinh(dynamic x)
         {
             return sinh(scplx.t(x));
@@ -7356,7 +7377,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static SingleC tanh(SingleC x)
         {
             var res = new SingleC();
@@ -7367,7 +7388,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Tanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static SingleC tanh(dynamic x)
         {
             return tanh(scplx.t(x));
@@ -7377,7 +7398,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static SingleC csch(SingleC x)
         {
             var res = new SingleC();
@@ -7388,7 +7409,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Csch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static SingleC csch(dynamic x)
         {
             return csch(scplx.t(x));
@@ -7397,7 +7418,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static SingleC sech(SingleC x)
         {
             var res = new SingleC();
@@ -7408,7 +7429,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Sech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static SingleC sech(dynamic x)
         {
             return sech(scplx.t(x));
@@ -7417,7 +7438,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static SingleC coth(SingleC x)
         {
             var res = new SingleC();
@@ -7428,7 +7449,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Coth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static SingleC coth(dynamic x)
         {
             return coth(scplx.t(x));
@@ -7445,7 +7466,7 @@ namespace ArbPrecNet
         #region Inverse trigonometric functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static SingleC asin(SingleC x)
         {
             var res = new SingleC();
@@ -7456,7 +7477,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Asin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static SingleC asin(dynamic x)
         {
             return asin(scplx.t(x));
@@ -7465,7 +7486,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static SingleC acos(SingleC x)
         {
             var res = new SingleC();
@@ -7476,7 +7497,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Acos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static SingleC acos(dynamic x)
         {
             return acos(scplx.t(x));
@@ -7484,7 +7505,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static SingleC atan(SingleC x)
         {
             var res = new SingleC();
@@ -7495,7 +7516,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Atan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static SingleC atan(dynamic x)
         {
             return atan(scplx.t(x));
@@ -7503,7 +7524,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static SingleC acsc(SingleC x)
         {
             var res = new SingleC();
@@ -7514,14 +7535,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Acsc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static SingleC acsc(dynamic x)
         {
             return acsc(scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static SingleC asec(SingleC x)
         {
             var res = new SingleC();
@@ -7532,14 +7553,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Asec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static SingleC asec(dynamic x)
         {
             return asec(scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static SingleC acot(SingleC x)
         {
             var res = new SingleC();
@@ -7550,7 +7571,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Acot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static SingleC acot(dynamic x)
         {
             return acot(scplx.t(x));
@@ -7565,7 +7586,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static SingleC asinh(SingleC x)
         {
             var res = new SingleC();
@@ -7576,7 +7597,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Asinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static SingleC asinh(dynamic x)
         {
             return asinh(scplx.t(x));
@@ -7584,7 +7605,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static SingleC acosh(SingleC x)
         {
             var res = new SingleC();
@@ -7595,7 +7616,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Acosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static SingleC acosh(dynamic x)
         {
             return acosh(scplx.t(x));
@@ -7603,7 +7624,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static SingleC atanh(SingleC x)
         {
             var res = new SingleC();
@@ -7614,7 +7635,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Atanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static SingleC atanh(dynamic x)
         {
             return atanh(scplx.t(x));
@@ -7622,7 +7643,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static SingleC acsch(SingleC x)
         {
             var res = new SingleC();
@@ -7633,7 +7654,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Acsch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static SingleC acsch(dynamic x)
         {
             return acsch(scplx.t(x));
@@ -7641,7 +7662,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static SingleC asech(SingleC x)
         {
             var res = new SingleC();
@@ -7652,7 +7673,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Asech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static SingleC asech(dynamic x)
         {
             return asech(scplx.t(x));
@@ -7660,7 +7681,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static SingleC acoth(SingleC x)
         {
             var res = new SingleC();
@@ -7671,7 +7692,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Acoth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static SingleC acoth(dynamic x)
         {
             return acoth(scplx.t(x));
@@ -7689,7 +7710,7 @@ namespace ArbPrecNet
         #region Gamma and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static SingleC gamma(SingleC x)
         {
             var res = new SingleC();
@@ -7700,7 +7721,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Gamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static SingleC gamma(dynamic x)
         {
             return gamma(scplx.t(x));
@@ -7708,7 +7729,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static SingleC rgamma(SingleC x)
         {
             var res = new SingleC();
@@ -7719,7 +7740,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Rgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static SingleC rgamma(dynamic x)
         {
             return rgamma(scplx.t(x));
@@ -7727,7 +7748,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static SingleC lgamma(SingleC x)
         {
             var res = new SingleC();
@@ -7738,7 +7759,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Lgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static SingleC lgamma(dynamic x)
         {
             return lgamma(scplx.t(x));
@@ -7746,7 +7767,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static SingleC rising_factorial(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -7757,7 +7778,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_RisingFactorial(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static SingleC rising_factorial(dynamic x, dynamic y)
         {
             return rising_factorial(scplx.t(x), scplx.t(y));
@@ -7765,7 +7786,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static SingleC beta(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -7776,7 +7797,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Beta(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static SingleC beta(dynamic x, dynamic y)
         {
             return beta(scplx.t(x), scplx.t(y));
@@ -7787,13 +7808,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static SingleC gamma1pm1(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.gamma1pm1, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static SingleC gamma1pm1(dynamic x)
         {
             return gamma1pm1(scplx.t(x));
@@ -7801,13 +7822,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static SingleC factorial(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.factorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static SingleC factorial(dynamic x)
         {
             return factorial(scplx.t(x));
@@ -7815,13 +7836,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static SingleC doublefactorial(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.doublefactorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static SingleC doublefactorial(dynamic x)
         {
             return doublefactorial(scplx.t(x));
@@ -7829,13 +7850,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static SingleC falling_factorial(SingleC a, SingleC n)
         {
             return aflintc.SCplxViaArbCS2(aflintc.falling_factorial, a, n);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static SingleC falling_factorial(dynamic a, dynamic n)
         {
             return falling_factorial(scplx.t(a), scplx.t(n));
@@ -7843,13 +7864,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static SingleC gamma_ratio(SingleC a, SingleC b)
         {
             return aflintc.SCplxViaArbCS2(aflintc.gamma_ratio, a, b);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static SingleC gamma_ratio(dynamic a, dynamic b)
         {
             return gamma_ratio(scplx.t(a), scplx.t(b));
@@ -7857,13 +7878,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static SingleC gamma_delta_ratio(SingleC a, SingleC delta)
         {
             return aflintc.SCplxViaArbCS2(aflintc.gamma_delta_ratio, a, delta);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static SingleC gamma_delta_ratio(dynamic a, dynamic delta)
         {
             return gamma_delta_ratio(scplx.t(a), scplx.t(delta));
@@ -7871,13 +7892,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static SingleC binomial(SingleC n, SingleC k)
         {
             return aflintc.SCplxViaArbCS2(aflintc.binomial, n, k);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static SingleC binomial(dynamic n, dynamic k)
         {
             return binomial(scplx.t(n), scplx.t(k));
@@ -7899,7 +7920,7 @@ namespace ArbPrecNet
         #region Miscellaneous
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static SingleC lambert_wk(SingleC x, int branch)
         {
             var res = new SingleC();
@@ -7910,7 +7931,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LambertW_ui(IntPtr res, IntPtr x, int branch);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static SingleC lambert_wk(dynamic x, int branch)
         {
             return lambert_wk(scplx.t(x), branch);
@@ -7919,25 +7940,25 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static SingleC lambert_w0(SingleC x)
         {
             return lambert_wk(scplx.t(x), 0);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static SingleC lambert_w0(dynamic x)
         {
             return lambert_w0(scplx.t(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static SingleC lambert_wm1(SingleC x)
         {
             return lambert_wk(scplx.t(x), -1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static SingleC lambert_wm1(dynamic x)
         {
             return lambert_wm1(scplx.t(x));
@@ -7966,7 +7987,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static SingleC m_elliptic_k(SingleC m)
         {
             var res = new SingleC();
@@ -7977,7 +7998,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_MEllipticK(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static SingleC m_elliptic_k(dynamic x)
         {
             return m_elliptic_k(scplx.t(x));
@@ -7986,7 +8007,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static SingleC m_elliptic_e(SingleC m)
         {
             var res = new SingleC();
@@ -7997,7 +8018,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_MEllipticE(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static SingleC m_elliptic_e(dynamic x)
         {
             return m_elliptic_e(scplx.t(x));
@@ -8006,7 +8027,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static SingleC m_elliptic_pi(SingleC n, SingleC m)
         {
             var res = new SingleC();
@@ -8017,7 +8038,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_MEllipticPi(IntPtr res, IntPtr n, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static SingleC m_elliptic_pi(dynamic x, dynamic y)
         {
             return m_elliptic_pi(scplx.t(x), scplx.t(y));
@@ -8026,7 +8047,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static SingleC m_elliptic_f(SingleC phi, SingleC m)
         {
             var res = new SingleC();
@@ -8037,7 +8058,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_MEllipticF(IntPtr res, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static SingleC m_elliptic_f(dynamic phi, dynamic m)
         {
             return m_elliptic_f(scplx.t(phi), scplx.t(m));
@@ -8045,7 +8066,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static SingleC m_elliptic_e_inc(SingleC phi, SingleC m)
         {
             var res = new SingleC();
@@ -8056,7 +8077,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_MEllipticEInc(IntPtr res, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static SingleC m_elliptic_e_inc(dynamic phi, dynamic m)
         {
             return m_elliptic_e_inc(scplx.t(phi), scplx.t(m));
@@ -8064,7 +8085,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static SingleC m_elliptic_pi_inc(SingleC n, SingleC phi, SingleC m)
         {
             var res = new SingleC();
@@ -8075,7 +8096,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_MEllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static SingleC m_elliptic_pi_inc(dynamic n, dynamic phi, dynamic m)
         {
             return m_elliptic_pi_inc(scplx.t(n), scplx.t(phi), scplx.t(m));
@@ -8094,7 +8115,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static SingleC elliptic_k(SingleC k)
         {
             var res = new SingleC();
@@ -8105,7 +8126,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticK(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static SingleC elliptic_k(dynamic k)
         {
             return elliptic_k(scplx.t(k));
@@ -8114,7 +8135,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static SingleC elliptic_e(SingleC k)
         {
             var res = new SingleC();
@@ -8125,7 +8146,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticE(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static SingleC elliptic_e(dynamic k)
         {
             return elliptic_e(scplx.t(k));
@@ -8134,7 +8155,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static SingleC elliptic_pi(SingleC n, SingleC k)
         {
             var res = new SingleC();
@@ -8145,7 +8166,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticPi(IntPtr res, IntPtr n, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static SingleC elliptic_pi(dynamic n, dynamic k)
         {
             return elliptic_pi(scplx.t(n), scplx.t(k));
@@ -8154,7 +8175,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static SingleC elliptic_f(SingleC phi, SingleC k)
         {
             var res = new SingleC();
@@ -8165,7 +8186,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticF(IntPtr res, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static SingleC elliptic_f(dynamic phi, dynamic k)
         {
             return elliptic_f(scplx.t(phi), scplx.t(k));
@@ -8173,7 +8194,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static SingleC elliptic_e_inc(SingleC phi, SingleC k)
         {
             var res = new SingleC();
@@ -8184,7 +8205,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticEInc(IntPtr res, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static SingleC elliptic_e_inc(dynamic phi, dynamic k)
         {
             return elliptic_e_inc(scplx.t(phi), scplx.t(k));
@@ -8192,7 +8213,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static SingleC elliptic_pi_inc(SingleC n, SingleC phi, SingleC k)
         {
             var res = new SingleC();
@@ -8203,7 +8224,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static SingleC elliptic_pi_inc(dynamic n, dynamic phi, dynamic k)
         {
             return elliptic_pi_inc(scplx.t(n), scplx.t(phi), scplx.t(k));
@@ -8212,7 +8233,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static SingleC agm(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -8223,7 +8244,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Agm(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static SingleC agm(dynamic x, dynamic y)
         {
             return agm(scplx.t(x), scplx.t(y));
@@ -8237,7 +8258,7 @@ namespace ArbPrecNet
         #region Carlson symmetric elliptic integrals
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static SingleC elliptic_rc(SingleC x, SingleC y)
         {
             var res = new SingleC();
@@ -8248,14 +8269,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Elliptic_RC(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static SingleC elliptic_rc(dynamic x, dynamic y)
         {
             return elliptic_rc(scplx.t(x), scplx.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static SingleC elliptic_rf(SingleC x, SingleC y, SingleC z)
         {
             var res = new SingleC();
@@ -8266,7 +8287,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Elliptic_RF(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static SingleC elliptic_rf(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rf(scplx.t(x), scplx.t(y), scplx.t(z));
@@ -8276,7 +8297,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static SingleC elliptic_rg(SingleC x, SingleC y, SingleC z)
         {
             var res = new SingleC();
@@ -8287,7 +8308,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Elliptic_RG(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static SingleC elliptic_rg(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rg(scplx.t(x), scplx.t(y), scplx.t(z));
@@ -8296,7 +8317,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static SingleC elliptic_rd(SingleC x, SingleC y, SingleC z)
         {
             var res = new SingleC();
@@ -8307,7 +8328,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Elliptic_RD(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static SingleC elliptic_rd(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rd(scplx.t(x), scplx.t(y), scplx.t(z));
@@ -8315,7 +8336,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static SingleC elliptic_rj(SingleC x, SingleC y, SingleC z, SingleC w)
         {
             var res = new SingleC();
@@ -8326,7 +8347,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Elliptic_RJ(IntPtr res, IntPtr x, IntPtr y, IntPtr z, IntPtr w);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static SingleC elliptic_rj(dynamic x, dynamic y, dynamic z, dynamic w)
         {
             return elliptic_rj(scplx.t(x), scplx.t(y), scplx.t(z), scplx.t(w));
@@ -8344,7 +8365,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static SingleC jacobi_theta1(SingleC x, SingleC q)
         {
             var res = new SingleC();
@@ -8355,7 +8376,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta1Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static SingleC jacobi_theta1(dynamic x, dynamic q)
         {
             return jacobi_theta1(scplx.t(x), scplx.t(q));
@@ -8364,7 +8385,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static SingleC jacobi_theta2(SingleC x, SingleC q)
         {
             var res = new SingleC();
@@ -8375,7 +8396,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta2Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static SingleC jacobi_theta2(dynamic x, dynamic q)
         {
             return jacobi_theta2(scplx.t(x), scplx.t(q));
@@ -8384,7 +8405,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static SingleC jacobi_theta3(SingleC x, SingleC q)
         {
             var res = new SingleC();
@@ -8395,7 +8416,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta3Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static SingleC jacobi_theta3(dynamic x, dynamic q)
         {
             return jacobi_theta3(scplx.t(x), scplx.t(q));
@@ -8404,7 +8425,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static SingleC jacobi_theta4(SingleC x, SingleC q)
         {
             var res = new SingleC();
@@ -8415,7 +8436,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta4Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static SingleC jacobi_theta4(dynamic x, dynamic q)
         {
             return jacobi_theta4(scplx.t(x), scplx.t(q));
@@ -8425,7 +8446,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta1Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta1Tau/*' />
         public static SingleC JacobiTheta1Tau(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8436,7 +8457,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta1QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta1Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta1Tau/*' />
         public static SingleC JacobiTheta1Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta1Tau(scplx.t(z), scplx.t(tau));
@@ -8445,7 +8466,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta2Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta2Tau/*' />
         public static SingleC JacobiTheta2Tau(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8456,7 +8477,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta2QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta2Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta2Tau/*' />
         public static SingleC JacobiTheta2Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta2Tau(scplx.t(z), scplx.t(tau));
@@ -8465,7 +8486,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta3Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta3Tau/*' />
         public static SingleC JacobiTheta3Tau(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8476,7 +8497,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta3QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta3Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta3Tau/*' />
         public static SingleC JacobiTheta3Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta3Tau(scplx.t(z), scplx.t(tau));
@@ -8485,7 +8506,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta4Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta4Tau/*' />
         public static SingleC JacobiTheta4Tau(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8496,7 +8517,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_Theta4QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta4Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta4Tau/*' />
         public static SingleC JacobiTheta4Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta4Tau(scplx.t(z), scplx.t(tau));
@@ -8514,7 +8535,7 @@ namespace ArbPrecNet
         #region Jacobi elliptic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/QfromK/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/QfromK/*' />
         public static SingleC QfromK(SingleC k)
         {
             var res = new SingleC();
@@ -8525,7 +8546,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_QfromK(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/QfromK/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/QfromK/*' />
         public static SingleC QfromK(dynamic k)
         {
             return QfromK(scplx.t(k));
@@ -8534,7 +8555,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/TfromUQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/TfromUQ/*' />
         public static SingleC TfromUQ(SingleC u, SingleC q)
         {
             var res = new SingleC();
@@ -8545,7 +8566,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_TfromUQ(IntPtr res, IntPtr u, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/TfromUQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/TfromUQ/*' />
         public static SingleC TfromUQ(dynamic n, dynamic k)
         {
             return TfromUQ(scplx.t(n), scplx.t(k));
@@ -8553,7 +8574,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/SnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/SnTQ/*' />
         public static SingleC SnTQ(SingleC t, SingleC q)
         {
             var res = new SingleC();
@@ -8564,7 +8585,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_SnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/SnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/SnTQ/*' />
         public static SingleC SnTQ(dynamic t, dynamic q)
         {
             return SnTQ(scplx.t(t), scplx.t(q));
@@ -8572,7 +8593,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CnTQ/*' />
         public static SingleC CnTQ(SingleC t, SingleC q)
         {
             var res = new SingleC();
@@ -8583,7 +8604,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_CnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CnTQ/*' />
         public static SingleC CnTQ(dynamic t, dynamic q)
         {
             return CnTQ(scplx.t(t), scplx.t(q));
@@ -8591,7 +8612,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/DnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/DnTQ/*' />
         public static SingleC DnTQ(SingleC t, SingleC q)
         {
             var res = new SingleC();
@@ -8602,7 +8623,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/DnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/DnTQ/*' />
         public static SingleC DnTQ(dynamic t, dynamic q)
         {
             return DnTQ(scplx.t(t), scplx.t(q));
@@ -8610,7 +8631,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static SingleC jacobi_sn(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8621,7 +8642,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiSN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static SingleC jacobi_sn(dynamic x, dynamic k)
         {
             return jacobi_sn(scplx.t(x), scplx.t(k));
@@ -8629,7 +8650,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static SingleC jacobi_cn(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8640,7 +8661,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiCN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static SingleC jacobi_cn(dynamic x, dynamic k)
         {
             return jacobi_cn(scplx.t(x), scplx.t(k));
@@ -8648,7 +8669,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static SingleC jacobi_dn(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8659,7 +8680,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiDN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static SingleC jacobi_dn(dynamic x, dynamic k)
         {
             return jacobi_dn(scplx.t(x), scplx.t(k));
@@ -8667,7 +8688,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static SingleC jacobi_ns(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8678,7 +8699,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiNS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static SingleC jacobi_ns(dynamic x, dynamic k)
         {
             return jacobi_ns(scplx.t(x), scplx.t(k));
@@ -8686,7 +8707,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static SingleC jacobi_nc(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8697,7 +8718,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiNC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static SingleC jacobi_nc(dynamic x, dynamic k)
         {
             return jacobi_nc(scplx.t(x), scplx.t(k));
@@ -8705,7 +8726,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static SingleC jacobi_nd(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8716,7 +8737,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiND(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static SingleC jacobi_nd(dynamic x, dynamic k)
         {
             return jacobi_nd(scplx.t(x), scplx.t(k));
@@ -8724,7 +8745,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static SingleC jacobi_sc(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8735,7 +8756,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiSC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static SingleC jacobi_sc(dynamic x, dynamic k)
         {
             return jacobi_sc(scplx.t(x), scplx.t(k));
@@ -8743,7 +8764,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static SingleC jacobi_sd(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8754,7 +8775,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiSD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static SingleC jacobi_sd(dynamic x, dynamic k)
         {
             return jacobi_sd(scplx.t(x), scplx.t(k));
@@ -8762,7 +8783,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static SingleC jacobi_dc(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8773,7 +8794,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiDC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static SingleC jacobi_dc(dynamic x, dynamic k)
         {
             return jacobi_dc(scplx.t(x), scplx.t(k));
@@ -8781,7 +8802,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static SingleC jacobi_ds(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8792,7 +8813,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiDS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static SingleC jacobi_ds(dynamic x, dynamic k)
         {
             return jacobi_ds(scplx.t(x), scplx.t(k));
@@ -8800,7 +8821,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static SingleC jacobi_cs(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8811,7 +8832,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiCS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static SingleC jacobi_cs(dynamic x, dynamic k)
         {
             return jacobi_cs(scplx.t(x), scplx.t(k));
@@ -8819,7 +8840,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static SingleC jacobi_cd(SingleC x, SingleC k)
         {
             var res = new SingleC();
@@ -8830,7 +8851,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_JacobiCD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static SingleC jacobi_cd(dynamic x, dynamic k)
         {
             return jacobi_cd(scplx.t(x), scplx.t(k));
@@ -8846,7 +8867,7 @@ namespace ArbPrecNet
         #region Conversions of parameters of Weierstrass P
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<SingleC, SingleC> elliptic_invariants_from_roots(SingleC e1, SingleC e2)
         {
             SingleC e3 = -e1 - e2;
@@ -8855,7 +8876,7 @@ namespace ArbPrecNet
             return new Tuple<SingleC, SingleC>(g2, g3);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<SingleC, SingleC> elliptic_invariants_from_roots(dynamic e1, dynamic e2)
         {
             return elliptic_invariants_from_roots(scplx.t(e1), scplx.t(e2));
@@ -8863,13 +8884,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<SingleC, SingleC> elliptic_invariants_from_tau(SingleC tau)
         {
             return new Tuple<SingleC, SingleC>(EllipticInvariantG2(tau), EllipticInvariantG3(tau));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<SingleC, SingleC> elliptic_invariants_from_tau(dynamic tau)
         {
             return elliptic_invariants_from_tau(scplx.t(tau));
@@ -8877,13 +8898,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<SingleC, SingleC, SingleC> elliptic_roots_from_tau(SingleC tau)
         {
             return new Tuple<SingleC, SingleC, SingleC>(EllipticRootE1(tau), EllipticRootE2(tau), EllipticRootE3(tau));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<SingleC, SingleC, SingleC> elliptic_roots_from_tau(dynamic tau)
         {
             return elliptic_roots_from_tau(scplx.t(tau));
@@ -8902,7 +8923,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_p_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_p_t/*' />
         public static SingleC weierstrass_p_t(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8913,7 +8934,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_WeierstrassP(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_p_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_p_t/*' />
         public static SingleC weierstrass_p_t(dynamic z, dynamic tau)
         {
             return weierstrass_p_t(scplx.t(z), scplx.t(tau));
@@ -8922,7 +8943,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/WeierstrassPInv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
         public static SingleC WeierstrassPInv(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8933,7 +8954,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/WeierstrassPInv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
         public static SingleC WeierstrassPInv(dynamic z, dynamic tau)
         {
             return WeierstrassPInv(scplx.t(z), scplx.t(tau));
@@ -8941,7 +8962,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_zeta_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_zeta_t/*' />
         public static SingleC weierstrass_zeta_t(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8952,7 +8973,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_WeierstrassPZeta(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_zeta_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_zeta_t/*' />
         public static SingleC weierstrass_zeta_t(dynamic z, dynamic tau)
         {
             return weierstrass_zeta_t(scplx.t(z), scplx.t(tau));
@@ -8961,7 +8982,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_sigma_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_sigma_t/*' />
         public static SingleC weierstrass_sigma_t(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8972,7 +8993,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_WeierstrassPSigma(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_sigma_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_sigma_t/*' />
         public static SingleC weierstrass_sigma_t(dynamic z, dynamic tau)
         {
             return weierstrass_sigma_t(scplx.t(z), scplx.t(tau));
@@ -8980,7 +9001,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_pprime_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pprime_t/*' />
         public static SingleC weierstrass_pprime_t(SingleC z, SingleC tau)
         {
             var res = new SingleC();
@@ -8991,7 +9012,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_WeierstrassPPrime(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_pprime_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pprime_t/*' />
         public static SingleC weierstrass_pprime_t(dynamic z, dynamic tau)
         {
             return weierstrass_pprime_t(scplx.t(z), scplx.t(tau));
@@ -9001,7 +9022,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2/*' />
         public static SingleC EllipticInvariantG2(SingleC tau)
         {
             var res = new SingleC();
@@ -9012,7 +9033,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticInvariantG2(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2/*' />
         public static SingleC EllipticInvariantG2(dynamic k)
         {
             return EllipticInvariantG2(scplx.t(k));
@@ -9021,7 +9042,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG3/*' />
         public static SingleC EllipticInvariantG3(SingleC tau)
         {
             var res = new SingleC();
@@ -9032,7 +9053,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticInvariantG3(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG3/*' />
         public static SingleC EllipticInvariantG3(dynamic k)
         {
             return EllipticInvariantG3(scplx.t(k));
@@ -9040,7 +9061,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE1/*' />
         public static SingleC EllipticRootE1(SingleC tau)
         {
             var res = new SingleC();
@@ -9051,7 +9072,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticRootE1(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE1/*' />
         public static SingleC EllipticRootE1(dynamic k)
         {
             return EllipticRootE1(scplx.t(k));
@@ -9059,7 +9080,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE2/*' />
         public static SingleC EllipticRootE2(SingleC tau)
         {
             var res = new SingleC();
@@ -9070,7 +9091,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticRootE2(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE2/*' />
         public static SingleC EllipticRootE2(dynamic k)
         {
             return EllipticRootE2(scplx.t(k));
@@ -9078,7 +9099,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE3/*' />
         public static SingleC EllipticRootE3(SingleC tau)
         {
             var res = new SingleC();
@@ -9089,7 +9110,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_EllipticRootE3(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE3/*' />
         public static SingleC EllipticRootE3(dynamic k)
         {
             return EllipticRootE3(scplx.t(k));
@@ -9097,7 +9118,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dedekind_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dedekind_eta/*' />
         public static SingleC dedekind_eta(SingleC tau)
         {
             var res = new SingleC();
@@ -9108,7 +9129,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DedekindEta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dedekind_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dedekind_eta/*' />
         public static SingleC dedekind_eta(dynamic k)
         {
             return dedekind_eta(scplx.t(k));
@@ -9116,7 +9137,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/klein_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static SingleC klein_j(SingleC tau)
         {
             var res = new SingleC();
@@ -9127,7 +9148,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_KleinJ(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/klein_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static SingleC klein_j(dynamic k)
         {
             return klein_j(scplx.t(k));
@@ -9135,7 +9156,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_lambda/*' />
         public static SingleC modular_lambda(SingleC tau)
         {
             var res = new SingleC();
@@ -9146,7 +9167,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_ModularLambda(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_lambda/*' />
         public static SingleC modular_lambda(dynamic k)
         {
             return modular_lambda(scplx.t(k));
@@ -9154,7 +9175,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_delta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_delta/*' />
         public static SingleC modular_delta(SingleC tau)
         {
             var res = new SingleC();
@@ -9165,7 +9186,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_ModularDelta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_delta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_delta/*' />
         public static SingleC modular_delta(dynamic k)
         {
             return modular_delta(scplx.t(k));
@@ -9193,7 +9214,7 @@ namespace ArbPrecNet
         #region Lerch’s transcendent: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static SingleC lerch_phi(SingleC s, SingleC z, SingleC a)
         {
             var res = new SingleC();
@@ -9204,7 +9225,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LerchPhi(IntPtr res, IntPtr s, IntPtr z, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static SingleC lerch_phi(dynamic s, dynamic z, dynamic a)
         {
             return lerch_phi(scplx.t(s), scplx.t(z), scplx.t(a));
@@ -9212,7 +9233,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static SingleC lerch_zeta(SingleC lambda1, SingleC alpha, SingleC s)
         {
             var res = new SingleC();
@@ -9223,7 +9244,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LerchZeta(IntPtr res, IntPtr lambda1, IntPtr alpha, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static SingleC lerch_zeta(dynamic lambda1, dynamic alpha, dynamic s)
         {
             return lerch_zeta(scplx.t(lambda1), scplx.t(alpha), scplx.t(s));
@@ -9239,7 +9260,7 @@ namespace ArbPrecNet
         #region polygamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static SingleC polygamma(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9250,7 +9271,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Polygamma(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static SingleC polygamma(dynamic s, dynamic z)
         {
             return polygamma(scplx.t(s), scplx.t(z));
@@ -9258,7 +9279,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static SingleC trigamma(SingleC x)
         {
             var res = new SingleC();
@@ -9269,7 +9290,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Trigamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static SingleC trigamma(dynamic x)
         {
             return trigamma(scplx.t(x));
@@ -9277,7 +9298,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static SingleC digamma(SingleC x)
         {
             var res = new SingleC();
@@ -9288,7 +9309,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Digamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static SingleC digamma(dynamic x)
         {
             return digamma(scplx.t(x));
@@ -9303,7 +9324,7 @@ namespace ArbPrecNet
         #region Polylogarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static SingleC polylog(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9314,7 +9335,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Polylog(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static SingleC polylog(dynamic s, dynamic z)
         {
             return polylog(scplx.t(s), scplx.t(z));
@@ -9323,7 +9344,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static SingleC trilog(SingleC x)
         {
             var res = new SingleC();
@@ -9334,7 +9355,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Trilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static SingleC trilog(dynamic x)
         {
             return trilog(scplx.t(x));
@@ -9342,7 +9363,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static SingleC dilog(SingleC x)
         {
             var res = new SingleC();
@@ -9353,7 +9374,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Dilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static SingleC dilog(dynamic x)
         {
             return dilog(scplx.t(x));
@@ -9361,7 +9382,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static SingleC clausen_sin(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9372,7 +9393,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ClausenSin(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static SingleC clausen_sin(dynamic s, dynamic z)
         {
             return clausen_sin(scplx.t(s), scplx.t(z));
@@ -9380,7 +9401,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static SingleC clausen_cos(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9391,7 +9412,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ClausenCos(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static SingleC clausen_cos(dynamic s, dynamic z)
         {
             return clausen_cos(scplx.t(s), scplx.t(z));
@@ -9400,7 +9421,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static SingleC clausen2(SingleC x)
         {
             var res = new SingleC();
@@ -9411,7 +9432,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Clausen2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static SingleC clausen2(dynamic x)
         {
             return clausen2(scplx.t(x));
@@ -9419,7 +9440,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static SingleC bose_einstein(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9430,7 +9451,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_BoseEinstein(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static SingleC bose_einstein(dynamic s, dynamic z)
         {
             return bose_einstein(scplx.t(s), scplx.t(z));
@@ -9438,7 +9459,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static SingleC fermi_dirac(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9449,7 +9470,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_FermiDirac(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static SingleC fermi_dirac(dynamic s, dynamic z)
         {
             return fermi_dirac(scplx.t(s), scplx.t(z));
@@ -9457,7 +9478,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static SingleC legendre_chi(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9468,7 +9489,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LegendreChi(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static SingleC legendre_chi(dynamic s, dynamic z)
         {
             return legendre_chi(scplx.t(s), scplx.t(z));
@@ -9476,7 +9497,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static SingleC inverse_tan_integral(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -9487,7 +9508,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_InverseTanIntegral(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static SingleC inverse_tan_integral(dynamic s, dynamic z)
         {
             return inverse_tan_integral(scplx.t(s), scplx.t(z));
@@ -9504,7 +9525,7 @@ namespace ArbPrecNet
         #region Hurwitz zeta function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static SingleC hurwitz_zeta(SingleC s, SingleC a)
         {
             var res = new SingleC();
@@ -9515,7 +9536,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_HurwitzZeta(IntPtr res, IntPtr s, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static SingleC hurwitz_zeta(dynamic s, dynamic a)
         {
             return hurwitz_zeta(scplx.t(s), scplx.t(a));
@@ -9523,7 +9544,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/stieltjes/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/stieltjes/*' />
         //public static SingleC stieltjes(SingleC x, Int32 n)
         //{
         //    var res = new SingleC();
@@ -9536,7 +9557,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
         public static SingleC bernpoly(SingleC x, Int32 n)
         {
             var res = new SingleC();
@@ -9546,7 +9567,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SCplx_Acb_BernoulliPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_SCplx_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
         public static SingleC bernpoly(dynamic x, Int32 n)
         {
             return bernpoly(scplx.t(x), n);
@@ -9554,7 +9575,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static SingleC eulerpoly(SingleC x, Int32 n)
         {
             var res = new SingleC();
@@ -9564,7 +9585,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SCplx_Acb_EulerPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_SCplx_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static SingleC eulerpoly(dynamic x, Int32 n)
         {
             return eulerpoly(scplx.t(x), n);
@@ -9573,7 +9594,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static SingleC harmonic(SingleC x)
         {
             var res = new SingleC();
@@ -9584,7 +9605,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Harmonic(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static SingleC harmonic(dynamic x)
         {
             return harmonic(scplx.t(x));
@@ -9593,7 +9614,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static SingleC harmonic2(SingleC z, SingleC r)
         {
             var res = new SingleC();
@@ -9604,7 +9625,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Harmonic2(IntPtr res, IntPtr z, IntPtr r);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static SingleC harmonic2(dynamic z, dynamic r)
         {
             return harmonic2(scplx.t(z), scplx.t(r));
@@ -9615,7 +9636,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static SingleC barnes_g(SingleC x)
         {
             var res = new SingleC();
@@ -9626,7 +9647,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_BarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static SingleC barnes_g(dynamic x)
         {
             return barnes_g(scplx.t(x));
@@ -9634,7 +9655,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static SingleC logbarnes_g(SingleC x)
         {
             var res = new SingleC();
@@ -9645,7 +9666,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LogBarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static SingleC logbarnes_g(dynamic x)
         {
             return logbarnes_g(scplx.t(x));
@@ -9653,7 +9674,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static SingleC hyperfactorial(SingleC x)
         {
             var res = new SingleC();
@@ -9664,7 +9685,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hyperfactorial(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static SingleC hyperfactorial(dynamic x)
         {
             return hyperfactorial(scplx.t(x));
@@ -9672,7 +9693,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static SingleC superfactorial(SingleC x)
         {
             var res = new SingleC();
@@ -9683,7 +9704,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Superfactorial(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static SingleC superfactorial(dynamic x)
         {
             return superfactorial(scplx.t(x));
@@ -9699,7 +9720,7 @@ namespace ArbPrecNet
         #region Riemann zeta function, and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static SingleC zeta(SingleC x)
         {
             var res = new SingleC();
@@ -9710,14 +9731,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Zeta(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static SingleC zeta(dynamic x)
         {
             return zeta(scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static SingleC zetam1(SingleC x)
         {
             var res = new SingleC();
@@ -9728,7 +9749,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Zetam1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static SingleC zetam1(dynamic x)
         {
             return zetam1(scplx.t(x));
@@ -9736,7 +9757,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static SingleC riemann_xi(SingleC tau)
         {
             var res = new SingleC();
@@ -9747,7 +9768,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DirichletXi(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static SingleC riemann_xi(dynamic k)
         {
             return riemann_xi(scplx.t(k));
@@ -9755,7 +9776,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static SingleC dirichlet_eta(SingleC tau)
         {
             var res = new SingleC();
@@ -9766,7 +9787,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DirichletEta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static SingleC dirichlet_eta(dynamic k)
         {
             return dirichlet_eta(scplx.t(k));
@@ -9774,7 +9795,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static SingleC dirichlet_etam1(SingleC tau)
         {
             var res = new SingleC();
@@ -9785,7 +9806,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DirichletEtam1(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static SingleC dirichlet_etam1(dynamic k)
         {
             return dirichlet_etam1(scplx.t(k));
@@ -9793,7 +9814,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static SingleC dirichlet_beta(SingleC tau)
         {
             var res = new SingleC();
@@ -9804,7 +9825,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DirichletBeta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static SingleC dirichlet_beta(dynamic k)
         {
             return dirichlet_beta(scplx.t(k));
@@ -9812,7 +9833,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static SingleC dirichlet_lambda(SingleC tau)
         {
             var res = new SingleC();
@@ -9823,7 +9844,7 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_DirichletLambda(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static SingleC dirichlet_lambda(dynamic k)
         {
             return dirichlet_lambda(scplx.t(k));
@@ -9831,7 +9852,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static SingleC hardy_z(SingleC tau)
         {
             var res = new SingleC();
@@ -9842,14 +9863,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_HardyZ(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static SingleC hardy_z(dynamic k)
         {
             return hardy_z(scplx.t(k));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static SingleC hardy_theta(SingleC tau)
         {
             var res = new SingleC();
@@ -9860,14 +9881,14 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_HardyTheta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static SingleC hardy_theta(dynamic k)
         {
             return hardy_theta(scplx.t(k));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta_zero/*' />
         public static SingleC zeta_zero(Int32 n)
         {
             var res = new SingleC();
@@ -9901,7 +9922,7 @@ namespace ArbPrecNet
         #region 0F1: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static SingleC hyperg_0f1(SingleC a, SingleC x)
         {
             var res = new SingleC();
@@ -9912,7 +9933,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom0F1(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static SingleC hyperg_0f1(dynamic a, dynamic x)
         {
             return hyperg_0f1(scplx.t(a), scplx.t(x));
@@ -9921,7 +9942,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static SingleC hyperg_0f1r(SingleC a, SingleC x)
         {
             var res = new SingleC();
@@ -9932,7 +9953,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom0F1r(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static SingleC hyperg_0f1r(dynamic a, dynamic x)
         {
             return hyperg_0f1r(scplx.t(a), scplx.t(x));
@@ -9949,13 +9970,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static SingleC bessel_jv(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_jv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static SingleC bessel_jv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv(scplx.t(nu), scplx.t(x), scaled);
@@ -9963,13 +9984,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static SingleC bessel_yv(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_yv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static SingleC bessel_yv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv(scplx.t(nu), scplx.t(x), scaled);
@@ -9977,13 +9998,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static SingleC bessel_iv(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_iv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static SingleC bessel_iv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv(scplx.t(nu), scplx.t(x), scaled);
@@ -9991,13 +10012,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static SingleC bessel_kv(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_kv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static SingleC bessel_kv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv(scplx.t(nu), scplx.t(x), scaled);
@@ -10011,13 +10032,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static SingleC bessel_jv_prime(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_jv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static SingleC bessel_jv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv_prime(scplx.t(nu), scplx.t(x), scaled);
@@ -10025,13 +10046,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static SingleC bessel_yv_prime(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_yv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static SingleC bessel_yv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv_prime(scplx.t(nu), scplx.t(x), scaled);
@@ -10039,13 +10060,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static SingleC bessel_iv_prime(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_iv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static SingleC bessel_iv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv_prime(scplx.t(nu), scplx.t(x), scaled);
@@ -10053,13 +10074,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static SingleC bessel_kv_prime(SingleC nu, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.bessel_kv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static SingleC bessel_kv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv_prime(scplx.t(nu), scplx.t(x), scaled);
@@ -10083,13 +10104,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static SingleC sph_bessel_jn(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_jn, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static SingleC sph_bessel_jn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn(scplx.t(n), scplx.t(x), scaled);
@@ -10098,13 +10119,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static SingleC sph_bessel_yn(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_yn, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static SingleC sph_bessel_yn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn(scplx.t(n), scplx.t(x), scaled);
@@ -10113,13 +10134,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static SingleC sph_bessel_in(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_in, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static SingleC sph_bessel_in(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in(scplx.t(n), scplx.t(x), scaled);
@@ -10128,13 +10149,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static SingleC sph_bessel_kn(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_kn, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static SingleC sph_bessel_kn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn(scplx.t(n), scplx.t(x), scaled);
@@ -10144,13 +10165,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static SingleC besselpoly(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.besselpoly, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static SingleC besselpoly(dynamic n, dynamic x, bool scaled = false)
         {
             return besselpoly(scplx.t(n), scplx.t(x), scaled);
@@ -10160,13 +10181,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static SingleC besseltheta(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.besseltheta, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static SingleC besseltheta(dynamic n, dynamic x, bool scaled = false)
         {
             return besseltheta(scplx.t(n), scplx.t(x), scaled);
@@ -10184,13 +10205,13 @@ namespace ArbPrecNet
         #region 0F1: Spherical Bessel functions, first derivative
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn_prime/*' />
         public static SingleC sph_bessel_jn_prime(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_jn_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn_prime/*' />
         public static SingleC sph_bessel_jn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn_prime(scplx.t(n), scplx.t(x), scaled);
@@ -10198,13 +10219,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn_prime/*' />
         public static SingleC sph_bessel_yn_prime(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_yn_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn_prime/*' />
         public static SingleC sph_bessel_yn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn_prime(scplx.t(n), scplx.t(x), scaled);
@@ -10212,13 +10233,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in_prime/*' />
         public static SingleC sph_bessel_in_prime(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_in_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in_prime/*' />
         public static SingleC sph_bessel_in_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in_prime(scplx.t(n), scplx.t(x), scaled);
@@ -10226,13 +10247,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn_prime/*' />
         public static SingleC sph_bessel_kn_prime(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2Bool1(aflintc.sph_bessel_kn_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn_prime/*' />
         public static SingleC sph_bessel_kn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn_prime(scplx.t(n), scplx.t(x), scaled);
@@ -10321,13 +10342,13 @@ namespace ArbPrecNet
         #region 0F1: Airy functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static SingleC airy_ai(SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS1Bool1(aflintc.airy_ai, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static SingleC airy_ai(dynamic x, bool scaled = false)
         {
             return airy_ai(scplx.t(x), scaled);
@@ -10335,13 +10356,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static SingleC airy_ai_prime(SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS1Bool1(aflintc.airy_ai_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static SingleC airy_ai_prime(dynamic x, bool scaled = false)
         {
             return airy_ai_prime(scplx.t(x), scaled);
@@ -10349,13 +10370,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static SingleC airy_bi(SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS1Bool1(aflintc.airy_bi, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static SingleC airy_bi(dynamic x, bool scaled = false)
         {
             return airy_bi(scplx.t(x), scaled);
@@ -10363,13 +10384,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static SingleC airy_bi_prime(SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS1Bool1(aflintc.airy_bi_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static SingleC airy_bi_prime(dynamic x, bool scaled = false)
         {
             return airy_bi_prime(scplx.t(x), scaled);
@@ -10377,7 +10398,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_zero/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_zero/*' />
         //public static Single airy_ai_zero(Int32 n)
         //{
         //    ArbPrec.Init(); Single res = 0.0F;
@@ -10388,7 +10409,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SReal_Arb_AiryAiZero(ref Single res, Int32 n);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime_zero/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime_zero/*' />
         //public static Single airy_ai_prime_zero(UInt32 n)
         //{
         //    ArbPrec.Init(); Single res = 0.0F;
@@ -10399,7 +10420,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SReal_Arb_AiryAiPrimeZero(ref Single res, UInt32 n);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_zero/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_zero/*' />
         //public static Single airy_bi_zero(Int32 n)
         //{
         //    ArbPrec.Init(); Single res = 0.0F;
@@ -10410,7 +10431,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SReal_Arb_AiryBiZero(ref Single res, Int32 n);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime_zero/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime_zero/*' />
         //public static Single airy_bi_prime_zero(UInt32 n)
         //{
         //    ArbPrec.Init(); Single res = 0.0F;
@@ -10423,7 +10444,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         //public static SingleC airy_ai(SingleC x, bool scaled = false)
         //{
         //    var res = new SingleC();
@@ -10435,7 +10456,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_AiryAi(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         //public static SingleC airy_ai(dynamic x, bool scaled = false)
         //{
         //    return airy_ai(scplx.t(x), scaled);
@@ -10444,7 +10465,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         //public static SingleC airy_ai_prime(SingleC x, bool scaled = false)
         //{
         //    var res = new SingleC();
@@ -10456,7 +10477,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_AiryAiPrime(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         //public static SingleC airy_ai_prime(dynamic x, bool scaled = false)
         //{
         //    return airy_ai_prime(scplx.t(x), scaled);
@@ -10465,7 +10486,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         //public static SingleC airy_bi(SingleC x, bool scaled = false)
         //{
         //    var res = new SingleC();
@@ -10477,7 +10498,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_AiryBi(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         //public static SingleC airy_bi(dynamic x, bool scaled = false)
         //{
         //    return airy_bi(scplx.t(x), scaled);
@@ -10485,7 +10506,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         //public static SingleC airy_bi_prime(SingleC x, bool scaled = false)
         //{
         //    var res = new SingleC();
@@ -10497,7 +10518,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_AiryBiPrime(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         //public static SingleC airy_bi_prime(dynamic x, bool scaled = false)
         //{
         //    return airy_bi_prime(scplx.t(x), scaled);
@@ -10649,7 +10670,7 @@ namespace ArbPrecNet
         #region 1F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static SingleC hyperg_1f1(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -10660,7 +10681,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom1F1(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static SingleC hyperg_1f1(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1(scplx.t(a), scplx.t(b), scplx.t(x));
@@ -10669,7 +10690,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static SingleC hyperg_1f1r(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -10680,7 +10701,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom1F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static SingleC hyperg_1f1r(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1r(scplx.t(a), scplx.t(b), scplx.t(x));
@@ -10689,7 +10710,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static SingleC hyperg_u(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -10700,7 +10721,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_HypgeomU(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static SingleC hyperg_u(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_u(scplx.t(a), scplx.t(b), scplx.t(x));
@@ -10717,7 +10738,7 @@ namespace ArbPrecNet
         #region 1F1: Incomplete gamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static SingleC gamma_upper(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -10728,7 +10749,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_GammaUpper(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static SingleC gamma_upper(dynamic s, dynamic z)
         {
             return gamma_upper(scplx.t(s), scplx.t(z));
@@ -10738,7 +10759,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static SingleC gamma_q(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -10749,7 +10770,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_GammaQ(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static SingleC gamma_q(dynamic s, dynamic z)
         {
             return gamma_q(scplx.t(s), scplx.t(z));
@@ -10760,7 +10781,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static SingleC gamma_lower(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -10771,7 +10792,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_GammaLower(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static SingleC gamma_lower(dynamic s, dynamic z)
         {
             return gamma_lower(scplx.t(s), scplx.t(z));
@@ -10779,7 +10800,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static SingleC gamma_p(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -10790,7 +10811,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_GammaP(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static SingleC gamma_p(dynamic s, dynamic z)
         {
             return gamma_p(scplx.t(s), scplx.t(z));
@@ -10798,7 +10819,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static SingleC gamma_p_prime(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -10809,7 +10830,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_GammaPPrime(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static SingleC gamma_p_prime(dynamic s, dynamic z)
         {
             return gamma_p_prime(scplx.t(s), scplx.t(z));
@@ -10824,7 +10845,7 @@ namespace ArbPrecNet
         #region 1F1: Error function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static SingleC erf(SingleC x)
         {
             var res = new SingleC();
@@ -10835,7 +10856,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Erf(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static SingleC erf(dynamic x)
         {
             return erf(scplx.t(x));
@@ -10843,7 +10864,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static SingleC erfc(SingleC x)
         {
             var res = new SingleC();
@@ -10854,7 +10875,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Erfc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static SingleC erfc(dynamic x)
         {
             return erfc(scplx.t(x));
@@ -10864,7 +10885,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static SingleC erfi(SingleC x)
         {
             var res = new SingleC();
@@ -10875,7 +10896,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Erfi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static SingleC erfi(dynamic x)
         {
             return erfi(scplx.t(x));
@@ -10886,13 +10907,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static SingleC dawson(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.dawson, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static SingleC dawson(dynamic x)
         {
             return dawson(scplx.t(x));
@@ -10900,13 +10921,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/faddeeva/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />
         public static SingleC faddeeva(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.faddeeva, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/faddeeva/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />
         public static SingleC faddeeva(dynamic x)
         {
             return faddeeva(scplx.t(x));
@@ -10917,7 +10938,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static SingleC fresnel_s(SingleC x)
         {
             var res = new SingleC();
@@ -10928,7 +10949,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_FresnelS(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static SingleC fresnel_s(dynamic x)
         {
             return fresnel_s(scplx.t(x));
@@ -10936,7 +10957,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static SingleC fresnel_c(SingleC x)
         {
             var res = new SingleC();
@@ -10947,7 +10968,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_FresnelC(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static SingleC fresnel_c(dynamic x)
         {
             return fresnel_c(scplx.t(x));
@@ -10955,7 +10976,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static SingleC ndens(SingleC x)
         {
             var res = new SingleC();
@@ -10966,7 +10987,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Ndens(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static SingleC ndens(dynamic x)
         {
             return ndens(scplx.t(x));
@@ -10974,7 +10995,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static SingleC ndis(SingleC x)
         {
             var res = new SingleC();
@@ -10985,7 +11006,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Ndis(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static SingleC ndis(dynamic x)
         {
             return ndis(scplx.t(x));
@@ -11001,7 +11022,7 @@ namespace ArbPrecNet
         #region 1F1: Exponential integrals and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static SingleC exp_integral_en(SingleC s, SingleC z)
         {
             var res = new SingleC();
@@ -11012,21 +11033,21 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ExpIntegralE(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static SingleC exp_integral_en(dynamic s, dynamic z)
         {
             return exp_integral_en(scplx.t(s), scplx.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static SingleC exp_integral_e1(SingleC z)
         {
             return exp_integral_en(scplx.t(1), z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static SingleC exp_integral_e1(dynamic z)
         {
             return exp_integral_e1(scplx.t(z));
@@ -11036,7 +11057,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static SingleC exp_integral_ei(SingleC x)
         {
             var res = new SingleC();
@@ -11047,7 +11068,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ExpIntegralEi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static SingleC exp_integral_ei(dynamic x)
         {
             return exp_integral_ei(scplx.t(x));
@@ -11055,7 +11076,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static SingleC sin_integral(SingleC x)
         {
             var res = new SingleC();
@@ -11066,7 +11087,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_SinIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static SingleC sin_integral(dynamic x)
         {
             return sin_integral(scplx.t(x));
@@ -11074,7 +11095,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static SingleC cos_integral(SingleC x)
         {
             var res = new SingleC();
@@ -11085,7 +11106,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CosIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static SingleC cos_integral(dynamic x)
         {
             return cos_integral(scplx.t(x));
@@ -11093,7 +11114,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static SingleC sinh_integral(SingleC x)
         {
             var res = new SingleC();
@@ -11104,7 +11125,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_SinhIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static SingleC sinh_integral(dynamic x)
         {
             return sinh_integral(scplx.t(x));
@@ -11113,7 +11134,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static SingleC cosh_integral(SingleC x)
         {
             var res = new SingleC();
@@ -11124,7 +11145,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoshIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static SingleC cosh_integral(dynamic x)
         {
             return cosh_integral(scplx.t(x));
@@ -11132,7 +11153,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static SingleC log_integral(SingleC x)
         {
             var res = new SingleC();
@@ -11143,7 +11164,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LogIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static SingleC log_integral(dynamic x)
         {
             return log_integral(scplx.t(x));
@@ -11151,7 +11172,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static SingleC log_integral_offset(SingleC x)
         {
             var res = new SingleC();
@@ -11162,7 +11183,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LogIntegralOffset(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static SingleC log_integral_offset(dynamic x)
         {
             return log_integral_offset(scplx.t(x));
@@ -11178,7 +11199,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static SingleC hermite_h(SingleC n, SingleC x)
         {
             var res = new SingleC();
@@ -11189,7 +11210,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_HermiteH(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static SingleC hermite_h(dynamic n, dynamic x)
         {
             return hermite_h(scplx.t(n), scplx.t(x));
@@ -11197,14 +11218,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static SingleC hermite_he(SingleC n, SingleC x)
         {
             return exp2(-n / 2) * hermite_h(n, x / sqrt(2));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static SingleC hermite_he(dynamic n, dynamic x)
         {
             return hermite_he(scplx.t(n), scplx.t(x));
@@ -11212,7 +11233,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static SingleC laguerre_l(SingleC n, SingleC m, SingleC x)
         {
             var res = new SingleC();
@@ -11223,7 +11244,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_LaguerreL(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static SingleC laguerre_l(dynamic n, dynamic m, dynamic x)
         {
             return laguerre_l(scplx.t(n), scplx.t(m), scplx.t(x));
@@ -11231,14 +11252,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre/*' />
         public static SingleC laguerre(SingleC n, SingleC x)
         {
             return laguerre_l(n, scplx.t(0), x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre/*' />
         public static SingleC laguerre(dynamic n, dynamic x)
         {
             return laguerre(scplx.t(n), scplx.t(x));
@@ -11252,7 +11273,7 @@ namespace ArbPrecNet
         #region 1F1: Coulomb functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static SingleC coulomb_f(SingleC l, SingleC eta, SingleC x)
         {
             var res = new SingleC();
@@ -11263,7 +11284,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoulombF(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static SingleC coulomb_f(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_f(scplx.t(l), scplx.t(eta), scplx.t(x));
@@ -11272,7 +11293,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static SingleC coulomb_g(SingleC l, SingleC eta, SingleC x)
         {
             var res = new SingleC();
@@ -11283,7 +11304,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoulombG(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static SingleC coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(scplx.t(l), scplx.t(eta), scplx.t(x));
@@ -11293,7 +11314,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hpos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
         public static SingleC coulomb_hpos(SingleC l, SingleC eta, SingleC x)
         {
             var res = new SingleC();
@@ -11304,7 +11325,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hpos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
         public static SingleC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_hpos(scplx.t(l), scplx.t(eta), scplx.t(x));
@@ -11313,7 +11334,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hneg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
         public static SingleC coulomb_hneg(SingleC l, SingleC eta, SingleC x)
         {
             var res = new SingleC();
@@ -11324,7 +11345,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hneg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
         public static SingleC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_hneg(scplx.t(l), scplx.t(eta), scplx.t(x));
@@ -11442,7 +11463,7 @@ namespace ArbPrecNet
         #region 2F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static SingleC hyperg_2f1(SingleC a, SingleC b, SingleC c, SingleC x)
         {
             var res = new SingleC();
@@ -11453,7 +11474,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom2F1(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static SingleC hyperg_2f1(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1(scplx.t(a), scplx.t(b), scplx.t(c), scplx.t(x));
@@ -11461,7 +11482,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static SingleC hyperg_2f1r(SingleC a, SingleC b, SingleC c, SingleC x)
         {
             var res = new SingleC();
@@ -11472,7 +11493,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom2F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static SingleC hyperg_2f1r(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1r(scplx.t(a), scplx.t(b), scplx.t(c), scplx.t(x));
@@ -11488,7 +11509,7 @@ namespace ArbPrecNet
         #region 2F1-related orthogonal polynomials
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static SingleC chebyshev_t(SingleC n, SingleC x)
         {
             var res = new SingleC();
@@ -11499,7 +11520,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ChebyshevT(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static SingleC chebyshev_t(dynamic n, dynamic x)
         {
             return chebyshev_t(scplx.t(n), scplx.t(x));
@@ -11507,7 +11528,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static SingleC chebyshev_u(SingleC n, SingleC x)
         {
             var res = new SingleC();
@@ -11518,7 +11539,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_ChebyshevU(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static SingleC chebyshev_u(dynamic n, dynamic x)
         {
             return chebyshev_u(scplx.t(n), scplx.t(x));
@@ -11530,7 +11551,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_v/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_v/*' />
         public static SingleC chebyshev_v(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2(aflintc.chebyshev_v, n, x);
@@ -11544,7 +11565,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_w/*' />
         public static SingleC chebyshev_w(SingleC n, SingleC x, bool scaled = false)
         {
             return aflintc.SCplxViaArbCS2(aflintc.chebyshev_w, n, x);
@@ -11567,7 +11588,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static SingleC gegenbauer_c(SingleC n, SingleC m, SingleC x)
         {
             var res = new SingleC();
@@ -11578,7 +11599,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_GegenbauerC(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static SingleC gegenbauer_c(dynamic n, dynamic m, dynamic x)
         {
             return gegenbauer_c(scplx.t(n), scplx.t(m), scplx.t(x));
@@ -11586,7 +11607,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static SingleC jacobi_p(SingleC n, SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -11597,7 +11618,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_JacobiP(IntPtr res, IntPtr n, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static SingleC jacobi_p(dynamic n, dynamic a, dynamic b, dynamic x)
         {
             return jacobi_p(scplx.t(n), scplx.t(a), scplx.t(b), scplx.t(x));
@@ -11606,42 +11627,42 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static SingleC legendre_p(SingleC n, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.legendre_p, n, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static SingleC legendre_p(dynamic n, dynamic x)
         {
             return legendre_p(scplx.t(n), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static SingleC legendre_q(SingleC n, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.legendre_q, n, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static SingleC legendre_q(dynamic n, dynamic x)
         {
             return legendre_q(scplx.t(n), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static SingleC legendre_plm(SingleC n, SingleC m, SingleC x, int type = 1)
         {
             return aflintc.SCplxViaArbCS3Int1(aflintc.legendre_plm, n, m, x, type);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static SingleC legendre_plm(dynamic n, dynamic m, dynamic x, int type = 1)
         {
             return legendre_plm(scplx.t(n), scplx.t(m), scplx.t(x), type);
@@ -11649,14 +11670,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static SingleC legendre_qlm(SingleC n, SingleC m, SingleC x, int type = 1)
         {
             return aflintc.SCplxViaArbCS3Int1(aflintc.legendre_qlm, n, m, x, type);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static SingleC legendre_qlm(dynamic n, dynamic m, dynamic x, int type = 1)
         {
             return legendre_qlm(scplx.t(n), scplx.t(m), scplx.t(x), type);
@@ -11665,7 +11686,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         //public static SingleC legendre_p(SingleC n, SingleC m, SingleC x)
         //{
         //    var res = new SingleC();
@@ -11676,7 +11697,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_LegendreP(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         //public static SingleC legendre_p(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_p(scplx.t(n), scplx.t(m), scplx.t(x));
@@ -11685,7 +11706,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         //public static SingleC legendre_plm(SingleC n, SingleC m, SingleC x)
         //{
         //    var res = new SingleC();
@@ -11696,7 +11717,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_LegendrePv(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         //public static SingleC legendre_plm(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_plm(scplx.t(n), scplx.t(m), scplx.t(x));
@@ -11712,7 +11733,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         //public static SingleC legendre_q(SingleC n, SingleC m, SingleC x)
         //{
         //    var res = new SingleC();
@@ -11723,7 +11744,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_LegendreQ(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         //public static SingleC legendre_q(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_q(scplx.t(n), scplx.t(m), scplx.t(x));
@@ -11731,7 +11752,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         //public static SingleC legendre_qlm(SingleC n, SingleC m, SingleC x)
         //{
         //    var res = new SingleC();
@@ -11742,7 +11763,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_SCplx_Acb_LegendreQv(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         //public static SingleC legendre_qlm(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_qlm(scplx.t(n), scplx.t(m), scplx.t(x));
@@ -11752,7 +11773,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static SingleC spherical_y(SingleC n, SingleC m, SingleC theta, SingleC phi)
         {
             var res = new SingleC();
@@ -11763,7 +11784,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_SphericalY(IntPtr res, IntPtr n, IntPtr m, IntPtr theta, IntPtr phi);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static SingleC spherical_y(dynamic n, dynamic m, dynamic theta, dynamic phi)
         {
             return spherical_y(scplx.t(n), scplx.t(m), scplx.t(theta), scplx.t(phi));
@@ -11780,7 +11801,7 @@ namespace ArbPrecNet
         #region 2F1-Incomplete beta Function
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static SingleC beta_lower(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -11791,14 +11812,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_BetaLower(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static SingleC beta_lower(dynamic a, dynamic b, dynamic x)
         {
             return beta_lower(scplx.t(a), scplx.t(b), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static SingleC ibeta(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -11809,14 +11830,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Ibeta(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static SingleC ibeta(dynamic a, dynamic b, dynamic x)
         {
             return ibeta(scplx.t(a), scplx.t(b), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static SingleC ibetac(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -11827,14 +11848,14 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Ibetac(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static SingleC ibetac(dynamic a, dynamic b, dynamic x)
         {
             return ibetac(scplx.t(a), scplx.t(b), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static SingleC ibeta_prime(SingleC a, SingleC b, SingleC x)
         {
             var res = new SingleC();
@@ -11845,7 +11866,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_IbetaPrime(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static SingleC ibeta_prime(dynamic a, dynamic b, dynamic x)
         {
             return ibeta_prime(scplx.t(a), scplx.t(b), scplx.t(x));
@@ -11864,7 +11885,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static SingleC hyperg_1f2(SingleC a1, SingleC b1, SingleC b2, SingleC x)
         {
             var res = new SingleC();
@@ -11875,7 +11896,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom1F2(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static SingleC hyperg_1f2(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2(scplx.t(a1), scplx.t(b1), scplx.t(b2), scplx.t(x));
@@ -11883,7 +11904,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static SingleC hyperg_1f2r(SingleC a1, SingleC b1, SingleC b2, SingleC x)
         {
             var res = new SingleC();
@@ -11894,7 +11915,7 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Hypgeom1F2r(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static SingleC hyperg_1f2r(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2r(scplx.t(a1), scplx.t(b1), scplx.t(b2), scplx.t(x));
@@ -11912,52 +11933,52 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static SingleC airy_gi(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.airy_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static SingleC airy_gi(dynamic x)
         {
             return airy_gi(scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static SingleC airy_hi(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.airy_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static SingleC airy_hi(dynamic x)
         {
             return airy_hi(scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static SingleC airy_gi_prime(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.airy_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static SingleC airy_gi_prime(dynamic x)
         {
             return airy_gi_prime(scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static SingleC airy_hi_prime(SingleC x)
         {
             return aflintc.SCplxViaArbCS1(aflintc.airy_hi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static SingleC airy_hi_prime(dynamic x)
         {
             return airy_hi_prime(scplx.t(x));
@@ -11971,39 +11992,39 @@ namespace ArbPrecNet
         #region Struve functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static SingleC struve_h(SingleC v, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.struve_h, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static SingleC struve_h(dynamic v, dynamic x)
         {
             return struve_h(scplx.t(v), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static SingleC struve_l(SingleC v, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.struve_l, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static SingleC struve_l(dynamic v, dynamic x)
         {
             return struve_l(scplx.t(v), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static SingleC struve_k(SingleC v, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.struve_k, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static SingleC struve_k(dynamic v, dynamic x)
         {
             return struve_k(scplx.t(v), scplx.t(x));
@@ -12015,7 +12036,7 @@ namespace ArbPrecNet
             return aflintc.SCplxViaArbCS2(aflintc.struve_m, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_m/*' />
         public static SingleC struve_m(dynamic v, dynamic x)
         {
             return struve_m(scplx.t(v), scplx.t(x));
@@ -12029,52 +12050,52 @@ namespace ArbPrecNet
         #region Anger, Weber and Lommel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static SingleC anger_j(SingleC v, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.anger_j, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static SingleC anger_j(dynamic v, dynamic x)
         {
             return anger_j(scplx.t(v), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static SingleC weber_e(SingleC v, SingleC x)
         {
             return aflintc.SCplxViaArbCS2(aflintc.weber_e, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static SingleC weber_e(dynamic v, dynamic x)
         {
             return weber_e(scplx.t(v), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static SingleC lommel_s1(SingleC mu, SingleC nu, SingleC x)
         {
             return aflintc.SCplxViaArbCS3(aflintc.lommel_s1, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static SingleC lommel_s1(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s1(scplx.t(mu), scplx.t(nu), scplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static SingleC lommel_s2(SingleC mu, SingleC nu, SingleC x)
         {
             return aflintc.SCplxViaArbCS3(aflintc.lommel_s2, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static SingleC lommel_s2(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s2(scplx.t(mu), scplx.t(nu), scplx.t(x));

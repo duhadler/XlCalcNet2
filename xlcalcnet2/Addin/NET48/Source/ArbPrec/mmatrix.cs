@@ -379,7 +379,7 @@ namespace ArbPrecNet
 
         public static MpfrMatC operator +(MpfrMatC m1)
         {
-            return m1 + mflintc.zero();
+            return m1 + mflintc.zero;
         }
 
 

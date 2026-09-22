@@ -76,21 +76,17 @@ namespace ArbPrecNet
             string DLLPath = Path.GetDirectoryName(FullDLLPath) + @"\";
 
             //MessageBox.Show(DLLPath);
-            //Console.WriteLine("DLLPath: {0}", DLLPath);
 
 
 
             if (!DLLPath.Contains("xlcalcnet2"))
             {
-                //Console.WriteLine("In contains");
-                //DLLPath = DLLPath.Replace("xlcalcnet", "mpfebnet");
                 DLLPath = DLLPath.Replace("xlcalcnet", "xlcalcnet2");
             }
 
 
             //MessageBox.Show(DLLPath);
 
-            //Console.WriteLine("DLLPath: {0}", DLLPath);
 
             Directory.SetCurrentDirectory(DLLPath);
 
@@ -155,14 +151,7 @@ namespace ArbPrecNet
         {
             Init();
             Interop.Lib_Set_Default(constants.mp_default_prec, (int)Math.Round(dps * 333 / 100d));
-            //Lib_Mpfi_CXSC_Set_Prec((int)Math.Round(dps * 333 / 100d));
-            //Lib_Mpd_SetPrec((uint)(dps + 0));
         }
-        //[DllImport(mpNum, EntryPoint = "Lib_Mpd_SetPrec", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern int Lib_Mpd_SetPrec(uint prec);
-
-        //[DllImport(mpNum, EntryPoint = "Lib_Mpfi_CXSC_Set_Prec", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern int Lib_Mpfi_CXSC_Set_Prec(int prec);
 
 
 

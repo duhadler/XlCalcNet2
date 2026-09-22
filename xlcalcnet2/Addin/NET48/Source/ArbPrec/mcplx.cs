@@ -431,6 +431,22 @@ namespace ArbPrecNet
         }
 
 
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/prec/*' />
+        public static Int32 prec
+        {
+            set { ArbPrec.SetPrec((uint)value); }
+            get { return (int)ArbPrec.GetPrec(); }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Contexts"]/dps/*' />
+        public static Int32 dps
+        {
+            set { ArbPrec.SetDps(value); }
+            get { return (int)ArbPrec.GetDps(); }
+        }
+
+
         /// <include file="docs.xml" path='docs/members[@name="Contexts"]/IsRealCtx/*' />
         public static bool IsRealCtx
         {
@@ -781,7 +797,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Neg(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/add/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/add/*' />
         public static MpfrC add(MpfrC x, MpfrC y)
         {
             return x + y;
@@ -800,7 +816,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/subtract/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/subtract/*' />
         public static MpfrC subtract(MpfrC x, MpfrC y)
         {
             return x - y;
@@ -819,7 +835,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/multiply/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/multiply/*' />
         public static MpfrC multiply(MpfrC x, MpfrC y)
         {
             return x * y;
@@ -837,7 +853,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/divide/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/divide/*' />
         public static MpfrC divide(MpfrC x, MpfrC y)
         {
             return x / y;
@@ -876,42 +892,42 @@ namespace ArbPrecNet
         #region Machine constants and properties of numbers
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/IsReal/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/IsReal/*' />
         //public static bool IsReal(MpfrC z)
         //{
         //    return (z.imag == mflint.t(0));
         //}
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/iszero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/iszero/*' />
         public static bool iszero(MpfrC z)
         {
             return (z.real == mflint.t(0)) && (z.imag == mflint.t(0));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isone/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(MpfrC z)
         {
             return (z.real == mflint.t(1)) && (z.imag == mflint.t(0));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinf/*' />
         public static bool isinf(MpfrC z)
         {
             return (mflint.isinf(z.real)) || (mflint.isinf(z.imag));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnan/*' />
         public static bool isnan(MpfrC z)
         {
             return (mflint.isnan(z.real)) || (mflint.isnan(z.imag));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isfinite/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isfinite/*' />
         public static bool isfinite(MpfrC z)
         {
             return (mflint.isfinite(z.real)) && (mflint.isfinite(z.imag));
@@ -921,33 +937,33 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/zero/*' />
-        public static MpfrC zero()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zero/*' />
+        public static MpfrC zero
         {
-            return mflintc.t(0, 0);
+            get { return mflintc.t(0, 0); }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/one/*' />
-        public static MpfrC one()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/one/*' />
+        public static MpfrC one
         {
-            return mflintc.t(1, 0);
+            get { return mflintc.t(1, 0); }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/onej/*' />
-        public static MpfrC onej()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/onej/*' />
+        public static MpfrC onej
         {
-            return mflintc.t(0, 1);
+            get { return mflintc.t(0, 1); }
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/nan/*' />
-        public static MpfrC nan()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nan/*' />
+        public static MpfrC nan
         {
-            return mflintc.t(mflint.nan(), mflint.nan());
+            get { return mflintc.t(mflint.nan, mflint.nan); }
         }
 
 
@@ -957,10 +973,17 @@ namespace ArbPrecNet
 
 
 
+
+
+        #region Elementary scalar functions
+
+
+
+
         #region Complex components
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Mpfr abs(MpfrC x)
         {
             var res = new Mpfr();
@@ -971,50 +994,50 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Abs(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Mpfr abs(dynamic x)
         {
             return abs(t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Mpfr fabs(MpfrC x)
         {
             return abs(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Mpfr fabs(dynamic x)
         {
             return fabs(t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static MpfrC sign(MpfrC z)
         {
-            if (iszero(z)) return zero();
+            if (iszero(z)) return zero;
             else return z / abs(z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static MpfrC sign(dynamic z)
         {
             return sign(t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Mpfr real(MpfrC z)
         {
             return z.real;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Mpfr real(dynamic x)
         {
             return real(t(x));
@@ -1022,14 +1045,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Mpfr imag(MpfrC z)
         {
             return z.imag;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Mpfr imag(dynamic x)
         {
             return imag(t(x));
@@ -1039,7 +1062,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Mpfr phase(MpfrC x)
         {
             var res = new Mpfr();
@@ -1050,7 +1073,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Arg(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Mpfr phase(dynamic x)
         {
             return phase(t(x));
@@ -1060,7 +1083,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static MpfrC conj(MpfrC x)
         {
             var res = new MpfrC();
@@ -1071,7 +1094,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Conj(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static MpfrC conj(dynamic x)
         {
             return conj(t(x));
@@ -1080,13 +1103,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Mpfr, Mpfr> polar(MpfrC x)
         {
             return new Tuple<Mpfr, Mpfr>(abs(x), phase(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Mpfr, Mpfr> polar(dynamic x)
         {
             return polar(mcplx.t(x));
@@ -1094,13 +1117,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static MpfrC rect(Mpfr r, Mpfr phi)
         {
             return r * expj(phi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static MpfrC rect(dynamic r, dynamic phi)
         {
             return rect(mreal.t(r), mreal.t(phi));
@@ -1121,7 +1144,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static MpfrC sqrt(MpfrC x)
         {
             var res = new MpfrC();
@@ -1132,7 +1155,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Sqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static MpfrC sqrt(dynamic x)
         {
             return sqrt(t(x));
@@ -1140,7 +1163,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static MpfrC sqrt1pm1(MpfrC x)
         {
             var res = new MpfrC();
@@ -1151,7 +1174,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Sqrt1pm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static MpfrC sqrt1pm1(dynamic x)
         {
             return sqrt1pm1(mflintc.t(x));
@@ -1159,14 +1182,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static MpfrC rsqrt(MpfrC x)
         {
             return 1.0 / sqrt(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static MpfrC rsqrt(dynamic x)
         {
             return rsqrt(t(x));
@@ -1175,7 +1198,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static MpfrC cbrt(MpfrC x)
         {
             var res = new MpfrC();
@@ -1186,7 +1209,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Cbrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static MpfrC cbrt(dynamic x)
         {
             return cbrt(t(x));
@@ -1197,7 +1220,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/unitroot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/unitroot/*' />
         public static MpfrC unitroot(Int32 n)
         {
             var res = new MpfrC();
@@ -1210,7 +1233,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static MpfrC root_si(MpfrC x, Int32 n)
         {
             var res = new MpfrC();
@@ -1221,7 +1244,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Root_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static MpfrC root_si(dynamic x, Int32 n)
         {
             return root_si(t(x), n);
@@ -1291,8 +1314,8 @@ namespace ArbPrecNet
                 Mpfr SqrtQr = mflint.sqrt(Qr);
                 Mpfr theta = mflint.acos(Rr / (SqrtQr * SqrtQr * SqrtQr));
                 x1 = -2 * SqrtQr * mflint.cos((theta) / 3) - a / 3;
-                x2 = -2 * SqrtQr * mflint.cos((theta + 2 * mflint.pi()) / 3) - a / 3;
-                x3 = -2 * SqrtQr * mflint.cos((theta - 2 * mflint.pi()) / 3) - a / 3;
+                x2 = -2 * SqrtQr * mflint.cos((theta + 2 * mflint.pi) / 3) - a / 3;
+                x3 = -2 * SqrtQr * mflint.cos((theta - 2 * mflint.pi) / 3) - a / 3;
             }
             else
             {
@@ -1304,8 +1327,8 @@ namespace ArbPrecNet
                     D = -D;
                 }
                 MpfrC A = -mflintc.cbrt(R + D);
-                MpfrC B = mflintc.zero();
-                if (A != mflintc.zero())
+                MpfrC B = mflintc.zero;
+                if (A != mflintc.zero)
                 {
                     B = Q / A;
                 }
@@ -1313,8 +1336,8 @@ namespace ArbPrecNet
                 Console.WriteLine("B: {0}", B);
 
                 x1 = (A + B) - a / 3;
-                x2 = -0.5 * (A + B) - a / 3 + 0.5 * mflintc.onej() * mflint.sqrt(3) * (A - B);
-                x3 = -0.5 * (A + B) - a / 3 - 0.5 * mflintc.onej() * mflint.sqrt(3) * (A - B);
+                x2 = -0.5 * (A + B) - a / 3 + 0.5 * mflintc.onej * mflint.sqrt(3) * (A - B);
+                x3 = -0.5 * (A + B) - a / 3 - 0.5 * mflintc.onej * mflint.sqrt(3) * (A - B);
             }
             return new Tuple<MpfrC, MpfrC, MpfrC>(x1, x2, x3);
         }
@@ -1422,7 +1445,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static MpfrC exp(MpfrC x)
         {
             //MessageBox.Show("C#, MpfrC: " + x.ToString());
@@ -1434,14 +1457,14 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Exp(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static MpfrC exp(dynamic x)
         {
             return exp(t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static MpfrC expj(MpfrC x)
         {
             var res = new MpfrC();
@@ -1452,7 +1475,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acb_Expj(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static MpfrC expj(dynamic x)
         {
             return expj(t(x));
@@ -1460,7 +1483,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static MpfrC expjpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -1471,7 +1494,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Expjpi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static MpfrC expjpi(dynamic x)
         {
             return expjpi(mflintc.t(x));
@@ -1479,7 +1502,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static MpfrC exp2(MpfrC x)
         {
             var res = new MpfrC();
@@ -1490,7 +1513,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Exp2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static MpfrC exp2(dynamic x)
         {
             return exp2(mflintc.t(x));
@@ -1498,7 +1521,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static MpfrC exp10(MpfrC x)
         {
             var res = new MpfrC();
@@ -1509,7 +1532,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Exp10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static MpfrC exp10(dynamic x)
         {
             return exp10(mflintc.t(x));
@@ -1518,7 +1541,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static MpfrC expm1(MpfrC x)
         {
             var res = new MpfrC();
@@ -1529,7 +1552,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Expm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static MpfrC expm1(dynamic x)
         {
             return expm1(mflintc.t(x));
@@ -1537,7 +1560,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static MpfrC exp10m1(MpfrC x)
         {
             var res = new MpfrC();
@@ -1548,7 +1571,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Exp10m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static MpfrC exp10m1(dynamic x)
         {
             return exp10m1(mflintc.t(x));
@@ -1556,7 +1579,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static MpfrC exp2m1(MpfrC x)
         {
             var res = new MpfrC();
@@ -1567,7 +1590,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Exp2m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static MpfrC exp2m1(dynamic x)
         {
             return exp2m1(mflintc.t(x));
@@ -1575,7 +1598,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static MpfrC exprel(MpfrC x)
         {
             var res = new MpfrC();
@@ -1586,7 +1609,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_ExpRel(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static MpfrC exprel(dynamic x)
         {
             return exprel(mflintc.t(x));
@@ -1605,7 +1628,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static MpfrC log(MpfrC x)
         {
             var res = new MpfrC();
@@ -1616,7 +1639,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Log(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static MpfrC log(dynamic x)
         {
             return log(t(x));
@@ -1625,7 +1648,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static MpfrC log1p(MpfrC x)
         {
             var res = new MpfrC();
@@ -1636,7 +1659,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Log1p(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static MpfrC log1p(dynamic x)
         {
             return log1p(mflintc.t(x));
@@ -1644,7 +1667,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static MpfrC log2(MpfrC x)
         {
             var res = new MpfrC();
@@ -1655,7 +1678,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Log2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static MpfrC log2(dynamic x)
         {
             return log2(mflintc.t(x));
@@ -1663,7 +1686,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static MpfrC log10(MpfrC x)
         {
             var res = new MpfrC();
@@ -1674,13 +1697,13 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Log10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static MpfrC log10(dynamic x)
         {
             return log10(t(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static MpfrC logbase(MpfrC x, MpfrC b)
         {
             var res = new MpfrC();
@@ -1691,7 +1714,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static MpfrC logbase(dynamic x, dynamic b)
         {
             return logbase(mflintc.t(x), mflintc.t(b));
@@ -1702,7 +1725,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static MpfrC log10p1(MpfrC x)
         {
             var res = new MpfrC();
@@ -1713,7 +1736,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Log10p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static MpfrC log10p1(dynamic x)
         {
             return log10p1(mflintc.t(x));
@@ -1721,7 +1744,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static MpfrC log2p1(MpfrC x)
         {
             var res = new MpfrC();
@@ -1732,7 +1755,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Log2p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static MpfrC log2p1(dynamic x)
         {
             return log2p1(mflintc.t(x));
@@ -1740,7 +1763,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static MpfrC lambert_wk(MpfrC x, int branch)
         {
             var res = new MpfrC();
@@ -1751,7 +1774,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_LambertW_ui(IntPtr res, IntPtr x, int branch);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static MpfrC lambert_wk(dynamic x, int branch)
         {
             return lambert_wk(mflintc.t(x), branch);
@@ -1767,14 +1790,14 @@ namespace ArbPrecNet
         #region Power functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static MpfrC sqr(MpfrC x)
         {
             return x * x;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static MpfrC sqr(dynamic x)
         {
             return sqr(t(x));
@@ -1782,7 +1805,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static MpfrC cube(MpfrC x)
         {
             var res = new MpfrC();
@@ -1793,7 +1816,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Cube(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static MpfrC cube(dynamic x)
         {
             return cube(mflintc.t(x));
@@ -1802,7 +1825,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static MpfrC pow(MpfrC x, MpfrC y)
         {
             var res = new MpfrC();
@@ -1813,7 +1836,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Pow(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static MpfrC pow(dynamic x, dynamic y)
         {
             return pow(t(x), t(y));
@@ -1821,7 +1844,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static MpfrC hypot(MpfrC x, MpfrC y)
         {
             var res = new MpfrC();
@@ -1832,7 +1855,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Hypot(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static MpfrC hypot(dynamic x, dynamic y)
         {
             return hypot(mflintc.t(x), mflintc.t(y));
@@ -1840,7 +1863,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static MpfrC pow_si(MpfrC x, Int32 n)
         {
             var res = new MpfrC();
@@ -1851,21 +1874,21 @@ namespace ArbPrecNet
         internal static extern int Lib_Arb_Arb_Pow_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static MpfrC pow_si(dynamic x, Int32 n)
         {
             return pow_si(mflintc.t(x), n);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static MpfrC compound_si(MpfrC x, Int32 n)
         {
             return pow1p(t(x), t(n));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static MpfrC compound_si(dynamic x, Int32 n)
         {
             return pow1p(t(x), t(n));
@@ -1873,7 +1896,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static MpfrC powm1(MpfrC x, MpfrC y)
         {
             var res = new MpfrC();
@@ -1884,7 +1907,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Powm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static MpfrC powm1(dynamic x, dynamic y)
         {
             return powm1(mflintc.t(x), mflintc.t(y));
@@ -1892,7 +1915,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static MpfrC pow1p(MpfrC x, MpfrC y)
         {
             var res = new MpfrC();
@@ -1903,7 +1926,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Pow1p(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static MpfrC pow1p(dynamic x, dynamic y)
         {
             return pow1p(mflintc.t(x), mflintc.t(y));
@@ -1911,7 +1934,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static MpfrC pow1pm1(MpfrC x, MpfrC y)
         {
             var res = new MpfrC();
@@ -1922,7 +1945,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Pow1pm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static MpfrC pow1pm1(dynamic x, dynamic y)
         {
             return pow1pm1(mflintc.t(x), mflintc.t(y));
@@ -1940,7 +1963,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static MpfrC sin(MpfrC x)
         {
             var res = new MpfrC();
@@ -1951,7 +1974,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Sin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static MpfrC sin(dynamic x)
         {
             return sin(t(x));
@@ -1959,7 +1982,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static MpfrC cos(MpfrC x)
         {
             var res = new MpfrC();
@@ -1970,7 +1993,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Cos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static MpfrC cos(dynamic x)
         {
             return cos(t(x));
@@ -1981,7 +2004,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static MpfrC tan(MpfrC x)
         {
             var res = new MpfrC();
@@ -1992,7 +2015,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Tan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static MpfrC tan(dynamic x)
         {
             return tan(t(x));
@@ -2000,7 +2023,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static MpfrC cot(MpfrC x)
         {
             var res = new MpfrC();
@@ -2011,7 +2034,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Cot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static MpfrC cot(dynamic x)
         {
             return cot(mflintc.t(x));
@@ -2019,7 +2042,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static MpfrC sec(MpfrC x)
         {
             var res = new MpfrC();
@@ -2030,7 +2053,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Sec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static MpfrC sec(dynamic x)
         {
             return sec(mflintc.t(x));
@@ -2038,7 +2061,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static MpfrC csc(MpfrC x)
         {
             var res = new MpfrC();
@@ -2049,7 +2072,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Csc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static MpfrC csc(dynamic x)
         {
             return csc(mflintc.t(x));
@@ -2057,7 +2080,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static MpfrC sinc(MpfrC x)
         {
             var res = new MpfrC();
@@ -2068,7 +2091,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Sinc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static MpfrC sinc(dynamic x)
         {
             return sinc(mflintc.t(x));
@@ -2077,7 +2100,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static MpfrC sinpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2088,7 +2111,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_SinPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static MpfrC sinpi(dynamic x)
         {
             return sinpi(mflintc.t(x));
@@ -2097,7 +2120,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static MpfrC cospi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2108,7 +2131,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_CosPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static MpfrC cospi(dynamic x)
         {
             return cospi(mflintc.t(x));
@@ -2118,7 +2141,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static MpfrC tanpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2129,7 +2152,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_TanPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static MpfrC tanpi(dynamic x)
         {
             return tanpi(mflintc.t(x));
@@ -2138,7 +2161,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static MpfrC cotpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2149,14 +2172,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_CotPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static MpfrC cotpi(dynamic x)
         {
             return cotpi(mflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static MpfrC cscpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2167,14 +2190,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_CscPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static MpfrC cscpi(dynamic x)
         {
             return cscpi(mflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static MpfrC secpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2185,7 +2208,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_SecPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static MpfrC secpi(dynamic x)
         {
             return secpi(mflintc.t(x));
@@ -2195,7 +2218,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static MpfrC sincpi(MpfrC x)
         {
             var res = new MpfrC();
@@ -2206,7 +2229,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_SincPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static MpfrC sincpi(dynamic x)
         {
             return sincpi(mflintc.t(x));
@@ -2222,7 +2245,7 @@ namespace ArbPrecNet
         #region Hyperbolic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static MpfrC sinh(MpfrC x)
         {
             var res = new MpfrC();
@@ -2233,7 +2256,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Sinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static MpfrC sinh(dynamic x)
         {
             return sinh(t(x));
@@ -2242,7 +2265,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static MpfrC cosh(MpfrC x)
         {
             var res = new MpfrC();
@@ -2253,7 +2276,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Cosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static MpfrC cosh(dynamic x)
         {
             return cosh(t(x));
@@ -2264,7 +2287,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static MpfrC tanh(MpfrC x)
         {
             var res = new MpfrC();
@@ -2275,7 +2298,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Tanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static MpfrC tanh(dynamic x)
         {
             return tanh(t(x));
@@ -2284,7 +2307,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static MpfrC csch(MpfrC x)
         {
             var res = new MpfrC();
@@ -2295,7 +2318,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acb_Csch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static MpfrC csch(dynamic x)
         {
             return csch(mflintc.t(x));
@@ -2304,7 +2327,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static MpfrC sech(MpfrC x)
         {
             var res = new MpfrC();
@@ -2315,7 +2338,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acb_Sech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static MpfrC sech(dynamic x)
         {
             return sech(mflintc.t(x));
@@ -2324,7 +2347,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static MpfrC coth(MpfrC x)
         {
             var res = new MpfrC();
@@ -2335,7 +2358,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acb_Coth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static MpfrC coth(dynamic x)
         {
             return coth(mflintc.t(x));
@@ -2354,7 +2377,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static MpfrC asin(MpfrC x)
         {
             var res = new MpfrC();
@@ -2365,7 +2388,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Asin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static MpfrC asin(dynamic x)
         {
             return asin(t(x));
@@ -2373,7 +2396,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static MpfrC acos(MpfrC x)
         {
             var res = new MpfrC();
@@ -2384,7 +2407,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static MpfrC acos(dynamic x)
         {
             return acos(t(x));
@@ -2393,7 +2416,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static MpfrC atan(MpfrC x)
         {
             var res = new MpfrC();
@@ -2404,7 +2427,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Atan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static MpfrC atan(dynamic x)
         {
             return atan(t(x));
@@ -2412,7 +2435,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static MpfrC acsc(MpfrC x)
         {
             var res = new MpfrC();
@@ -2423,14 +2446,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Acsc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static MpfrC acsc(dynamic x)
         {
             return acsc(mflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static MpfrC asec(MpfrC x)
         {
             var res = new MpfrC();
@@ -2441,14 +2464,14 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Asec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static MpfrC asec(dynamic x)
         {
             return asec(mflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static MpfrC acot(MpfrC x)
         {
             var res = new MpfrC();
@@ -2459,7 +2482,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Acot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static MpfrC acot(dynamic x)
         {
             return acot(mflintc.t(x));
@@ -2476,7 +2499,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static MpfrC asinh(MpfrC x)
         {
             var res = new MpfrC();
@@ -2487,7 +2510,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Asinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static MpfrC asinh(dynamic x)
         {
             return asinh(t(x));
@@ -2495,7 +2518,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static MpfrC acosh(MpfrC x)
         {
             var res = new MpfrC();
@@ -2506,7 +2529,7 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static MpfrC acosh(dynamic x)
         {
             return acosh(t(x));
@@ -2516,7 +2539,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static MpfrC atanh(MpfrC x)
         {
             var res = new MpfrC();
@@ -2527,14 +2550,14 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Atanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static MpfrC atanh(dynamic x)
         {
             return atanh(t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static MpfrC acsch(MpfrC x)
         {
             var res = new MpfrC();
@@ -2545,7 +2568,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Acsch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static MpfrC acsch(dynamic x)
         {
             return acsch(mflintc.t(x));
@@ -2553,7 +2576,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static MpfrC asech(MpfrC x)
         {
             var res = new MpfrC();
@@ -2564,7 +2587,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Asech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static MpfrC asech(dynamic x)
         {
             return asech(mflintc.t(x));
@@ -2572,7 +2595,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static MpfrC acoth(MpfrC x)
         {
             var res = new MpfrC();
@@ -2583,7 +2606,7 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Acoth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static MpfrC acoth(dynamic x)
         {
             return acoth(mflintc.t(x));
@@ -2598,15 +2621,22 @@ namespace ArbPrecNet
 
 
 
+        #endregion
 
+
+
+
+
+
+
+
+        #region Eigen 
 
 
 
         #region Matrix Creation
 
-        /// <summary>
-        /// Converts from a complex scalar of type MpfrC
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
         public static MpfrMatC mat_t(MpfrC x)
         {
             var matA = new MpfrMatC();
@@ -2615,9 +2645,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Converts from a real matrix of type MpfrMat
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
         public static MpfrMatC mat_t(MpfrMat matA)
         {
             var x = mat_zeros(matA.rows, matA.cols);
@@ -2625,9 +2653,7 @@ namespace ArbPrecNet
             return x;
         }
 
-        /// <summary>
-        /// Makes a deep copy from a complex matrix of type MpfrMatC
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
         public static MpfrMatC mat_t(MpfrMatC matA)
         {
             var matX = mat_zeros(matA.rows, matA.cols);
@@ -2637,9 +2663,7 @@ namespace ArbPrecNet
 
 
 
-        /// <summary>
-        /// Returns SetZero
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_zeros/*' />
         public static MpfrMatC mat_zeros(int n, int m)
         {
             var resout = new MpfrMatC();
@@ -2647,29 +2671,26 @@ namespace ArbPrecNet
             return resout;
         }
 
-        /* *********************** */
-
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_t/*' />
         public static MpfrMatC mat_cplx_t(MpfrMatC matA)
         {
             return mat_t(matA);
         }
 
 
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_zeros/*' />
         public static MpfrMatC mat_cplx_zeros(int n, int m)
         {
             return mat_zeros(n, m);
         }
 
-        /* *********************** */
 
 
 
 
 
 
-        /// <summary>
-        /// Returns SetOnes
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_ones/*' />
         public static MpfrMatC mat_ones(int n, int m)
         {
             var resout = new MpfrMatC();
@@ -2678,9 +2699,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns SetIdentity
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_identity/*' />
         public static MpfrMatC mat_identity(int n, int m)
         {
             var resout = new MpfrMatC();
@@ -2689,9 +2708,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns SetIdentity
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_identity/*' />
         public static MpfrMatC mat_eye(int n, int m)
         {
             var resout = new MpfrMatC();
@@ -2700,9 +2717,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns Random
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random/*' />
         public static MpfrMatC mat_random(int n, int m)
         {
             var resout = new MpfrMatC();
@@ -2711,9 +2726,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns RandomSym
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random_symmetric/*' />
         public static MpfrMatC mat_random_symmetric(int n)
         {
             var resout = new MpfrMatC();
@@ -2722,9 +2735,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns RandomSa
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random_selfadjoint/*' />
         public static MpfrMatC mat_random_selfadjoint(int n)
         {
             var resout = new MpfrMatC();
@@ -2733,9 +2744,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns RandomSaPosdef
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_random_selfadjoint_posdef/*' />
         public static MpfrMatC mat_random_selfadjoint_posdef(int n)
         {
             var resout = new MpfrMatC();
@@ -2744,9 +2753,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <summary>
-        /// Returns FillLinear
-        /// </summary>
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_fill_linear/*' />
         public static MpfrMatC mat_fill_linear(int n, int m)
         {
             var resout = new MpfrMatC();
@@ -2759,6 +2766,520 @@ namespace ArbPrecNet
 
 
         #endregion
+
+
+
+
+
+        #region Read-only properties
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_rows/*' />
+        public static int mat_rows(MpfrMatC matA)
+        {
+            return matA.rows;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_cols/*' />
+        public static int mat_cols(MpfrMatC matA)
+        {
+            return matA.cols;
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_cols/*' />
+        public static int mat_size(MpfrMatC matA)
+        {
+            return matA.size;
+        }
+
+
+        #endregion
+
+
+
+        #region Accessing and setting parts of a matrix
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_block/*' />
+        public static MpfrMatC mat_get_block(MpfrMatC matA, int i, int j, int p, int q)
+        {
+            return matA.get_Block(i, j, p, q);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_block/*' />
+        public static void mat_set_block(MpfrMatC matA, int i, int j, int p, int q, MpfrMatC matB)
+        {
+            matA.set_Block(i, j, p, q, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_row/*' />
+        public static MpfrMatC mat_get_row(MpfrMatC matA, int i)
+        {
+            return matA.get_Row(i);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_row/*' />
+        public static void mat_set_row(MpfrMatC matA, int i, MpfrMatC matB)
+        {
+            matA.set_Row(i, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_col/*' />
+        public static MpfrMatC mat_get_col(MpfrMatC matA, int i)
+        {
+            return matA.get_Col(i);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_col/*' />
+        public static void mat_set_col(MpfrMatC matA, int i, MpfrMatC matB)
+        {
+            matA.set_Col(i, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_diagonal/*' />
+        public static MpfrMatC mat_get_diagonal(MpfrMatC matA, int q = 0)
+        {
+            return matA.get_Diagonal(q);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_diagonal/*' />
+        public static void mat_set_diagonal(MpfrMatC matA, int q, MpfrMatC matB)
+        {
+            matA.set_Diagonal(q, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_get_triangular_view/*' />
+        public static MpfrMatC mat_get_triangular_view(MpfrMatC matA, int view = 1)
+        {
+            return matA.get_TriangularView(view);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_set_triangular_view/*' />
+        public static void mat_set_triangular_view(MpfrMatC matA, int view, MpfrMatC matB)
+        {
+            matA.set_TriangularView(view, matB);
+        }
+
+
+
+        #endregion
+
+
+
+
+        #region Changing the shape of a matrix and/or the order of coefficients
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_sort/*' />
+        public static void mat_sort(MpfrMatC matA, int sort_order = 0, int sort_criterion = 1)
+        {
+            matA.Sort(sort_order, sort_criterion);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_sort_rows_by_col/*' />
+        public static void mat_sort_rows_by_col(MpfrMatC matA, int column_to_sort_by = 0, int sort_order = 0, int sort_criterion = 1)
+        {
+            matA.SortRowsByCol(column_to_sort_by, sort_order, sort_criterion);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_resize/*' />
+        public static void mat_resize(MpfrMatC matA, int r, int c)
+        {
+            matA.Resize(r, c);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_resize_like/*' />
+        public static void mat_resize_like(MpfrMatC matA, MpfrMatC matB)
+        {
+            matA.ResizeLike(matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_conservative_resize/*' />
+        public static void mat_conservative_resize(MpfrMatC matA, int r, int c)
+        {
+            matA.ConservativeResize(r, c);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_as_diagonal/*' />
+        public static MpfrMatC mat_as_diagonal(MpfrMatC matA)
+        {
+            return matA.AsDiagonal();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_adjoint/*' />
+        public static MpfrMatC mat_adjoint(MpfrMatC matA)
+        {
+            return matA.Adjoint();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_conjugate/*' />
+        public static MpfrMatC mat_conjugate(MpfrMatC matA)
+        {
+            return matA.Conjugate();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_transpose/*' />
+        public static MpfrMatC mat_transpose(MpfrMatC matA)
+        {
+            return matA.Transpose();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_reverse_full/*' />
+        public static MpfrMatC mat_reverse_full(MpfrMatC matA)
+        {
+            return matA.ReverseFull();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_reverse_row_wise/*' />
+        public static MpfrMatC mat_reverse_row_wise(MpfrMatC matA)
+        {
+            return matA.ReverseRowwise();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_reverse_col_wise/*' />
+        public static MpfrMatC mat_reverse_col_wise(MpfrMatC matA)
+        {
+            return matA.ReverseColwise();
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_replicate_full/*' />
+        public static MpfrMatC mat_replicate_full(MpfrMatC matA, int vertical, int horizontal)
+        {
+            return matA.ReplicateFull(vertical, horizontal);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_replicate_row_wise/*' />
+        public static MpfrMatC mat_replicate_row_wise(MpfrMatC matA, int horizontal)
+        {
+            return matA.ReplicateRowwise(horizontal);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_replicate_col_wise/*' />
+        public static MpfrMatC mat_replicate_col_wise(MpfrMatC matA, int vertical)
+        {
+            return matA.ReplicateColwise(vertical);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_concat_horizontal/*' />
+        public static MpfrMatC mat_concat_horizontal(MpfrMatC matA, MpfrMatC matB)
+        {
+            return matA.ConcatHorizontal(matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_concat_vertical/*' />
+        public static MpfrMatC mat_concat_vertical(MpfrMatC matA, MpfrMatC matB)
+        {
+            return matA.ConcatVertical(matB);
+        }
+
+
+
+        #endregion
+
+
+
+        #region Basic arithmetic operations
+
+
+
+
+
+        #endregion
+
+
+
+
+
+        #region Standard decompositions and linear solving
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_ldlt/*' />
+        public static MpfrMatMapC mat_ldlt(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.LDLT(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_partial_piv_lu/*' />
+        public static MpfrMatMapC mat_partial_piv_lu(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.PartialPivLU(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_full_piv_lu/*' />
+        public static MpfrMatMapC mat_full_piv_lu(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.FullPivLU(query, matB);
+        }
+
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_llt/*' />
+        //public static MpfrMatMapC mat_llt(MpfrMatC matA, string query, [Optional] MpfrMatC matB)
+        //{
+        //    return matA.LLT(query, matB);
+        //}
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_llt/*' />
+        public static MpfrMatMapC mat_llt(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.LLT(query, matB);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_householder_qr/*' />
+        public static MpfrMatMapC mat_householder_qr(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.HouseholderQR(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_col_piv_householder_qr/*' />
+        public static MpfrMatMapC mat_col_piv_householder_qr(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.ColPivHouseholderQR(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_full_piv_householder_qr/*' />
+        public static MpfrMatMapC mat_full_piv_householder_qr(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.FullPivHouseholderQR(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_cod_householder_qr/*' />
+        public static MpfrMatMapC mat_cod_householder_qr(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.COD(query, matB);
+        }
+
+
+
+
+        #endregion
+
+
+
+
+        #region Singular Value and Eigen (selfadjoint) decompositions
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_jacobi_svd/*' />
+        public static MpfrMatMapC mat_jacobi_svd(MpfrMatC matA, string query)
+        {
+            return matA.JacobiSVD(query);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_jacobi_svd_thin/*' />
+        public static MpfrMatMapC mat_jacobi_svd_thin(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.JacobiSvdThin(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_jacobi_svd_full/*' />
+        public static MpfrMatMapC mat_jacobi_svd_full(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.JacobiSvdFull(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_self_adjoint_eigen_values/*' />
+        public static MpfrMatMapC mat_self_adjoint_eigen_values(MpfrMatC matA, string query)
+        {
+            return matA.SelfAdjointEigenValues(query);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_self_adjoint_eigen_system/*' />
+        public static MpfrMatMapC mat_self_adjoint_eigen_system(MpfrMatC matA, string query)
+        {
+            return matA.SelfAdjointEigenSystem(query);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_generalized_self_adjoint_eigen_values/*' />
+        public static MpfrMatMapC mat_generalized_self_adjoint_eigen_values(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.GeneralizedSelfAdjointEigenValues(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_generalized_self_adjoint_eigen_system/*' />
+        public static MpfrMatMapC mat_generalized_self_adjoint_eigen_system(MpfrMatC matA, string query, MpfrMatC matB)
+        {
+            return matA.GeneralizedSelfAdjointEigenSolver(query, matB);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_tridiagonalization/*' />
+        public static MpfrMatMapC mat_tridiagonalization(MpfrMatC matA, string query)
+        {
+            return matA.Tridiag(query);
+        }
+
+
+
+
+
+        #endregion
+
+
+
+
+        #region Eigen decompositions of general square matrices
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_hessenberg/*' />
+        public static MpfrMatMapC mat_hessenberg(MpfrMatC matA, string query)
+        {
+            return matA.Hessenberg(query);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_schur/*' />
+        public static MpfrMatMapC mat_schur(MpfrMatC matA, string query)
+        {
+            return matA.Schur(query);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_eigen_values/*' />
+        public static MpfrMatMapC mat_eigen_values(MpfrMatC matA, string query)
+        {
+            return matA.EigenValues(query);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_eigen_system/*' />
+        public static MpfrMatMapC mat_eigen_system(MpfrMatC matA, string query)
+        {
+            return matA.EigenSystem(query);
+        }
+
+
+
+        #endregion
+
+
+
+
+        #region Eigen: Fast Fourier Transform
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_fft_fwd/*' />
+        public static MpfrMatC mat_fft_fwd(MpfrMatC matA)
+        {
+            return matA.FFTFwd();
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/mat_fft_inv/*' />
+        public static MpfrMatC mat_fft_inv(MpfrMatC matA)
+        {
+            return matA.FFTCplxInv();
+        }
+
+
+
+
+
+        #endregion
+
+
+
+
+        #region Eigen: Polynomials
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/roots_to_monic_poly/*' />
+        public static MpfrMatC roots_to_monic_poly(MpfrMatC vecA)
+        {
+            return vecA.RootsToMonicPolynomial();
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/poly_eval/*' />
+        public static MpfrMatC poly_eval(MpfrMatC polyA, MpfrMatC roots)
+        {
+            return polyA.PolyEval(roots);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="Eigen"]/poly_solve/*' />
+        public static MpfrMatC poly_solve(MpfrMatC polyA)
+        {
+            return polyA.PolynomialSolver();
+        }
+
+
+
+
+        #endregion
+
+
+
+
+
+
+
+        #endregion
+
 
 
 

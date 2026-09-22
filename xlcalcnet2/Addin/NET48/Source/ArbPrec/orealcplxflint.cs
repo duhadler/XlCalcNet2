@@ -93,14 +93,14 @@ namespace ArbPrecNet
         #region General functions for real numbers
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fma/*' />
         public static Octuple fma(Octuple x, Octuple y, Octuple z)
         {
             return oreal.fma(x, y, z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fma/*' />
         public static Octuple fma(dynamic x, dynamic y, dynamic z)
         {
             return oreal.fma(x, y, z);
@@ -109,28 +109,28 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmax/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmax/*' />
         public static Octuple fmax(Octuple x, Octuple y)
         {
             return oreal.fmax(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmax/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmax/*' />
         public static Octuple fmax(dynamic x, dynamic y)
         {
             return oreal.fmax(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmin/*' />
         public static Octuple fmin(Octuple x, Octuple y)
         {
             return oreal.fmin(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmin/*' />
         public static Octuple fmin(dynamic x, dynamic y)
         {
             return oreal.fmin(x, y);
@@ -144,54 +144,75 @@ namespace ArbPrecNet
         #region Machine constants
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/zero/*' />
-        public static Octuple zero()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zero/*' />
+        public static Octuple zero
         {
-            return oreal.zero();
+            get
+            {
+                return oreal.zero;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/negzero/*' />
-        public static Octuple negzero()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/negzero/*' />
+        public static Octuple negzero
         {
-            return oreal.negzero();
+            get
+            {
+                return oreal.negzero;
+            }
         }
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/one/*' />
-        public static Octuple one()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/one/*' />
+        public static Octuple one
         {
-            return oreal.one();
+            get
+            {
+                return oreal.one;
+            }
         }
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/onej/*' />
-        public static OctupleC onej()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/onej/*' />
+        public static OctupleC onej
         {
-            return oreal.onej();
+            get
+            {
+                return oreal.onej;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isposinf/*' />
-        public static Octuple inf()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isposinf/*' />
+        public static Octuple inf
         {
-            return oreal.inf();
+            get
+            {
+                return oreal.inf;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/neginf/*' />
-        public static Octuple neginf()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/neginf/*' />
+        public static Octuple neginf
         {
-            return oreal.neginf();
+            get
+            {
+                return oreal.neginf;
+            }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/nan/*' />
-        public static Octuple nan()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nan/*' />
+        public static Octuple nan
         {
-            return oreal.nan();
+            get
+            {
+                return oreal.nan;
+            }
         }
 
 
@@ -203,14 +224,14 @@ namespace ArbPrecNet
         #region Properties of numbers
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/signbit/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/signbit/*' />
         public static int signbit(Octuple x)
         {
             return oreal.signbit(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/signbit/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/signbit/*' />
         public static int signbit(dynamic x)
         {
             return oreal.signbit(x);
@@ -218,14 +239,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isfinite/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isfinite/*' />
         public static bool isfinite(Octuple x)
         {
             return oreal.isfinite(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isfinite/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isfinite/*' />
         public static bool isfinite(dynamic x)
         {
             return oreal.isfinite(x);
@@ -234,14 +255,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinf/*' />
         public static bool isinf(Octuple x)
         {
             return oreal.isinf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinf/*' />
         public static bool isinf(dynamic x)
         {
             return oreal.isinf(x);
@@ -249,14 +270,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isposinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isposinf/*' />
         public static bool isposinf(Octuple x)
         {
             return oreal.isposinf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isposinf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isposinf/*' />
         public static bool isposinf(dynamic x)
         {
             return oreal.isposinf(x);
@@ -264,14 +285,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isneginf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isneginf/*' />
         public static bool isneginf(Octuple x)
         {
             return oreal.isneginf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isneginf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isneginf/*' />
         public static bool isneginf(dynamic x)
         {
             return oreal.isneginf(x);
@@ -279,14 +300,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnan/*' />
         public static bool isnan(Octuple x)
         {
             return oreal.isnan(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isnan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnan/*' />
         public static bool isnan(dynamic x)
         {
             return oreal.isnan(x);
@@ -294,14 +315,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/iszero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/iszero/*' />
         public static bool iszero(Octuple x)
         {
             return oreal.iszero(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/iszero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/iszero/*' />
         public static bool iszero(dynamic x)
         {
             return oreal.iszero(x);
@@ -310,14 +331,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isone/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(Octuple x)
         {
             return oreal.isone(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isone/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(dynamic x)
         {
             return oreal.isone(x);
@@ -325,14 +346,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isinteger/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinteger/*' />
         public static bool isinteger(Octuple x)
         {
             return oreal.isinteger(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isinteger/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isinteger/*' />
         public static bool isinteger(dynamic x)
         {
             return oreal.isinteger(x);
@@ -340,14 +361,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnumber/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
         public static bool isnumber(Octuple x)
         {
             return oreal.isnumber(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isnumber/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
         public static bool isnumber(dynamic x)
         {
             return oreal.isnumber(x);
@@ -355,14 +376,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isregular/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
         public static bool isregular(Octuple x)
         {
             return oreal.isregular(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isregular/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
         public static bool isregular(dynamic x)
         {
             return oreal.isregular(x);
@@ -370,14 +391,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isnormal/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
         public static bool isnormal(Octuple x)
         {
             return oreal.isnormal(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isnormal/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
         public static bool isnormal(dynamic x)
         {
             return oreal.isnormal(x);
@@ -385,14 +406,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/isunordered/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
         public static bool isunordered(Octuple x, Octuple y)
         {
             return oreal.isunordered(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/isunordered/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
         public static bool isunordered(dynamic x, dynamic y)
         {
             return oreal.isunordered(x, y);
@@ -400,14 +421,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/fitsint32/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint32/*' />
         public static bool fitsint32(Octuple x)
         {
             return oreal.fitsint32(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fitsint32/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint32/*' />
         public static bool fitsint32(dynamic x)
         {
             return oreal.fitsint32(x);
@@ -415,14 +436,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/fitsint64/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint64/*' />
         public static bool fitsint64(Octuple x)
         {
             return oreal.fitsint32(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fitsint64/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fitsint64/*' />
         public static bool fitsint64(dynamic x)
         {
             return oreal.fitsint32(x);
@@ -438,14 +459,14 @@ namespace ArbPrecNet
 
         #region Integer Related Functions
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nearbyint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nearbyint/*' />
         public static Octuple nearbyint(Octuple x)
         {
             return oreal.nearbyint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nearbyint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nearbyint/*' />
         public static Octuple nearbyint(dynamic x)
         {
             return oreal.nearbyint(x);
@@ -453,28 +474,28 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rint/*' />
         public static Octuple rint(Octuple x)
         {
             return oreal.rint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rint/*' />
         public static Octuple rint(dynamic x)
         {
             return oreal.rint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lrint/*' />
         public static Int32 lrint(Octuple x)
         {
             return oreal.lrint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lrint/*' />
         public static Int32 lrint(dynamic x)
         {
             return oreal.lrint(x);
@@ -482,14 +503,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llrint/*' />
         public static Int64 llrint(Octuple x)
         {
             return oreal.llrint(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llrint/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llrint/*' />
         public static Int64 llrint(dynamic x)
         {
             return oreal.llrint(x);
@@ -498,14 +519,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ceil/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ceil/*' />
         public static Octuple ceil(Octuple x)
         {
             return oreal.ceil(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ceil/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ceil/*' />
         public static Octuple ceil(dynamic x)
         {
             return oreal.ceil(x);
@@ -513,56 +534,56 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/floor/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/floor/*' />
         public static Octuple floor(Octuple x)
         {
             return oreal.floor(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/floor/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/floor/*' />
         public static Octuple floor(dynamic x)
         {
             return oreal.floor(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trunc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trunc/*' />
         public static Octuple trunc(Octuple x)
         {
             return oreal.trunc(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trunc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trunc/*' />
         public static Octuple trunc(dynamic x)
         {
             return oreal.trunc(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/round/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/round/*' />
         public static Octuple round(Octuple x)
         {
             return oreal.round(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/round/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/round/*' />
         public static Octuple round(dynamic x)
         {
             return oreal.round(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lround/*' />
         public static Int32 lround(Octuple x)
         {
             return oreal.lround(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lround/*' />
         public static Int32 lround(dynamic x)
         {
             return oreal.lround(x);
@@ -570,14 +591,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llround/*' />
         public static Int64 llround(Octuple x)
         {
             return oreal.llround(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/llround/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llround/*' />
         public static Int64 llround(dynamic x)
         {
             return oreal.llround(x);
@@ -593,28 +614,28 @@ namespace ArbPrecNet
         #region Floating point functions for real numbers
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/copysign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/copysign/*' />
         public static Octuple copysign(Octuple x, Octuple y)
         {
             return oreal.copysign(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/copysign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/copysign/*' />
         public static Octuple copysign(dynamic x, dynamic y)
         {
             return oreal.copysign(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/frexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frexp/*' />
         public static Tuple<Octuple, Int32> frexp(Octuple x)
         {
             return oreal.frexp(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/frexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frexp/*' />
         public static Tuple<Octuple, Int32> frexp(dynamic x)
         {
             return oreal.frexp(x);
@@ -622,27 +643,27 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logb/*' />
         public static Octuple logb(Octuple x)
         {
             return oreal.logb(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logb/*' />
         public static Octuple logb(dynamic x)
         {
             return oreal.logb(x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ilogb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(Octuple x)
         {
             return oreal.ilogb(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ilogb/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(dynamic x)
         {
             return oreal.ilogb(x);
@@ -650,14 +671,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ldexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ldexp/*' />
         public static Octuple ldexp(Octuple x, Int32 e)
         {
             return oreal.ldexp(x, e);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ldexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ldexp/*' />
         public static Octuple ldexp(dynamic x, dynamic e)
         {
             return oreal.ldexp(x, e);
@@ -665,14 +686,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbn/*' />
         public static Octuple scalbn(Octuple x, Int32 e)
         {
             return oreal.scalbn(x, e);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbn/*' />
         public static Octuple scalbn(dynamic x, dynamic e)
         {
             return oreal.scalbn(x, e);
@@ -680,14 +701,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbln/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbln/*' />
         public static Octuple scalbln(Octuple x, Int32 e)
         {
             return oreal.scalbln(x, e);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/scalbln/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbln/*' />
         public static Octuple scalbln(dynamic x, dynamic e)
         {
             return oreal.scalbln(x, e);
@@ -695,14 +716,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fdim/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fdim/*' />
         public static Octuple fdim(Octuple x, Octuple y)
         {
             return oreal.fdim(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fdim/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fdim/*' />
         public static Octuple fdim(dynamic x, dynamic y)
         {
             return oreal.fdim(x, y);
@@ -716,14 +737,14 @@ namespace ArbPrecNet
         #region Fraction and remainder Related Functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Octuple, Octuple> modf(Octuple x)
         {
             return oreal.modf(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Octuple, Octuple> modf(dynamic x)
         {
             return oreal.modf(x);
@@ -731,42 +752,42 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmod/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Octuple fmod(Octuple x, Octuple y)
         {
             return oreal.fmod(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fmod/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Octuple fmod(dynamic x, dynamic y)
         {
             return oreal.fmod(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remainder/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Octuple remainder(Octuple x, Octuple y)
         {
             return oreal.remainder(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remainder/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Octuple remainder(dynamic x, dynamic y)
         {
             return oreal.remainder(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remquo/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Octuple, Int32> remquo(Octuple x, Octuple y)
         {
             return oreal.remquo(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/remquo/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Octuple, Int32> remquo(dynamic x, dynamic y)
         {
             return oreal.remquo(x, y);
@@ -779,84 +800,84 @@ namespace ArbPrecNet
         #region Functions related to mantissa width and exponent range
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/epsilon/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/epsilon/*' />
         public static Octuple epsilon()
         {
             return oreal.epsilon();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ulp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ulp/*' />
         public static Octuple ulp(Octuple x)
         {
             return oreal.ulp(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ulp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ulp/*' />
         public static Octuple ulp(dynamic x)
         {
             return oreal.ulp(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/maxvalue/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/maxvalue/*' />
         public static Octuple maxvalue()
         {
             return oreal.maxvalue();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/lowestvalue/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lowestvalue/*' />
         public static Octuple lowestvalue()
         {
             return oreal.lowestvalue();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ConstantsAndProperties"]/minposvalue/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/minposvalue/*' />
         public static Octuple minposvalue()
         {
             return oreal.minposvalue();
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextafter/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
         public static Octuple nextafter(Octuple x, Octuple y)
         {
             return oreal.nextafter(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextafter/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
         public static Octuple nextafter(dynamic x, dynamic y)
         {
             return oreal.nextafter(x, y);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextabove/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextabove/*' />
         public static Octuple nextabove(Octuple x)
         {
             return oreal.nextabove(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextabove/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextabove/*' />
         public static Octuple nextabove(dynamic x)
         {
             return oreal.nextabove(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextbelow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextbelow/*' />
         public static Octuple nextbelow(Octuple x)
         {
             return oreal.nextbelow(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nextbelow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextbelow/*' />
         public static Octuple nextbelow(dynamic x)
         {
             return oreal.nextbelow(x);
@@ -870,85 +891,85 @@ namespace ArbPrecNet
         #region Mathematical Constants
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/degree/*' />
-        public static Octuple degree()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/degree/*' />
+        public static Octuple degree
         {
-            return oreal.degree();
+            get { return oreal.degree; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phi/*' />
-        public static Octuple phi()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phi/*' />
+        public static Octuple phi
         {
-            return oreal.phi();
+            get { return oreal.phi; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ln2/*' />
-        public static Octuple ln2()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ln2/*' />
+        public static Octuple ln2
         {
-            return oreal.ln2();
+            get { return oreal.ln2; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ln10/*' />
-        public static Octuple ln10()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ln10/*' />
+        public static Octuple ln10
         {
-            return oreal.ln10();
+            get { return oreal.ln10; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pi/*' />
-        public static Octuple pi()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pi/*' />
+        public static Octuple pi
         {
-            return oreal.pi();
-        }
-
-
-
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/e/*' />
-        public static Octuple e()
-        {
-            return oreal.e();
+            get { return oreal.pi; }
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/egamma/*' />
-        public static Octuple egamma()
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/e/*' />
+        public static Octuple e
         {
-            return oreal.egamma();
+            get { return oreal.e; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/apery/*' />
-        public static Octuple apery()
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/egamma/*' />
+        public static Octuple egamma
         {
-            return oreal.apery();
+            get { return oreal.egamma; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/catalan/*' />
-        public static Octuple catalan()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/apery/*' />
+        public static Octuple apery
         {
-            return oreal.catalan();
+            get { return oreal.apery; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/glaisher/*' />
-        public static Octuple glaisher()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/catalan/*' />
+        public static Octuple catalan
         {
-            return oreal.glaisher();
+            get { return oreal.catalan; }
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/khinchin/*' />
-        public static Octuple khinchin()
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/glaisher/*' />
+        public static Octuple glaisher
         {
-            return oreal.khinchin();
+            get { return oreal.glaisher; }
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/khinchin/*' />
+        public static Octuple khinchin
+        {
+            get { return oreal.khinchin; }
         }
 
 
@@ -972,14 +993,14 @@ namespace ArbPrecNet
         #region Complex components
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Octuple abs(Octuple x)
         {
             return oreal.abs(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/abs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/abs/*' />
         public static Octuple abs(dynamic x)
         {
             return abs(oreal.t(x));
@@ -987,14 +1008,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Octuple fabs(Octuple x)
         {
             return oreal.fabs(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fabs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fabs/*' />
         public static Octuple fabs(dynamic x)
         {
             return fabs(oreal.t(x));
@@ -1002,14 +1023,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static Octuple sign(Octuple x)
         {
             return oreal.sign(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sign/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sign/*' />
         public static Octuple sign(dynamic x)
         {
             return sign(oreal.t(x));
@@ -1017,14 +1038,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Octuple real(Octuple x)
         {
             return x;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/real/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/real/*' />
         public static Octuple real(dynamic x)
         {
             return real(oreal.t(x));
@@ -1032,14 +1053,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Octuple imag(Octuple x)
         {
-            return oreal.zero();
+            return oreal.zero;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/imag/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/imag/*' />
         public static Octuple imag(dynamic x)
         {
             return imag(oreal.t(x));
@@ -1047,14 +1068,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Octuple phase(Octuple x)
         {
             return oreal.phase(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/phase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/phase/*' />
         public static Octuple phase(dynamic x)
         {
             return oreal.phase(x);
@@ -1062,14 +1083,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static Octuple conj(Octuple x)
         {
             return x;
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/conj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/conj/*' />
         public static Octuple conj(dynamic x)
         {
             return conj(oreal.t(x));
@@ -1078,13 +1099,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Octuple, Octuple> polar(Octuple x)
         {
             return new Tuple<Octuple, Octuple>(abs(x), phase(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Octuple, Octuple> polar(dynamic x)
         {
             return polar(oreal.t(x));
@@ -1092,13 +1113,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static OctupleC rect(Octuple r, Octuple phi)
         {
             return r * expj(phi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static OctupleC rect(dynamic r, dynamic phi)
         {
             return rect(oreal.t(r), oreal.t(phi));
@@ -1118,7 +1139,7 @@ namespace ArbPrecNet
         #region Roots and quadratic, cubic, and quartic 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static Octuple sqrt(Octuple x)
         {
             var res = new Octuple();
@@ -1129,7 +1150,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Sqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static Octuple sqrt(dynamic x)
         {
             return sqrt(oreal.t(x));
@@ -1137,7 +1158,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static Octuple rsqrt(Octuple x)
         {
             var res = new Octuple();
@@ -1148,7 +1169,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Rsqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static Octuple rsqrt(dynamic x)
         {
             return rsqrt(oreal.t(x));
@@ -1157,7 +1178,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static Octuple cbrt(Octuple x)
         {
             var res = new Octuple();
@@ -1168,7 +1189,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Cbrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static Octuple cbrt(dynamic x)
         {
             return cbrt(oreal.t(x));
@@ -1176,7 +1197,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static Octuple sqrt1pm1(Octuple x)
         {
             var res = new Octuple();
@@ -1187,7 +1208,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Sqrt1pm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static Octuple sqrt1pm1(dynamic x)
         {
             return sqrt1pm1(oreal.t(x));
@@ -1197,11 +1218,11 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/nthroot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nthroot/*' />
         public static Octuple root_si(Octuple x, Int32 n)
         {
-            if (isinf(x)) { return inf(); }
-            if (isnan(x)) { return nan(); }
+            if (isinf(x)) { return inf; }
+            if (isnan(x)) { return nan; }
             var res = new Octuple();
             Lib_OReal_Arb_Root_ui(res.mpPtr, x.mpPtr, n);
             return res;
@@ -1210,7 +1231,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Root_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static Octuple root_si(dynamic x, Int32 n)
         {
             return root_si(oreal.t(x), n);
@@ -1225,7 +1246,7 @@ namespace ArbPrecNet
         #region Exponential and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static Octuple exp(Octuple x)
         {
             var res = new Octuple();
@@ -1236,7 +1257,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Exp(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static Octuple exp(dynamic x)
         {
             return exp(oreal.t(x));
@@ -1246,28 +1267,28 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static OctupleC expj(Octuple x)
         {
             return oflintc.expj(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static OctupleC expj(dynamic x)
         {
             return oflintc.expj(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static OctupleC expjpi(Octuple x)
         {
             return oflintc.expjpi(x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static OctupleC expjpi(dynamic x)
         {
             return oflintc.expjpi(x);
@@ -1278,7 +1299,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static Octuple exp10(Octuple x)
         {
             var res = new Octuple();
@@ -1289,14 +1310,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Exp10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static Octuple exp10(dynamic x)
         {
             return exp10(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static Octuple exp2(Octuple x)
         {
             var res = new Octuple();
@@ -1307,14 +1328,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Exp2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static Octuple exp2(dynamic x)
         {
             return exp2(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static Octuple expm1(Octuple x)
         {
             var res = new Octuple();
@@ -1325,14 +1346,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Expm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static Octuple expm1(dynamic x)
         {
             return expm1(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static Octuple exp10m1(Octuple x)
         {
             var res = new Octuple();
@@ -1343,14 +1364,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Exp10m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static Octuple exp10m1(dynamic x)
         {
             return exp10m1(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static Octuple exp2m1(Octuple x)
         {
             var res = new Octuple();
@@ -1361,14 +1382,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Exp2m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static Octuple exp2m1(dynamic x)
         {
             return exp2m1(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static Octuple exprel(Octuple x)
         {
             var res = new Octuple();
@@ -1379,7 +1400,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_ExpRel(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static Octuple exprel(dynamic x)
         {
             return exprel(oreal.t(x));
@@ -1395,7 +1416,7 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static Octuple logbase(Octuple x, Octuple b)
         {
             var res = new Octuple();
@@ -1406,14 +1427,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static Octuple logbase(dynamic x, dynamic b)
         {
             return logbase(oreal.t(x), oreal.t(b));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static Octuple log(Octuple x)
         {
             var res = new Octuple();
@@ -1424,14 +1445,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static Octuple log(dynamic x)
         {
             return log(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static Octuple log10(Octuple x)
         {
             var res = new Octuple();
@@ -1442,14 +1463,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static Octuple log10(dynamic x)
         {
             return log10(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static Octuple log2(Octuple x)
         {
             var res = new Octuple();
@@ -1460,14 +1481,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static Octuple log2(dynamic x)
         {
             return log2(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static Octuple log1p(Octuple x)
         {
             var res = new Octuple();
@@ -1478,14 +1499,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log1p(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static Octuple log1p(dynamic x)
         {
             return log1p(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static Octuple log10p1(Octuple x)
         {
             var res = new Octuple();
@@ -1496,14 +1517,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log10p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static Octuple log10p1(dynamic x)
         {
             return log10p1(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static Octuple log2p1(Octuple x)
         {
             var res = new Octuple();
@@ -1514,14 +1535,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log2p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static Octuple log2p1(dynamic x)
         {
             return log2p1(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1mexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1mexp/*' />
         public static Octuple log1mexp(Octuple x)
         {
             var res = new Octuple();
@@ -1532,7 +1553,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Log1mexp(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1mexp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1mexp/*' />
         public static Octuple log1mexp(dynamic x)
         {
             return log1mexp(oreal.t(x));
@@ -1549,7 +1570,7 @@ namespace ArbPrecNet
         #region Power functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static Octuple sqr(Octuple x)
         {
             var res = new Octuple();
@@ -1560,7 +1581,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Square(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static Octuple sqr(dynamic x)
         {
             return sqr(oreal.t(x));
@@ -1568,7 +1589,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static Octuple cube(Octuple x)
         {
             var res = new Octuple();
@@ -1579,14 +1600,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Cube(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static Octuple cube(dynamic x)
         {
             return cube(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static Octuple hypot(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -1597,7 +1618,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypot(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static Octuple hypot(dynamic x, dynamic y)
         {
             return hypot(oreal.t(x), oreal.t(y));
@@ -1605,11 +1626,11 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powi/*' />
         public static Octuple pow_si(Octuple x, Int32 n)
         {
-            if (isinf(x)) { return inf(); }
-            if (isnan(x)) { return nan(); }
+            if (isinf(x)) { return inf; }
+            if (isnan(x)) { return nan; }
             var res = new Octuple();
             Lib_OReal_Arb_Pow_si(res.mpPtr, x.mpPtr, n);
             return res;
@@ -1618,7 +1639,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Pow_si(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static Octuple pow_si(dynamic x, Int32 n)
         {
             return pow_si(oreal.t(x), n);
@@ -1626,11 +1647,11 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static Octuple compound_si(Octuple x, Int32 n)
         {
-            if (isinf(x)) { return inf(); }
-            if (isnan(x)) { return nan(); }
+            if (isinf(x)) { return inf; }
+            if (isnan(x)) { return nan; }
             var res = new Octuple();
             Lib_OReal_Arb_Compound_si(res.mpPtr, x.mpPtr, n);
             return res;
@@ -1639,7 +1660,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Compound_si(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static Octuple compound_si(dynamic x, Int32 n)
         {
             return compound_si(oreal.t(x), n);
@@ -1647,7 +1668,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static Octuple pow(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -1658,14 +1679,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Pow(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static Octuple pow(dynamic x, dynamic y)
         {
             return pow(oreal.t(x), oreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static Octuple powm1(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -1676,14 +1697,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Powm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static Octuple powm1(dynamic x, dynamic y)
         {
             return powm1(oreal.t(x), oreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static Octuple pow1p(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -1694,14 +1715,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Pow1p(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static Octuple pow1p(dynamic x, dynamic y)
         {
             return pow1p(oreal.t(x), oreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static Octuple pow1pm1(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -1712,7 +1733,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Pow1pm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static Octuple pow1pm1(dynamic x, dynamic y)
         {
             return pow1pm1(oreal.t(x), oreal.t(y));
@@ -1728,7 +1749,7 @@ namespace ArbPrecNet
         #region Trigonometric and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static Octuple sin(Octuple x)
         {
             var res = new Octuple();
@@ -1739,7 +1760,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Sin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static Octuple sin(dynamic x)
         {
             return sin(oreal.t(x));
@@ -1747,7 +1768,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static Octuple cos(Octuple x)
         {
             var res = new Octuple();
@@ -1758,7 +1779,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Cos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static Octuple cos(dynamic x)
         {
             return cos(oreal.t(x));
@@ -1767,7 +1788,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static Octuple tan(Octuple x)
         {
             var res = new Octuple();
@@ -1778,7 +1799,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Tan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static Octuple tan(dynamic x)
         {
             return tan(oreal.t(x));
@@ -1786,7 +1807,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static Octuple cot(Octuple x)
         {
             var res = new Octuple();
@@ -1797,7 +1818,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Cot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static Octuple cot(dynamic x)
         {
             return cot(oreal.t(x));
@@ -1805,7 +1826,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static Octuple sec(Octuple x)
         {
             var res = new Octuple();
@@ -1816,7 +1837,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Sec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static Octuple sec(dynamic x)
         {
             return sec(oreal.t(x));
@@ -1824,7 +1845,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static Octuple csc(Octuple x)
         {
             var res = new Octuple();
@@ -1835,7 +1856,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Csc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static Octuple csc(dynamic x)
         {
             return csc(oreal.t(x));
@@ -1843,7 +1864,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static Octuple sinc(Octuple x)
         {
             var res = new Octuple();
@@ -1854,7 +1875,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Sinc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static Octuple sinc(dynamic x)
         {
             return sinc(oreal.t(x));
@@ -1863,7 +1884,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static Octuple sinpi(Octuple x)
         {
             var res = new Octuple();
@@ -1874,7 +1895,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_SinPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static Octuple sinpi(dynamic x)
         {
             return sinpi(oreal.t(x));
@@ -1883,7 +1904,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static Octuple cospi(Octuple x)
         {
             var res = new Octuple();
@@ -1894,7 +1915,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_CosPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static Octuple cospi(dynamic x)
         {
             return cospi(oreal.t(x));
@@ -1904,7 +1925,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static Octuple tanpi(Octuple x)
         {
             var res = new Octuple();
@@ -1915,7 +1936,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_TanPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static Octuple tanpi(dynamic x)
         {
             return tanpi(oreal.t(x));
@@ -1924,7 +1945,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static Octuple cotpi(Octuple x)
         {
             var res = new Octuple();
@@ -1935,7 +1956,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_CotPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static Octuple cotpi(dynamic x)
         {
             return cotpi(oreal.t(x));
@@ -1944,7 +1965,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static Octuple cscpi(Octuple x)
         {
             var res = new Octuple();
@@ -1952,7 +1973,7 @@ namespace ArbPrecNet
             return 1/res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static Octuple cscpi(dynamic x)
         {
             return cscpi(oreal.t(x));
@@ -1961,7 +1982,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static Octuple secpi(Octuple x)
         {
             var res = new Octuple();
@@ -1969,7 +1990,7 @@ namespace ArbPrecNet
             return 1/res;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static Octuple secpi(dynamic x)
         {
             return secpi(oreal.t(x));
@@ -1978,7 +1999,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static Octuple sincpi(Octuple x)
         {
             var res = new Octuple();
@@ -1989,7 +2010,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_SincPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static Octuple sincpi(dynamic x)
         {
             return sincpi(oreal.t(x));
@@ -2004,7 +2025,7 @@ namespace ArbPrecNet
         #region Hyperbolic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static Octuple sinh(Octuple x)
         {
             var res = new Octuple();
@@ -2015,14 +2036,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Sinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static Octuple sinh(dynamic x)
         {
             return sinh(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static Octuple cosh(Octuple x)
         {
             var res = new Octuple();
@@ -2033,14 +2054,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Cosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static Octuple cosh(dynamic x)
         {
             return cosh(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static Octuple tanh(Octuple x)
         {
             var res = new Octuple();
@@ -2051,14 +2072,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Tanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static Octuple tanh(dynamic x)
         {
             return tanh(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static Octuple csch(Octuple x)
         {
             var res = new Octuple();
@@ -2069,14 +2090,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Csch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static Octuple csch(dynamic x)
         {
             return csch(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static Octuple sech(Octuple x)
         {
             var res = new Octuple();
@@ -2087,14 +2108,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Sech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static Octuple sech(dynamic x)
         {
             return sech(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static Octuple coth(Octuple x)
         {
             var res = new Octuple();
@@ -2105,7 +2126,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Coth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static Octuple coth(dynamic x)
         {
             return coth(oreal.t(x));
@@ -2121,7 +2142,7 @@ namespace ArbPrecNet
         #region Inverse trigonometric functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static Octuple asin(Octuple x)
         {
             var res = new Octuple();
@@ -2132,14 +2153,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Asin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static Octuple asin(dynamic x)
         {
             return asin(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static Octuple acos(Octuple x)
         {
             var res = new Octuple();
@@ -2150,14 +2171,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Acos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static Octuple acos(dynamic x)
         {
             return acos(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan2/*' />
         public static Octuple atan2(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -2168,14 +2189,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Atan2(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan2/*' />
         public static Octuple atan2(dynamic x, dynamic y)
         {
             return atan2(oreal.t(x), oreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static Octuple atan(Octuple x)
         {
             var res = new Octuple();
@@ -2186,14 +2207,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Atan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static Octuple atan(dynamic x)
         {
             return atan(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static Octuple acsc(Octuple x)
         {
             var res = new Octuple();
@@ -2204,14 +2225,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Acsc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static Octuple acsc(dynamic x)
         {
             return acsc(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static Octuple asec(Octuple x)
         {
             var res = new Octuple();
@@ -2222,14 +2243,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Asec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static Octuple asec(dynamic x)
         {
             return asec(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static Octuple acot(Octuple x)
         {
             var res = new Octuple();
@@ -2240,7 +2261,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Acot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static Octuple acot(dynamic x)
         {
             return acot(oreal.t(x));
@@ -2256,7 +2277,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static Octuple asinh(Octuple x)
         {
             var res = new Octuple();
@@ -2267,14 +2288,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Asinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static Octuple asinh(dynamic x)
         {
             return asinh(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static Octuple acosh(Octuple x)
         {
             var res = new Octuple();
@@ -2285,14 +2306,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Acosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static Octuple acosh(dynamic x)
         {
             return acosh(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static Octuple atanh(Octuple x)
         {
             var res = new Octuple();
@@ -2303,14 +2324,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Atanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static Octuple atanh(dynamic x)
         {
             return atanh(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static Octuple acsch(Octuple x)
         {
             var res = new Octuple();
@@ -2321,14 +2342,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Acsch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static Octuple acsch(dynamic x)
         {
             return acsch(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static Octuple asech(Octuple x)
         {
             var res = new Octuple();
@@ -2339,14 +2360,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Asech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static Octuple asech(dynamic x)
         {
             return asech(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static Octuple acoth(Octuple x)
         {
             var res = new Octuple();
@@ -2357,7 +2378,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Acoth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static Octuple acoth(dynamic x)
         {
             return acoth(oreal.t(x));
@@ -2373,7 +2394,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static Octuple gamma(Octuple x)
         {
             var res = new Octuple();
@@ -2384,7 +2405,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Gamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static Octuple gamma(dynamic x)
         {
             return gamma(oreal.t(x));
@@ -2392,7 +2413,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static Octuple rgamma(Octuple x)
         {
             var res = new Octuple();
@@ -2403,7 +2424,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Rgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static Octuple rgamma(dynamic x)
         {
             return rgamma(oreal.t(x));
@@ -2411,7 +2432,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static Octuple lgamma(Octuple x)
         {
             var res = new Octuple();
@@ -2422,7 +2443,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Lgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static Octuple lgamma(dynamic x)
         {
             return lgamma(oreal.t(x));
@@ -2430,7 +2451,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static Octuple rising_factorial(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -2441,7 +2462,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_RisingFactorial(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static Octuple rising_factorial(dynamic x, dynamic y)
         {
             return rising_factorial(oreal.t(x), oreal.t(y));
@@ -2449,7 +2470,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static Octuple beta(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -2460,7 +2481,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Beta(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static Octuple beta(dynamic x, dynamic y)
         {
             return beta(oreal.t(x), oreal.t(y));
@@ -2471,13 +2492,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static Octuple gamma1pm1(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.gamma1pm1, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static Octuple gamma1pm1(dynamic x)
         {
             return gamma1pm1(oreal.t(x));
@@ -2485,13 +2506,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static Octuple factorial(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.factorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static Octuple factorial(dynamic x)
         {
             return factorial(oreal.t(x));
@@ -2499,13 +2520,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static Octuple doublefactorial(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.doublefactorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static Octuple doublefactorial(dynamic x)
         {
             return doublefactorial(oreal.t(x));
@@ -2513,13 +2534,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static Octuple falling_factorial(Octuple a, Octuple n)
         {
             return aflint.ORealViaArbS2(aflint.falling_factorial, a, n);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static Octuple falling_factorial(dynamic a, dynamic n)
         {
             return falling_factorial(oreal.t(a), oreal.t(n));
@@ -2527,13 +2548,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static Octuple gamma_ratio(Octuple a, Octuple b)
         {
             return aflint.ORealViaArbS2(aflint.gamma_ratio, a, b);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static Octuple gamma_ratio(dynamic a, dynamic b)
         {
             return gamma_ratio(oreal.t(a), oreal.t(b));
@@ -2541,13 +2562,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static Octuple gamma_delta_ratio(Octuple a, Octuple delta)
         {
             return aflint.ORealViaArbS2(aflint.gamma_delta_ratio, a, delta);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static Octuple gamma_delta_ratio(dynamic a, dynamic delta)
         {
             return gamma_delta_ratio(oreal.t(a), oreal.t(delta));
@@ -2555,13 +2576,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static Octuple binomial(Octuple n, Octuple k)
         {
             return aflint.ORealViaArbS2(aflint.binomial, n, k);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static Octuple binomial(dynamic n, dynamic k)
         {
             return binomial(oreal.t(n), oreal.t(k));
@@ -2578,7 +2599,7 @@ namespace ArbPrecNet
         #region Miscellaneous
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static Octuple lambert_w0(Octuple x)
         {
             var res = new Octuple();
@@ -2589,14 +2610,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LambertW0(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static Octuple lambert_w0(dynamic x)
         {
             return lambert_w0(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static Octuple lambert_wm1(Octuple x)
         {
             var res = new Octuple();
@@ -2607,7 +2628,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LambertWm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static Octuple lambert_wm1(dynamic x)
         {
             return lambert_wm1(oreal.t(x));
@@ -2615,13 +2636,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static OctupleC lambert_wk(Octuple x, int k)
         {
             return oflintc.lambert_wk(ocplx.t(x), k);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static OctupleC lambert_wk(dynamic x, int k)
         {
             return lambert_wk(oreal.t(x), k);
@@ -2629,7 +2650,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static Octuple agm(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -2639,13 +2660,13 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_Agm", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_OReal_Arb_Agm(IntPtr res, IntPtr x, IntPtr y);
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         //public static ORealMatT agm(ORealMatT x, ORealMatT y)
         //{
         //    return oreal.ORealMatTFunc2(agm, x, y);
         //}
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static Octuple agm(dynamic x, dynamic y)
         {
             return agm(oreal.t(x), oreal.t(y));
@@ -2678,7 +2699,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static Octuple m_elliptic_k(Octuple m)
         {
             var res = new Octuple();
@@ -2688,7 +2709,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_MEllipticK", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_MEllipticK(IntPtr res, IntPtr x);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static Octuple m_elliptic_k(dynamic x)
         {
             return m_elliptic_k(oreal.t(x));
@@ -2697,7 +2718,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static Octuple m_elliptic_e(Octuple m)
         {
             var res = new Octuple();
@@ -2707,7 +2728,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_MEllipticE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_MEllipticE(IntPtr res, IntPtr x);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static Octuple m_elliptic_e(dynamic x)
         {
             return m_elliptic_e(oreal.t(x));
@@ -2716,7 +2737,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static Octuple m_elliptic_pi(Octuple n, Octuple m)
         {
             var res = new Octuple();
@@ -2726,7 +2747,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_MEllipticPi", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_MEllipticPi(IntPtr res, IntPtr n, IntPtr m);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static Octuple m_elliptic_pi(dynamic x, dynamic y)
         {
             return m_elliptic_pi(oreal.t(x), oreal.t(y));
@@ -2735,7 +2756,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static Octuple m_elliptic_f(Octuple phi, Octuple m)
         {
             var res = new Octuple();
@@ -2745,7 +2766,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_MEllipticF", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_MEllipticF(IntPtr res, IntPtr phi, IntPtr m);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static Octuple m_elliptic_f(dynamic phi, dynamic m)
         {
             return m_elliptic_f(oreal.t(phi), oreal.t(m));
@@ -2753,7 +2774,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static Octuple m_elliptic_e_inc(Octuple phi, Octuple m)
         {
             var res = new Octuple();
@@ -2763,7 +2784,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_MEllipticEInc", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_MEllipticEInc(IntPtr res, IntPtr phi, IntPtr m);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static Octuple m_elliptic_e_inc(dynamic phi, dynamic m)
         {
             return m_elliptic_e_inc(oreal.t(phi), oreal.t(m));
@@ -2771,7 +2792,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static Octuple m_elliptic_pi_inc(Octuple n, Octuple phi, Octuple m)
         {
             var res = new Octuple();
@@ -2781,7 +2802,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_MEllipticPiInc", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_MEllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr m);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static Octuple m_elliptic_pi_inc(dynamic n, dynamic phi, dynamic m)
         {
             return m_elliptic_pi_inc(oreal.t(n), oreal.t(phi), oreal.t(m));
@@ -2798,7 +2819,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static Octuple elliptic_k(Octuple k)
         {
             var res = new Octuple();
@@ -2808,13 +2829,13 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_EllipticK", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_EllipticK(IntPtr res, IntPtr k);
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         //public static ORealMatT elliptic_k(ORealMatT k)
         //{
         //    return oreal.ORealMatTFunc(elliptic_k, k);
         //}
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static Octuple elliptic_k(dynamic k)
         {
             return elliptic_k(oreal.t(k));
@@ -2823,7 +2844,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static Octuple elliptic_e(Octuple k)
         {
             var res = new Octuple();
@@ -2833,13 +2854,13 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_EllipticE", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_EllipticE(IntPtr res, IntPtr k);
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         //public static ORealMatT elliptic_e(ORealMatT k)
         //{
         //    return oreal.ORealMatTFunc(elliptic_e, k);
         //}
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static Octuple elliptic_e(dynamic k)
         {
             return elliptic_e(oreal.t(k));
@@ -2848,7 +2869,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static Octuple elliptic_pi(Octuple n, Octuple k)
         {
             var res = new Octuple();
@@ -2858,13 +2879,13 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_EllipticPi", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_EllipticPi(IntPtr res, IntPtr n, IntPtr k);
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         //public static ORealMatT elliptic_pi(ORealMatT n, ORealMatT k)
         //{
         //    return oreal.ORealMatTFunc2(elliptic_pi, n, k);
         //}
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static Octuple elliptic_pi(dynamic n, dynamic k)
         {
             return elliptic_pi(oreal.t(n), oreal.t(k));
@@ -2873,7 +2894,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static Octuple elliptic_f(Octuple phi, Octuple k)
         {
             var res = new Octuple();
@@ -2883,13 +2904,13 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_EllipticF", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_EllipticF(IntPtr res, IntPtr phi, IntPtr k);
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         //public static ORealMatT elliptic_f(ORealMatT phi, ORealMatT k)
         //{
         //    return oreal.ORealMatTFunc2(elliptic_f, phi, k);
         //}
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static Octuple elliptic_f(dynamic phi, dynamic k)
         {
             return elliptic_f(oreal.t(phi), oreal.t(k));
@@ -2897,7 +2918,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static Octuple elliptic_e_inc(Octuple phi, Octuple k)
         {
             var res = new Octuple();
@@ -2907,13 +2928,13 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_EllipticEInc", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_EllipticEInc(IntPtr res, IntPtr phi, IntPtr k);
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         //public static ORealMatT elliptic_e_inc(ORealMatT phi, ORealMatT k)
         //{
         //    return oreal.ORealMatTFunc2(elliptic_e_inc, phi, k);
         //}
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static Octuple elliptic_e_inc(dynamic phi, dynamic k)
         {
             return elliptic_e_inc(oreal.t(phi), oreal.t(k));
@@ -2921,7 +2942,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static Octuple elliptic_pi_inc(Octuple n, Octuple phi, Octuple k)
         {
             var res = new Octuple();
@@ -2931,7 +2952,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_EllipticPiInc", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_OReal_Arb_EllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr k);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static Octuple elliptic_pi_inc(dynamic n, dynamic phi, dynamic k)
         {
             return elliptic_pi_inc(oreal.t(n), oreal.t(phi), oreal.t(k));
@@ -2947,7 +2968,7 @@ namespace ArbPrecNet
         #region Carlson symmetric elliptic integrals
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Octuple elliptic_rc(Octuple x, Octuple y)
         {
             var res = new Octuple();
@@ -2958,14 +2979,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Elliptic_RC(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Octuple elliptic_rc(dynamic x, dynamic y)
         {
             return elliptic_rc(oreal.t(x), oreal.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Octuple elliptic_rf(Octuple x, Octuple y, Octuple z)
         {
             var res = new Octuple();
@@ -2976,7 +2997,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Elliptic_RF(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static Octuple elliptic_rf(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rf(oreal.t(x), oreal.t(y), oreal.t(z));
@@ -2986,7 +3007,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static Octuple elliptic_rg(Octuple x, Octuple y, Octuple z)
         {
             var res = new Octuple();
@@ -2997,7 +3018,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Elliptic_RG(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static Octuple elliptic_rg(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rg(oreal.t(x), oreal.t(y), oreal.t(z));
@@ -3006,7 +3027,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static Octuple elliptic_rd(Octuple x, Octuple y, Octuple z)
         {
             var res = new Octuple();
@@ -3017,7 +3038,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Elliptic_RD(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static Octuple elliptic_rd(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rd(oreal.t(x), oreal.t(y), oreal.t(z));
@@ -3025,7 +3046,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static Octuple elliptic_rj(Octuple x, Octuple y, Octuple z, Octuple w)
         {
             var res = new Octuple();
@@ -3036,7 +3057,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Elliptic_RJ(IntPtr res, IntPtr x, IntPtr y, IntPtr z, IntPtr w);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static Octuple elliptic_rj(dynamic x, dynamic y, dynamic z, dynamic w)
         {
             return elliptic_rj(oreal.t(x), oreal.t(y), oreal.t(z), oreal.t(w));
@@ -3054,7 +3075,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static Octuple jacobi_theta1(Octuple x, Octuple q)
         {
             var res = new Octuple();
@@ -3065,7 +3086,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Theta1Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static Octuple jacobi_theta1(dynamic x, dynamic q)
         {
             return jacobi_theta1(oreal.t(x), oreal.t(q));
@@ -3074,7 +3095,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static Octuple jacobi_theta2(Octuple x, Octuple q)
         {
             var res = new Octuple();
@@ -3085,7 +3106,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Theta2Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static Octuple jacobi_theta2(dynamic x, dynamic q)
         {
             return jacobi_theta2(oreal.t(x), oreal.t(q));
@@ -3094,7 +3115,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static Octuple jacobi_theta3(Octuple x, Octuple q)
         {
             var res = new Octuple();
@@ -3105,7 +3126,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Theta3Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static Octuple jacobi_theta3(dynamic x, dynamic q)
         {
             return jacobi_theta3(oreal.t(x), oreal.t(q));
@@ -3114,7 +3135,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static Octuple jacobi_theta4(Octuple x, Octuple q)
         {
             var res = new Octuple();
@@ -3125,7 +3146,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_Theta4Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static Octuple jacobi_theta4(dynamic x, dynamic q)
         {
             return jacobi_theta4(oreal.t(x), oreal.t(q));
@@ -3142,7 +3163,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static Octuple jacobi_sn(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3153,7 +3174,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiSN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static Octuple jacobi_sn(dynamic x, dynamic k)
         {
             return jacobi_sn(oreal.t(x), oreal.t(k));
@@ -3161,7 +3182,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static Octuple jacobi_cn(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3172,7 +3193,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiCN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static Octuple jacobi_cn(dynamic x, dynamic k)
         {
             return jacobi_cn(oreal.t(x), oreal.t(k));
@@ -3180,7 +3201,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static Octuple jacobi_dn(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3191,7 +3212,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiDN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static Octuple jacobi_dn(dynamic x, dynamic k)
         {
             return jacobi_dn(oreal.t(x), oreal.t(k));
@@ -3199,7 +3220,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static Octuple jacobi_ns(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3210,7 +3231,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiNS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static Octuple jacobi_ns(dynamic x, dynamic k)
         {
             return jacobi_ns(oreal.t(x), oreal.t(k));
@@ -3218,7 +3239,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static Octuple jacobi_nc(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3229,7 +3250,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiNC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static Octuple jacobi_nc(dynamic x, dynamic k)
         {
             return jacobi_nc(oreal.t(x), oreal.t(k));
@@ -3237,7 +3258,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static Octuple jacobi_nd(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3248,7 +3269,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiND(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static Octuple jacobi_nd(dynamic x, dynamic k)
         {
             return jacobi_nd(oreal.t(x), oreal.t(k));
@@ -3256,7 +3277,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static Octuple jacobi_sc(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3267,7 +3288,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiSC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static Octuple jacobi_sc(dynamic x, dynamic k)
         {
             return jacobi_sc(oreal.t(x), oreal.t(k));
@@ -3275,7 +3296,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static Octuple jacobi_sd(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3286,7 +3307,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiSD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static Octuple jacobi_sd(dynamic x, dynamic k)
         {
             return jacobi_sd(oreal.t(x), oreal.t(k));
@@ -3294,7 +3315,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static Octuple jacobi_dc(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3305,7 +3326,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiDC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static Octuple jacobi_dc(dynamic x, dynamic k)
         {
             return jacobi_dc(oreal.t(x), oreal.t(k));
@@ -3313,7 +3334,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static Octuple jacobi_ds(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3324,7 +3345,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiDS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static Octuple jacobi_ds(dynamic x, dynamic k)
         {
             return jacobi_ds(oreal.t(x), oreal.t(k));
@@ -3332,7 +3353,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static Octuple jacobi_cs(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3343,7 +3364,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiCS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static Octuple jacobi_cs(dynamic x, dynamic k)
         {
             return jacobi_cs(oreal.t(x), oreal.t(k));
@@ -3351,7 +3372,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static Octuple jacobi_cd(Octuple x, Octuple k)
         {
             var res = new Octuple();
@@ -3362,7 +3383,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OReal_Arb_JacobiCD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static Octuple jacobi_cd(dynamic x, dynamic k)
         {
             return jacobi_cd(oreal.t(x), oreal.t(k));
@@ -3403,7 +3424,7 @@ namespace ArbPrecNet
         #region Lerch’s transcendent: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static Octuple lerch_phi(Octuple s, Octuple z, Octuple a)
         {
             var res = new Octuple();
@@ -3414,7 +3435,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LerchPhi(IntPtr res, IntPtr s, IntPtr z, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static Octuple lerch_phi(dynamic s, dynamic z, dynamic a)
         {
             return lerch_phi(oreal.t(s), oreal.t(z), oreal.t(a));
@@ -3422,7 +3443,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static OctupleC lerch_zeta(Octuple lambda1, Octuple alpha, Octuple s)
         {
             var res = oflintc.lerch_zeta(lambda1, alpha, s);
@@ -3430,7 +3451,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static OctupleC lerch_zeta(dynamic lambda1, dynamic alpha, dynamic s)
         {
             return lerch_zeta(oreal.t(lambda1), oreal.t(alpha), oreal.t(s));
@@ -3448,7 +3469,7 @@ namespace ArbPrecNet
         #region polygamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static Octuple polygamma(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -3459,20 +3480,20 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Polygamma(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static Octuple polygamma(dynamic s, dynamic z)
         {
             return polygamma(oreal.t(s), oreal.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static Octuple trigamma(Octuple x)
         {
             return polygamma(1, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static Octuple trigamma(dynamic x)
         {
             return trigamma(oreal.t(x));
@@ -3480,7 +3501,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static Octuple digamma(Octuple x)
         {
             var res = new Octuple();
@@ -3491,7 +3512,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Digamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static Octuple digamma(dynamic x)
         {
             return digamma(oreal.t(x));
@@ -3500,7 +3521,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static Octuple harmonic(Octuple x)
         {
             OctupleC res = oflintc.harmonic(x);
@@ -3508,7 +3529,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static Octuple harmonic(dynamic x)
         {
             return harmonic(oreal.t(x));
@@ -3524,7 +3545,7 @@ namespace ArbPrecNet
         #region Polylogarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static Octuple polylog(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -3535,7 +3556,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Polylog(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static Octuple polylog(dynamic s, dynamic z)
         {
             return polylog(oreal.t(s), oreal.t(z));
@@ -3545,7 +3566,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static Octuple trilog(Octuple x)
         {
             OctupleC res = oflintc.trilog(x);
@@ -3553,7 +3574,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static Octuple trilog(dynamic x)
         {
             return trilog(oreal.t(x));
@@ -3562,7 +3583,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static Octuple dilog(Octuple x)
         {
             var res = new Octuple();
@@ -3573,7 +3594,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Dilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static Octuple dilog(dynamic x)
         {
             return dilog(oreal.t(x));
@@ -3583,7 +3604,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static Octuple clausen_sin(Octuple s, Octuple z)
         {
             OctupleC res = oflintc.clausen_sin(s, z);
@@ -3591,7 +3612,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static Octuple clausen_sin(dynamic s, dynamic z)
         {
             return clausen_sin(oreal.t(s), oreal.t(z));
@@ -3599,7 +3620,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static Octuple clausen_cos(Octuple s, Octuple z)
         {
             OctupleC res = oflintc.clausen_cos(s, z);
@@ -3607,7 +3628,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static Octuple clausen_cos(dynamic s, dynamic z)
         {
             return clausen_cos(oreal.t(s), oreal.t(z));
@@ -3615,14 +3636,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static Octuple clausen2(Octuple x)
         {
             return clausen_sin(oreal.t(2), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static Octuple clausen2(dynamic x)
         {
             return clausen_sin(oreal.t(2), oreal.t(x));
@@ -3630,7 +3651,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static Octuple bose_einstein(Octuple s, Octuple z)
         {
             OctupleC res = oflintc.bose_einstein(s, z);
@@ -3638,7 +3659,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static Octuple bose_einstein(dynamic s, dynamic z)
         {
             return bose_einstein(oreal.t(s), oreal.t(z));
@@ -3646,7 +3667,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static Octuple fermi_dirac(Octuple s, Octuple z)
         {
             OctupleC res = oflintc.fermi_dirac(s, z);
@@ -3654,7 +3675,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static Octuple fermi_dirac(dynamic s, dynamic z)
         {
             return fermi_dirac(oreal.t(s), oreal.t(z));
@@ -3662,7 +3683,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static Octuple legendre_chi(Octuple s, Octuple z)
         {
             OctupleC res = oflintc.legendre_chi(s, z);
@@ -3670,7 +3691,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static Octuple legendre_chi(dynamic s, dynamic z)
         {
             return legendre_chi(oreal.t(s), oreal.t(z));
@@ -3678,7 +3699,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static Octuple inverse_tan_integral(Octuple s, Octuple z)
         {
             OctupleC res = oflintc.inverse_tan_integral(s, z);
@@ -3686,7 +3707,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static Octuple inverse_tan_integral(dynamic s, dynamic z)
         {
             return inverse_tan_integral(oreal.t(s), oreal.t(z));
@@ -3703,7 +3724,7 @@ namespace ArbPrecNet
         #region Hurwitz zeta function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static Octuple hurwitz_zeta(Octuple s, Octuple a)
         {
             var res = new Octuple();
@@ -3714,7 +3735,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_HurwitzZeta(IntPtr res, IntPtr s, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static Octuple hurwitz_zeta(dynamic s, dynamic a)
         {
             return hurwitz_zeta(oreal.t(s), oreal.t(a));
@@ -3723,7 +3744,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static Octuple harmonic2(Octuple z, Octuple r)
         {
             OctupleC res = oflintc.harmonic2(z, r);
@@ -3731,7 +3752,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static Octuple harmonic2(dynamic z, dynamic r)
         {
             return harmonic2(oreal.t(z), oreal.t(r));
@@ -3741,7 +3762,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernoulli/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
         public static Octuple bernoulli(Int32 n)
         {
             var res = new Octuple();
@@ -3753,7 +3774,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernoulli/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
         public static Octuple bernpoly(Octuple x, Int32 n)
         {
             var res = new Octuple();
@@ -3763,7 +3784,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_BernoulliPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_OReal_Arb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernoulli/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
         public static Octuple bernpoly(dynamic x, Int32 n)
         {
             return bernpoly(oreal.t(x), n);
@@ -3772,7 +3793,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulernum/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulernum/*' />
         public static Octuple eulernum(Int32 n)
         {
             var res = new Octuple();
@@ -3787,14 +3808,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static Octuple eulerpoly(Octuple x, Int32 n)
         {
             OctupleC res = oflintc.eulerpoly(x, n);
             return res.real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static Octuple eulerpoly(dynamic x, Int32 n)
         {
             return eulerpoly(oreal.t(x), n);
@@ -3804,7 +3825,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static Octuple barnes_g(Octuple x)
         {
             var res = new Octuple();
@@ -3815,7 +3836,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_BarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static Octuple barnes_g(dynamic x)
         {
             return barnes_g(oreal.t(x));
@@ -3823,7 +3844,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static Octuple logbarnes_g(Octuple x)
         {
             var res = new Octuple();
@@ -3834,7 +3855,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LogBarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static Octuple logbarnes_g(dynamic x)
         {
             return logbarnes_g(oreal.t(x));
@@ -3844,7 +3865,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static Octuple hyperfactorial(Octuple x)
         {
             OctupleC res = oflintc.hyperfactorial(x);
@@ -3852,7 +3873,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static Octuple hyperfactorial(dynamic x)
         {
             return hyperfactorial(oreal.t(x));
@@ -3860,7 +3881,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static Octuple superfactorial(Octuple x)
         {
             OctupleC res = oflintc.superfactorial(x);
@@ -3868,7 +3889,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static Octuple superfactorial(dynamic x)
         {
             return superfactorial(oreal.t(x));
@@ -3886,7 +3907,7 @@ namespace ArbPrecNet
         #region Riemann zeta function, and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static Octuple zeta(Octuple x)
         {
             var res = new Octuple();
@@ -3897,7 +3918,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Zeta(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static Octuple zeta(dynamic x)
         {
             return zeta(oreal.t(x));
@@ -3905,7 +3926,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static Octuple zetam1(Octuple x)
         {
             OctupleC res = oflintc.zetam1(x);
@@ -3913,7 +3934,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static Octuple zetam1(dynamic x)
         {
             return zetam1(oreal.t(x));
@@ -3921,7 +3942,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static Octuple hardy_theta(Octuple x)
         {
             OctupleC res = oflintc.hardy_theta(x);
@@ -3929,7 +3950,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static Octuple hardy_theta(dynamic x)
         {
             return hardy_theta(oreal.t(x));
@@ -3937,7 +3958,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static Octuple hardy_z(Octuple x)
         {
             OctupleC res = oflintc.hardy_z(x);
@@ -3945,7 +3966,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static Octuple hardy_z(dynamic x)
         {
             return hardy_z(oreal.t(x));
@@ -3953,7 +3974,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static Octuple riemann_xi(Octuple x)
         {
             OctupleC res = oflintc.riemann_xi(x);
@@ -3961,7 +3982,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static Octuple riemann_xi(dynamic x)
         {
             return riemann_xi(oreal.t(x));
@@ -3969,7 +3990,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static Octuple dirichlet_eta(Octuple x)
         {
             OctupleC res = oflintc.dirichlet_eta(x);
@@ -3977,7 +3998,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static Octuple dirichlet_eta(dynamic x)
         {
             return dirichlet_eta(oreal.t(x));
@@ -3985,7 +4006,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static Octuple dirichlet_etam1(Octuple x)
         {
             OctupleC res = oflintc.dirichlet_etam1(x);
@@ -3993,7 +4014,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static Octuple dirichlet_etam1(dynamic x)
         {
             return dirichlet_etam1(oreal.t(x));
@@ -4001,7 +4022,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static Octuple dirichlet_beta(Octuple x)
         {
             OctupleC res = oflintc.dirichlet_beta(x);
@@ -4009,7 +4030,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static Octuple dirichlet_beta(dynamic x)
         {
             return dirichlet_beta(oreal.t(x));
@@ -4017,7 +4038,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static Octuple dirichlet_lambda(Octuple x)
         {
             OctupleC res = oflintc.dirichlet_lambda(x);
@@ -4025,7 +4046,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static Octuple dirichlet_lambda(dynamic x)
         {
             return dirichlet_lambda(oreal.t(x));
@@ -4034,7 +4055,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/backlund_s/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/backlund_s/*' />
         //public static Octuple backlund_s(Octuple x)
         //{
         //    var res = new Octuple();
@@ -4045,7 +4066,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OReal_Arb_BacklundS(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/backlund_s/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/backlund_s/*' />
         //public static Octuple backlund_s(dynamic x)
         //{
         //    return zeta(oreal.t(x));
@@ -4055,7 +4076,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/grampoint/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/grampoint/*' />
         //public static Octuple grampoint(Int32 n)
         //{
         //    var res = new Octuple();
@@ -4079,7 +4100,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bell/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bell/*' />
         public static Octuple bell(Int32 n)
         {
             var res = new Octuple();
@@ -4091,7 +4112,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/partitions/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/partitions/*' />
         public static Octuple partitions(Int32 n)
         {
             var res = new Octuple();
@@ -4103,7 +4124,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/primorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/primorial/*' />
         public static Octuple primorial(Int32 n)
         {
             var res = new Octuple();
@@ -4129,7 +4150,7 @@ namespace ArbPrecNet
         #region 0F1: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static Octuple hyperg_0f1(Octuple a, Octuple x)
         {
             var res = new Octuple();
@@ -4140,7 +4161,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom0F1(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static Octuple hyperg_0f1(dynamic a, dynamic x)
         {
             return hyperg_0f1(oreal.t(a), oreal.t(x));
@@ -4149,7 +4170,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static Octuple hyperg_0f1r(Octuple a, Octuple x)
         {
             var res = new Octuple();
@@ -4160,7 +4181,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom0F1r(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static Octuple hyperg_0f1r(dynamic a, dynamic x)
         {
             return hyperg_0f1r(oreal.t(a), oreal.t(x));
@@ -4178,13 +4199,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static Octuple bessel_jv(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_jv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static Octuple bessel_jv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv(oreal.t(nu), oreal.t(x), scaled);
@@ -4192,13 +4213,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static Octuple bessel_yv(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_yv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static Octuple bessel_yv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv(oreal.t(nu), oreal.t(x), scaled);
@@ -4206,13 +4227,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static Octuple bessel_iv(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_iv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static Octuple bessel_iv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv(oreal.t(nu), oreal.t(x), scaled);
@@ -4220,13 +4241,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static Octuple bessel_kv(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_kv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static Octuple bessel_kv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv(oreal.t(nu), oreal.t(x), scaled);
@@ -4240,13 +4261,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static Octuple bessel_jv_prime(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_jv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static Octuple bessel_jv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv_prime(oreal.t(nu), oreal.t(x), scaled);
@@ -4254,13 +4275,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static Octuple bessel_yv_prime(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_yv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static Octuple bessel_yv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv_prime(oreal.t(nu), oreal.t(x), scaled);
@@ -4268,13 +4289,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static Octuple bessel_iv_prime(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_iv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static Octuple bessel_iv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv_prime(oreal.t(nu), oreal.t(x), scaled);
@@ -4282,13 +4303,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static Octuple bessel_kv_prime(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.bessel_kv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static Octuple bessel_kv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv_prime(oreal.t(nu), oreal.t(x), scaled);
@@ -4311,30 +4332,30 @@ namespace ArbPrecNet
         #region 0F1: Spherical Bessel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static Octuple sph_bessel_jn(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.zero();
-            if (oreal.isneginf(x)) return oreal.zero();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.zero;
+            if (oreal.isneginf(x)) return oreal.zero;
             if (x == 0.0)
             {
                 if (n >= 0)
                 {
-                    if ((n == 0)) return oreal.one();
-                    else return oreal.zero();
+                    if ((n == 0)) return oreal.one;
+                    else return oreal.zero;
                 }
                 else
                 {
-                    if (lrint(n) % 2 == 0) return oreal.neginf(); else return oreal.nan();
+                    if (lrint(n) % 2 == 0) return oreal.neginf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_jn(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static Octuple sph_bessel_jn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn(oreal.t(n), oreal.t(x), scaled);
@@ -4343,30 +4364,30 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static Octuple sph_bessel_yn(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.zero();
-            if (oreal.isneginf(x)) return oreal.zero();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.zero;
+            if (oreal.isneginf(x)) return oreal.zero;
             if (x == 0.0)
             {
                 if (n < 0)
                 {
-                    if ((n == -1)) return oreal.one();
-                    else return oreal.zero();
+                    if ((n == -1)) return oreal.one;
+                    else return oreal.zero;
                 }
                 else
                 {
-                    if (lrint(n) % 2 != 0) return oreal.neginf(); else return oreal.nan();
+                    if (lrint(n) % 2 != 0) return oreal.neginf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_yn(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static Octuple sph_bessel_yn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn(oreal.t(n), oreal.t(x), scaled);
@@ -4375,30 +4396,30 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static Octuple sph_bessel_in(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.inf();
-            if (oreal.isneginf(x)) return oreal.zero();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.inf;
+            if (oreal.isneginf(x)) return oreal.zero;
             if (x == 0.0)
             {
                 if (n >= 0)
                 {
-                    if ((n == 0)) return oreal.one();
-                    else return oreal.zero();
+                    if ((n == 0)) return oreal.one;
+                    else return oreal.zero;
                 }
                 else
                 {
-                    if (lrint(n) % 2 == 0) return oreal.neginf(); else return oreal.nan();
+                    if (lrint(n) % 2 == 0) return oreal.neginf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_in(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static Octuple sph_bessel_in(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in(oreal.t(n), oreal.t(x), scaled);
@@ -4407,29 +4428,29 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static Octuple sph_bessel_kn(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.zero();
-            if (oreal.isneginf(x)) return oreal.neginf();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.zero;
+            if (oreal.isneginf(x)) return oreal.neginf;
             if (x == 0.0)
             {
                 if (n >= 0)
                 {
-                    if (lrint(n) % 2 == 0) return oreal.nan(); else return oreal.inf();
+                    if (lrint(n) % 2 == 0) return oreal.nan; else return oreal.inf;
                 }
                 else
                 {
-                    if (lrint(n) % 2 == 0) return oreal.inf(); else return oreal.nan();
+                    if (lrint(n) % 2 == 0) return oreal.inf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_kn(n, x, scaled).real;
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static Octuple sph_bessel_kn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn(oreal.t(n), oreal.t(x), scaled);
@@ -4440,13 +4461,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static Octuple besselpoly(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.besselpoly, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static Octuple besselpoly(dynamic nu, dynamic x, bool scaled = false)
         {
             return besselpoly(oreal.t(nu), oreal.t(x), scaled);
@@ -4455,13 +4476,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static Octuple besseltheta(Octuple nu, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2Bool1(aflint.besseltheta, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static Octuple besseltheta(dynamic nu, dynamic x, bool scaled = false)
         {
             return besseltheta(oreal.t(nu), oreal.t(x), scaled);
@@ -4487,18 +4508,18 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_jn_prime/*' />
         public static Octuple sph_bessel_jn_prime(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.zero();
-            if (oreal.isneginf(x)) return oreal.zero();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.zero;
+            if (oreal.isneginf(x)) return oreal.zero;
             if (x == 0.0)
             {
                 if (n == 1) return 1 / oreal.t(3);
-                if (n >= 0) return oreal.zero();
+                if (n >= 0) return oreal.zero;
                 else
                 {
-                    if (lrint(n) % 2 != 0) return oreal.neginf(); else return oreal.nan();
+                    if (lrint(n) % 2 != 0) return oreal.neginf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_jn_prime(n, x, scaled).real;
@@ -4516,18 +4537,18 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_yn_prime/*' />
         public static Octuple sph_bessel_yn_prime(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.zero();
-            if (oreal.isneginf(x)) return oreal.zero();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.zero;
+            if (oreal.isneginf(x)) return oreal.zero;
             if (x == 0.0)
             {
                 if (n == -2) return -1 / oreal.t(3);
-                if (n < 0) return oreal.zero();
+                if (n < 0) return oreal.zero;
                 else
                 {
-                    if (lrint(n) % 2 == 0) return oreal.inf(); else return oreal.nan();
+                    if (lrint(n) % 2 == 0) return oreal.inf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_yn_prime(n, x, scaled).real;
@@ -4545,20 +4566,20 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_in_prime/*' />
         public static Octuple sph_bessel_in_prime(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.inf();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.inf;
             if (oreal.isneginf(x))
             {
-                if (lrint(n) % 2 == 0) return oreal.neginf(); else return oreal.inf();
+                if (lrint(n) % 2 == 0) return oreal.neginf; else return oreal.inf;
             }
             if (x == 0.0)
             {
-                if (n == 0) return oreal.zero();
+                if (n == 0) return oreal.zero;
                 if (n < 0)
                 {
-                    if (lrint(n) % 2 != 0) return oreal.neginf(); else return oreal.nan();
+                    if (lrint(n) % 2 != 0) return oreal.neginf; else return oreal.nan;
                 }
             }
             return oflintc.sph_bessel_in_prime(n, x, scaled).real;
@@ -4576,15 +4597,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_kn_prime/*' />
         public static Octuple sph_bessel_kn_prime(Octuple n, Octuple x, bool scaled = false)
         {
-            if (!oreal.isinteger(n)) return oreal.nan();
+            if (!oreal.isinteger(n)) return oreal.nan;
 
-            if (oreal.isnan(x)) return oreal.nan();
-            if (oreal.isinf(x)) return oreal.zero();
-            if (oreal.isneginf(x)) return oreal.neginf();
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isinf(x)) return oreal.zero;
+            if (oreal.isneginf(x)) return oreal.neginf;
             if (x == 0.0)
             {
-                if (((n >= 0) && (lrint(n) % 2 == 0)) || ((n < 0) && (lrint(n) % 2 != 0))) return oreal.neginf();
-                else return oreal.nan();
+                if (((n >= 0) && (lrint(n) % 2 == 0)) || ((n < 0) && (lrint(n) % 2 != 0))) return oreal.neginf;
+                else return oreal.nan;
             }
             return oflintc.sph_bessel_kn_prime(n, x, scaled).real;
         }
@@ -4614,7 +4635,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
         public static OctupleC hankel_h1(Octuple v, Octuple x)
         {
-            return bessel_jv(v, x) + ocplx.onej() * bessel_yv(v, x);
+            return bessel_jv(v, x) + ocplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
@@ -4628,7 +4649,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
         public static OctupleC hankel_h2(Octuple v, Octuple x)
         {
-            return bessel_jv(v, x) - ocplx.onej() * bessel_yv(v, x);
+            return bessel_jv(v, x) - ocplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
@@ -4642,7 +4663,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
         public static OctupleC sph_hankel_h1(int n, Octuple x)
         {
-            return sph_bessel_jn(n, x) + ocplx.onej() * sph_bessel_yn(n, x);
+            return sph_bessel_jn(n, x) + ocplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
@@ -4656,7 +4677,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
         public static OctupleC sph_hankel_h2(int n, Octuple x)
         {
-            return sph_bessel_jn(n, x) - ocplx.onej() * sph_bessel_yn(n, x);
+            return sph_bessel_jn(n, x) - ocplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
@@ -4681,13 +4702,13 @@ namespace ArbPrecNet
         #region 0F1: Airy functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static Octuple airy_ai(Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS1Bool1(aflint.airy_ai, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static Octuple airy_ai(dynamic x, bool scaled = false)
         {
             return airy_ai(oreal.t(x), scaled);
@@ -4695,13 +4716,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static Octuple airy_ai_prime(Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS1Bool1(aflint.airy_ai_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static Octuple airy_ai_prime(dynamic x, bool scaled = false)
         {
             return airy_ai_prime(oreal.t(x), scaled);
@@ -4709,13 +4730,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static Octuple airy_bi(Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS1Bool1(aflint.airy_bi, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static Octuple airy_bi(dynamic x, bool scaled = false)
         {
             return airy_bi(oreal.t(x), scaled);
@@ -4723,13 +4744,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static Octuple airy_bi_prime(Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS1Bool1(aflint.airy_bi_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static Octuple airy_bi_prime(dynamic x, bool scaled = false)
         {
             return airy_bi_prime(oreal.t(x), scaled);
@@ -4739,7 +4760,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_zero/*' />
         public static Octuple airy_ai_zero(Int32 n)
         {
             var res = new Octuple();
@@ -4750,7 +4771,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_AiryAiZero(IntPtr res, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime_zero/*' />
         public static Octuple airy_ai_prime_zero(Int32 n)
         {
             var res = new Octuple();
@@ -4761,7 +4782,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_AiryAiPrimeZero(IntPtr res, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_zero/*' />
         public static Octuple airy_bi_zero(Int32 n)
         {
             var res = new Octuple();
@@ -4772,7 +4793,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_AiryBiZero(IntPtr res, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime_zero/*' />
         public static Octuple airy_bi_prime_zero(Int32 n)
         {
             var res = new Octuple();
@@ -4929,7 +4950,7 @@ namespace ArbPrecNet
         #region 1F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static Octuple hyperg_1f1(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -4940,7 +4961,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom1F1(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static Octuple hyperg_1f1(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1(oreal.t(a), oreal.t(b), oreal.t(x));
@@ -4949,7 +4970,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static Octuple hyperg_1f1r(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -4960,7 +4981,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom1F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static Octuple hyperg_1f1r(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1r(oreal.t(a), oreal.t(b), oreal.t(x));
@@ -4969,7 +4990,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static Octuple hyperg_u(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -4980,7 +5001,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_HypgeomU(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static Octuple hyperg_u(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_u(oreal.t(a), oreal.t(b), oreal.t(x));
@@ -4988,7 +5009,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static Octuple hermite_h(Octuple n, Octuple x)
         {
             var res = new Octuple();
@@ -4999,7 +5020,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_HermiteH(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static Octuple hermite_h(dynamic n, dynamic x)
         {
             return hermite_h(oreal.t(n), oreal.t(x));
@@ -5007,14 +5028,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static Octuple hermite_he(Octuple n, Octuple x)
         {
             return exp2(-n / 2) * hermite_h(n, x / sqrt(2));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static Octuple hermite_he(dynamic n, dynamic x)
         {
             return hermite_he(oreal.t(n), oreal.t(x));
@@ -5023,7 +5044,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static Octuple laguerre_l(Octuple n, Octuple m, Octuple x)
         {
             var res = new Octuple();
@@ -5034,7 +5055,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LaguerreL(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static Octuple laguerre_l(dynamic n, dynamic m, dynamic x)
         {
             return laguerre_l(oreal.t(n), oreal.t(m), oreal.t(x));
@@ -5052,7 +5073,7 @@ namespace ArbPrecNet
         #region 1F1: Incomplete gamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static Octuple gamma_upper(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -5063,7 +5084,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_GammaUpper(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static Octuple gamma_upper(dynamic s, dynamic z)
         {
             return gamma_upper(oreal.t(s), oreal.t(z));
@@ -5071,7 +5092,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static Octuple gamma_q(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -5082,7 +5103,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_GammaQ(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static Octuple gamma_q(dynamic s, dynamic z)
         {
             return gamma_q(oreal.t(s), oreal.t(z));
@@ -5090,7 +5111,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static Octuple gamma_lower(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -5101,7 +5122,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_GammaLower(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static Octuple gamma_lower(dynamic s, dynamic z)
         {
             return gamma_lower(oreal.t(s), oreal.t(z));
@@ -5109,7 +5130,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static Octuple gamma_p(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -5120,7 +5141,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_GammaP(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static Octuple gamma_p(dynamic s, dynamic z)
         {
             return gamma_p(oreal.t(s), oreal.t(z));
@@ -5128,7 +5149,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static Octuple gamma_p_prime(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -5139,7 +5160,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_GammaPPrime(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static Octuple gamma_p_prime(dynamic s, dynamic z)
         {
             return gamma_p_prime(oreal.t(s), oreal.t(z));
@@ -5154,7 +5175,7 @@ namespace ArbPrecNet
         #region 1F1: Error function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Octuple erf(Octuple x)
         {
             var res = new Octuple();
@@ -5165,7 +5186,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Erf(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Octuple erf(dynamic x)
         {
             return erf(oreal.t(x));
@@ -5173,7 +5194,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Octuple erfc(Octuple x)
         {
             var res = new Octuple();
@@ -5184,7 +5205,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Erfc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Octuple erfc(dynamic x)
         {
             return erfc(oreal.t(x));
@@ -5193,7 +5214,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Octuple erf_inv(Octuple x)
         {
             var res = new Octuple();
@@ -5204,7 +5225,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Erfinv(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Octuple erf_inv(dynamic x)
         {
             return erf_inv(oreal.t(x));
@@ -5212,7 +5233,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Octuple erfc_inv(Octuple x)
         {
             var res = new Octuple();
@@ -5223,7 +5244,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Erfcinv(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc_inv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Octuple erfc_inv(dynamic x)
         {
             return erfc_inv(oreal.t(x));
@@ -5232,7 +5253,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static Octuple erfi(Octuple x)
         {
             var res = new Octuple();
@@ -5243,7 +5264,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Erfi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static Octuple erfi(dynamic x)
         {
             return erfi(oreal.t(x));
@@ -5251,13 +5272,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static Octuple dawson(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.dawson, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static Octuple dawson(dynamic x)
         {
             return dawson(oreal.t(x));
@@ -5266,7 +5287,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Octuple fresnel_s(Octuple x)
         {
             var res = new Octuple();
@@ -5277,7 +5298,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_FresnelS(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Octuple fresnel_s(dynamic x)
         {
             return fresnel_s(oreal.t(x));
@@ -5285,7 +5306,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static Octuple fresnel_c(Octuple x)
         {
             var res = new Octuple();
@@ -5296,7 +5317,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_FresnelC(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static Octuple fresnel_c(dynamic x)
         {
             return fresnel_c(oreal.t(x));
@@ -5304,7 +5325,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static Octuple ndens(Octuple x)
         {
             var res = new Octuple();
@@ -5315,7 +5336,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Ndens(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static Octuple ndens(dynamic x)
         {
             return ndens(oreal.t(x));
@@ -5323,7 +5344,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Octuple ndis(Octuple x)
         {
             var res = new Octuple();
@@ -5334,7 +5355,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Ndis(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Octuple ndis(dynamic x)
         {
             return ndis(oreal.t(x));
@@ -5350,7 +5371,7 @@ namespace ArbPrecNet
         #region 1F1: Exponential integrals and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static Octuple exp_integral_en(Octuple s, Octuple z)
         {
             var res = new Octuple();
@@ -5361,14 +5382,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_ExpIntegralE(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static Octuple exp_integral_en(dynamic s, dynamic z)
         {
             return exp_integral_en(oreal.t(s), oreal.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static Octuple exp_integral_e1(Octuple z)
         {
             if (z < 0) return -exp_integral_ei(-z);
@@ -5376,7 +5397,7 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static Octuple exp_integral_e1(dynamic z)
         {
             return exp_integral_e1(oreal.t(z));
@@ -5384,7 +5405,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static Octuple exp_integral_ei(Octuple x)
         {
             var res = new Octuple();
@@ -5395,7 +5416,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_ExpIntegralEi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static Octuple exp_integral_ei(dynamic x)
         {
             return exp_integral_ei(oreal.t(x));
@@ -5403,7 +5424,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static Octuple sin_integral(Octuple x)
         {
             var res = new Octuple();
@@ -5414,7 +5435,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_SinIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static Octuple sin_integral(dynamic x)
         {
             return sin_integral(oreal.t(x));
@@ -5422,7 +5443,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static Octuple cos_integral(Octuple x)
         {
             var res = new Octuple();
@@ -5433,7 +5454,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_CosIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static Octuple cos_integral(dynamic x)
         {
             return cos_integral(oreal.t(x));
@@ -5441,7 +5462,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static Octuple sinh_integral(Octuple x)
         {
             var res = new Octuple();
@@ -5452,7 +5473,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_SinhIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static Octuple sinh_integral(dynamic x)
         {
             return sinh_integral(oreal.t(x));
@@ -5461,7 +5482,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static Octuple cosh_integral(Octuple x)
         {
             var res = new Octuple();
@@ -5472,7 +5493,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_CoshIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static Octuple cosh_integral(dynamic x)
         {
             return cosh_integral(oreal.t(x));
@@ -5480,7 +5501,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static Octuple log_integral(Octuple x)
         {
             var res = new Octuple();
@@ -5491,7 +5512,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LogIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static Octuple log_integral(dynamic x)
         {
             return log_integral(oreal.t(x));
@@ -5499,7 +5520,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static Octuple log_integral_offset(Octuple x)
         {
             var res = new Octuple();
@@ -5510,7 +5531,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_LogIntegralOffset(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static Octuple log_integral_offset(dynamic x)
         {
             return log_integral_offset(oreal.t(x));
@@ -5527,7 +5548,7 @@ namespace ArbPrecNet
         #region 1F1: Coulomb functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static Octuple coulomb_f(Octuple l, Octuple eta, Octuple x)
         {
             var res = new Octuple();
@@ -5538,7 +5559,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_CoulombF(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static Octuple coulomb_f(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_f(oreal.t(l), oreal.t(eta), oreal.t(x));
@@ -5547,7 +5568,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static Octuple coulomb_g(Octuple l, Octuple eta, Octuple x)
         {
             var res = new Octuple();
@@ -5558,7 +5579,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_CoulombG(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static Octuple coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(oreal.t(l), oreal.t(eta), oreal.t(x));
@@ -5678,7 +5699,7 @@ namespace ArbPrecNet
         #region 2F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static Octuple hyperg_2f1(Octuple a, Octuple b, Octuple c, Octuple x)
         {
             var res = new Octuple();
@@ -5689,7 +5710,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom2F1(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static Octuple hyperg_2f1(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1(oreal.t(a), oreal.t(b), oreal.t(c), oreal.t(x));
@@ -5697,7 +5718,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static Octuple hyperg_2f1r(Octuple a, Octuple b, Octuple c, Octuple x)
         {
             var res = new Octuple();
@@ -5708,7 +5729,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom2F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static Octuple hyperg_2f1r(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1r(oreal.t(a), oreal.t(b), oreal.t(c), oreal.t(x));
@@ -5724,7 +5745,7 @@ namespace ArbPrecNet
         #region 2F1-related orthogonal polynomials
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static Octuple chebyshev_t(Octuple n, Octuple x)
         {
             var res = new Octuple();
@@ -5735,7 +5756,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_ChebyshevT(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static Octuple chebyshev_t(dynamic n, dynamic x)
         {
             return chebyshev_t(oreal.t(n), oreal.t(x));
@@ -5743,7 +5764,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static Octuple chebyshev_u(Octuple n, Octuple x)
         {
             var res = new Octuple();
@@ -5754,7 +5775,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_ChebyshevU(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static Octuple chebyshev_u(dynamic n, dynamic x)
         {
             return chebyshev_u(oreal.t(n), oreal.t(x));
@@ -5765,7 +5786,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_v/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_v/*' />
         public static Octuple chebyshev_v(Octuple n, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2(aflint.chebyshev_v, n, x);
@@ -5779,7 +5800,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_w/*' />
         public static Octuple chebyshev_w(Octuple n, Octuple x, bool scaled = false)
         {
             return aflint.ORealViaArbS2(aflint.chebyshev_w, n, x);
@@ -5797,7 +5818,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static Octuple gegenbauer_c(Octuple n, Octuple m, Octuple x)
         {
             var res = new Octuple();
@@ -5808,7 +5829,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_GegenbauerC(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static Octuple gegenbauer_c(dynamic n, dynamic m, dynamic x)
         {
             return gegenbauer_c(oreal.t(n), oreal.t(m), oreal.t(x));
@@ -5817,7 +5838,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static Octuple jacobi_p(Octuple n, Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -5828,7 +5849,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_JacobiP(IntPtr res, IntPtr n, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static Octuple jacobi_p(dynamic n, dynamic a, dynamic b, dynamic x)
         {
             return jacobi_p(oreal.t(n), oreal.t(a), oreal.t(b), oreal.t(x));
@@ -5837,7 +5858,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static Octuple legendre_p(Octuple n, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.legendre_p, n, x);
@@ -5851,7 +5872,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static Octuple legendre_q(Octuple n, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.legendre_q, n, x);
@@ -5865,7 +5886,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static Octuple legendre_plm(Octuple n, Octuple m, Octuple x)
         {
             return aflint.ORealViaArbS3(aflint.legendre_plm, n, m, x);
@@ -5879,7 +5900,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static Octuple legendre_qlm(Octuple n, Octuple m, Octuple x)
         {
             return aflint.ORealViaArbS3(aflint.legendre_qlm, n, m, x);
@@ -5895,7 +5916,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/toroidal_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/toroidal_plm/*' />
         public static Octuple toroidal_plm(Octuple l, Octuple m, Octuple x)
         {
             return aflint.ORealViaArbS3(aflint.toroidal_plm, l, m, x);
@@ -5909,7 +5930,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/toroidal_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/toroidal_qlm/*' />
         public static Octuple toroidal_qlm(Octuple l, Octuple m, Octuple x)
         {
             return aflint.ORealViaArbS3(aflint.toroidal_qlm, l, m, x);
@@ -5926,14 +5947,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static OctupleC spherical_y(Octuple n, Octuple m, Octuple theta, Octuple phi)
         {
             return oflintc.spherical_y(ocplx.t(n), ocplx.t(m), ocplx.t(theta), ocplx.t(phi));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static OctupleC spherical_y(dynamic n, dynamic m, dynamic theta, dynamic phi)
         {
             return spherical_y(oreal.t(n), oreal.t(m), oreal.t(theta), oreal.t(phi));
@@ -5952,7 +5973,7 @@ namespace ArbPrecNet
         #region 2F1-Incomplete beta Function
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static Octuple beta_lower(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -5963,14 +5984,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_BetaLower(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static Octuple beta_lower(dynamic a, dynamic b, dynamic x)
         {
             return beta_lower(oreal.t(a), oreal.t(b), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static Octuple ibeta(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -5981,14 +6002,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Ibeta(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static Octuple ibeta(dynamic a, dynamic b, dynamic x)
         {
             return ibeta(oreal.t(a), oreal.t(b), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static Octuple ibetac(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -5999,14 +6020,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Ibetac(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static Octuple ibetac(dynamic a, dynamic b, dynamic x)
         {
             return ibetac(oreal.t(a), oreal.t(b), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static Octuple ibeta_prime(Octuple a, Octuple b, Octuple x)
         {
             var res = new Octuple();
@@ -6017,7 +6038,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_IbetaPrime(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static Octuple ibeta_prime(dynamic a, dynamic b, dynamic x)
         {
             return ibeta_prime(oreal.t(a), oreal.t(b), oreal.t(x));
@@ -6032,7 +6053,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static Octuple hyperg_1f2(Octuple a1, Octuple b1, Octuple b2, Octuple x)
         {
             var res = new Octuple();
@@ -6043,7 +6064,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom1F2(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static Octuple hyperg_1f2(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2(oreal.t(a1), oreal.t(b1), oreal.t(b2), oreal.t(x));
@@ -6051,7 +6072,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static Octuple hyperg_1f2r(Octuple a1, Octuple b1, Octuple b2, Octuple x)
         {
             var res = new Octuple();
@@ -6062,7 +6083,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Hypgeom1F2r(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static Octuple hyperg_1f2r(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2r(oreal.t(a1), oreal.t(b1), oreal.t(b2), oreal.t(x));
@@ -6079,52 +6100,52 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static Octuple airy_gi(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.airy_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static Octuple airy_gi(dynamic x)
         {
             return airy_gi(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static Octuple airy_hi(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.airy_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static Octuple airy_hi(dynamic x)
         {
             return airy_hi(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static Octuple airy_gi_prime(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.airy_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static Octuple airy_gi_prime(dynamic x)
         {
             return airy_gi_prime(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static Octuple airy_hi_prime(Octuple x)
         {
             return aflint.ORealViaArbS1(aflint.airy_hi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static Octuple airy_hi_prime(dynamic x)
         {
             return airy_hi_prime(oreal.t(x));
@@ -6139,39 +6160,39 @@ namespace ArbPrecNet
         #region Struve functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static Octuple struve_h(Octuple v, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.struve_h, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static Octuple struve_h(dynamic v, dynamic x)
         {
             return struve_h(oreal.t(v), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static Octuple struve_l(Octuple v, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.struve_l, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static Octuple struve_l(dynamic v, dynamic x)
         {
             return struve_l(oreal.t(v), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static Octuple struve_k(Octuple v, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.struve_k, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static Octuple struve_k(dynamic v, dynamic x)
         {
             return struve_k(oreal.t(v), oreal.t(x));
@@ -6183,7 +6204,7 @@ namespace ArbPrecNet
             return aflint.ORealViaArbS2(aflint.struve_m, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_m/*' />
         public static Octuple struve_m(dynamic v, dynamic x)
         {
             return struve_m(oreal.t(v), oreal.t(x));
@@ -6197,52 +6218,52 @@ namespace ArbPrecNet
         #region Anger, Weber and Lommel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static Octuple anger_j(Octuple v, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.anger_j, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static Octuple anger_j(dynamic v, dynamic x)
         {
             return anger_j(oreal.t(v), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static Octuple weber_e(Octuple v, Octuple x)
         {
             return aflint.ORealViaArbS2(aflint.weber_e, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static Octuple weber_e(dynamic v, dynamic x)
         {
             return weber_e(oreal.t(v), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static Octuple lommel_s1(Octuple mu, Octuple nu, Octuple x)
         {
             return aflint.ORealViaArbS3(aflint.lommel_s1, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static Octuple lommel_s1(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s1(oreal.t(mu), oreal.t(nu), oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static Octuple lommel_s2(Octuple mu, Octuple nu, Octuple x)
         {
             return aflint.ORealViaArbS3(aflint.lommel_s2, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static Octuple lommel_s2(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s2(oreal.t(mu), oreal.t(nu), oreal.t(x));
@@ -6439,13 +6460,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Octuple, Octuple> polar(OctupleC x)
         {
             return new Tuple<Octuple, Octuple>(abs(x), phase(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polar/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polar/*' />
         public static Tuple<Octuple, Octuple> polar(dynamic x)
         {
             return polar(ocplx.t(x));
@@ -6453,13 +6474,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static OctupleC rect(Octuple r, Octuple phi)
         {
             return r * expj(phi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rect/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rect/*' />
         public static OctupleC rect(dynamic r, dynamic phi)
         {
             return rect(oreal.t(r), oreal.t(phi));
@@ -6479,7 +6500,7 @@ namespace ArbPrecNet
         #region Roots and quadratic, cubic, and quartic 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static OctupleC sqrt(OctupleC x)
         {
             var res = new OctupleC();
@@ -6490,7 +6511,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Sqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt/*' />
         public static OctupleC sqrt(dynamic x)
         {
             return sqrt(ocplx.t(x));
@@ -6498,7 +6519,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static OctupleC rsqrt(OctupleC x)
         {
             var res = new OctupleC();
@@ -6509,7 +6530,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Rsqrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rsqrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static OctupleC rsqrt(dynamic x)
         {
             return sqrt(ocplx.t(x));
@@ -6518,7 +6539,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static OctupleC cbrt(OctupleC x)
         {
             var res = new OctupleC();
@@ -6529,7 +6550,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Cbrt(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cbrt/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cbrt/*' />
         public static OctupleC cbrt(dynamic x)
         {
             return cbrt(ocplx.t(x));
@@ -6538,7 +6559,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static OctupleC sqrt1pm1(OctupleC x)
         {
             var res = new OctupleC();
@@ -6549,7 +6570,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Sqrt1pm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqrt1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqrt1pm1/*' />
         public static OctupleC sqrt1pm1(dynamic x)
         {
             return cbrt(ocplx.t(x));
@@ -6557,7 +6578,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/unitroot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/unitroot/*' />
         public static OctupleC unitroot(Int32 n)
         {
             var res = new OctupleC();
@@ -6569,7 +6590,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static OctupleC root_si(OctupleC x, Int32 n)
         {
             var res = new OctupleC();
@@ -6580,7 +6601,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Root_ui(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/root_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/root_si/*' />
         public static OctupleC root_si(dynamic x, Int32 n)
         {
             return root_si(ocplx.t(x), n);
@@ -6596,7 +6617,7 @@ namespace ArbPrecNet
         #region Exponential and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static OctupleC exp(OctupleC x)
         {
             var res = new OctupleC();
@@ -6607,7 +6628,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Exp(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp/*' />
         public static OctupleC exp(dynamic x)
         {
             return exp(ocplx.t(x));
@@ -6615,7 +6636,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static OctupleC expj(OctupleC x)
         {
             var res = new OctupleC();
@@ -6626,7 +6647,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Expj(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expj/*' />
         public static OctupleC expj(dynamic x)
         {
             return expj(ocplx.t(x));
@@ -6634,7 +6655,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static OctupleC expjpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -6645,7 +6666,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Expjpi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expjpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expjpi/*' />
         public static OctupleC expjpi(dynamic x)
         {
             return expjpi(ocplx.t(x));
@@ -6653,7 +6674,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static OctupleC exp10(OctupleC x)
         {
             var res = new OctupleC();
@@ -6664,7 +6685,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Exp10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10/*' />
         public static OctupleC exp10(dynamic x)
         {
             return exp10(ocplx.t(x));
@@ -6672,7 +6693,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static OctupleC exp2(OctupleC x)
         {
             var res = new OctupleC();
@@ -6683,7 +6704,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Exp2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2/*' />
         public static OctupleC exp2(dynamic x)
         {
             return exp2(ocplx.t(x));
@@ -6691,7 +6712,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static OctupleC expm1(OctupleC x)
         {
             var res = new OctupleC();
@@ -6702,7 +6723,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Expm1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/expm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/expm1/*' />
         public static OctupleC expm1(dynamic x)
         {
             return expm1(ocplx.t(x));
@@ -6710,7 +6731,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static OctupleC exp10m1(OctupleC x)
         {
             var res = new OctupleC();
@@ -6721,7 +6742,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Exp10m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp10m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp10m1/*' />
         public static OctupleC exp10m1(dynamic x)
         {
             return exp10m1(ocplx.t(x));
@@ -6729,7 +6750,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static OctupleC exp2m1(OctupleC x)
         {
             var res = new OctupleC();
@@ -6740,7 +6761,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Exp2m1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp2m1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp2m1/*' />
         public static OctupleC exp2m1(dynamic x)
         {
             return exp2m1(ocplx.t(x));
@@ -6748,7 +6769,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static OctupleC exprel(OctupleC x)
         {
             var res = new OctupleC();
@@ -6759,7 +6780,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ExpRel(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exprel/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exprel/*' />
         public static OctupleC exprel(dynamic x)
         {
             return exprel(ocplx.t(x));
@@ -6775,7 +6796,7 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static OctupleC logbase(OctupleC x, OctupleC b)
         {
             var res = new OctupleC();
@@ -6786,7 +6807,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbase/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
         public static OctupleC logbase(dynamic x, dynamic b)
         {
             return logbase(ocplx.t(x), ocplx.t(b));
@@ -6794,7 +6815,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static OctupleC log(OctupleC x)
         {
             var res = new OctupleC();
@@ -6805,7 +6826,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Log(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
         public static OctupleC log(dynamic x)
         {
             return log(ocplx.t(x));
@@ -6813,7 +6834,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static OctupleC log10(OctupleC x)
         {
             var res = new OctupleC();
@@ -6824,7 +6845,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Log10(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10/*' />
         public static OctupleC log10(dynamic x)
         {
             return log10(ocplx.t(x));
@@ -6832,7 +6853,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static OctupleC log2(OctupleC x)
         {
             var res = new OctupleC();
@@ -6843,7 +6864,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Log2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2/*' />
         public static OctupleC log2(dynamic x)
         {
             return log2(ocplx.t(x));
@@ -6851,7 +6872,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static OctupleC log1p(OctupleC x)
         {
             var res = new OctupleC();
@@ -6862,7 +6883,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Log1p(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log1p/*' />
         public static OctupleC log1p(dynamic x)
         {
             return log1p(ocplx.t(x));
@@ -6870,7 +6891,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static OctupleC log10p1(OctupleC x)
         {
             var res = new OctupleC();
@@ -6881,7 +6902,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Log10p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log10p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log10p1/*' />
         public static OctupleC log10p1(dynamic x)
         {
             return log10p1(ocplx.t(x));
@@ -6889,7 +6910,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static OctupleC log2p1(OctupleC x)
         {
             var res = new OctupleC();
@@ -6900,7 +6921,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Log2p1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log2p1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log2p1/*' />
         public static OctupleC log2p1(dynamic x)
         {
             return log2p1(ocplx.t(x));
@@ -6915,7 +6936,7 @@ namespace ArbPrecNet
         #region Power functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static OctupleC sqr(OctupleC x)
         {
             var res = new OctupleC();
@@ -6926,7 +6947,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Square(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sqr/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sqr/*' />
         public static OctupleC sqr(dynamic x)
         {
             return sqr(ocplx.t(x));
@@ -6934,7 +6955,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static OctupleC cube(OctupleC x)
         {
             var res = new OctupleC();
@@ -6945,7 +6966,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Cube(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cube/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cube/*' />
         public static OctupleC cube(dynamic x)
         {
             return cube(ocplx.t(x));
@@ -6953,7 +6974,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static OctupleC hypot(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -6964,7 +6985,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypot(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hypot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hypot/*' />
         public static OctupleC hypot(dynamic x, dynamic y)
         {
             return hypot(ocplx.t(x), ocplx.t(y));
@@ -6972,7 +6993,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static OctupleC pow_si(OctupleC x, Int32 n)
         {
             var res = new OctupleC();
@@ -6983,28 +7004,28 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Pow_si(IntPtr res, IntPtr x, Int32 n);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />
         public static OctupleC pow_si(dynamic x, Int32 n)
         {
             return pow_si(ocplx.t(x), n);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static OctupleC compound_si(OctupleC x, Int32 n)
         {
             return pow1p(ocplx.t(x), ocplx.t(n));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/compound_si/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/compound_si/*' />
         public static OctupleC compound_si(dynamic x, Int32 n)
         {
             return pow1p(ocplx.t(x), ocplx.t(n));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static OctupleC pow(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -7015,7 +7036,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Pow(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />
         public static OctupleC pow(dynamic x, dynamic y)
         {
             return pow(ocplx.t(x), ocplx.t(y));
@@ -7023,7 +7044,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static OctupleC powm1(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -7034,7 +7055,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Powm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/powm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/powm1/*' />
         public static OctupleC powm1(dynamic x, dynamic y)
         {
             return powm1(ocplx.t(x), ocplx.t(y));
@@ -7042,7 +7063,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static OctupleC pow1p(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -7053,7 +7074,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Pow1p(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1p/*' />
         public static OctupleC pow1p(dynamic x, dynamic y)
         {
             return pow1p(ocplx.t(x), ocplx.t(y));
@@ -7061,7 +7082,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static OctupleC pow1pm1(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -7072,7 +7093,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Pow1pm1(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/pow1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow1pm1/*' />
         public static OctupleC pow1pm1(dynamic x, dynamic y)
         {
             return pow1pm1(ocplx.t(x), ocplx.t(y));
@@ -7087,7 +7108,7 @@ namespace ArbPrecNet
         #region Trigonometric and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static OctupleC sin(OctupleC x)
         {
             var res = new OctupleC();
@@ -7098,7 +7119,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Sin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin/*' />
         public static OctupleC sin(dynamic x)
         {
             return sin(ocplx.t(x));
@@ -7106,7 +7127,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static OctupleC cos(OctupleC x)
         {
             var res = new OctupleC();
@@ -7117,7 +7138,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Cos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos/*' />
         public static OctupleC cos(dynamic x)
         {
             return cos(ocplx.t(x));
@@ -7126,7 +7147,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static OctupleC tan(OctupleC x)
         {
             var res = new OctupleC();
@@ -7137,7 +7158,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Tan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tan/*' />
         public static OctupleC tan(dynamic x)
         {
             return tan(ocplx.t(x));
@@ -7145,7 +7166,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static OctupleC cot(OctupleC x)
         {
             var res = new OctupleC();
@@ -7156,7 +7177,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Cot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cot/*' />
         public static OctupleC cot(dynamic x)
         {
             return cot(ocplx.t(x));
@@ -7164,7 +7185,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static OctupleC sec(OctupleC x)
         {
             var res = new OctupleC();
@@ -7175,7 +7196,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Sec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sec/*' />
         public static OctupleC sec(dynamic x)
         {
             return sec(ocplx.t(x));
@@ -7183,7 +7204,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static OctupleC csc(OctupleC x)
         {
             var res = new OctupleC();
@@ -7194,7 +7215,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Csc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csc/*' />
         public static OctupleC csc(dynamic x)
         {
             return csc(ocplx.t(x));
@@ -7202,7 +7223,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static OctupleC sinc(OctupleC x)
         {
             var res = new OctupleC();
@@ -7213,7 +7234,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Sinc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinc/*' />
         public static OctupleC sinc(dynamic x)
         {
             return sinc(ocplx.t(x));
@@ -7222,7 +7243,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static OctupleC sinpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7233,7 +7254,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_SinPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinpi/*' />
         public static OctupleC sinpi(dynamic x)
         {
             return sinpi(ocplx.t(x));
@@ -7242,7 +7263,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static OctupleC cospi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7253,7 +7274,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CosPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cospi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cospi/*' />
         public static OctupleC cospi(dynamic x)
         {
             return cospi(ocplx.t(x));
@@ -7263,7 +7284,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static OctupleC tanpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7274,7 +7295,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_TanPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanpi/*' />
         public static OctupleC tanpi(dynamic x)
         {
             return tanpi(ocplx.t(x));
@@ -7283,7 +7304,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static OctupleC cotpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7294,7 +7315,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CotPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cotpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cotpi/*' />
         public static OctupleC cotpi(dynamic x)
         {
             return cotpi(ocplx.t(x));
@@ -7303,7 +7324,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static OctupleC cscpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7314,7 +7335,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CscPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cscpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cscpi/*' />
         public static OctupleC cscpi(dynamic x)
         {
             return cscpi(ocplx.t(x));
@@ -7323,7 +7344,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static OctupleC secpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7334,7 +7355,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_SecPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/secpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/secpi/*' />
         public static OctupleC secpi(dynamic x)
         {
             return secpi(ocplx.t(x));
@@ -7343,7 +7364,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static OctupleC sincpi(OctupleC x)
         {
             var res = new OctupleC();
@@ -7354,7 +7375,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_SincPi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sincpi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sincpi/*' />
         public static OctupleC sincpi(dynamic x)
         {
             return sincpi(ocplx.t(x));
@@ -7369,7 +7390,7 @@ namespace ArbPrecNet
         #region Hyperbolic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static OctupleC cosh(OctupleC x)
         {
             var res = new OctupleC();
@@ -7380,7 +7401,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Cosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh/*' />
         public static OctupleC cosh(dynamic x)
         {
             return cosh(ocplx.t(x));
@@ -7389,7 +7410,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static OctupleC sinh(OctupleC x)
         {
             var res = new OctupleC();
@@ -7400,7 +7421,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Sinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh/*' />
         public static OctupleC sinh(dynamic x)
         {
             return sinh(ocplx.t(x));
@@ -7411,7 +7432,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static OctupleC tanh(OctupleC x)
         {
             var res = new OctupleC();
@@ -7422,7 +7443,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Tanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/tanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/tanh/*' />
         public static OctupleC tanh(dynamic x)
         {
             return tanh(ocplx.t(x));
@@ -7432,7 +7453,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static OctupleC csch(OctupleC x)
         {
             var res = new OctupleC();
@@ -7443,7 +7464,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Csch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/csch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/csch/*' />
         public static OctupleC csch(dynamic x)
         {
             return csch(ocplx.t(x));
@@ -7452,7 +7473,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static OctupleC sech(OctupleC x)
         {
             var res = new OctupleC();
@@ -7463,7 +7484,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Sech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sech/*' />
         public static OctupleC sech(dynamic x)
         {
             return sech(ocplx.t(x));
@@ -7472,7 +7493,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static OctupleC coth(OctupleC x)
         {
             var res = new OctupleC();
@@ -7483,7 +7504,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Coth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coth/*' />
         public static OctupleC coth(dynamic x)
         {
             return coth(ocplx.t(x));
@@ -7500,7 +7521,7 @@ namespace ArbPrecNet
         #region Inverse trigonometric functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static OctupleC asin(OctupleC x)
         {
             var res = new OctupleC();
@@ -7511,7 +7532,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Asin(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asin/*' />
         public static OctupleC asin(dynamic x)
         {
             return asin(ocplx.t(x));
@@ -7520,7 +7541,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static OctupleC acos(OctupleC x)
         {
             var res = new OctupleC();
@@ -7531,7 +7552,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Acos(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acos/*' />
         public static OctupleC acos(dynamic x)
         {
             return acos(ocplx.t(x));
@@ -7539,7 +7560,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static OctupleC atan(OctupleC x)
         {
             var res = new OctupleC();
@@ -7550,7 +7571,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Atan(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atan/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atan/*' />
         public static OctupleC atan(dynamic x)
         {
             return atan(ocplx.t(x));
@@ -7558,7 +7579,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static OctupleC acsc(OctupleC x)
         {
             var res = new OctupleC();
@@ -7569,14 +7590,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Acsc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsc/*' />
         public static OctupleC acsc(dynamic x)
         {
             return acsc(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static OctupleC asec(OctupleC x)
         {
             var res = new OctupleC();
@@ -7587,14 +7608,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Asec(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asec/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asec/*' />
         public static OctupleC asec(dynamic x)
         {
             return asec(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static OctupleC acot(OctupleC x)
         {
             var res = new OctupleC();
@@ -7605,7 +7626,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Acot(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acot/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acot/*' />
         public static OctupleC acot(dynamic x)
         {
             return acot(ocplx.t(x));
@@ -7620,7 +7641,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static OctupleC asinh(OctupleC x)
         {
             var res = new OctupleC();
@@ -7631,7 +7652,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Asinh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asinh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asinh/*' />
         public static OctupleC asinh(dynamic x)
         {
             return asinh(ocplx.t(x));
@@ -7639,7 +7660,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static OctupleC acosh(OctupleC x)
         {
             var res = new OctupleC();
@@ -7650,7 +7671,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Acosh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acosh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acosh/*' />
         public static OctupleC acosh(dynamic x)
         {
             return acosh(ocplx.t(x));
@@ -7658,7 +7679,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static OctupleC atanh(OctupleC x)
         {
             var res = new OctupleC();
@@ -7669,7 +7690,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Atanh(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/atanh/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/atanh/*' />
         public static OctupleC atanh(dynamic x)
         {
             return atanh(ocplx.t(x));
@@ -7677,7 +7698,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static OctupleC acsch(OctupleC x)
         {
             var res = new OctupleC();
@@ -7688,7 +7709,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Acsch(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acsch/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acsch/*' />
         public static OctupleC acsch(dynamic x)
         {
             return acsch(ocplx.t(x));
@@ -7696,7 +7717,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static OctupleC asech(OctupleC x)
         {
             var res = new OctupleC();
@@ -7707,7 +7728,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Asech(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/asech/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/asech/*' />
         public static OctupleC asech(dynamic x)
         {
             return asech(ocplx.t(x));
@@ -7715,7 +7736,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static OctupleC acoth(OctupleC x)
         {
             var res = new OctupleC();
@@ -7726,7 +7747,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Acoth(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/acoth/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/acoth/*' />
         public static OctupleC acoth(dynamic x)
         {
             return acoth(ocplx.t(x));
@@ -7744,7 +7765,7 @@ namespace ArbPrecNet
         #region Gamma and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static OctupleC gamma(OctupleC x)
         {
             var res = new OctupleC();
@@ -7755,7 +7776,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Gamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma/*' />
         public static OctupleC gamma(dynamic x)
         {
             return gamma(ocplx.t(x));
@@ -7763,7 +7784,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static OctupleC rgamma(OctupleC x)
         {
             var res = new OctupleC();
@@ -7774,7 +7795,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Rgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rgamma/*' />
         public static OctupleC rgamma(dynamic x)
         {
             return rgamma(ocplx.t(x));
@@ -7782,7 +7803,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static OctupleC lgamma(OctupleC x)
         {
             var res = new OctupleC();
@@ -7793,7 +7814,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Lgamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lgamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lgamma/*' />
         public static OctupleC lgamma(dynamic x)
         {
             return lgamma(ocplx.t(x));
@@ -7801,7 +7822,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static OctupleC rising_factorial(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -7812,7 +7833,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_RisingFactorial(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/rising_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rising_factorial/*' />
         public static OctupleC rising_factorial(dynamic x, dynamic y)
         {
             return rising_factorial(ocplx.t(x), ocplx.t(y));
@@ -7820,7 +7841,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static OctupleC beta(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -7831,7 +7852,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Beta(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta/*' />
         public static OctupleC beta(dynamic x, dynamic y)
         {
             return beta(ocplx.t(x), ocplx.t(y));
@@ -7843,13 +7864,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static OctupleC gamma1pm1(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.gamma1pm1, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma1pm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma1pm1/*' />
         public static OctupleC gamma1pm1(dynamic x)
         {
             return gamma1pm1(ocplx.t(x));
@@ -7857,13 +7878,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static OctupleC factorial(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.factorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/factorial/*' />
         public static OctupleC factorial(dynamic x)
         {
             return factorial(ocplx.t(x));
@@ -7871,13 +7892,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static OctupleC doublefactorial(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.doublefactorial, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/doublefactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/doublefactorial/*' />
         public static OctupleC doublefactorial(dynamic x)
         {
             return doublefactorial(ocplx.t(x));
@@ -7885,13 +7906,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static OctupleC falling_factorial(OctupleC a, OctupleC n)
         {
             return aflintc.OCplxViaArbCS2(aflintc.falling_factorial, a, n);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/falling_factorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/falling_factorial/*' />
         public static OctupleC falling_factorial(dynamic a, dynamic n)
         {
             return falling_factorial(ocplx.t(a), ocplx.t(n));
@@ -7899,13 +7920,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static OctupleC gamma_ratio(OctupleC a, OctupleC b)
         {
             return aflintc.OCplxViaArbCS2(aflintc.gamma_ratio, a, b);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_ratio/*' />
         public static OctupleC gamma_ratio(dynamic a, dynamic b)
         {
             return gamma_ratio(ocplx.t(a), ocplx.t(b));
@@ -7913,13 +7934,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static OctupleC gamma_delta_ratio(OctupleC a, OctupleC delta)
         {
             return aflintc.OCplxViaArbCS2(aflintc.gamma_delta_ratio, a, delta);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_delta_ratio/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_delta_ratio/*' />
         public static OctupleC gamma_delta_ratio(dynamic a, dynamic delta)
         {
             return gamma_delta_ratio(ocplx.t(a), ocplx.t(delta));
@@ -7927,13 +7948,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static OctupleC binomial(OctupleC n, OctupleC k)
         {
             return aflintc.OCplxViaArbCS2(aflintc.binomial, n, k);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/binomial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/binomial/*' />
         public static OctupleC binomial(dynamic n, dynamic k)
         {
             return binomial(ocplx.t(n), ocplx.t(k));
@@ -7955,7 +7976,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static OctupleC lambert_wk(OctupleC x, int branch)
         {
             var res = new OctupleC();
@@ -7966,7 +7987,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LambertW_ui(IntPtr res, IntPtr x, int branch);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wk/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wk/*' />
         public static OctupleC lambert_wk(dynamic x, int branch)
         {
             return lambert_wk(ocplx.t(x), branch);
@@ -7975,25 +7996,25 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static OctupleC lambert_w0(OctupleC x)
         {
             return lambert_wk(ocplx.t(x), 0);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_w0/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_w0/*' />
         public static OctupleC lambert_w0(dynamic x)
         {
             return lambert_w0(ocplx.t(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static OctupleC lambert_wm1(OctupleC x)
         {
             return lambert_wk(ocplx.t(x), -1);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lambert_wm1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lambert_wm1/*' />
         public static OctupleC lambert_wm1(dynamic x)
         {
             return lambert_wm1(ocplx.t(x));
@@ -8003,7 +8024,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static OctupleC agm(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -8014,7 +8035,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Agm(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/agm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/agm/*' />
         public static OctupleC agm(dynamic x, dynamic y)
         {
             return agm(ocplx.t(x), ocplx.t(y));
@@ -8045,7 +8066,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static OctupleC m_elliptic_k(OctupleC m)
         {
             var res = new OctupleC();
@@ -8056,7 +8077,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_MEllipticK(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_k/*' />
         public static OctupleC m_elliptic_k(dynamic x)
         {
             return m_elliptic_k(ocplx.t(x));
@@ -8065,7 +8086,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static OctupleC m_elliptic_e(OctupleC m)
         {
             var res = new OctupleC();
@@ -8076,7 +8097,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_MEllipticE(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e/*' />
         public static OctupleC m_elliptic_e(dynamic x)
         {
             return m_elliptic_e(ocplx.t(x));
@@ -8085,7 +8106,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static OctupleC m_elliptic_pi(OctupleC n, OctupleC m)
         {
             var res = new OctupleC();
@@ -8096,7 +8117,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_MEllipticPi(IntPtr res, IntPtr n, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi/*' />
         public static OctupleC m_elliptic_pi(dynamic x, dynamic y)
         {
             return m_elliptic_pi(ocplx.t(x), ocplx.t(y));
@@ -8105,7 +8126,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static OctupleC m_elliptic_f(OctupleC phi, OctupleC m)
         {
             var res = new OctupleC();
@@ -8116,7 +8137,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_MEllipticF(IntPtr res, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_f/*' />
         public static OctupleC m_elliptic_f(dynamic phi, dynamic m)
         {
             return m_elliptic_f(ocplx.t(phi), ocplx.t(m));
@@ -8124,7 +8145,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static OctupleC m_elliptic_e_inc(OctupleC phi, OctupleC m)
         {
             var res = new OctupleC();
@@ -8135,7 +8156,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_MEllipticEInc(IntPtr res, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_e_inc/*' />
         public static OctupleC m_elliptic_e_inc(dynamic phi, dynamic m)
         {
             return m_elliptic_e_inc(ocplx.t(phi), ocplx.t(m));
@@ -8143,7 +8164,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static OctupleC m_elliptic_pi_inc(OctupleC n, OctupleC phi, OctupleC m)
         {
             var res = new OctupleC();
@@ -8154,7 +8175,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_MEllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr m);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/m_elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/m_elliptic_pi_inc/*' />
         public static OctupleC m_elliptic_pi_inc(dynamic n, dynamic phi, dynamic m)
         {
             return m_elliptic_pi_inc(ocplx.t(n), ocplx.t(phi), ocplx.t(m));
@@ -8173,7 +8194,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static OctupleC elliptic_k(OctupleC k)
         {
             var res = new OctupleC();
@@ -8184,7 +8205,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticK(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_k/*' />
         public static OctupleC elliptic_k(dynamic k)
         {
             return elliptic_k(ocplx.t(k));
@@ -8193,7 +8214,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static OctupleC elliptic_e(OctupleC k)
         {
             var res = new OctupleC();
@@ -8204,7 +8225,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticE(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e/*' />
         public static OctupleC elliptic_e(dynamic k)
         {
             return elliptic_e(ocplx.t(k));
@@ -8213,7 +8234,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static OctupleC elliptic_pi(OctupleC n, OctupleC k)
         {
             var res = new OctupleC();
@@ -8224,7 +8245,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticPi(IntPtr res, IntPtr n, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi/*' />
         public static OctupleC elliptic_pi(dynamic n, dynamic k)
         {
             return elliptic_pi(ocplx.t(n), ocplx.t(k));
@@ -8233,7 +8254,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static OctupleC elliptic_f(OctupleC phi, OctupleC k)
         {
             var res = new OctupleC();
@@ -8244,7 +8265,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticF(IntPtr res, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_f/*' />
         public static OctupleC elliptic_f(dynamic phi, dynamic k)
         {
             return elliptic_f(ocplx.t(phi), ocplx.t(k));
@@ -8252,7 +8273,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static OctupleC elliptic_e_inc(OctupleC phi, OctupleC k)
         {
             var res = new OctupleC();
@@ -8263,7 +8284,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticEInc(IntPtr res, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_e_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_e_inc/*' />
         public static OctupleC elliptic_e_inc(dynamic phi, dynamic k)
         {
             return elliptic_e_inc(ocplx.t(phi), ocplx.t(k));
@@ -8271,7 +8292,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static OctupleC elliptic_pi_inc(OctupleC n, OctupleC phi, OctupleC k)
         {
             var res = new OctupleC();
@@ -8282,7 +8303,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticPiInc(IntPtr res, IntPtr n, IntPtr phi, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_pi_inc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_pi_inc/*' />
         public static OctupleC elliptic_pi_inc(dynamic n, dynamic phi, dynamic k)
         {
             return elliptic_pi_inc(ocplx.t(n), ocplx.t(phi), ocplx.t(k));
@@ -8298,7 +8319,7 @@ namespace ArbPrecNet
         #region Carlson symmetric elliptic integrals
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static OctupleC elliptic_rc(OctupleC x, OctupleC y)
         {
             var res = new OctupleC();
@@ -8309,14 +8330,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Elliptic_RC(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static OctupleC elliptic_rc(dynamic x, dynamic y)
         {
             return elliptic_rc(ocplx.t(x), ocplx.t(y));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static OctupleC elliptic_rf(OctupleC x, OctupleC y, OctupleC z)
         {
             var res = new OctupleC();
@@ -8327,7 +8348,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Elliptic_RF(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rf/*' />
         public static OctupleC elliptic_rf(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rf(ocplx.t(x), ocplx.t(y), ocplx.t(z));
@@ -8337,7 +8358,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static OctupleC elliptic_rg(OctupleC x, OctupleC y, OctupleC z)
         {
             var res = new OctupleC();
@@ -8348,7 +8369,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Elliptic_RG(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rg/*' />
         public static OctupleC elliptic_rg(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rg(ocplx.t(x), ocplx.t(y), ocplx.t(z));
@@ -8357,7 +8378,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static OctupleC elliptic_rd(OctupleC x, OctupleC y, OctupleC z)
         {
             var res = new OctupleC();
@@ -8368,7 +8389,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Elliptic_RD(IntPtr res, IntPtr x, IntPtr y, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rd/*' />
         public static OctupleC elliptic_rd(dynamic x, dynamic y, dynamic z)
         {
             return elliptic_rd(ocplx.t(x), ocplx.t(y), ocplx.t(z));
@@ -8376,7 +8397,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static OctupleC elliptic_rj(OctupleC x, OctupleC y, OctupleC z, OctupleC w)
         {
             var res = new OctupleC();
@@ -8387,7 +8408,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Elliptic_RJ(IntPtr res, IntPtr x, IntPtr y, IntPtr z, IntPtr w);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/elliptic_rj/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/elliptic_rj/*' />
         public static OctupleC elliptic_rj(dynamic x, dynamic y, dynamic z, dynamic w)
         {
             return elliptic_rj(ocplx.t(x), ocplx.t(y), ocplx.t(z), ocplx.t(w));
@@ -8405,7 +8426,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static OctupleC jacobi_theta1(OctupleC x, OctupleC q)
         {
             var res = new OctupleC();
@@ -8416,7 +8437,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta1Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta1/*' />
         public static OctupleC jacobi_theta1(dynamic x, dynamic q)
         {
             return jacobi_theta1(ocplx.t(x), ocplx.t(q));
@@ -8425,7 +8446,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static OctupleC jacobi_theta2(OctupleC x, OctupleC q)
         {
             var res = new OctupleC();
@@ -8436,7 +8457,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta2Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta2/*' />
         public static OctupleC jacobi_theta2(dynamic x, dynamic q)
         {
             return jacobi_theta2(ocplx.t(x), ocplx.t(q));
@@ -8445,7 +8466,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static OctupleC jacobi_theta3(OctupleC x, OctupleC q)
         {
             var res = new OctupleC();
@@ -8456,7 +8477,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta3Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta3/*' />
         public static OctupleC jacobi_theta3(dynamic x, dynamic q)
         {
             return jacobi_theta3(ocplx.t(x), ocplx.t(q));
@@ -8465,7 +8486,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static OctupleC jacobi_theta4(OctupleC x, OctupleC q)
         {
             var res = new OctupleC();
@@ -8476,7 +8497,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta4Q(IntPtr res, IntPtr x, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_theta4/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_theta4/*' />
         public static OctupleC jacobi_theta4(dynamic x, dynamic q)
         {
             return jacobi_theta4(ocplx.t(x), ocplx.t(q));
@@ -8486,7 +8507,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta1Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta1Tau/*' />
         public static OctupleC JacobiTheta1Tau(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -8497,7 +8518,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta1QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta1Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta1Tau/*' />
         public static OctupleC JacobiTheta1Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta1Tau(ocplx.t(z), ocplx.t(tau));
@@ -8506,7 +8527,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta2Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta2Tau/*' />
         public static OctupleC JacobiTheta2Tau(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -8517,7 +8538,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta2QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta2Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta2Tau/*' />
         public static OctupleC JacobiTheta2Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta2Tau(ocplx.t(z), ocplx.t(tau));
@@ -8526,7 +8547,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta3Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta3Tau/*' />
         public static OctupleC JacobiTheta3Tau(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -8537,7 +8558,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta3QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta3Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta3Tau/*' />
         public static OctupleC JacobiTheta3Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta3Tau(ocplx.t(z), ocplx.t(tau));
@@ -8546,7 +8567,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta4Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta4Tau/*' />
         public static OctupleC JacobiTheta4Tau(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -8557,7 +8578,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_Theta4QTau(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/JacobiTheta4Tau/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/JacobiTheta4Tau/*' />
         public static OctupleC JacobiTheta4Tau(dynamic z, dynamic tau)
         {
             return JacobiTheta4Tau(ocplx.t(z), ocplx.t(tau));
@@ -8575,7 +8596,7 @@ namespace ArbPrecNet
         #region Jacobi elliptic functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/QfromK/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/QfromK/*' />
         public static OctupleC QfromK(OctupleC k)
         {
             var res = new OctupleC();
@@ -8586,7 +8607,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_QfromK(IntPtr res, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/QfromK/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/QfromK/*' />
         public static OctupleC QfromK(dynamic k)
         {
             return QfromK(ocplx.t(k));
@@ -8595,7 +8616,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/TfromUQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/TfromUQ/*' />
         public static OctupleC TfromUQ(OctupleC u, OctupleC q)
         {
             var res = new OctupleC();
@@ -8606,7 +8627,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_TfromUQ(IntPtr res, IntPtr u, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/TfromUQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/TfromUQ/*' />
         public static OctupleC TfromUQ(dynamic n, dynamic k)
         {
             return TfromUQ(ocplx.t(n), ocplx.t(k));
@@ -8614,7 +8635,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/SnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/SnTQ/*' />
         public static OctupleC SnTQ(OctupleC t, OctupleC q)
         {
             var res = new OctupleC();
@@ -8625,7 +8646,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_SnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/SnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/SnTQ/*' />
         public static OctupleC SnTQ(dynamic t, dynamic q)
         {
             return SnTQ(ocplx.t(t), ocplx.t(q));
@@ -8633,7 +8654,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CnTQ/*' />
         public static OctupleC CnTQ(OctupleC t, OctupleC q)
         {
             var res = new OctupleC();
@@ -8644,7 +8665,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_CnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/CnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/CnTQ/*' />
         public static OctupleC CnTQ(dynamic t, dynamic q)
         {
             return CnTQ(ocplx.t(t), ocplx.t(q));
@@ -8652,7 +8673,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/DnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/DnTQ/*' />
         public static OctupleC DnTQ(OctupleC t, OctupleC q)
         {
             var res = new OctupleC();
@@ -8663,7 +8684,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DnTQ(IntPtr res, IntPtr t, IntPtr q);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/DnTQ/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/DnTQ/*' />
         public static OctupleC DnTQ(dynamic t, dynamic q)
         {
             return DnTQ(ocplx.t(t), ocplx.t(q));
@@ -8671,7 +8692,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static OctupleC jacobi_sn(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8682,7 +8703,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiSN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sn/*' />
         public static OctupleC jacobi_sn(dynamic x, dynamic k)
         {
             return jacobi_sn(ocplx.t(x), ocplx.t(k));
@@ -8690,7 +8711,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static OctupleC jacobi_cn(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8701,7 +8722,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiCN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cn/*' />
         public static OctupleC jacobi_cn(dynamic x, dynamic k)
         {
             return jacobi_cn(ocplx.t(x), ocplx.t(k));
@@ -8709,7 +8730,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static OctupleC jacobi_dn(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8720,7 +8741,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiDN(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dn/*' />
         public static OctupleC jacobi_dn(dynamic x, dynamic k)
         {
             return jacobi_dn(ocplx.t(x), ocplx.t(k));
@@ -8728,7 +8749,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static OctupleC jacobi_ns(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8739,7 +8760,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiNS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ns/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ns/*' />
         public static OctupleC jacobi_ns(dynamic x, dynamic k)
         {
             return jacobi_ns(ocplx.t(x), ocplx.t(k));
@@ -8747,7 +8768,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static OctupleC jacobi_nc(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8758,7 +8779,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiNC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nc/*' />
         public static OctupleC jacobi_nc(dynamic x, dynamic k)
         {
             return jacobi_nc(ocplx.t(x), ocplx.t(k));
@@ -8766,7 +8787,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static OctupleC jacobi_nd(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8777,7 +8798,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiND(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_nd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_nd/*' />
         public static OctupleC jacobi_nd(dynamic x, dynamic k)
         {
             return jacobi_nd(ocplx.t(x), ocplx.t(k));
@@ -8785,7 +8806,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static OctupleC jacobi_sc(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8796,7 +8817,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiSC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sc/*' />
         public static OctupleC jacobi_sc(dynamic x, dynamic k)
         {
             return jacobi_sc(ocplx.t(x), ocplx.t(k));
@@ -8804,7 +8825,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static OctupleC jacobi_sd(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8815,7 +8836,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiSD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_sd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_sd/*' />
         public static OctupleC jacobi_sd(dynamic x, dynamic k)
         {
             return jacobi_sd(ocplx.t(x), ocplx.t(k));
@@ -8823,7 +8844,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static OctupleC jacobi_dc(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8834,7 +8855,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiDC(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_dc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_dc/*' />
         public static OctupleC jacobi_dc(dynamic x, dynamic k)
         {
             return jacobi_dc(ocplx.t(x), ocplx.t(k));
@@ -8842,7 +8863,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static OctupleC jacobi_ds(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8853,7 +8874,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiDS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_ds/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_ds/*' />
         public static OctupleC jacobi_ds(dynamic x, dynamic k)
         {
             return jacobi_ds(ocplx.t(x), ocplx.t(k));
@@ -8861,7 +8882,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static OctupleC jacobi_cs(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8872,7 +8893,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiCS(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cs/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cs/*' />
         public static OctupleC jacobi_cs(dynamic x, dynamic k)
         {
             return jacobi_cs(ocplx.t(x), ocplx.t(k));
@@ -8880,7 +8901,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static OctupleC jacobi_cd(OctupleC x, OctupleC k)
         {
             var res = new OctupleC();
@@ -8891,7 +8912,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_JacobiCD(IntPtr res, IntPtr x, IntPtr k);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_cd/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_cd/*' />
         public static OctupleC jacobi_cd(dynamic x, dynamic k)
         {
             return jacobi_cd(ocplx.t(x), ocplx.t(k));
@@ -8908,7 +8929,7 @@ namespace ArbPrecNet
         #region Conversions of parameters of Weierstrass P
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<OctupleC, OctupleC> elliptic_invariants_from_roots(OctupleC e1, OctupleC e2)
         {
             OctupleC e3 = -e1 - e2;
@@ -8917,7 +8938,7 @@ namespace ArbPrecNet
             return new Tuple<OctupleC, OctupleC>(g2, g3);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<OctupleC, OctupleC> elliptic_invariants_from_roots(dynamic e1, dynamic e2)
         {
             return elliptic_invariants_from_roots(ocplx.t(e1), ocplx.t(e2));
@@ -8925,13 +8946,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<OctupleC, OctupleC> elliptic_invariants_from_tau(OctupleC tau)
         {
             return new Tuple<OctupleC, OctupleC>(EllipticInvariantG2(tau), EllipticInvariantG3(tau));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<OctupleC, OctupleC> elliptic_invariants_from_tau(dynamic tau)
         {
             return elliptic_invariants_from_tau(ocplx.t(tau));
@@ -8939,13 +8960,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<OctupleC, OctupleC, OctupleC> elliptic_roots_from_tau(OctupleC tau)
         {
             return new Tuple<OctupleC, OctupleC, OctupleC>(EllipticRootE1(tau), EllipticRootE2(tau), EllipticRootE3(tau));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2G3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2G3/*' />
         public static Tuple<OctupleC, OctupleC, OctupleC> elliptic_roots_from_tau(dynamic tau)
         {
             return elliptic_roots_from_tau(ocplx.t(tau));
@@ -8966,7 +8987,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_p_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_p_t/*' />
         public static OctupleC weierstrass_p_t(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -8977,7 +8998,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_WeierstrassP(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_p_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_p_t/*' />
         public static OctupleC weierstrass_p_t(dynamic z, dynamic tau)
         {
             return weierstrass_p_t(ocplx.t(z), ocplx.t(tau));
@@ -8986,7 +9007,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/WeierstrassPInv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
         public static OctupleC WeierstrassPInv(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -8997,7 +9018,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/WeierstrassPInv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
         public static OctupleC WeierstrassPInv(dynamic z, dynamic tau)
         {
             return WeierstrassPInv(ocplx.t(z), ocplx.t(tau));
@@ -9005,7 +9026,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_zeta_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_zeta_t/*' />
         public static OctupleC weierstrass_zeta_t(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -9016,7 +9037,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_WeierstrassPZeta(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_zeta_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_zeta_t/*' />
         public static OctupleC weierstrass_zeta_t(dynamic z, dynamic tau)
         {
             return weierstrass_zeta_t(ocplx.t(z), ocplx.t(tau));
@@ -9025,7 +9046,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_sigma_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_sigma_t/*' />
         public static OctupleC weierstrass_sigma_t(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -9036,7 +9057,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_WeierstrassPSigma(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_sigma_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_sigma_t/*' />
         public static OctupleC weierstrass_sigma_t(dynamic z, dynamic tau)
         {
             return weierstrass_sigma_t(ocplx.t(z), ocplx.t(tau));
@@ -9044,7 +9065,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_pprime_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pprime_t/*' />
         public static OctupleC weierstrass_pprime_t(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
@@ -9055,7 +9076,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_WeierstrassPPrime(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weierstrass_pprime_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pprime_t/*' />
         public static OctupleC weierstrass_pprime_t(dynamic z, dynamic tau)
         {
             return weierstrass_pprime_t(ocplx.t(z), ocplx.t(tau));
@@ -9065,7 +9086,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2/*' />
         public static OctupleC EllipticInvariantG2(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9076,7 +9097,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticInvariantG2(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG2/*' />
         public static OctupleC EllipticInvariantG2(dynamic k)
         {
             return EllipticInvariantG2(ocplx.t(k));
@@ -9085,7 +9106,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG3/*' />
         public static OctupleC EllipticInvariantG3(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9096,7 +9117,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticInvariantG3(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticInvariantG3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticInvariantG3/*' />
         public static OctupleC EllipticInvariantG3(dynamic k)
         {
             return EllipticInvariantG3(ocplx.t(k));
@@ -9104,7 +9125,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE1/*' />
         public static OctupleC EllipticRootE1(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9115,7 +9136,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticRootE1(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE1/*' />
         public static OctupleC EllipticRootE1(dynamic k)
         {
             return EllipticRootE1(ocplx.t(k));
@@ -9123,7 +9144,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE2/*' />
         public static OctupleC EllipticRootE2(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9134,7 +9155,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticRootE2(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE2/*' />
         public static OctupleC EllipticRootE2(dynamic k)
         {
             return EllipticRootE2(ocplx.t(k));
@@ -9142,7 +9163,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE3/*' />
         public static OctupleC EllipticRootE3(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9153,7 +9174,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_EllipticRootE3(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/EllipticRootE3/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/EllipticRootE3/*' />
         public static OctupleC EllipticRootE3(dynamic k)
         {
             return EllipticRootE3(ocplx.t(k));
@@ -9161,7 +9182,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dedekind_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dedekind_eta/*' />
         public static OctupleC dedekind_eta(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9172,7 +9193,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DedekindEta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dedekind_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dedekind_eta/*' />
         public static OctupleC dedekind_eta(dynamic k)
         {
             return dedekind_eta(ocplx.t(k));
@@ -9180,7 +9201,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/klein_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static OctupleC klein_j(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9191,7 +9212,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_KleinJ(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/klein_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static OctupleC klein_j(dynamic k)
         {
             return klein_j(ocplx.t(k));
@@ -9199,7 +9220,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_lambda/*' />
         public static OctupleC modular_lambda(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9210,7 +9231,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_ModularLambda(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_lambda/*' />
         public static OctupleC modular_lambda(dynamic k)
         {
             return modular_lambda(ocplx.t(k));
@@ -9218,7 +9239,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_delta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_delta/*' />
         public static OctupleC modular_delta(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9229,7 +9250,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_ModularDelta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/modular_delta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modular_delta/*' />
         public static OctupleC modular_delta(dynamic k)
         {
             return modular_delta(ocplx.t(k));
@@ -9257,7 +9278,7 @@ namespace ArbPrecNet
         #region Lerch’s transcendent: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static OctupleC lerch_phi(OctupleC s, OctupleC z, OctupleC a)
         {
             var res = new OctupleC();
@@ -9268,7 +9289,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LerchPhi(IntPtr res, IntPtr s, IntPtr z, IntPtr a);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_phi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_phi/*' />
         public static OctupleC lerch_phi(dynamic s, dynamic z, dynamic a)
         {
             return lerch_phi(ocplx.t(s), ocplx.t(z), ocplx.t(a));
@@ -9276,7 +9297,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static OctupleC lerch_zeta(OctupleC lambda1, OctupleC alpha, OctupleC s)
         {
             var res = new OctupleC();
@@ -9287,7 +9308,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LerchZeta(IntPtr res, IntPtr lambda1, IntPtr alpha, IntPtr s);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lerch_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lerch_zeta/*' />
         public static OctupleC lerch_zeta(dynamic lambda1, dynamic alpha, dynamic s)
         {
             return lerch_zeta(ocplx.t(lambda1), ocplx.t(alpha), ocplx.t(s));
@@ -9303,7 +9324,7 @@ namespace ArbPrecNet
         #region polygamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static OctupleC polygamma(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9314,7 +9335,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Polygamma(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polygamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polygamma/*' />
         public static OctupleC polygamma(dynamic s, dynamic z)
         {
             return polygamma(ocplx.t(s), ocplx.t(z));
@@ -9322,7 +9343,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static OctupleC trigamma(OctupleC x)
         {
             var res = new OctupleC();
@@ -9333,7 +9354,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Trigamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trigamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trigamma/*' />
         public static OctupleC trigamma(dynamic x)
         {
             return trigamma(ocplx.t(x));
@@ -9341,7 +9362,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static OctupleC digamma(OctupleC x)
         {
             var res = new OctupleC();
@@ -9352,7 +9373,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Digamma(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/digamma/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/digamma/*' />
         public static OctupleC digamma(dynamic x)
         {
             return digamma(ocplx.t(x));
@@ -9367,7 +9388,7 @@ namespace ArbPrecNet
         #region Polylogarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static OctupleC polylog(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9378,7 +9399,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Polylog(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/polylog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/polylog/*' />
         public static OctupleC polylog(dynamic s, dynamic z)
         {
             return polylog(ocplx.t(s), ocplx.t(z));
@@ -9387,7 +9408,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static OctupleC trilog(OctupleC x)
         {
             var res = new OctupleC();
@@ -9398,7 +9419,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Trilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/trilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/trilog/*' />
         public static OctupleC trilog(dynamic x)
         {
             return trilog(ocplx.t(x));
@@ -9406,7 +9427,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static OctupleC dilog(OctupleC x)
         {
             var res = new OctupleC();
@@ -9417,7 +9438,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Dilog(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dilog/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dilog/*' />
         public static OctupleC dilog(dynamic x)
         {
             return dilog(ocplx.t(x));
@@ -9425,7 +9446,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static OctupleC clausen_sin(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9436,7 +9457,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ClausenSin(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_sin/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_sin/*' />
         public static OctupleC clausen_sin(dynamic s, dynamic z)
         {
             return clausen_sin(ocplx.t(s), ocplx.t(z));
@@ -9444,7 +9465,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static OctupleC clausen_cos(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9455,7 +9476,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ClausenCos(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen_cos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen_cos/*' />
         public static OctupleC clausen_cos(dynamic s, dynamic z)
         {
             return clausen_cos(ocplx.t(s), ocplx.t(z));
@@ -9464,7 +9485,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static OctupleC clausen2(OctupleC x)
         {
             var res = new OctupleC();
@@ -9475,7 +9496,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Clausen2(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/clausen2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/clausen2/*' />
         public static OctupleC clausen2(dynamic x)
         {
             return clausen2(ocplx.t(x));
@@ -9483,7 +9504,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static OctupleC bose_einstein(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9494,7 +9515,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_BoseEinstein(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bose_einstein/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static OctupleC bose_einstein(dynamic s, dynamic z)
         {
             return bose_einstein(ocplx.t(s), ocplx.t(z));
@@ -9502,7 +9523,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static OctupleC fermi_dirac(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9513,7 +9534,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_FermiDirac(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fermi_dirac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fermi_dirac/*' />
         public static OctupleC fermi_dirac(dynamic s, dynamic z)
         {
             return fermi_dirac(ocplx.t(s), ocplx.t(z));
@@ -9521,7 +9542,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static OctupleC legendre_chi(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9532,7 +9553,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LegendreChi(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_chi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_chi/*' />
         public static OctupleC legendre_chi(dynamic s, dynamic z)
         {
             return legendre_chi(ocplx.t(s), ocplx.t(z));
@@ -9540,7 +9561,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static OctupleC inverse_tan_integral(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9551,7 +9572,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_InverseTanIntegral(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/inverse_tan_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/inverse_tan_integral/*' />
         public static OctupleC inverse_tan_integral(dynamic s, dynamic z)
         {
             return inverse_tan_integral(ocplx.t(s), ocplx.t(z));
@@ -9568,7 +9589,7 @@ namespace ArbPrecNet
         #region Hurwitz zeta function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static OctupleC hurwitz_zeta(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -9579,7 +9600,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_HurwitzZeta(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hurwitz_zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hurwitz_zeta/*' />
         public static OctupleC hurwitz_zeta(dynamic s, dynamic z)
         {
             return hurwitz_zeta(ocplx.t(s), ocplx.t(z));
@@ -9587,7 +9608,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/stieltjes/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/stieltjes/*' />
         //public static OctupleC stieltjes(OctupleC x, Int32 n)
         //{
         //    var res = new OctupleC();
@@ -9600,7 +9621,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
         public static OctupleC bernpoly(OctupleC x, Int32 n)
         {
             var res = new OctupleC();
@@ -9610,7 +9631,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OCplx_Acb_BernoulliPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_OCplx_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bernpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
         public static OctupleC bernpoly(dynamic x, Int32 n)
         {
             return bernpoly(ocplx.t(x), n);
@@ -9618,7 +9639,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static OctupleC eulerpoly(OctupleC x, Int32 n)
         {
             var res = new OctupleC();
@@ -9628,7 +9649,7 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OCplx_Acb_EulerPoly_ui", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_OCplx_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/eulerpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
         public static OctupleC eulerpoly(dynamic x, Int32 n)
         {
             return eulerpoly(ocplx.t(x), n);
@@ -9637,7 +9658,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static OctupleC harmonic(OctupleC x)
         {
             var res = new OctupleC();
@@ -9648,7 +9669,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Harmonic(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic/*' />
         public static OctupleC harmonic(dynamic x)
         {
             return harmonic(ocplx.t(x));
@@ -9657,7 +9678,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static OctupleC harmonic2(OctupleC z, OctupleC r)
         {
             var res = new OctupleC();
@@ -9668,7 +9689,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Harmonic2(IntPtr res, IntPtr z, IntPtr r);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/harmonic2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/harmonic2/*' />
         public static OctupleC harmonic2(dynamic z, dynamic r)
         {
             return harmonic2(ocplx.t(z), ocplx.t(r));
@@ -9679,7 +9700,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static OctupleC barnes_g(OctupleC x)
         {
             var res = new OctupleC();
@@ -9690,7 +9711,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_BarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/barnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/barnes_g/*' />
         public static OctupleC barnes_g(dynamic x)
         {
             return barnes_g(ocplx.t(x));
@@ -9698,7 +9719,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static OctupleC logbarnes_g(OctupleC x)
         {
             var res = new OctupleC();
@@ -9709,7 +9730,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LogBarnesG(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/logbarnes_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbarnes_g/*' />
         public static OctupleC logbarnes_g(dynamic x)
         {
             return logbarnes_g(ocplx.t(x));
@@ -9717,7 +9738,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static OctupleC hyperfactorial(OctupleC x)
         {
             var res = new OctupleC();
@@ -9728,7 +9749,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hyperfactorial(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperfactorial/*' />
         public static OctupleC hyperfactorial(dynamic x)
         {
             return hyperfactorial(ocplx.t(x));
@@ -9736,7 +9757,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static OctupleC superfactorial(OctupleC x)
         {
             var res = new OctupleC();
@@ -9747,7 +9768,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Superfactorial(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/superfactorial/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/superfactorial/*' />
         public static OctupleC superfactorial(dynamic x)
         {
             return superfactorial(ocplx.t(x));
@@ -9763,7 +9784,7 @@ namespace ArbPrecNet
         #region Riemann zeta function, and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static OctupleC zeta(OctupleC x)
         {
             var res = new OctupleC();
@@ -9774,14 +9795,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Zeta(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta/*' />
         public static OctupleC zeta(dynamic x)
         {
             return zeta(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static OctupleC zetam1(OctupleC x)
         {
             var res = new OctupleC();
@@ -9792,7 +9813,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Zetam1(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zetam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zetam1/*' />
         public static OctupleC zetam1(dynamic x)
         {
             return zetam1(ocplx.t(x));
@@ -9800,7 +9821,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static OctupleC riemann_xi(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9811,7 +9832,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DirichletXi(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/riemann_xi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/riemann_xi/*' />
         public static OctupleC riemann_xi(dynamic k)
         {
             return riemann_xi(ocplx.t(k));
@@ -9819,7 +9840,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static OctupleC dirichlet_eta(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9830,7 +9851,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DirichletEta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_eta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_eta/*' />
         public static OctupleC dirichlet_eta(dynamic k)
         {
             return dirichlet_eta(ocplx.t(k));
@@ -9838,7 +9859,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static OctupleC dirichlet_etam1(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9849,7 +9870,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DirichletEtam1(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_etam1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_etam1/*' />
         public static OctupleC dirichlet_etam1(dynamic k)
         {
             return dirichlet_etam1(ocplx.t(k));
@@ -9857,7 +9878,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static OctupleC dirichlet_beta(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9868,7 +9889,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DirichletBeta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_beta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_beta/*' />
         public static OctupleC dirichlet_beta(dynamic k)
         {
             return dirichlet_beta(ocplx.t(k));
@@ -9876,7 +9897,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static OctupleC dirichlet_lambda(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9887,7 +9908,7 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_DirichletLambda(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dirichlet_lambda/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dirichlet_lambda/*' />
         public static OctupleC dirichlet_lambda(dynamic k)
         {
             return dirichlet_lambda(ocplx.t(k));
@@ -9895,7 +9916,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static OctupleC hardy_z(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9906,14 +9927,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_HardyZ(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_z/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_z/*' />
         public static OctupleC hardy_z(dynamic k)
         {
             return hardy_z(ocplx.t(k));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static OctupleC hardy_theta(OctupleC tau)
         {
             var res = new OctupleC();
@@ -9924,14 +9945,14 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_HardyTheta(IntPtr res, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hardy_theta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hardy_theta/*' />
         public static OctupleC hardy_theta(dynamic k)
         {
             return hardy_theta(ocplx.t(k));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/zeta_zero/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zeta_zero/*' />
         public static OctupleC zeta_zero(Int32 n)
         {
             var res = new OctupleC();
@@ -9965,7 +9986,7 @@ namespace ArbPrecNet
         #region 0F1: Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static OctupleC hyperg_0f1(OctupleC a, OctupleC x)
         {
             var res = new OctupleC();
@@ -9976,7 +9997,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom0F1(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1/*' />
         public static OctupleC hyperg_0f1(dynamic a, dynamic x)
         {
             return hyperg_0f1(ocplx.t(a), ocplx.t(x));
@@ -9985,7 +10006,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static OctupleC hyperg_0f1r(OctupleC a, OctupleC x)
         {
             var res = new OctupleC();
@@ -9996,7 +10017,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom0F1r(IntPtr res, IntPtr a, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_0f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_0f1r/*' />
         public static OctupleC hyperg_0f1r(dynamic a, dynamic x)
         {
             return hyperg_0f1r(ocplx.t(a), ocplx.t(x));
@@ -10014,13 +10035,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static OctupleC bessel_jv(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_jv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv/*' />
         public static OctupleC bessel_jv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10028,13 +10049,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static OctupleC bessel_yv(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_yv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv/*' />
         public static OctupleC bessel_yv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10042,13 +10063,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static OctupleC bessel_iv(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_iv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv/*' />
         public static OctupleC bessel_iv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10056,13 +10077,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static OctupleC bessel_kv(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_kv, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv/*' />
         public static OctupleC bessel_kv(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10076,13 +10097,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static OctupleC bessel_jv_prime(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_jv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_jv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_jv_prime/*' />
         public static OctupleC bessel_jv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_jv_prime(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10090,13 +10111,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static OctupleC bessel_yv_prime(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_yv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_yv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_yv_prime/*' />
         public static OctupleC bessel_yv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_yv_prime(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10104,13 +10125,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static OctupleC bessel_iv_prime(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_iv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_iv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_iv_prime/*' />
         public static OctupleC bessel_iv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_iv_prime(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10118,13 +10139,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static OctupleC bessel_kv_prime(OctupleC nu, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.bessel_kv_prime, nu, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/bessel_kv_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bessel_kv_prime/*' />
         public static OctupleC bessel_kv_prime(dynamic nu, dynamic x, bool scaled = false)
         {
             return bessel_kv_prime(ocplx.t(nu), ocplx.t(x), scaled);
@@ -10152,13 +10173,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static OctupleC sph_bessel_jn(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_jn, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn/*' />
         public static OctupleC sph_bessel_jn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn(ocplx.t(n), ocplx.t(x), scaled);
@@ -10167,13 +10188,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static OctupleC sph_bessel_yn(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_yn, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn/*' />
         public static OctupleC sph_bessel_yn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn(ocplx.t(n), ocplx.t(x), scaled);
@@ -10182,13 +10203,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static OctupleC sph_bessel_in(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_in, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in/*' />
         public static OctupleC sph_bessel_in(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in(ocplx.t(n), ocplx.t(x), scaled);
@@ -10197,13 +10218,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static OctupleC sph_bessel_kn(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_kn, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn/*' />
         public static OctupleC sph_bessel_kn(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn(ocplx.t(n), ocplx.t(x), scaled);
@@ -10214,13 +10235,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static OctupleC besselpoly(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.besselpoly, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besselpoly/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
         public static OctupleC besselpoly(dynamic n, dynamic x, bool scaled = false)
         {
             return besselpoly(ocplx.t(n), ocplx.t(x), scaled);
@@ -10230,13 +10251,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static OctupleC besseltheta(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.besseltheta, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/besseltheta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
         public static OctupleC besseltheta(dynamic n, dynamic x, bool scaled = false)
         {
             return besseltheta(ocplx.t(n), ocplx.t(x), scaled);
@@ -10255,13 +10276,13 @@ namespace ArbPrecNet
         #region 0F1: Spherical Bessel functions, first derivative
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn_prime/*' />
         public static OctupleC sph_bessel_jn_prime(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_jn_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_jn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_jn_prime/*' />
         public static OctupleC sph_bessel_jn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_jn_prime(ocplx.t(n), ocplx.t(x), scaled);
@@ -10269,13 +10290,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn_prime/*' />
         public static OctupleC sph_bessel_yn_prime(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_yn_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_yn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_yn_prime/*' />
         public static OctupleC sph_bessel_yn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_yn_prime(ocplx.t(n), ocplx.t(x), scaled);
@@ -10283,13 +10304,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in_prime/*' />
         public static OctupleC sph_bessel_in_prime(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_in_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_in_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_in_prime/*' />
         public static OctupleC sph_bessel_in_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_in_prime(ocplx.t(n), ocplx.t(x), scaled);
@@ -10297,13 +10318,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn_prime/*' />
         public static OctupleC sph_bessel_kn_prime(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2Bool1(aflintc.sph_bessel_kn_prime, n, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sph_bessel_kn_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sph_bessel_kn_prime/*' />
         public static OctupleC sph_bessel_kn_prime(dynamic n, dynamic x, bool scaled = false)
         {
             return sph_bessel_kn_prime(ocplx.t(n), ocplx.t(x), scaled);
@@ -10392,13 +10413,13 @@ namespace ArbPrecNet
         #region 0F1: Airy functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static OctupleC airy_ai(OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS1Bool1(aflintc.airy_ai, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         public static OctupleC airy_ai(dynamic x, bool scaled = false)
         {
             return airy_ai(ocplx.t(x), scaled);
@@ -10406,13 +10427,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static OctupleC airy_ai_prime(OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS1Bool1(aflintc.airy_ai_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         public static OctupleC airy_ai_prime(dynamic x, bool scaled = false)
         {
             return airy_ai_prime(ocplx.t(x), scaled);
@@ -10420,13 +10441,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static OctupleC airy_bi(OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS1Bool1(aflintc.airy_bi, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         public static OctupleC airy_bi(dynamic x, bool scaled = false)
         {
             return airy_bi(ocplx.t(x), scaled);
@@ -10434,13 +10455,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static OctupleC airy_bi_prime(OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS1Bool1(aflintc.airy_bi_prime, x, scaled);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         public static OctupleC airy_bi_prime(dynamic x, bool scaled = false)
         {
             return airy_bi_prime(ocplx.t(x), scaled);
@@ -10449,7 +10470,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         //public static OctupleC airy_ai(OctupleC x, bool scaled = false)
         //{
         //    var res = new OctupleC();
@@ -10461,7 +10482,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_AiryAi(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
         //public static OctupleC airy_ai(dynamic x, bool scaled = false)
         //{
         //    return airy_ai(ocplx.t(x), scaled);
@@ -10470,7 +10491,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         //public static OctupleC airy_ai_prime(OctupleC x, bool scaled = false)
         //{
         //    var res = new OctupleC();
@@ -10482,7 +10503,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_AiryAiPrime(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_ai_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
         //public static OctupleC airy_ai_prime(dynamic x, bool scaled = false)
         //{
         //    return airy_ai_prime(ocplx.t(x), scaled);
@@ -10491,7 +10512,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         //public static OctupleC airy_bi(OctupleC x, bool scaled = false)
         //{
         //    var res = new OctupleC();
@@ -10503,7 +10524,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_AiryBi(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
         //public static OctupleC airy_bi(dynamic x, bool scaled = false)
         //{
         //    return airy_bi(ocplx.t(x), scaled);
@@ -10511,7 +10532,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         //public static OctupleC airy_bi_prime(OctupleC x, bool scaled = false)
         //{
         //    var res = new OctupleC();
@@ -10523,7 +10544,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_AiryBiPrime(IntPtr res, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_bi_prime/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
         //public static OctupleC airy_bi_prime(dynamic x, bool scaled = false)
         //{
         //    return airy_bi_prime(ocplx.t(x), scaled);
@@ -10670,7 +10691,7 @@ namespace ArbPrecNet
         #region 1F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static OctupleC hyperg_1f1(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -10681,7 +10702,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom1F1(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1/*' />
         public static OctupleC hyperg_1f1(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1(ocplx.t(a), ocplx.t(b), ocplx.t(x));
@@ -10690,7 +10711,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static OctupleC hyperg_1f1r(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -10701,7 +10722,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom1F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f1r/*' />
         public static OctupleC hyperg_1f1r(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_1f1r(ocplx.t(a), ocplx.t(b), ocplx.t(x));
@@ -10710,7 +10731,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static OctupleC hyperg_u(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -10721,7 +10742,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_HypgeomU(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
         public static OctupleC hyperg_u(dynamic a, dynamic b, dynamic x)
         {
             return hyperg_u(ocplx.t(a), ocplx.t(b), ocplx.t(x));
@@ -10738,7 +10759,7 @@ namespace ArbPrecNet
         #region 1F1: Incomplete gamma functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static OctupleC gamma_upper(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -10749,7 +10770,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_GammaUpper(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_upper/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_upper/*' />
         public static OctupleC gamma_upper(dynamic s, dynamic z)
         {
             return gamma_upper(ocplx.t(s), ocplx.t(z));
@@ -10759,7 +10780,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static OctupleC gamma_q(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -10770,7 +10791,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_GammaQ(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_q/*' />
         public static OctupleC gamma_q(dynamic s, dynamic z)
         {
             return gamma_q(ocplx.t(s), ocplx.t(z));
@@ -10781,7 +10802,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static OctupleC gamma_lower(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -10792,7 +10813,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_GammaLower(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_lower/*' />
         public static OctupleC gamma_lower(dynamic s, dynamic z)
         {
             return gamma_lower(ocplx.t(s), ocplx.t(z));
@@ -10800,7 +10821,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static OctupleC gamma_p(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -10811,7 +10832,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_GammaP(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p/*' />
         public static OctupleC gamma_p(dynamic s, dynamic z)
         {
             return gamma_p(ocplx.t(s), ocplx.t(z));
@@ -10819,7 +10840,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static OctupleC gamma_p_prime(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -10830,7 +10851,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_GammaPPrime(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gamma_p_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gamma_p_prime/*' />
         public static OctupleC gamma_p_prime(dynamic s, dynamic z)
         {
             return gamma_p_prime(ocplx.t(s), ocplx.t(z));
@@ -10845,7 +10866,7 @@ namespace ArbPrecNet
         #region 1F1: Error function and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static OctupleC erf(OctupleC x)
         {
             var res = new OctupleC();
@@ -10856,7 +10877,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Erf(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erf/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static OctupleC erf(dynamic x)
         {
             return erf(ocplx.t(x));
@@ -10864,7 +10885,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static OctupleC erfc(OctupleC x)
         {
             var res = new OctupleC();
@@ -10875,7 +10896,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Erfc(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfc/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static OctupleC erfc(dynamic x)
         {
             return erfc(ocplx.t(x));
@@ -10885,7 +10906,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static OctupleC erfi(OctupleC x)
         {
             var res = new OctupleC();
@@ -10896,7 +10917,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Erfi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/erfi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfi/*' />
         public static OctupleC erfi(dynamic x)
         {
             return erfi(ocplx.t(x));
@@ -10907,13 +10928,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static OctupleC dawson(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.dawson, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/dawson/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/dawson/*' />
         public static OctupleC dawson(dynamic x)
         {
             return dawson(ocplx.t(x));
@@ -10921,13 +10942,13 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/faddeeva/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />
         public static OctupleC faddeeva(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.faddeeva, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/faddeeva/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />
         public static OctupleC faddeeva(dynamic x)
         {
             return faddeeva(ocplx.t(x));
@@ -10938,7 +10959,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static OctupleC fresnel_s(OctupleC x)
         {
             var res = new OctupleC();
@@ -10949,7 +10970,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_FresnelS(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_s/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static OctupleC fresnel_s(dynamic x)
         {
             return fresnel_s(ocplx.t(x));
@@ -10957,7 +10978,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static OctupleC fresnel_c(OctupleC x)
         {
             var res = new OctupleC();
@@ -10968,7 +10989,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_FresnelC(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/fresnel_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_c/*' />
         public static OctupleC fresnel_c(dynamic x)
         {
             return fresnel_c(ocplx.t(x));
@@ -10976,7 +10997,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static OctupleC ndens(OctupleC x)
         {
             var res = new OctupleC();
@@ -10987,7 +11008,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Ndens(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndens/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndens/*' />
         public static OctupleC ndens(dynamic x)
         {
             return ndens(ocplx.t(x));
@@ -10995,7 +11016,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static OctupleC ndis(OctupleC x)
         {
             var res = new OctupleC();
@@ -11006,7 +11027,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Ndis(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ndis/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static OctupleC ndis(dynamic x)
         {
             return ndis(ocplx.t(x));
@@ -11022,7 +11043,7 @@ namespace ArbPrecNet
         #region 1F1: Exponential integrals and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static OctupleC exp_integral_en(OctupleC s, OctupleC z)
         {
             var res = new OctupleC();
@@ -11033,21 +11054,21 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ExpIntegralE(IntPtr res, IntPtr s, IntPtr z);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_en/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_en/*' />
         public static OctupleC exp_integral_en(dynamic s, dynamic z)
         {
             return exp_integral_en(ocplx.t(s), ocplx.t(z));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static OctupleC exp_integral_e1(OctupleC z)
         {
             return exp_integral_en(ocplx.t(1), z);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_e1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_e1/*' />
         public static OctupleC exp_integral_e1(dynamic z)
         {
             return exp_integral_e1(ocplx.t(z));
@@ -11057,7 +11078,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static OctupleC exp_integral_ei(OctupleC x)
         {
             var res = new OctupleC();
@@ -11068,7 +11089,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ExpIntegralEi(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/exp_integral_ei/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/exp_integral_ei/*' />
         public static OctupleC exp_integral_ei(dynamic x)
         {
             return exp_integral_ei(ocplx.t(x));
@@ -11076,7 +11097,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static OctupleC sin_integral(OctupleC x)
         {
             var res = new OctupleC();
@@ -11087,7 +11108,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_SinIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sin_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sin_integral/*' />
         public static OctupleC sin_integral(dynamic x)
         {
             return sin_integral(ocplx.t(x));
@@ -11095,7 +11116,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static OctupleC cos_integral(OctupleC x)
         {
             var res = new OctupleC();
@@ -11106,7 +11127,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CosIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cos_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cos_integral/*' />
         public static OctupleC cos_integral(dynamic x)
         {
             return cos_integral(ocplx.t(x));
@@ -11114,7 +11135,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static OctupleC sinh_integral(OctupleC x)
         {
             var res = new OctupleC();
@@ -11125,7 +11146,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_SinhIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/sinh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/sinh_integral/*' />
         public static OctupleC sinh_integral(dynamic x)
         {
             return sinh_integral(ocplx.t(x));
@@ -11134,7 +11155,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static OctupleC cosh_integral(OctupleC x)
         {
             var res = new OctupleC();
@@ -11145,7 +11166,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoshIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/cosh_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/cosh_integral/*' />
         public static OctupleC cosh_integral(dynamic x)
         {
             return cosh_integral(ocplx.t(x));
@@ -11153,7 +11174,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static OctupleC log_integral(OctupleC x)
         {
             var res = new OctupleC();
@@ -11164,7 +11185,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LogIntegral(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral/*' />
         public static OctupleC log_integral(dynamic x)
         {
             return log_integral(ocplx.t(x));
@@ -11172,7 +11193,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static OctupleC log_integral_offset(OctupleC x)
         {
             var res = new OctupleC();
@@ -11183,7 +11204,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LogIntegralOffset(IntPtr res, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/log_integral_offset/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log_integral_offset/*' />
         public static OctupleC log_integral_offset(dynamic x)
         {
             return log_integral_offset(ocplx.t(x));
@@ -11199,7 +11220,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static OctupleC hermite_h(OctupleC n, OctupleC x)
         {
             var res = new OctupleC();
@@ -11210,7 +11231,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_HermiteH(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_h/*' />
         public static OctupleC hermite_h(dynamic n, dynamic x)
         {
             return hermite_h(ocplx.t(n), ocplx.t(x));
@@ -11218,14 +11239,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static OctupleC hermite_he(OctupleC n, OctupleC x)
         {
             return exp2(-n / 2) * hermite_h(n, x / sqrt(2));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hermite_he/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static OctupleC hermite_he(dynamic n, dynamic x)
         {
             return hermite_he(ocplx.t(n), ocplx.t(x));
@@ -11233,7 +11254,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static OctupleC laguerre_l(OctupleC n, OctupleC m, OctupleC x)
         {
             var res = new OctupleC();
@@ -11244,7 +11265,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_LaguerreL(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/laguerre_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/laguerre_l/*' />
         public static OctupleC laguerre_l(dynamic n, dynamic m, dynamic x)
         {
             return laguerre_l(ocplx.t(n), ocplx.t(m), ocplx.t(x));
@@ -11259,7 +11280,7 @@ namespace ArbPrecNet
         #region 1F1: Coulomb functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static OctupleC coulomb_f(OctupleC l, OctupleC eta, OctupleC x)
         {
             var res = new OctupleC();
@@ -11270,7 +11291,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoulombF(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_f/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_f/*' />
         public static OctupleC coulomb_f(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_f(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
@@ -11279,7 +11300,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static OctupleC coulomb_g(OctupleC l, OctupleC eta, OctupleC x)
         {
             var res = new OctupleC();
@@ -11290,7 +11311,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoulombG(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_g/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_g/*' />
         public static OctupleC coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
@@ -11300,7 +11321,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hpos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
         public static OctupleC coulomb_hpos(OctupleC l, OctupleC eta, OctupleC x)
         {
             var res = new OctupleC();
@@ -11311,7 +11332,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hpos/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
         public static OctupleC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_hpos(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
@@ -11320,7 +11341,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hneg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
         public static OctupleC coulomb_hneg(OctupleC l, OctupleC eta, OctupleC x)
         {
             var res = new OctupleC();
@@ -11331,7 +11352,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/coulomb_hneg/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
         public static OctupleC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_hneg(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
@@ -11451,7 +11472,7 @@ namespace ArbPrecNet
         #region 2F1 Overview
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static OctupleC hyperg_2f1(OctupleC a, OctupleC b, OctupleC c, OctupleC x)
         {
             var res = new OctupleC();
@@ -11462,7 +11483,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom2F1(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1/*' />
         public static OctupleC hyperg_2f1(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1(ocplx.t(a), ocplx.t(b), ocplx.t(c), ocplx.t(x));
@@ -11470,7 +11491,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static OctupleC hyperg_2f1r(OctupleC a, OctupleC b, OctupleC c, OctupleC x)
         {
             var res = new OctupleC();
@@ -11481,7 +11502,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom2F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr c, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_2f1r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_2f1r/*' />
         public static OctupleC hyperg_2f1r(dynamic a, dynamic b, dynamic c, dynamic x)
         {
             return hyperg_2f1r(ocplx.t(a), ocplx.t(b), ocplx.t(c), ocplx.t(x));
@@ -11497,7 +11518,7 @@ namespace ArbPrecNet
         #region 2F1-related orthogonal polynomials
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static OctupleC chebyshev_t(OctupleC n, OctupleC x)
         {
             var res = new OctupleC();
@@ -11508,7 +11529,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ChebyshevT(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_t/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_t/*' />
         public static OctupleC chebyshev_t(dynamic n, dynamic x)
         {
             return chebyshev_t(ocplx.t(n), ocplx.t(x));
@@ -11516,7 +11537,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static OctupleC chebyshev_u(OctupleC n, OctupleC x)
         {
             var res = new OctupleC();
@@ -11527,7 +11548,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_ChebyshevU(IntPtr res, IntPtr n, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_u/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_u/*' />
         public static OctupleC chebyshev_u(dynamic n, dynamic x)
         {
             return chebyshev_u(ocplx.t(n), ocplx.t(x));
@@ -11538,7 +11559,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_v/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_v/*' />
         public static OctupleC chebyshev_v(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2(aflintc.chebyshev_v, n, x);
@@ -11552,7 +11573,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/chebyshev_w/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/chebyshev_w/*' />
         public static OctupleC chebyshev_w(OctupleC n, OctupleC x, bool scaled = false)
         {
             return aflintc.OCplxViaArbCS2(aflintc.chebyshev_w, n, x);
@@ -11574,7 +11595,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static OctupleC gegenbauer_c(OctupleC n, OctupleC m, OctupleC x)
         {
             var res = new OctupleC();
@@ -11585,7 +11606,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_GegenbauerC(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/gegenbauer_c/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/gegenbauer_c/*' />
         public static OctupleC gegenbauer_c(dynamic n, dynamic m, dynamic x)
         {
             return gegenbauer_c(ocplx.t(n), ocplx.t(m), ocplx.t(x));
@@ -11593,7 +11614,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static OctupleC jacobi_p(OctupleC n, OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -11604,7 +11625,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_JacobiP(IntPtr res, IntPtr n, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/jacobi_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
         public static OctupleC jacobi_p(dynamic n, dynamic a, dynamic b, dynamic x)
         {
             return jacobi_p(ocplx.t(n), ocplx.t(a), ocplx.t(b), ocplx.t(x));
@@ -11613,42 +11634,42 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static OctupleC legendre_p(OctupleC n, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.legendre_p, n, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static OctupleC legendre_p(dynamic n, dynamic x)
         {
             return legendre_p(ocplx.t(n), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static OctupleC legendre_q(OctupleC n, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.legendre_q, n, x);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         public static OctupleC legendre_q(dynamic n, dynamic x)
         {
             return legendre_q(ocplx.t(n), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static OctupleC legendre_plm(OctupleC n, OctupleC m, OctupleC x, int type = 1)
         {
             return aflintc.OCplxViaArbCS3Int1(aflintc.legendre_plm, n, m, x, type);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         public static OctupleC legendre_plm(dynamic n, dynamic m, dynamic x, int type = 1)
         {
             return legendre_plm(ocplx.t(n), ocplx.t(m), ocplx.t(x), type);
@@ -11656,14 +11677,14 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static OctupleC legendre_qlm(OctupleC n, OctupleC m, OctupleC x, int type = 1)
         {
             return aflintc.OCplxViaArbCS3Int1(aflintc.legendre_qlm, n, m, x, type);
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         public static OctupleC legendre_qlm(dynamic n, dynamic m, dynamic x, int type = 1)
         {
             return legendre_qlm(ocplx.t(n), ocplx.t(m), ocplx.t(x), type);
@@ -11672,7 +11693,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         //public static OctupleC legendre_p(OctupleC n, OctupleC m, OctupleC x)
         //{
         //    var res = new OctupleC();
@@ -11683,7 +11704,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_LegendreP(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_p/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         //public static OctupleC legendre_p(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_p(ocplx.t(n), ocplx.t(m), ocplx.t(x));
@@ -11692,7 +11713,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         //public static OctupleC legendre_plm(OctupleC n, OctupleC m, OctupleC x)
         //{
         //    var res = new OctupleC();
@@ -11703,7 +11724,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_LegendrePv(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_plm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_plm/*' />
         //public static OctupleC legendre_plm(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_plm(ocplx.t(n), ocplx.t(m), ocplx.t(x));
@@ -11711,7 +11732,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         //public static OctupleC legendre_q(OctupleC n, OctupleC m, OctupleC x)
         //{
         //    var res = new OctupleC();
@@ -11722,7 +11743,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_LegendreQ(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_q/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_q/*' />
         //public static OctupleC legendre_q(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_q(ocplx.t(n), ocplx.t(m), ocplx.t(x));
@@ -11730,7 +11751,7 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         //public static OctupleC legendre_qlm(OctupleC n, OctupleC m, OctupleC x)
         //{
         //    var res = new OctupleC();
@@ -11741,7 +11762,7 @@ namespace ArbPrecNet
         //internal static extern int Lib_OCplx_Acb_LegendreQv(IntPtr res, IntPtr n, IntPtr m, IntPtr x);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/legendre_qlm/*' />
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_qlm/*' />
         //public static OctupleC legendre_qlm(dynamic n, dynamic m, dynamic x)
         //{
         //    return legendre_qlm(ocplx.t(n), ocplx.t(m), ocplx.t(x));
@@ -11751,7 +11772,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static OctupleC spherical_y(OctupleC n, OctupleC m, OctupleC theta, OctupleC phi)
         {
             var res = new OctupleC();
@@ -11762,7 +11783,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_SphericalY(IntPtr res, IntPtr n, IntPtr m, IntPtr theta, IntPtr phi);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/spherical_y/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/spherical_y/*' />
         public static OctupleC spherical_y(dynamic n, dynamic m, dynamic theta, dynamic phi)
         {
             return spherical_y(ocplx.t(n), ocplx.t(m), ocplx.t(theta), ocplx.t(phi));
@@ -11779,7 +11800,7 @@ namespace ArbPrecNet
         #region 2F1-Incomplete beta Function
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static OctupleC beta_lower(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -11790,14 +11811,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_BetaLower(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/beta_lower/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_lower/*' />
         public static OctupleC beta_lower(dynamic a, dynamic b, dynamic x)
         {
             return beta_lower(ocplx.t(a), ocplx.t(b), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static OctupleC ibeta(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -11808,14 +11829,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Ibeta(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta/*' />
         public static OctupleC ibeta(dynamic a, dynamic b, dynamic x)
         {
             return ibeta(ocplx.t(a), ocplx.t(b), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static OctupleC ibetac(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -11826,14 +11847,14 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Ibetac(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibetac/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibetac/*' />
         public static OctupleC ibetac(dynamic a, dynamic b, dynamic x)
         {
             return ibetac(ocplx.t(a), ocplx.t(b), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static OctupleC ibeta_prime(OctupleC a, OctupleC b, OctupleC x)
         {
             var res = new OctupleC();
@@ -11844,7 +11865,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_IbetaPrime(IntPtr res, IntPtr a, IntPtr b, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/ibeta_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ibeta_prime/*' />
         public static OctupleC ibeta_prime(dynamic a, dynamic b, dynamic x)
         {
             return ibeta_prime(ocplx.t(a), ocplx.t(b), ocplx.t(x));
@@ -11863,7 +11884,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static OctupleC hyperg_1f2(OctupleC a1, OctupleC b1, OctupleC b2, OctupleC x)
         {
             var res = new OctupleC();
@@ -11874,7 +11895,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom1F2(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2/*' />
         public static OctupleC hyperg_1f2(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2(ocplx.t(a1), ocplx.t(b1), ocplx.t(b2), ocplx.t(x));
@@ -11882,7 +11903,7 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static OctupleC hyperg_1f2r(OctupleC a1, OctupleC b1, OctupleC b2, OctupleC x)
         {
             var res = new OctupleC();
@@ -11893,7 +11914,7 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Hypgeom1F2r(IntPtr res, IntPtr a1, IntPtr b1, IntPtr b2, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/hyperg_1f2r/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_1f2r/*' />
         public static OctupleC hyperg_1f2r(dynamic a1, dynamic b1, dynamic b2, dynamic x)
         {
             return hyperg_1f2r(ocplx.t(a1), ocplx.t(b1), ocplx.t(b2), ocplx.t(x));
@@ -11911,52 +11932,52 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static OctupleC airy_gi(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.airy_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
         public static OctupleC airy_gi(dynamic x)
         {
             return airy_gi(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static OctupleC airy_hi(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.airy_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
         public static OctupleC airy_hi(dynamic x)
         {
             return airy_hi(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static OctupleC airy_gi_prime(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.airy_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_gi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
         public static OctupleC airy_gi_prime(dynamic x)
         {
             return airy_gi_prime(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static OctupleC airy_hi_prime(OctupleC x)
         {
             return aflintc.OCplxViaArbCS1(aflintc.airy_hi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/airy_hi_prime/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
         public static OctupleC airy_hi_prime(dynamic x)
         {
             return airy_hi_prime(ocplx.t(x));
@@ -11972,39 +11993,39 @@ namespace ArbPrecNet
         #region Struve functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static OctupleC struve_h(OctupleC v, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.struve_h, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_h/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_h/*' />
         public static OctupleC struve_h(dynamic v, dynamic x)
         {
             return struve_h(ocplx.t(v), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static OctupleC struve_l(OctupleC v, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.struve_l, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_l/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_l/*' />
         public static OctupleC struve_l(dynamic v, dynamic x)
         {
             return struve_l(ocplx.t(v), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static OctupleC struve_k(OctupleC v, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.struve_k, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_k/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_k/*' />
         public static OctupleC struve_k(dynamic v, dynamic x)
         {
             return struve_k(ocplx.t(v), ocplx.t(x));
@@ -12016,7 +12037,7 @@ namespace ArbPrecNet
             return aflintc.OCplxViaArbCS2(aflintc.struve_m, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/struve_m/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/struve_m/*' />
         public static OctupleC struve_m(dynamic v, dynamic x)
         {
             return struve_m(ocplx.t(v), ocplx.t(x));
@@ -12030,52 +12051,52 @@ namespace ArbPrecNet
         #region Anger, Weber and Lommel functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static OctupleC anger_j(OctupleC v, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.anger_j, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/anger_j/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/anger_j/*' />
         public static OctupleC anger_j(dynamic v, dynamic x)
         {
             return anger_j(ocplx.t(v), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static OctupleC weber_e(OctupleC v, OctupleC x)
         {
             return aflintc.OCplxViaArbCS2(aflintc.weber_e, v, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/weber_e/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weber_e/*' />
         public static OctupleC weber_e(dynamic v, dynamic x)
         {
             return weber_e(ocplx.t(v), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static OctupleC lommel_s1(OctupleC mu, OctupleC nu, OctupleC x)
         {
             return aflintc.OCplxViaArbCS3(aflintc.lommel_s1, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s1/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s1/*' />
         public static OctupleC lommel_s1(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s1(ocplx.t(mu), ocplx.t(nu), ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static OctupleC lommel_s2(OctupleC mu, OctupleC nu, OctupleC x)
         {
             return aflintc.OCplxViaArbCS3(aflintc.lommel_s2, mu, nu, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarAndArrayFunctions"]/lommel_s2/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lommel_s2/*' />
         public static OctupleC lommel_s2(dynamic mu, dynamic nu, dynamic x)
         {
             return lommel_s2(ocplx.t(mu), ocplx.t(nu), ocplx.t(x));
