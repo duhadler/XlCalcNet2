@@ -19,6 +19,13 @@ namespace ArbPrecNet
         public static Boolean UseRawDouble = false;
 
 
+        public static string Version()
+        {
+            return "0.5.0";
+        }
+
+
+
         public static bool IsExactDouble(double z)
         {
             if (!dreal.isfinite(z)) return true;
