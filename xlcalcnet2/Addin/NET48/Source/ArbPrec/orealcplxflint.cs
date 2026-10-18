@@ -5857,6 +5857,30 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Octuple zernike_r(Octuple n, Octuple m, Octuple r)
+        {
+            if (!oreal.isinteger(n)) return oreal.nan;
+            if (!oreal.isinteger(m)) return oreal.nan;
+            if ((n < m) || (m < 0)) return oreal.zero;
+            if (!((lrint(n) - lrint(m)) % 2 == 0)) return oreal.zero;
+            if (r < 0) return oreal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Octuple zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(oreal.t(n), oreal.t(m), oreal.t(r));
+        }
+
+
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static Octuple legendre_p(Octuple n, Octuple x)
@@ -11566,7 +11590,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_v/*' />
-        public static OctupleC chebyshev_v(int n, dynamic y)
+        public static OctupleC chebyshev_v(dynamic n, dynamic y)
         {
             return chebyshev_v(ocplx.t(n), ocplx.t(y));
         }
@@ -11580,7 +11604,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_w/*' />
-        public static OctupleC chebyshev_w(int n, dynamic y)
+        public static OctupleC chebyshev_w(dynamic n, dynamic y)
         {
             return chebyshev_w(ocplx.t(n), ocplx.t(y));
         }

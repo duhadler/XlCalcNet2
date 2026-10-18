@@ -5833,6 +5833,25 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Double zernike_r(Double n, Double m, Double r)
+        {
+            if (!dreal.isinteger(n)) return dreal.nan;
+            if (!dreal.isinteger(m)) return dreal.nan;
+            if ((n < m) || (m < 0)) return dreal.zero;
+            if (!((n - m) % 2 == 0)) return dreal.zero;
+            if (r < 0) return dreal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Double zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(t(n), t(m), t(r));
+        }
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static Double legendre_p(Double n, Double x)
@@ -11991,7 +12010,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_v/*' />
-        public static Complex chebyshev_v(int n, dynamic y)
+        public static Complex chebyshev_v(dynamic n, dynamic y)
         {
             return chebyshev_v(dcplx.t(n), dcplx.t(y));
         }
@@ -12005,7 +12024,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_w/*' />
-        public static Complex chebyshev_w(int n, dynamic y)
+        public static Complex chebyshev_w(dynamic n, dynamic y)
         {
             return chebyshev_w(dcplx.t(n), dcplx.t(y));
         }

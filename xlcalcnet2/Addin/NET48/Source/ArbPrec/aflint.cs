@@ -6604,15 +6604,15 @@ namespace ArbPrecNet
         //internal static extern int Lib_Arb_Arb_AiryAiPrimeZero(IntPtr res, Int32 n);
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_zero/*' />
-        //public static Arb airy_bi_zero(Int32 n)
-        //{
-        //    var res = new Arb();
-        //    Lib_Arb_Arb_AiryBiZero(res.mpPtr, n);
-        //    return res;
-        //}
-        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_AiryBiZero", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern int Lib_Arb_Arb_AiryBiZero(IntPtr res, Int32 n);
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_zero/*' />
+        public static Arb airy_bi_zero(Int32 n)
+        {
+            var res = new Arb();
+            Lib_Arb_Arb_AiryBiZero(res.mpPtr, n);
+            return res;
+        }
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_AiryBiZero", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Arb_Arb_AiryBiZero(IntPtr res, Int32 n);
 
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime_zero/*' />
@@ -7692,6 +7692,28 @@ namespace ArbPrecNet
         {
             return jacobi_p(aflint.t(n), aflint.t(a), aflint.t(b), aflint.t(x));
         }
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Arb zernike_r(Arb n, Arb m, Arb r)
+        {
+            if (!aflint.isinteger(n)) return aflint.nan;
+            if (!aflint.isinteger(m)) return aflint.nan;
+            if ((n < m) || (m < 0)) return aflint.zero;
+            if (!((lrint(n) - lrint(m)) % 2 == 0)) return aflint.zero;
+            if (r < 0) return aflint.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Arb zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(aflint.t(n), aflint.t(m), aflint.t(r));
+        }
+
 
 
 

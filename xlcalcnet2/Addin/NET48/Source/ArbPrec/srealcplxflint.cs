@@ -5802,6 +5802,25 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Single zernike_r(Single n, Single m, Single r)
+        {
+            if (!sreal.isinteger(n)) return sreal.nan;
+            if (!sreal.isinteger(m)) return sreal.nan;
+            if ((n < m) || (m < 0)) return sreal.zero;
+            if (!((n - m) % 2 == 0)) return sreal.zero;
+            if (r < 0) return sreal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Single zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(sreal.t(n), sreal.t(m), sreal.t(r));
+        }
+
+
 
 
 
@@ -6938,11 +6957,11 @@ namespace ArbPrecNet
         public static SingleC pow_si(SingleC x, Int32 n)
         {
             var res = new SingleC();
-            Lib_Arb_Arb_Pow_ui(res.mpPtr, x.mpPtr, n);
+            Lib_SReal_Arb_Pow_si(res.mpPtr, x.mpPtr, n);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_Pow_ui", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Arb_Pow_ui(IntPtr res, IntPtr x, Int32 n);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SReal_Arb_Pow_si", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_SReal_Arb_Pow_si(IntPtr res, IntPtr x, Int32 n);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />

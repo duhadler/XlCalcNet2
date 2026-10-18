@@ -5823,6 +5823,29 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Quadruple zernike_r(Quadruple n, Quadruple m, Quadruple r)
+        {
+            if (!qreal.isinteger(n)) return qreal.nan;
+            if (!qreal.isinteger(m)) return qreal.nan;
+            if ((n < m) || (m < 0)) return qreal.zero;
+            if (!((lrint(n) - lrint(m)) % 2 == 0)) return qreal.zero;
+            if (r < 0) return qreal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Quadruple zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(qreal.t(n), qreal.t(m), qreal.t(r));
+        }
+
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static Quadruple legendre_p(Quadruple n, Quadruple x)
@@ -11543,7 +11566,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_v/*' />
-        public static QuadrupleC chebyshev_v(int n, dynamic y)
+        public static QuadrupleC chebyshev_v(dynamic n, dynamic y)
         {
             return chebyshev_v(qcplx.t(n), qcplx.t(y));
         }
@@ -11557,7 +11580,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_w/*' />
-        public static QuadrupleC chebyshev_w(int n, dynamic y)
+        public static QuadrupleC chebyshev_w(dynamic n, dynamic y)
         {
             return chebyshev_w(qcplx.t(n), qcplx.t(y));
         }

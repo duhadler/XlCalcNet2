@@ -2785,11 +2785,11 @@ namespace ArbPrecNet
         public static ArbC pow_si(ArbC x, Int32 n)
         {
             var res = new ArbC();
-            Lib_Acb_Acb_Pow_ui(res.mpPtr, x.mpPtr, n);
+            Lib_Acb_Acb_Pow_si(res.mpPtr, x.mpPtr, n);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Acb_Acb_Pow_ui", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Acb_Acb_Pow_ui(IntPtr res, IntPtr x, Int32 n);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Acb_Acb_Pow_si", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Acb_Acb_Pow_si(IntPtr res, IntPtr x, Int32 n);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow/*' />

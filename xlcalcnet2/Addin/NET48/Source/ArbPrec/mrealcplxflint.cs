@@ -5316,117 +5316,117 @@ namespace ArbPrecNet
         #region 0F1: Airy functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
-        public static MpfrC airy_ai(MpfrC x, bool scaled = false)
-        {
-            return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_ai, x, scaled);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
-        public static MpfrC airy_ai(dynamic x, bool scaled = false)
-        {
-            return airy_ai(mcplx.t(x), scaled);
-        }
-
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
-        public static MpfrC airy_ai_prime(MpfrC x, bool scaled = false)
-        {
-            return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_ai_prime, x, scaled);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
-        public static MpfrC airy_ai_prime(dynamic x, bool scaled = false)
-        {
-            return airy_ai_prime(mcplx.t(x), scaled);
-        }
-
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
-        public static MpfrC airy_bi(MpfrC x, bool scaled = false)
-        {
-            return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_bi, x, scaled);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
-        public static MpfrC airy_bi(dynamic x, bool scaled = false)
-        {
-            return airy_bi(mcplx.t(x), scaled);
-        }
-
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
-        public static MpfrC airy_bi_prime(MpfrC x, bool scaled = false)
-        {
-            return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_bi_prime, x, scaled);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
-        public static MpfrC airy_bi_prime(dynamic x, bool scaled = false)
-        {
-            return airy_bi_prime(mcplx.t(x), scaled);
-        }
-
-
-
-
-
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
-        //public static Mpfr airy_ai(Mpfr x, bool scaled = false)
+        //public static MpfrC airy_ai(MpfrC x, bool scaled = false)
         //{
-        //    return aflint.MpfrViaArbS1Bool1(aflint.airy_ai, x, scaled);
+        //    return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_ai, x, scaled);
         //}
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
-        //public static Mpfr airy_ai(dynamic x, bool scaled = false)
+        //public static MpfrC airy_ai(dynamic x, bool scaled = false)
         //{
-        //    return airy_ai(mreal.t(x), scaled);
+        //    return airy_ai(mcplx.t(x), scaled);
         //}
 
 
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
-        //public static Mpfr airy_ai_prime(Mpfr x, bool scaled = false)
+        //public static MpfrC airy_ai_prime(MpfrC x, bool scaled = false)
         //{
-        //    return aflint.MpfrViaArbS1Bool1(aflint.airy_ai_prime, x, scaled);
+        //    return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_ai_prime, x, scaled);
         //}
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
-        //public static Mpfr airy_ai_prime(dynamic x, bool scaled = false)
+        //public static MpfrC airy_ai_prime(dynamic x, bool scaled = false)
         //{
-        //    return airy_ai_prime(mreal.t(x), scaled);
+        //    return airy_ai_prime(mcplx.t(x), scaled);
         //}
 
 
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
-        //public static Mpfr airy_bi(Mpfr x, bool scaled = false)
+        //public static MpfrC airy_bi(MpfrC x, bool scaled = false)
         //{
-        //    return aflint.MpfrViaArbS1Bool1(aflint.airy_bi, x, scaled);
+        //    return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_bi, x, scaled);
         //}
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
-        //public static Mpfr airy_bi(dynamic x, bool scaled = false)
+        //public static MpfrC airy_bi(dynamic x, bool scaled = false)
         //{
-        //    return airy_bi(mreal.t(x), scaled);
+        //    return airy_bi(mcplx.t(x), scaled);
         //}
 
 
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
-        //public static Mpfr airy_bi_prime(Mpfr x, bool scaled = false)
+        //public static MpfrC airy_bi_prime(MpfrC x, bool scaled = false)
         //{
-        //    return aflint.MpfrViaArbS1Bool1(aflint.airy_bi_prime, x, scaled);
+        //    return aflintc.MCplxViaArbCS1Bool1(aflintc.airy_bi_prime, x, scaled);
         //}
 
         ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
-        //public static Mpfr airy_bi_prime(dynamic x, bool scaled = false)
+        //public static MpfrC airy_bi_prime(dynamic x, bool scaled = false)
         //{
-        //    return airy_bi_prime(mreal.t(x), scaled);
+        //    return airy_bi_prime(mcplx.t(x), scaled);
         //}
+
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
+        public static Mpfr airy_ai(Mpfr x, bool scaled = false)
+        {
+            return aflint.MpfrViaArbS1Bool1(aflint.airy_ai, x, scaled);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai/*' />
+        public static Mpfr airy_ai(dynamic x, bool scaled = false)
+        {
+            return airy_ai(mreal.t(x), scaled);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
+        public static Mpfr airy_ai_prime(Mpfr x, bool scaled = false)
+        {
+            return aflint.MpfrViaArbS1Bool1(aflint.airy_ai_prime, x, scaled);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_ai_prime/*' />
+        public static Mpfr airy_ai_prime(dynamic x, bool scaled = false)
+        {
+            return airy_ai_prime(mreal.t(x), scaled);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
+        public static Mpfr airy_bi(Mpfr x, bool scaled = false)
+        {
+            return aflint.MpfrViaArbS1Bool1(aflint.airy_bi, x, scaled);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi/*' />
+        public static Mpfr airy_bi(dynamic x, bool scaled = false)
+        {
+            return airy_bi(mreal.t(x), scaled);
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
+        public static Mpfr airy_bi_prime(Mpfr x, bool scaled = false)
+        {
+            return aflint.MpfrViaArbS1Bool1(aflint.airy_bi_prime, x, scaled);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_bi_prime/*' />
+        public static Mpfr airy_bi_prime(dynamic x, bool scaled = false)
+        {
+            return airy_bi_prime(mreal.t(x), scaled);
+        }
 
 
 
@@ -6521,6 +6521,29 @@ namespace ArbPrecNet
         {
             return jacobi_p(mflint.t(n), mflint.t(a), mflint.t(b), mflint.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Mpfr zernike_r(Mpfr n, Mpfr m, Mpfr r)
+        {
+            if (!mreal.isinteger(n)) return mreal.nan;
+            if (!mreal.isinteger(m)) return mreal.nan;
+            if ((n < m) || (m < 0)) return mreal.zero;
+            if (!((lrint(n) - lrint(m)) % 2 == 0)) return mreal.zero;
+            if (r < 0) return mreal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Mpfr zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(mreal.t(n), mreal.t(m), mreal.t(r));
+        }
+
+
+
 
 
 
@@ -12802,7 +12825,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_v/*' />
-        public static MpfrC chebyshev_v(int n, dynamic y)
+        public static MpfrC chebyshev_v(dynamic n, dynamic y)
         {
             return chebyshev_v(mcplx.t(n), mcplx.t(y));
         }
@@ -12816,7 +12839,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_w/*' />
-        public static MpfrC chebyshev_w(int n, dynamic y)
+        public static MpfrC chebyshev_w(dynamic n, dynamic y)
         {
             return chebyshev_w(mcplx.t(n), mcplx.t(y));
         }
@@ -12866,6 +12889,10 @@ namespace ArbPrecNet
         {
             return jacobi_p(mflintc.t(n), mflintc.t(a), mflintc.t(b), mflintc.t(x));
         }
+
+
+
+
 
 
 

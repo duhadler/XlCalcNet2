@@ -1867,11 +1867,11 @@ namespace ArbPrecNet
         public static MpfrC pow_si(MpfrC x, Int32 n)
         {
             var res = new MpfrC();
-            Lib_Arb_Arb_Pow_ui(res.mpPtr, x.mpPtr, n);
+            Lib_Mpfc_Pow_Si(res.mpPtr, x.mpPtr, n);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_Pow_ui", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Arb_Pow_ui(IntPtr res, IntPtr x, Int32 n);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfc_Pow_Si", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Mpfc_Pow_Si(IntPtr res, IntPtr x, Int32 n);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/pow_si/*' />

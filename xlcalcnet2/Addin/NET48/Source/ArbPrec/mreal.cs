@@ -6675,7 +6675,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/jacobi_p/*' />
-        public static Mpfr jacobi_p(int n, Mpfr alpha, Mpfr beta, Mpfr x)
+        internal static Mpfr jacobi_p_(int n, Mpfr alpha, Mpfr beta, Mpfr x)
         {
             var res = new Mpfr();
             Lib_Mpfr_Jacobi(res.mpPtr, n, alpha.mpPtr, beta.mpPtr, x.mpPtr, ArbPrec.GetDps());
@@ -6684,12 +6684,39 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Jacobi", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_Mpfr_Jacobi(IntPtr res, int n, IntPtr alpha, IntPtr beta, IntPtr x, uint dps);
 
-
-        /// <include file="docs.xml" path='docs/members[@name="Boost"]/jacobi_p/*' />
-        public static Mpfr jacobi_p(int n, dynamic alpha, dynamic beta, dynamic x)
+        public static Mpfr jacobi_p(Mpfr n, Mpfr alpha, Mpfr beta, Mpfr x)
         {
-            return jacobi_p(n, t(alpha), t(beta), t(x));
+            if (!mreal.isinteger(n)) return mreal.nan;
+            return jacobi_p_(lrint(n), alpha, beta, x);
         }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/jacobi_p/*' />
+        public static Mpfr jacobi_p(dynamic n, dynamic alpha, dynamic beta, dynamic x)
+        {
+            return jacobi_p(t(n), t(alpha), t(beta), t(x));
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Mpfr zernike_r(Mpfr n, Mpfr m, Mpfr r)
+        {
+            if (!mreal.isinteger(n)) return mreal.nan;
+            if (!mreal.isinteger(m)) return mreal.nan;
+            if ((n < m) || (m < 0)) return mreal.zero;
+            if (!((lrint(n) - lrint(m)) % 2 == 0)) return mreal.zero;
+            if (r < 0) return mreal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Mpfr zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(t(n), t(m), t(r));
+        }
+
 
 
 

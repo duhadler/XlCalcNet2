@@ -5803,6 +5803,31 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Extended zernike_r(Extended n, Extended m, Extended r)
+        {
+            if (!ereal.isinteger(n)) return ereal.nan;
+            if (!ereal.isinteger(m)) return ereal.nan;
+            if ((n < m) || (m < 0)) return ereal.zero;
+            if (!((lrint(n) - lrint(m)) % 2 == 0)) return ereal.zero;
+            if (r < 0) return ereal.zero;
+            return pow(r, m) * jacobi_p((n - m) / 2, 0, m, 2 * r * r - 1);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/zernike_r/*' />
+        public static Extended zernike_r(dynamic n, dynamic m, dynamic r)
+        {
+            return zernike_r(ereal.t(n), ereal.t(m), ereal.t(r));
+        }
+
+
+
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/legendre_p/*' />
         public static Extended legendre_p(Extended n, Extended x)
@@ -11521,7 +11546,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_v/*' />
-        public static ExtendedC chebyshev_v(int n, dynamic y)
+        public static ExtendedC chebyshev_v(dynamic n, dynamic y)
         {
             return chebyshev_v(ecplx.t(n), ecplx.t(y));
         }
@@ -11535,7 +11560,7 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/chebyshev_w/*' />
-        public static ExtendedC chebyshev_w(int n, dynamic y)
+        public static ExtendedC chebyshev_w(dynamic n, dynamic y)
         {
             return chebyshev_w(ecplx.t(n), ecplx.t(y));
         }
