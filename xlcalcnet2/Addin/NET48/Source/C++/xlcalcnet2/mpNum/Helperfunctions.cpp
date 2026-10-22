@@ -3051,14 +3051,14 @@ void arb_ndis(arb_t out1, const arb_t x, slong wp)
 
 
 
-void arb_fresnelc(arb_t res, const arb_t x, slong prec)
+void arb_fresnels(arb_t res, const arb_t x, slong prec)
 {
     arb_hypgeom_fresnel(res, NULL, x, 1, prec);
 }
 
 
 
-void arb_fresnels(arb_t res, const arb_t x, slong prec)
+void arb_fresnelc(arb_t res, const arb_t x, slong prec)
 {
     arb_hypgeom_fresnel(NULL, res, x, 1, prec);
 }
@@ -4891,14 +4891,14 @@ void acb_ndis(acb_t out1, const acb_t z, slong wp)
 
 
 
-void acb_fresnelc(acb_t res, const acb_t x, slong prec)
+void acb_fresnels(acb_t res, const acb_t x, slong prec)
 {
     acb_hypgeom_fresnel(res, NULL, x, 1, prec);
 }
 
 
 
-void acb_fresnels(acb_t res, const acb_t x, slong prec)
+void acb_fresnelc(acb_t res, const acb_t x, slong prec)
 {
     acb_hypgeom_fresnel(NULL, res, x, 1, prec);
 }

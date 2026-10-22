@@ -1417,8 +1417,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Single logbase(Single x, Single b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Single log(Single x, Single b)
         {
             ArbPrec.Init(); Single res = 0.0F;
             Lib_SReal_Arb_Logbase(ref res, ref x, ref b);
@@ -1428,10 +1428,10 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_Logbase(ref Single res, ref Single x, ref Single b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Single logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Single log(dynamic x, dynamic b)
         {
-            return logbase(sreal.t(x), sreal.t(b));
+            return log(sreal.t(x), sreal.t(b));
         }
 
 
@@ -5128,6 +5128,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Single erf(Single x)
         {
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isneginf(x)) return sreal.t(-1);
+            if (sreal.isposinf(x)) return sreal.t(1);
             ArbPrec.Init(); Single res = 0.0F;
             Lib_SReal_Arb_Erf(ref res, ref x);
             return res;
@@ -5147,6 +5150,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Single erfc(Single x)
         {
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isneginf(x)) return sreal.t(2);
+            if (sreal.isposinf(x)) return sreal.t(0);
             ArbPrec.Init(); Single res = 0.0F;
             Lib_SReal_Arb_Erfc(ref res, ref x);
             return res;
@@ -5167,12 +5173,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Single erf_inv(Single x)
         {
+            if (sreal.isnan(x)) return sreal.nan;
+            if (x <= sreal.t(-1)) return sreal.neginf;
+            if (x >= sreal.t(1)) return sreal.inf;
             ArbPrec.Init(); Single res = 0.0F;
-            Lib_SReal_Arb_Erfinv(ref res, ref x);
+            Lib_SReal_Arb_ErfInv(ref res, ref x);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SReal_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_SReal_Arb_Erfinv(ref Single res, ref Single x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SReal_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_SReal_Arb_ErfInv(ref Single res, ref Single x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -5186,12 +5195,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Single erfc_inv(Single x)
         {
+            if (sreal.isnan(x)) return sreal.nan;
+            if (x <= sreal.t(0)) return sreal.inf;
+            if (x >= sreal.t(2)) return sreal.neginf;
             ArbPrec.Init(); Single res = 0.0F;
-            Lib_SReal_Arb_Erfcinv(ref res, ref x);
+            Lib_SReal_Arb_ErfcInv(ref res, ref x);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SReal_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_SReal_Arb_Erfcinv(ref Single res, ref Single x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_SReal_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_SReal_Arb_ErfcInv(ref Single res, ref Single x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -5297,6 +5309,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Single ndis(Single x)
         {
+            if (sreal.isnan(x)) return sreal.nan;
+            if (sreal.isneginf(x)) return sreal.t(0);
+            if (sreal.isposinf(x)) return sreal.t(1);
             ArbPrec.Init(); Single res = 0.0F;
             Lib_SReal_Arb_Ndis(ref res, ref x);
             return res;
@@ -5310,6 +5325,21 @@ namespace ArbPrecNet
         {
             return ndis(sreal.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Single ndisx(Single q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Single ndisx(dynamic q)
+        {
+            return ndisx(sreal.t(q));
+        }
+
 
 
 
@@ -6756,8 +6786,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static SingleC logbase(SingleC x, SingleC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static SingleC log(SingleC x, SingleC b)
         {
             var res = new SingleC();
             Lib_SCplx_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -6767,10 +6797,10 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static SingleC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static SingleC log(dynamic x, dynamic b)
         {
-            return logbase(scplx.t(x), scplx.t(b));
+            return log(scplx.t(x), scplx.t(b));
         }
 
 

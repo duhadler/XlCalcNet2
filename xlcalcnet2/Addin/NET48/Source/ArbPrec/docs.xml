@@ -847,12 +847,12 @@
             <seealso href="">B03_ElementaryScalarFunctions/C04_Logarithms.html#ctx.log2</seealso>
         </log2>
 
-        <logbase>
+        <log>
             <summary>
-                Returns the logbase of x
+                Returns the log of x
             </summary>
-            <seealso href="">B03_ElementaryScalarFunctions/C04_Logarithms.html#ctx.logbase</seealso>
-        </logbase>
+            <seealso href="">B03_ElementaryScalarFunctions/C04_Logarithms.html#ctx.log</seealso>
+        </log>
 
         <log1p>
             <summary>

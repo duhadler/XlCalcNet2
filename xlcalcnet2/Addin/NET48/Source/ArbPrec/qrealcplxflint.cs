@@ -1410,8 +1410,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Quadruple logbase(Quadruple x, Quadruple b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Quadruple log(Quadruple x, Quadruple b)
         {
             var res = new Quadruple();
             Lib_QReal_Arb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -1421,10 +1421,10 @@ namespace ArbPrecNet
         internal static extern int Lib_QReal_Arb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Quadruple logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Quadruple log(dynamic x, dynamic b)
         {
-            return logbase(qreal.t(x), qreal.t(b));
+            return log(qreal.t(x), qreal.t(b));
         }
 
 
@@ -5142,6 +5142,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Quadruple erf(Quadruple x)
         {
+            if (qreal.isnan(x)) return qreal.nan;
+            if (qreal.isneginf(x)) return qreal.t(-1);
+            if (qreal.isposinf(x)) return qreal.t(1);
             var res = new Quadruple();
             Lib_QReal_Arb_Erf(res.mpPtr, x.mpPtr);
             return res;
@@ -5161,6 +5164,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Quadruple erfc(Quadruple x)
         {
+            if (qreal.isnan(x)) return qreal.nan;
+            if (qreal.isneginf(x)) return qreal.t(2);
+            if (qreal.isposinf(x)) return qreal.t(0);
             var res = new Quadruple();
             Lib_QReal_Arb_Erfc(res.mpPtr, x.mpPtr);
             return res;
@@ -5181,12 +5187,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Quadruple erf_inv(Quadruple x)
         {
+            if (qreal.isnan(x)) return qreal.nan;
+            if (x <= qreal.t(-1)) return qreal.neginf;
+            if (x >= qreal.t(1)) return qreal.inf;
             var res = new Quadruple();
-            Lib_QReal_Arb_Erfinv(res.mpPtr, x.mpPtr);
+            Lib_QReal_Arb_ErfInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_QReal_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_QReal_Arb_Erfinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_QReal_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_QReal_Arb_ErfInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -5200,12 +5209,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Quadruple erfc_inv(Quadruple x)
         {
+            if (qreal.isnan(x)) return qreal.nan;
+            if (x <= qreal.t(0)) return qreal.inf;
+            if (x >= qreal.t(2)) return qreal.neginf;
             var res = new Quadruple();
-            Lib_QReal_Arb_Erfcinv(res.mpPtr, x.mpPtr);
+            Lib_QReal_Arb_ErfcInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_QReal_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_QReal_Arb_Erfcinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_QReal_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_QReal_Arb_ErfcInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -5311,6 +5323,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Quadruple ndis(Quadruple x)
         {
+            if (qreal.isnan(x)) return qreal.nan;
+            if (qreal.isneginf(x)) return qreal.t(0);
+            if (qreal.isposinf(x)) return qreal.t(1);
             var res = new Quadruple();
             Lib_QReal_Arb_Ndis(res.mpPtr, x.mpPtr);
             return res;
@@ -5324,6 +5339,21 @@ namespace ArbPrecNet
         {
             return ndis(qreal.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Quadruple ndisx(Quadruple q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Quadruple ndisx(dynamic q)
+        {
+            return ndisx(qreal.t(q));
+        }
+
 
 
 
@@ -6781,8 +6811,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static QuadrupleC logbase(QuadrupleC x, QuadrupleC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static QuadrupleC log(QuadrupleC x, QuadrupleC b)
         {
             var res = new QuadrupleC();
             Lib_QCplx_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -6792,10 +6822,10 @@ namespace ArbPrecNet
         internal static extern int Lib_QCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static QuadrupleC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static QuadrupleC log(dynamic x, dynamic b)
         {
-            return logbase(qcplx.t(x), qcplx.t(b));
+            return log(qcplx.t(x), qcplx.t(b));
         }
 
 

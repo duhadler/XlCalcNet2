@@ -1010,9 +1010,9 @@ MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_Erf(double* res, const double
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_Erfc(double* res, const double* x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_ErfInv(FCplxPtr res, const FCplxPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_ErfInv(double* res, const double* x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_ErfcInv(FCplxPtr res, const FCplxPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_ErfcInv(double* res, const double* x);
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_FReal_Arb_Erfi(double* res, const double* x);
 

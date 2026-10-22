@@ -1031,9 +1031,9 @@ MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_Erf(float* res, const float* 
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_Erfc(float* res, const float* x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_ErfInv(SCplxPtr res, const SCplxPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_ErfInv(float* res, const float* x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_ErfcInv(SCplxPtr res, const SCplxPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_ErfcInv(float* res, const float* x);
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_SReal_Arb_Erfi(float* res, const float* x);
 

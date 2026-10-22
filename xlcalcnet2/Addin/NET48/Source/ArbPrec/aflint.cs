@@ -3243,8 +3243,8 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Arb logbase(Arb x, Arb b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Arb log(Arb x, Arb b)
         {
             var res = new Arb();
             Lib_Arb_Arb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -3254,10 +3254,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Arb_Arb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Arb logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Arb log(dynamic x, dynamic b)
         {
-            return logbase(aflint.t(x), aflint.t(b));
+            return log(aflint.t(x), aflint.t(b));
         }
 
 
@@ -7138,6 +7138,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Arb erf(Arb x)
         {
+            if (aflint.isnan(x)) return aflint.nan;
+            if (aflint.isneginf(x)) return aflint.t(-1);
+            if (aflint.isposinf(x)) return aflint.t(1);
             var res = new Arb();
             Lib_Arb_Arb_Erf(res.mpPtr, x.mpPtr);
             return res;
@@ -7157,6 +7160,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Arb erfc(Arb x)
         {
+            if (aflint.isnan(x)) return aflint.nan;
+            if (aflint.isneginf(x)) return aflint.t(2);
+            if (aflint.isposinf(x)) return aflint.t(0);
             var res = new Arb();
             Lib_Arb_Arb_Erfc(res.mpPtr, x.mpPtr);
             return res;
@@ -7177,12 +7183,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Arb erf_inv(Arb x)
         {
+            if (aflint.isnan(x)) return aflint.nan;
+            if (x <= aflint.t(-1)) return aflint.neginf;
+            if (x >= aflint.t(1)) return aflint.inf;
             var res = new Arb();
-            Lib_Arb_Arb_Erfinv(res.mpPtr, x.mpPtr);
+            Lib_Arb_Arb_ErfInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Arb_Erfinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Arb_Arb_ErfInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -7196,12 +7205,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Arb erfc_inv(Arb x)
         {
+            if (aflint.isnan(x)) return aflint.nan;
+            if (x <= aflint.t(0)) return aflint.inf;
+            if (x >= aflint.t(2)) return aflint.neginf;
             var res = new Arb();
-            Lib_Arb_Arb_Erfcinv(res.mpPtr, x.mpPtr);
+            Lib_Arb_Arb_ErfcInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Arb_Erfcinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Arb_Arb_ErfcInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -7316,6 +7328,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Arb ndis(Arb x)
         {
+            if (aflint.isnan(x)) return aflint.nan;
+            if (aflint.isneginf(x)) return aflint.t(0);
+            if (aflint.isposinf(x)) return aflint.t(1);
             var res = new Arb();
             if (aflint.isfinite(x))
             {
@@ -7335,6 +7350,24 @@ namespace ArbPrecNet
         {
             return ndis(aflint.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Arb ndisx(Arb q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Arb ndisx(dynamic q)
+        {
+            return ndisx(aflint.t(q));
+        }
+
+
+
+
 
 
 

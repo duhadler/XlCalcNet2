@@ -1703,8 +1703,8 @@ namespace ArbPrecNet
             return log10(t(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static MpfrC logbase(MpfrC x, MpfrC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static MpfrC log(MpfrC x, MpfrC b)
         {
             var res = new MpfrC();
             Lib_Mpfc_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -1714,10 +1714,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static MpfrC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static MpfrC log(dynamic x, dynamic b)
         {
-            return logbase(mflintc.t(x), mflintc.t(b));
+            return log(mflintc.t(x), mflintc.t(b));
         }
 
 

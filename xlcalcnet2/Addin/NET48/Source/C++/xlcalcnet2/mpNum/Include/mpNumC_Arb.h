@@ -1052,9 +1052,9 @@ MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_Erf(ArbPtr res, const ArbPtr x)
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_Erfc(ArbPtr res, const ArbPtr x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_ErfInv(AcbPtr res, const AcbPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_ErfInv(ArbPtr res, const ArbPtr x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_ErfcInv(AcbPtr res, const AcbPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_ErfcInv(ArbPtr res, const ArbPtr x);
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_Arb_Arb_Erfi(ArbPtr res, const ArbPtr x);
 

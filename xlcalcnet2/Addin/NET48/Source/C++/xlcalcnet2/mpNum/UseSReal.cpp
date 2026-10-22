@@ -1452,13 +1452,13 @@ void Lib_SReal_Arb_Erfc(float* res, const float* x)
 }
 
 
-void Lib_SReal_Arb_Erfinv(float* res, const float* x)
+void Lib_SReal_Arb_ErfInv(float* res, const float* x)
 {
     SReal_Arb_Realfunc1_Prec(arb_hypgeom_erfinv, res, x);
 }
 
 
-void Lib_SReal_Arb_Erfcinv(float* res, const float* x)
+void Lib_SReal_Arb_ErfcInv(float* res, const float* x)
 {
     SReal_Arb_Realfunc1_Prec(arb_hypgeom_erfcinv, res, x);
 }

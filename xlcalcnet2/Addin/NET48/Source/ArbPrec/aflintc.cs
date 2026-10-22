@@ -2603,8 +2603,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static ArbC logbase(ArbC x, ArbC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static ArbC log(ArbC x, ArbC b)
         {
             var res = new ArbC();
             Lib_Acb_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -2614,10 +2614,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static ArbC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static ArbC log(dynamic x, dynamic b)
         {
-            return logbase(aflintc.t(x), aflintc.t(b));
+            return log(aflintc.t(x), aflintc.t(b));
         }
 
 

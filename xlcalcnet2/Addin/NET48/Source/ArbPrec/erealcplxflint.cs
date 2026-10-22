@@ -1386,8 +1386,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Extended logbase(Extended x, Extended b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Extended log(Extended x, Extended b)
         {
             var res = new Extended();
             Lib_XReal_Arb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -1397,10 +1397,10 @@ namespace ArbPrecNet
         internal static extern int Lib_XReal_Arb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Extended logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Extended log(dynamic x, dynamic b)
         {
-            return logbase(ereal.t(x), ereal.t(b));
+            return log(ereal.t(x), ereal.t(b));
         }
 
 
@@ -5123,6 +5123,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Extended erf(Extended x)
         {
+            if (ereal.isnan(x)) return ereal.nan;
+            if (ereal.isneginf(x)) return ereal.t(-1);
+            if (ereal.isposinf(x)) return ereal.t(1);
             var res = new Extended();
             Lib_XReal_Arb_Erf(res.mpPtr, x.mpPtr);
             return res;
@@ -5142,6 +5145,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Extended erfc(Extended x)
         {
+            if (ereal.isnan(x)) return ereal.nan;
+            if (ereal.isneginf(x)) return ereal.t(2);
+            if (ereal.isposinf(x)) return ereal.t(0);
             var res = new Extended();
             Lib_XReal_Arb_Erfc(res.mpPtr, x.mpPtr);
             return res;
@@ -5162,12 +5168,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Extended erf_inv(Extended x)
         {
+            if (ereal.isnan(x)) return ereal.nan;
+            if (x <= ereal.t(-1)) return ereal.neginf;
+            if (x >= ereal.t(1)) return ereal.inf;
             var res = new Extended();
-            Lib_XReal_Arb_Erfinv(res.mpPtr, x.mpPtr);
+            Lib_XReal_Arb_ErfInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_XReal_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_XReal_Arb_Erfinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_XReal_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_XReal_Arb_ErfInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -5181,12 +5190,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Extended erfc_inv(Extended x)
         {
+            if (ereal.isnan(x)) return ereal.nan;
+            if (x <= ereal.t(0)) return ereal.inf;
+            if (x >= ereal.t(2)) return ereal.neginf;
             var res = new Extended();
-            Lib_XReal_Arb_Erfcinv(res.mpPtr, x.mpPtr);
+            Lib_XReal_Arb_ErfcInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_XReal_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_XReal_Arb_Erfcinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_XReal_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_XReal_Arb_ErfcInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -5292,6 +5304,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Extended ndis(Extended x)
         {
+            if (ereal.isnan(x)) return ereal.nan;
+            if (ereal.isneginf(x)) return ereal.t(0);
+            if (ereal.isposinf(x)) return ereal.t(1);
             var res = new Extended();
             Lib_XReal_Arb_Ndis(res.mpPtr, x.mpPtr);
             return res;
@@ -5305,6 +5320,21 @@ namespace ArbPrecNet
         {
             return ndis(ereal.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Extended ndisx(Extended q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Extended ndisx(dynamic q)
+        {
+            return ndisx(ereal.t(q));
+        }
+
 
 
 
@@ -6760,8 +6790,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static ExtendedC logbase(ExtendedC x, ExtendedC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static ExtendedC log(ExtendedC x, ExtendedC b)
         {
             var res = new ExtendedC();
             Lib_XCplx_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -6771,10 +6801,10 @@ namespace ArbPrecNet
         internal static extern int Lib_XCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static ExtendedC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static ExtendedC log(dynamic x, dynamic b)
         {
-            return logbase(ecplx.t(x), ecplx.t(b));
+            return log(ecplx.t(x), ecplx.t(b));
         }
 
 

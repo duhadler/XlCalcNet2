@@ -1416,8 +1416,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Octuple logbase(Octuple x, Octuple b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Octuple log(Octuple x, Octuple b)
         {
             var res = new Octuple();
             Lib_OReal_Arb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -1427,10 +1427,10 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Octuple logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Octuple log(dynamic x, dynamic b)
         {
-            return logbase(oreal.t(x), oreal.t(b));
+            return log(oreal.t(x), oreal.t(b));
         }
 
 
@@ -5178,6 +5178,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Octuple erf(Octuple x)
         {
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isneginf(x)) return oreal.t(-1);
+            if (oreal.isposinf(x)) return oreal.t(1);
             var res = new Octuple();
             Lib_OReal_Arb_Erf(res.mpPtr, x.mpPtr);
             return res;
@@ -5197,6 +5200,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Octuple erfc(Octuple x)
         {
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isneginf(x)) return oreal.t(2);
+            if (oreal.isposinf(x)) return oreal.t(0);
             var res = new Octuple();
             Lib_OReal_Arb_Erfc(res.mpPtr, x.mpPtr);
             return res;
@@ -5217,12 +5223,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Octuple erf_inv(Octuple x)
         {
+            if (oreal.isnan(x)) return oreal.nan; 
+            if (x <= oreal.t(-1)) return oreal.neginf;
+            if (x >= oreal.t(1)) return oreal.inf;
             var res = new Octuple();
-            Lib_OReal_Arb_Erfinv(res.mpPtr, x.mpPtr);
+            Lib_OReal_Arb_ErfInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_OReal_Arb_Erfinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_OReal_Arb_ErfInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -5236,12 +5245,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Octuple erfc_inv(Octuple x)
         {
+            if (oreal.isnan(x)) return oreal.nan;
+            if (x <= oreal.t(0)) return oreal.inf;
+            if (x >= oreal.t(2)) return oreal.neginf;
             var res = new Octuple();
-            Lib_OReal_Arb_Erfcinv(res.mpPtr, x.mpPtr);
+            Lib_OReal_Arb_ErfcInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_OReal_Arb_Erfcinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_OReal_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_OReal_Arb_ErfcInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -5347,6 +5359,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Octuple ndis(Octuple x)
         {
+            if (oreal.isnan(x)) return oreal.nan;
+            if (oreal.isneginf(x)) return oreal.t(0);
+            if (oreal.isposinf(x)) return oreal.t(1);
             var res = new Octuple();
             Lib_OReal_Arb_Ndis(res.mpPtr, x.mpPtr);
             return res;
@@ -5360,6 +5375,21 @@ namespace ArbPrecNet
         {
             return ndis(oreal.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Octuple ndisx(Octuple q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Octuple ndisx(dynamic q)
+        {
+            return ndisx(oreal.t(q));
+        }
+
 
 
 
@@ -6820,8 +6850,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static OctupleC logbase(OctupleC x, OctupleC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static OctupleC log(OctupleC x, OctupleC b)
         {
             var res = new OctupleC();
             Lib_OCplx_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -6831,10 +6861,10 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static OctupleC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static OctupleC log(dynamic x, dynamic b)
         {
-            return logbase(ocplx.t(x), ocplx.t(b));
+            return log(ocplx.t(x), ocplx.t(b));
         }
 
 

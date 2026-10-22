@@ -2081,8 +2081,8 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Mpfr logbase(Mpfr x, Mpfr b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Mpfr log(Mpfr x, Mpfr b)
         {
             var res = new Mpfr();
             Lib_Mpfr_Arb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -2092,10 +2092,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfr_Arb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Mpfr logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Mpfr log(dynamic x, dynamic b)
         {
-            return logbase(mflint.t(x), mflint.t(b));
+            return log(mflint.t(x), mflint.t(b));
         }
 
 
@@ -5847,6 +5847,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Mpfr erf(Mpfr x)
         {
+            if (mreal.isnan(x)) return mreal.nan;
+            if (mreal.isneginf(x)) return mreal.t(-1);
+            if (mreal.isposinf(x)) return mreal.t(1);
             var res = new Mpfr();
             Lib_Mpfr_Arb_Erf(res.mpPtr, x.mpPtr);
             return res;
@@ -5866,6 +5869,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Mpfr erfc(Mpfr x)
         {
+            if (mreal.isnan(x)) return mreal.nan;
+            if (mreal.isneginf(x)) return mreal.t(2);
+            if (mreal.isposinf(x)) return mreal.t(0);
             var res = new Mpfr();
             Lib_Mpfr_Arb_Erfc(res.mpPtr, x.mpPtr);
             return res;
@@ -5886,12 +5892,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Mpfr erf_inv(Mpfr x)
         {
+            if (mreal.isnan(x)) return mreal.nan;
+            if (x <= mreal.t(-1)) return mreal.neginf;
+            if (x >= mreal.t(1)) return mreal.inf;
             var res = new Mpfr();
-            Lib_Mpfr_Arb_Erfinv(res.mpPtr, x.mpPtr);
+            Lib_Mpfr_Arb_ErfInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Mpfr_Arb_Erfinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Mpfr_Arb_ErfInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -5905,12 +5914,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Mpfr erfc_inv(Mpfr x)
         {
+            if (mreal.isnan(x)) return mreal.nan;
+            if (x <= mreal.t(0)) return mreal.inf;
+            if (x >= mreal.t(2)) return mreal.neginf;
             var res = new Mpfr();
-            Lib_Mpfr_Arb_Erfcinv(res.mpPtr, x.mpPtr);
+            Lib_Mpfr_Arb_ErfcInv(res.mpPtr, x.mpPtr);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Mpfr_Arb_Erfcinv(IntPtr res, IntPtr x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_Mpfr_Arb_ErfcInv(IntPtr res, IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -6015,6 +6027,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Mpfr ndis(Mpfr x)
         {
+            if (mreal.isnan(x)) return mreal.nan;
+            if (mreal.isneginf(x)) return mreal.t(0);
+            if (mreal.isposinf(x)) return mreal.t(1);
             var res = new Mpfr();
             Lib_Mpfr_Arb_Ndis(res.mpPtr, x.mpPtr);
             return res;
@@ -6027,6 +6042,20 @@ namespace ArbPrecNet
         public static Mpfr ndis(dynamic x)
         {
             return ndis(mflint.t(x));
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Mpfr ndisx(Mpfr q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Mpfr ndisx(dynamic q)
+        {
+            return ndisx(mreal.t(q));
         }
 
 
@@ -8166,8 +8195,8 @@ namespace ArbPrecNet
             return log10(t(x));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static MpfrC logbase(MpfrC x, MpfrC b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static MpfrC log(MpfrC x, MpfrC b)
         {
             var res = new MpfrC();
             Lib_Mpfc_Acb_Logbase(res.mpPtr, x.mpPtr, b.mpPtr);
@@ -8177,10 +8206,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static MpfrC logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static MpfrC log(dynamic x, dynamic b)
         {
-            return logbase(mflintc.t(x), mflintc.t(b));
+            return log(mflintc.t(x), mflintc.t(b));
         }
 
 

@@ -1544,13 +1544,13 @@ void Lib_XReal_Arb_Erfc(long double* res, const long double* x)
 }
 
 
-void Lib_XReal_Arb_Erfinv(long double* res, const long double* x)
+void Lib_XReal_Arb_ErfInv(long double* res, const long double* x)
 {
     XReal_Arb_Realfunc1_Prec(arb_hypgeom_erfinv, res, x);
 }
 
 
-void Lib_XReal_Arb_Erfcinv(long double* res, const long double* x)
+void Lib_XReal_Arb_ErfcInv(long double* res, const long double* x)
 {
     XReal_Arb_Realfunc1_Prec(arb_hypgeom_erfcinv, res, x);
 }

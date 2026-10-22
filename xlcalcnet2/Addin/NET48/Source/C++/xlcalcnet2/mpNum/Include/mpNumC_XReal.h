@@ -541,9 +541,9 @@ MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_Erf(long double* res, const l
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_Erfc(long double* res, const long double* x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_ErfInv(XCplxPtr res, const XCplxPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_ErfInv(long double* res, const long double* x);
 
-MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_ErfcInv(XCplxPtr res, const XCplxPtr x);
+MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_ErfcInv(long double* res, const long double* x);
 
 MPNUMC_DLL_IMPORTEXPORT void __cdecl Lib_XReal_Arb_Erfi(long double* res, const long double* x);
 

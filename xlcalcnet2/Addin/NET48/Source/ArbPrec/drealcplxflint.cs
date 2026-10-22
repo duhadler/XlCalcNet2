@@ -1414,8 +1414,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Double logbase(Double x, Double b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Double log(Double x, Double b)
         {
             ArbPrec.Init(); Double res = 0.0;
             Lib_FReal_Arb_Logbase(ref res, ref x, ref b);
@@ -1425,10 +1425,10 @@ namespace ArbPrecNet
         internal static extern int Lib_FReal_Arb_Logbase(ref Double res, ref Double x, ref Double b);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Double logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Double log(dynamic x, dynamic b)
         {
-            return logbase(dreal.t(x), dreal.t(b));
+            return log(dreal.t(x), dreal.t(b));
         }
 
 
@@ -5151,6 +5151,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf/*' />
         public static Double erf(Double x)
         {
+            if (dreal.isnan(x)) return dreal.nan;
+            if (dreal.isneginf(x)) return dreal.t(-1);
+            if (dreal.isposinf(x)) return dreal.t(1);
             ArbPrec.Init(); Double res = 0.0;
             Lib_FReal_Arb_Erf(ref res, ref x);
             return res;
@@ -5170,6 +5173,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc/*' />
         public static Double erfc(Double x)
         {
+            if (dreal.isnan(x)) return dreal.nan;
+            if (dreal.isneginf(x)) return dreal.t(2);
+            if (dreal.isposinf(x)) return dreal.t(0);
             ArbPrec.Init(); Double res = 0.0;
             Lib_FReal_Arb_Erfc(ref res, ref x);
             return res;
@@ -5190,12 +5196,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
         public static Double erf_inv(Double x)
         {
+            if (dreal.isnan(x)) return dreal.nan;
+            if (x <= dreal.t(-1)) return dreal.neginf;
+            if (x >= dreal.t(1)) return dreal.inf;
             ArbPrec.Init(); Double res = 0.0;
-            Lib_FReal_Arb_Erfinv(ref res, ref x);
+            Lib_FReal_Arb_ErfInv(ref res, ref x);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FReal_Arb_Erfinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_FReal_Arb_Erfinv(ref Double res, ref Double x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FReal_Arb_ErfInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_FReal_Arb_ErfInv(ref Double res, ref Double x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erf_inv/*' />
@@ -5209,12 +5218,15 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
         public static Double erfc_inv(Double x)
         {
+            if (dreal.isnan(x)) return dreal.nan;
+            if (x <= dreal.t(0)) return dreal.inf;
+            if (x >= dreal.t(2)) return dreal.neginf;
             ArbPrec.Init(); Double res = 0.0;
-            Lib_FReal_Arb_Erfcinv(ref res, ref x);
+            Lib_FReal_Arb_ErfcInv(ref res, ref x);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FReal_Arb_Erfcinv", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_FReal_Arb_Erfcinv(ref Double res, ref Double x);
+        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FReal_Arb_ErfcInv", CallingConvention = CallingConvention.Cdecl)]
+        internal static extern int Lib_FReal_Arb_ErfcInv(ref Double res, ref Double x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/erfc_inv/*' />
@@ -5320,6 +5332,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndis/*' />
         public static Double ndis(Double x)
         {
+            if (dreal.isnan(x)) return dreal.nan;
+            if (dreal.isneginf(x)) return dreal.t(0);
+            if (dreal.isposinf(x)) return dreal.t(1);
             ArbPrec.Init(); Double res = 0.0;
             Lib_FReal_Arb_Ndis(ref res, ref x);
             return res;
@@ -5333,6 +5348,21 @@ namespace ArbPrecNet
         {
             return ndis(dreal.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Double ndisx(Double q)
+        {
+            return -sqrt(2) * erfc_inv(2 * q);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ndisx/*' />    
+        public static Double ndisx(dynamic q)
+        {
+            return ndisx(dreal.t(q));
+        }
+
 
 
 
@@ -6799,8 +6829,8 @@ namespace ArbPrecNet
         #region Logarithms and related functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Complex logbase(Complex x, Complex b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Complex log(Complex x, Complex b)
         {
             ArbPrec.Init();
             var res = new fcplx_t();
@@ -6812,10 +6842,10 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FCplx_Acb_Logbase", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_FCplx_Acb_Logbase(IntPtr res, IntPtr x, IntPtr b);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logbase/*' />
-        public static Complex logbase(dynamic x, dynamic b)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/log/*' />
+        public static Complex log(dynamic x, dynamic b)
         {
-            return logbase(dcplx.t(x), dcplx.t(b));
+            return log(dcplx.t(x), dcplx.t(b));
         }
 
 
