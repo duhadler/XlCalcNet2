@@ -747,7 +747,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Octuple, Octuple> modf(dynamic x)
         {
-            return oreal.modf(x);
+            return oreal.modf(oreal.t(x));
         }
 
 
@@ -762,7 +762,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Octuple fmod(dynamic x, dynamic y)
         {
-            return oreal.fmod(x, y);
+            return oreal.fmod(oreal.t(x), oreal.t(y));
         }
 
 
@@ -776,7 +776,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Octuple remainder(dynamic x, dynamic y)
         {
-            return oreal.remainder(x, y);
+            return oreal.remainder(oreal.t(x), oreal.t(y));
         }
 
 
@@ -790,8 +790,40 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Octuple, Int32> remquo(dynamic x, dynamic y)
         {
-            return oreal.remquo(x, y);
+            return oreal.remquo(oreal.t(x), oreal.t(y));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Octuple frac(Octuple x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Octuple frac(dynamic x)
+        {
+            return frac(oreal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Octuple fractionalpart(Octuple x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Octuple fractionalpart(dynamic x)
+        {
+            return fractionalpart(oreal.t(x));
+        }
+
 
         #endregion
 
@@ -6587,7 +6619,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static OctupleC rsqrt(dynamic x)
         {
-            return sqrt(ocplx.t(x));
+            return rsqrt(ocplx.t(x));
         }
 
 

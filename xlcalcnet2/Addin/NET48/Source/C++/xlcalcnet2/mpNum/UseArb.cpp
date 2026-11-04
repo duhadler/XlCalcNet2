@@ -472,7 +472,7 @@ int Lib_Arb_IsZero(const ArbPtr x)
 
 int Lib_Arb_IsOne(const ArbPtr x)
 {
-	return  arb_equal_si((arb_ptr)x, 0);
+	return  arb_equal_si((arb_ptr)x, 1);
 }
 
 int Lib_Arb_IsInf(const ArbPtr x)
@@ -1052,7 +1052,7 @@ void Lib_Arb_Sinh(ArbPtr res, const ArbPtr x)
 
 void Lib_Arb_Cosh(ArbPtr res, const ArbPtr x)
 {
-	arb_acosh((arb_ptr)res, (arb_ptr)x, mpfr_get_default_prec());
+	arb_cosh((arb_ptr)res, (arb_ptr)x, mpfr_get_default_prec());
 }
 
 void Lib_Arb_Tanh(ArbPtr res, const ArbPtr x)

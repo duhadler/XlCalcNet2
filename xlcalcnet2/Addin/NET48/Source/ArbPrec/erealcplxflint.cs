@@ -723,7 +723,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Extended, Extended> modf(dynamic x)
         {
-            return ereal.modf(x);
+            return ereal.modf(ereal.t(x));
         }
 
 
@@ -738,7 +738,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Extended fmod(dynamic x, dynamic y)
         {
-            return ereal.fmod(x, y);
+            return ereal.fmod(ereal.t(x), ereal.t(y));
         }
 
 
@@ -752,7 +752,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Extended remainder(dynamic x, dynamic y)
         {
-            return ereal.remainder(x, y);
+            return ereal.remainder(ereal.t(x), ereal.t(y));
         }
 
 
@@ -766,8 +766,40 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Extended, Int32> remquo(dynamic x, dynamic y)
         {
-            return ereal.remquo(x, y);
+            return ereal.remquo(ereal.t(x), ereal.t(y));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Extended frac(Extended x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Extended frac(dynamic x)
+        {
+            return frac(ereal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Extended fractionalpart(Extended x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Extended fractionalpart(dynamic x)
+        {
+            return fractionalpart(ereal.t(x));
+        }
+
 
         #endregion
 

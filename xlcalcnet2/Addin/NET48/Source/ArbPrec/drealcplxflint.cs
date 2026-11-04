@@ -747,7 +747,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Double, Double> modf(dynamic x)
         {
-            return dreal.modf(x);
+            return dreal.modf(dreal.t(x));
         }
 
 
@@ -762,7 +762,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Double fmod(dynamic x, dynamic y)
         {
-            return dreal.fmod(x, y);
+            return dreal.fmod(dreal.t(x), dreal.t(y));
         }
 
 
@@ -776,7 +776,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Double remainder(dynamic x, dynamic y)
         {
-            return dreal.remainder(x, y);
+            return dreal.remainder(dreal.t(x), dreal.t(y));
         }
 
 
@@ -790,8 +790,40 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Double, Int32> remquo(dynamic x, dynamic y)
         {
-            return dreal.remquo(x, y);
+            return dreal.remquo(dreal.t(x), dreal.t(y));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Double frac(Double x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Double frac(dynamic x)
+        {
+            return frac(dreal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Double fractionalpart(Double x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Double fractionalpart(dynamic x)
+        {
+            return fractionalpart(dreal.t(x));
+        }
+
 
         #endregion
 

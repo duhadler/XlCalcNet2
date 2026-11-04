@@ -765,7 +765,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Single fmod(dynamic x, dynamic y)
         {
-            return sreal.fmod(x, y);
+            return sreal.fmod(sreal.t(x), sreal.t(y));
         }
 
 
@@ -779,7 +779,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Single remainder(dynamic x, dynamic y)
         {
-            return sreal.remainder(x, y);
+            return sreal.remainder(sreal.t(x), sreal.t(y));
         }
 
 
@@ -793,8 +793,40 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Single, Int32> remquo(dynamic x, dynamic y)
         {
-            return sreal.remquo(x, y);
+            return sreal.remquo(sreal.t(x), sreal.t(y));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Single frac(Single x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Single frac(dynamic x)
+        {
+            return frac(sreal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Single fractionalpart(Single x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Single fractionalpart(dynamic x)
+        {
+            return fractionalpart(sreal.t(x));
+        }
+
 
         #endregion
 
@@ -6525,7 +6557,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static SingleC rsqrt(dynamic x)
         {
-            return sqrt(scplx.t(x));
+            return rsqrt(scplx.t(x));
         }
 
 

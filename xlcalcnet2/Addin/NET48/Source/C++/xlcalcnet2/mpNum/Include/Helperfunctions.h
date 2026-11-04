@@ -326,6 +326,7 @@ void mpfr_set_si64(mpfr_t x, int64_t sint64);
 
 
 
+void mpfr_get_ulp(mpfr_t ulp_res, const mpfr_t x);
 
 
 void mpfr_machine_epsilon_x(mpfr_t res, mpfr_t x, mp_prec_t prec);

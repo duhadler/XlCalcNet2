@@ -1829,6 +1829,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(Arb x)
         {
+            if (isnan(x) || isinf(x))
+                return false;
             return 0 != (Lib_Arb_IsOne(x.mpPtr));
         }
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_IsOne", CallingConvention = CallingConvention.Cdecl)]
@@ -1860,13 +1862,20 @@ namespace ArbPrecNet
 
 
 
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
+        //public static bool isnumber(Arb x)
+        //{
+        //    return 0 != (Lib_Arb_Isnumber(x.mpPtr));
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isnumber", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern int Lib_Arb_Isnumber(IntPtr x);
+
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
         public static bool isnumber(Arb x)
         {
-            return 0 != (Lib_Arb_Isnumber(x.mpPtr));
+            return !(isinf(x) || isnan(x));
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isnumber", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Isnumber(IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnumber/*' />
@@ -1877,13 +1886,20 @@ namespace ArbPrecNet
 
 
 
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
+        //public static bool isregular(Arb x)
+        //{
+        //    return 0 != (Lib_Arb_Isregular(x.mpPtr));
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isregular", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern int Lib_Arb_Isregular(IntPtr x);
+
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
         public static bool isregular(Arb x)
         {
-            return 0 != (Lib_Arb_Isregular(x.mpPtr));
+            return (isnumber(x) && (x!=0));
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isregular", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Isregular(IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isregular/*' />
@@ -1894,13 +1910,20 @@ namespace ArbPrecNet
 
 
 
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
+        //public static bool isnormal(Arb x)
+        //{
+        //    return 0 != (Lib_Arb_Isnormal(x.mpPtr));
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isnormal", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern int Lib_Arb_Isnormal(IntPtr x);
+
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
         public static bool isnormal(Arb x)
         {
-            return 0 != (Lib_Arb_Isnormal(x.mpPtr));
+            return (isnumber(x) && (x != 0));
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isnormal", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Isnormal(IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isnormal/*' />
@@ -1911,30 +1934,22 @@ namespace ArbPrecNet
 
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/IsSubnormal/*' />
-        //public static bool IsSubnormal(Arb x)
-        //{
-        //    return 0 != (Lib_Arb_Issubnormal(x.mpPtr));
-        //}
-        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Issubnormal", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern int Lib_Arb_Issubnormal(IntPtr x);
 
-
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/IsSubnormal/*' />
-        //public static bool IsSubnormal(dynamic x)
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
+        //public static bool isunordered(Arb x, Arb y)
         //{
-        //    return IsSubnormal(t(x));
+        //    return 0 != (Lib_Arb_Isunordered(x.mpPtr, y.mpPtr));
         //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isunordered", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern int Lib_Arb_Isunordered(IntPtr x, IntPtr y);
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
         public static bool isunordered(Arb x, Arb y)
         {
-            return 0 != (Lib_Arb_Isunordered(x.mpPtr, y.mpPtr));
+            return !((!isnan(x)) && (!isnan(y)));
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Isunordered", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern int Lib_Arb_Isunordered(IntPtr x, IntPtr y);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isunordered/*' />
@@ -2060,6 +2075,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lrint/*' />
         public static Int32 lrint(Arb x)
         {
+            if (isnan(x) || isinf(x) || !fitsint32(x))
+                return Int32.MinValue;
             return Lib_Arb_Lrint(x.mpPtr);
         }
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Lrint", CallingConvention = CallingConvention.Cdecl)]
@@ -2077,6 +2094,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llrint/*' />
         public static Int64 llrint(Arb x)
         {
+            if (isnan(x) || isinf(x) || !fitsint64(x))
+                return Int64.MinValue;
             return Lib_Arb_Llrint(x.mpPtr);
         }
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Llrint", CallingConvention = CallingConvention.Cdecl)]
@@ -2293,8 +2312,8 @@ namespace ArbPrecNet
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/Frexp/*' />
-        public static Tuple<Arb, Int32> Frexp(Arb x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frexp/*' />
+        public static Tuple<Arb, Int32> frexp(Arb x)
         {
             var res = new Arb();
             Int32 e = 0;
@@ -2305,10 +2324,10 @@ namespace ArbPrecNet
         internal static extern void Lib_Arb_Frexp(IntPtr res, IntPtr x, ref Int32 e);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/Frexp/*' />
-        public static Tuple<Arb, Int32> Frexp(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frexp/*' />
+        public static Tuple<Arb, Int32> frexp(dynamic x)
         {
-            return Frexp(t(x));
+            return frexp(t(x));
         }
 
 
@@ -2316,6 +2335,10 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logb/*' />
         public static Arb logb(Arb x)
         {
+            if (isnan(x)) return nan;
+            if (isinf(x)) return inf;
+            if (iszero(x)) return neginf;
+
             var res = new Arb();
             Lib_Arb_Logb(res.mpPtr, x.mpPtr);
             return res;
@@ -2330,13 +2353,20 @@ namespace ArbPrecNet
             return logb(t(x));
         }
 
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
+        //public static Int32 ilogb(Arb x)
+        //{
+        //    return Lib_Arb_Ilogb(x.mpPtr);
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Ilogb", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern Int32 Lib_Arb_Ilogb(IntPtr x);
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(Arb x)
         {
-            return Lib_Arb_Ilogb(x.mpPtr);
+            var res = logb(x);
+            return lrint(res);
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Ilogb", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern Int32 Lib_Arb_Ilogb(IntPtr x);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
@@ -2370,11 +2400,8 @@ namespace ArbPrecNet
         public static Arb scalbn(Arb x, Int32 e)
         {
             var res = new Arb();
-            Lib_Arb_Scalbn(res.mpPtr, x.mpPtr, e);
-            return res;
+            return ldexp(x, e);
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Scalbn", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Scalbn(IntPtr res, IntPtr x, Int32 e);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbn/*' />
@@ -2385,15 +2412,12 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbln/*' />
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbn/*' />
         public static Arb scalbln(Arb x, Int32 e)
         {
             var res = new Arb();
-            Lib_Arb_Scalbln(res.mpPtr, x.mpPtr, e);
-            return res;
+            return ldexp(x, e);
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Scalbln", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Scalbln(IntPtr res, IntPtr x, Int32 e);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scalbln/*' />
@@ -2432,13 +2456,10 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Arb, Arb> modf(Arb x)
         {
-            Arb iptr = new Arb();
-            Arb frac = new Arb();
-            Lib_Arb_Modf(frac.mpPtr, x.mpPtr, iptr.mpPtr);
-            return new Tuple<Arb, Arb>(iptr, frac);
+            //Arb iptr = new Arb();
+            //Arb frac = new Arb();
+            return new Tuple<Arb, Arb>(trunc(x), fractionalpart(x));
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Modf", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Modf(IntPtr frac, IntPtr x, IntPtr iptr);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
@@ -2452,12 +2473,11 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Arb fmod(Arb x, Arb y)
         {
-            var res = new Arb();
-            Lib_Arb_Fmod(res.mpPtr, x.mpPtr, y.mpPtr);
-            return res;
+            if (isnan(x) || isnan(y) || isinf(x) || iszero(y))
+                return nan;
+            var rem = trunc(x / y);
+            return x - rem * y;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Fmod", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Fmod(IntPtr res, IntPtr x, IntPtr y);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
@@ -2470,12 +2490,11 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Arb remainder(Arb x, Arb y)
         {
-            var res = new Arb();
-            Lib_Arb_Remainder(res.mpPtr, x.mpPtr, y.mpPtr);
-            return res;
+            if (isnan(x) || isnan(y) || isinf(x) || iszero(y))
+                return nan;
+            var rem = round(x / y);
+            return x - rem * y;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Remainder", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Remainder(IntPtr res, IntPtr x, IntPtr y);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
@@ -2485,23 +2504,54 @@ namespace ArbPrecNet
         }
 
 
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Arb, Int32> remquo(Arb x, Arb y)
         {
-            var res = new Arb();
-            Int32 e = 0;
-            Lib_Arb_Remquo(res.mpPtr, x.mpPtr, y.mpPtr, ref e);
-            return new Tuple<Arb, int>(res, e);
+            var res = mreal.remquo(mreal.t(x), mreal.t(y));
+            Int32 e = res.Item2;
+            return new Tuple<Arb, int>(remainder(x, y), e);
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Remquo", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Remquo(IntPtr res, IntPtr x, IntPtr y, ref Int32 e);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
-        public static Tuple<Arb, Int32> remquo(dynamic x)
+        public static Tuple<Arb, Int32> remquo(dynamic x, dynamic y)
         {
-            return remquo(t(x));
+            return remquo(t(x), t(y));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Arb frac(Arb x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Arb frac(dynamic x)
+        {
+            return frac(t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Arb fractionalpart(Arb x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Arb fractionalpart(dynamic x)
+        {
+            return fractionalpart(t(x));
+        }
+
+
 
         #endregion
 
@@ -2521,9 +2571,14 @@ namespace ArbPrecNet
         internal static extern void Lib_Arb_Epsilon(IntPtr res);
 
 
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ulp/*' />
         public static Arb ulp(Arb x)
         {
+            if (isnan(x) || isinf(x))
+                return nan;
+            if (iszero(x))
+                return minposvalue();
             var res = new Arb();
             Lib_Arb_Ulp(res.mpPtr, x.mpPtr);
             return res;
@@ -2531,55 +2586,89 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Ulp", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_Arb_Ulp(IntPtr res, IntPtr x);
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ulp/*' />
+        public static Arb ulp(dynamic x)
+        {
+            return ulp(aflint.t(x));
+        }
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/maxvalue/*' />
+        //public static Arb maxvalue()
+        //{
+        //    var res = new Arb();
+        //    Lib_Arb_Max(res.mpPtr);
+        //    return res;
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Max", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern void Lib_Arb_Max(IntPtr res);
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/maxvalue/*' />
         public static Arb maxvalue()
         {
-            var res = new Arb();
-            Lib_Arb_Max(res.mpPtr);
-            return res;
+            return aflint.t(mreal.maxvalue());
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Max", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Max(IntPtr res);
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lowestvalue/*' />
+        //public static Arb lowestvalue()
+        //{
+        //    var res = new Arb();
+        //    Lib_Arb_Lowest(res.mpPtr);
+        //    return res;
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Lowest", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern void Lib_Arb_Lowest(IntPtr res);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lowestvalue/*' />
         public static Arb lowestvalue()
         {
-            var res = new Arb();
-            Lib_Arb_Lowest(res.mpPtr);
-            return res;
+            return aflint.t(mreal.lowestvalue());
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Lowest", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Lowest(IntPtr res);
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/minposvalue/*' />
+        //public static Arb minposvalue()
+        //{
+        //    var res = new Arb();
+        //    Lib_Arb_Min(res.mpPtr);
+        //    return res;
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Min", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern void Lib_Arb_Min(IntPtr res);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/minposvalue/*' />
         public static Arb minposvalue()
         {
-            var res = new Arb();
-            Lib_Arb_Min(res.mpPtr);
-            return res;
+            return aflint.t(mreal.minposvalue());
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Min", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Min(IntPtr res);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nexttowards/*' />
-        public static Arb nexttowards(Arb x, Arb y)
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
+        //public static Arb nextafter(Arb x, Arb y)
+        //{
+        //    var res = new Arb();
+        //    Lib_Arb_Nexttoward(res.mpPtr, x.mpPtr, y.mpPtr);
+        //    return res;
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Nexttoward", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern void Lib_Arb_Nexttoward(IntPtr res, IntPtr x, IntPtr y);
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
+        public static Arb nextafter(Arb x, Arb y)
         {
-            var res = new Arb();
-            Lib_Arb_Nexttoward(res.mpPtr, x.mpPtr, y.mpPtr);
-            return res;
+            return aflint.t(mreal.nextafter(x, y));
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Nexttoward", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Arb_Nexttoward(IntPtr res, IntPtr x, IntPtr y);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nexttowards/*' />
-        public static Arb nexttowards(dynamic x, dynamic y)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
+        public static Arb nextafter(dynamic x, dynamic y)
         {
-            return nexttowards(aflint.t(x), aflint.t(y));
+            return aflint.t(mreal.nextafter(x, y));
         }
 
 

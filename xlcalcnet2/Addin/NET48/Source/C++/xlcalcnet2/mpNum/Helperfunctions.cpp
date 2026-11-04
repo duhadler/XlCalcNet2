@@ -329,6 +329,25 @@ char *  mpfr_get_str_extern(const char *template1, uint32_t digits, mpfr_t x)
 }
 
 
+
+// Computes ulp(x) and stores it in 'ulp_res'
+void mpfr_get_ulp(mpfr_t ulp_res, const mpfr_t x) {
+    if (mpfr_zero_p(x) || mpfr_nan_p(x) || mpfr_inf_p(x)) {
+        mpfr_set_nan(ulp_res);
+        return;
+    }
+
+    mpfr_exp_t exp = mpfr_get_exp(x);
+    mpfr_prec_t prec = mpfr_get_prec(x);
+    mpfr_exp_t ulp_exp = exp - (mpfr_exp_t)prec;
+
+    // ulp(x) = 2^(exp - prec)
+    mpfr_set_ui(ulp_res, 1, MPFR_RNDN);
+    mpfr_mul_2exp(ulp_res, ulp_res, ulp_exp, MPFR_RNDN);
+}
+
+
+
     /* the smallest eps such that x + eps != x */
 void mpfr_machine_epsilon_x(mpfr_t res, mpfr_t x, mp_prec_t prec)
 {
@@ -776,7 +795,7 @@ void arf_next_toward(arf_t res, const arf_t x, const arf_t y, slong prec)
     {
         arf_set(res, x);
     }
-    else if (c > 0)
+    else if (c < 0)
     {
         arf_next_above(res, x, prec);
     }
@@ -2300,7 +2319,8 @@ void arb_pow1p_(arb_t out1, const arb_t a, const arb_t b, slong wp)
     arb_t x; arb_init(x);
     arb_log1p(x, a, wp);
     arb_mul(x, b, x, wp);
-    arb_expm1(out1, x, wp) ;
+    //arb_expm1(out1, x, wp) ;
+    arb_exp(out1, x, wp) ;
     arb_clear(x);
 }
 
@@ -3667,7 +3687,8 @@ void acb_pow1p_(acb_t out1, const acb_t a, const acb_t b, slong wp)
     acb_t x; acb_init(x);
     acb_log1p(x, a, wp);
     acb_mul(x, b, x, wp);
-    acb_expm1(out1, x, wp) ;
+    //acb_expm1(out1, x, wp) ;
+    acb_exp(out1, x, wp) ;
     acb_clear(x);
 }
 

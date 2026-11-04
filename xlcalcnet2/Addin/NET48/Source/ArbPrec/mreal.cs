@@ -1340,7 +1340,9 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/isone/*' />
         public static bool isone(Mpfr x)
         {
-            return 0 != (Lib_Mpfr_Isone(x.mpPtr));
+            if (isnan(x) || isinf(x))
+                return false;
+            return 0 == (Lib_Mpfr_Isone(x.mpPtr));
         }
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Isone", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_Mpfr_Isone(IntPtr x);
@@ -1571,6 +1573,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lrint/*' />
         public static Int32 lrint(Mpfr x)
         {
+            if (isnan(x) || isinf(x) || !fitsint32(x))
+                return Int32.MinValue;
             return Lib_Mpfr_Lrint(x.mpPtr);
         }
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Lrint", CallingConvention = CallingConvention.Cdecl)]
@@ -1588,6 +1592,8 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/llrint/*' />
         public static Int64 llrint(Mpfr x)
         {
+            if (isnan(x) || isinf(x) || !fitsint64(x))
+                return Int64.MinValue;
             return Lib_Mpfr_Llrint(x.mpPtr);
         }
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Llrint", CallingConvention = CallingConvention.Cdecl)]
@@ -1759,6 +1765,10 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/logb/*' />
         public static Mpfr logb(Mpfr x)
         {
+            if (isnan(x)) return nan;
+            if (isinf(x)) return inf;
+            if (iszero(x)) return neginf;
+
             var res = new Mpfr();
             Lib_Mpfr_Logb(res.mpPtr, x.mpPtr);
             return res;
@@ -1773,14 +1783,22 @@ namespace ArbPrecNet
             return logb(t(x));
         }
 
+        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
+        //public static Int32 ilogb(Mpfr x)
+        //{
+        //    if (isnan(x) || isinf(x))
+        //        return Int32.MinValue;
+        //    return Lib_Mpfr_Ilogb(x.mpPtr);
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Ilogb", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern Int32 Lib_Mpfr_Ilogb(IntPtr x);
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(Mpfr x)
         {
-            return Lib_Mpfr_Ilogb(x.mpPtr);
+            var res = logb(x);
+            return lrint(res);
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Ilogb", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern Int32 Lib_Mpfr_Ilogb(IntPtr x);
-
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/ilogb/*' />
         public static Int32 ilogb(dynamic x)
@@ -1943,8 +1961,42 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Mpfr, Int32> remquo(dynamic x, dynamic y)
         {
-            return remquo(t(x), t(y));
+            return remquo(mflint.t(x), mflint.t(y));
         }
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Mpfr frac(Mpfr x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Mpfr frac(dynamic x)
+        {
+            return frac(mflint.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Mpfr fractionalpart(Mpfr x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Mpfr fractionalpart(dynamic x)
+        {
+            return fractionalpart(mflint.t(x));
+        }
+
+
 
         #endregion
 
@@ -4049,21 +4101,21 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="Boost"]/gamma1pm1/*' />
-        public static Mpfr gamma1pm1(Mpfr x)
-        {
-            var res = new Mpfr();
-            Lib_Mpfr_Tgamma1pm1(res.mpPtr, x.mpPtr, ArbPrec.GetDps());
-            return res;
-        }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Tgamma1pm1", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Mpfr_Tgamma1pm1(IntPtr res, IntPtr x, uint dps);
+        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/gamma1pm1/*' />
+        //public static Mpfr gamma1pm1(Mpfr x)
+        //{
+        //    var res = new Mpfr();
+        //    Lib_Mpfr_Tgamma1pm1(res.mpPtr, x.mpPtr, ArbPrec.GetDps());
+        //    return res;
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Tgamma1pm1", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern void Lib_Mpfr_Tgamma1pm1(IntPtr res, IntPtr x, uint dps);
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/gamma1pm1/*' />
         public static Mpfr gamma1pm1(dynamic x)
         {
-            return gamma1pm1(mreal.t(x));
+            return mflint.gamma1pm1(mreal.t(x));
         }
 
 

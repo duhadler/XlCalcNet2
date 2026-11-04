@@ -746,7 +746,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/modf/*' />
         public static Tuple<Quadruple, Quadruple> modf(dynamic x)
         {
-            return qreal.modf(x);
+            return qreal.modf(qreal.t(x));
         }
 
 
@@ -761,7 +761,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fmod/*' />
         public static Quadruple fmod(dynamic x, dynamic y)
         {
-            return qreal.fmod(x, y);
+            return qreal.fmod(qreal.t(x), qreal.t(y));
         }
 
 
@@ -775,7 +775,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remainder/*' />
         public static Quadruple remainder(dynamic x, dynamic y)
         {
-            return qreal.remainder(x, y);
+            return qreal.remainder(qreal.t(x), qreal.t(y));
         }
 
 
@@ -789,8 +789,40 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/remquo/*' />
         public static Tuple<Quadruple, Int32> remquo(dynamic x, dynamic y)
         {
-            return qreal.remquo(x, y);
+            return qreal.remquo(qreal.t(x), qreal.t(y));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Quadruple frac(Quadruple x)
+        {
+            return x - floor(x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/frac/*' />
+        public static Quadruple frac(dynamic x)
+        {
+            return frac(qreal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Quadruple fractionalpart(Quadruple x)
+        {
+            var s = sign(x);
+            x = abs(x);
+            return s * (x - floor(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fractionalpart/*' />
+        public static Quadruple fractionalpart(dynamic x)
+        {
+            return fractionalpart(qreal.t(x));
+        }
+
 
         #endregion
 
@@ -6548,7 +6580,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/rsqrt/*' />
         public static QuadrupleC rsqrt(dynamic x)
         {
-            return sqrt(qcplx.t(x));
+            return rsqrt(qcplx.t(x));
         }
 
 
