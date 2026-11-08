@@ -575,7 +575,7 @@ namespace ArbPrecNet
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
-            ArbPrec.SetDps(8 * 3 / 2);
+            ArbPrec.SetDps(16 * 3 / 2);
 
             Arb arb_x = aflint.t(x);
             Arb arb_res = f(arb_x);
@@ -590,7 +590,7 @@ namespace ArbPrecNet
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
-            ArbPrec.SetDps(8 * 3 / 2);
+            ArbPrec.SetDps(16 * 3 / 2);
 
             Arb arb_x = aflint.t(x);
             Arb arb_y = aflint.t(y);
@@ -606,7 +606,7 @@ namespace ArbPrecNet
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
-            ArbPrec.SetDps(8 * 3 / 2);
+            ArbPrec.SetDps(16 * 3 / 2);
 
             Arb arb_x = aflint.t(x);
             Arb arb_y = aflint.t(y);
@@ -2593,16 +2593,6 @@ namespace ArbPrecNet
         }
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/maxvalue/*' />
-        //public static Arb maxvalue()
-        //{
-        //    var res = new Arb();
-        //    Lib_Arb_Max(res.mpPtr);
-        //    return res;
-        //}
-        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Max", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern void Lib_Arb_Max(IntPtr res);
-
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/maxvalue/*' />
         public static Arb maxvalue()
@@ -2610,16 +2600,6 @@ namespace ArbPrecNet
             return aflint.t(mreal.maxvalue());
         }
 
-
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lowestvalue/*' />
-        //public static Arb lowestvalue()
-        //{
-        //    var res = new Arb();
-        //    Lib_Arb_Lowest(res.mpPtr);
-        //    return res;
-        //}
-        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Lowest", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern void Lib_Arb_Lowest(IntPtr res);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/lowestvalue/*' />
@@ -2629,16 +2609,6 @@ namespace ArbPrecNet
         }
 
 
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/minposvalue/*' />
-        //public static Arb minposvalue()
-        //{
-        //    var res = new Arb();
-        //    Lib_Arb_Min(res.mpPtr);
-        //    return res;
-        //}
-        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Min", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern void Lib_Arb_Min(IntPtr res);
-
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/minposvalue/*' />
         public static Arb minposvalue()
@@ -2646,16 +2616,6 @@ namespace ArbPrecNet
             return aflint.t(mreal.minposvalue());
         }
 
-
-        ///// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />
-        //public static Arb nextafter(Arb x, Arb y)
-        //{
-        //    var res = new Arb();
-        //    Lib_Arb_Nexttoward(res.mpPtr, x.mpPtr, y.mpPtr);
-        //    return res;
-        //}
-        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Arb_Nexttoward", CallingConvention = CallingConvention.Cdecl)]
-        //internal static extern void Lib_Arb_Nexttoward(IntPtr res, IntPtr x, IntPtr y);
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/nextafter/*' />

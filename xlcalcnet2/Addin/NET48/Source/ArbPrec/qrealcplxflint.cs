@@ -9051,8 +9051,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static QuadrupleC WeierstrassPInv(QuadrupleC z, QuadrupleC tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static QuadrupleC weierstrass_pinv_t(QuadrupleC z, QuadrupleC tau)
         {
             var res = new QuadrupleC();
             Lib_QCplx_Acb_WeierstrassPInv(res.mpPtr, z.mpPtr, tau.mpPtr);
@@ -9062,10 +9062,10 @@ namespace ArbPrecNet
         internal static extern void Lib_QCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static QuadrupleC WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static QuadrupleC weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(qcplx.t(z), qcplx.t(tau));
+            return weierstrass_pinv_t(qcplx.t(z), qcplx.t(tau));
         }
 
 

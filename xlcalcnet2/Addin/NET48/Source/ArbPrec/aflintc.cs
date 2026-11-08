@@ -409,7 +409,7 @@ namespace ArbPrecNet
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
-            ArbPrec.SetDps(8 * 3 / 2);
+            ArbPrec.SetDps(16 * 3 / 2);
 
             ArbC arbc_x = aflintc.t(x);
             ArbC arbc_res = f(arbc_x);
@@ -424,7 +424,7 @@ namespace ArbPrecNet
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
-            ArbPrec.SetDps(8 * 3 / 2);
+            ArbPrec.SetDps(16 * 3 / 2);
 
             ArbC arbc_x = aflintc.t(x);
             ArbC arbc_y = aflintc.t(y);
@@ -440,7 +440,7 @@ namespace ArbPrecNet
         {
             ArbPrec.Init();
             uint OldPrec = ArbPrec.GetDps();
-            ArbPrec.SetDps(8 * 3 / 2);
+            ArbPrec.SetDps(16 * 3 / 2);
 
             ArbC arbc_x = aflintc.t(x);
             ArbC arbc_y = aflintc.t(y);
@@ -4866,8 +4866,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static ArbC WeierstrassPInv(ArbC z, ArbC tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static ArbC weierstrass_pinv_t(ArbC z, ArbC tau)
         {
             var res = new ArbC();
             Lib_Acb_Acb_WeierstrassPInv(res.mpPtr, z.mpPtr, tau.mpPtr);
@@ -4877,10 +4877,10 @@ namespace ArbPrecNet
         internal static extern void Lib_Acb_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static ArbC WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static ArbC weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(aflintc.t(z), aflintc.t(tau));
+            return weierstrass_pinv_t(aflintc.t(z), aflintc.t(tau));
         }
 
 

@@ -9427,8 +9427,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static Complex WeierstrassPInv(Complex z, Complex tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static Complex weierstrass_pinv_t(Complex z, Complex tau)
         {
             ArbPrec.Init();
             var res = new fcplx_t();
@@ -9440,10 +9440,10 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FCplx_Acb_WeierstrassPInv", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Lib_FCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static Complex WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static Complex weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(dcplx.t(z), dcplx.t(tau));
+            return weierstrass_pinv_t(dcplx.t(z), dcplx.t(tau));
         }
 
 
@@ -9612,7 +9612,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/klein_j/*' />
         public static Complex klein_j(dynamic tau)
         {
-            return dedekind_eta(dcplx.t(tau));
+            return klein_j(dcplx.t(tau));
         }
 
 

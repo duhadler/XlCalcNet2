@@ -9024,8 +9024,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static SingleC WeierstrassPInv(SingleC z, SingleC tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static SingleC weierstrass_pinv_t(SingleC z, SingleC tau)
         {
             var res = new SingleC();
             Lib_SCplx_Acb_WeierstrassPInv(res.mpPtr, z.mpPtr, tau.mpPtr);
@@ -9035,10 +9035,10 @@ namespace ArbPrecNet
         internal static extern void Lib_SCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static SingleC WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static SingleC weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(scplx.t(z), scplx.t(tau));
+            return weierstrass_pinv_t(scplx.t(z), scplx.t(tau));
         }
 
 

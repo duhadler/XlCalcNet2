@@ -4068,6 +4068,7 @@ namespace ArbPrecNet
 
 
 
+
         #endregion
 
 
@@ -10400,8 +10401,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static MpfrC WeierstrassPInv(MpfrC z, MpfrC tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static MpfrC weierstrass_pinv_t(MpfrC z, MpfrC tau)
         {
             var res = new MpfrC();
             Lib_Mpfc_Acb_WeierstrassPInv(res.mpPtr, z.mpPtr, tau.mpPtr);
@@ -10411,10 +10412,10 @@ namespace ArbPrecNet
         internal static extern void Lib_Mpfc_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static MpfrC WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static MpfrC weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(mflintc.t(z), mflintc.t(tau));
+            return weierstrass_pinv_t(mflintc.t(z), mflintc.t(tau));
         }
 
 

@@ -9029,8 +9029,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static ExtendedC WeierstrassPInv(ExtendedC z, ExtendedC tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static ExtendedC weierstrass_pinv_t(ExtendedC z, ExtendedC tau)
         {
             var res = new ExtendedC();
             Lib_XCplx_Acb_WeierstrassPInv(res.mpPtr, z.mpPtr, tau.mpPtr);
@@ -9040,10 +9040,10 @@ namespace ArbPrecNet
         internal static extern void Lib_XCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static ExtendedC WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static ExtendedC weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(ecplx.t(z), ecplx.t(tau));
+            return weierstrass_pinv_t(ecplx.t(z), ecplx.t(tau));
         }
 
 

@@ -9093,8 +9093,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static OctupleC WeierstrassPInv(OctupleC z, OctupleC tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static OctupleC weierstrass_pinv_t(OctupleC z, OctupleC tau)
         {
             var res = new OctupleC();
             Lib_OCplx_Acb_WeierstrassPInv(res.mpPtr, z.mpPtr, tau.mpPtr);
@@ -9104,10 +9104,10 @@ namespace ArbPrecNet
         internal static extern void Lib_OCplx_Acb_WeierstrassPInv(IntPtr res, IntPtr z, IntPtr tau);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/WeierstrassPInv/*' />
-        public static OctupleC WeierstrassPInv(dynamic z, dynamic tau)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/weierstrass_pinv_t/*' />
+        public static OctupleC weierstrass_pinv_t(dynamic z, dynamic tau)
         {
-            return WeierstrassPInv(ocplx.t(z), ocplx.t(tau));
+            return weierstrass_pinv_t(ocplx.t(z), ocplx.t(tau));
         }
 
 
