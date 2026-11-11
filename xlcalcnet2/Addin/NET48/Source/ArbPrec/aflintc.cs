@@ -5420,7 +5420,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static ArbC bernpoly(ArbC x, Int32 n)
+        public static ArbC bernpoly(Int32 n, ArbC x)
         {
             var res = new ArbC();
             Lib_Acb_Acb_BernoulliPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -5430,15 +5430,15 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static ArbC bernpoly(dynamic x, Int32 n)
+        public static ArbC bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(aflintc.t(x), n);
+            return bernpoly(n, aflintc.t(x));
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static ArbC eulerpoly(ArbC x, Int32 n)
+        public static ArbC eulerpoly(Int32 n, ArbC x)
         {
             var res = new ArbC();
             Lib_Acb_Acb_EulerPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -5448,9 +5448,9 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static ArbC eulerpoly(dynamic x, Int32 n)
+        public static ArbC eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(aflintc.t(x), n);
+            return eulerpoly(n, aflintc.t(x));
         }
 
 

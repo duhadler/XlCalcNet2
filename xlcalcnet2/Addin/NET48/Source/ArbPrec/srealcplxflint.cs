@@ -3778,7 +3778,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Single bernpoly(Single x, Int32 n)
+        public static Single bernpoly(Int32 n, Single x)
         {
             ArbPrec.Init(); Single res = 0.0F;
             Lib_SReal_Arb_BernoulliPoly_ui(ref res, ref x, n);
@@ -3788,9 +3788,9 @@ namespace ArbPrecNet
         internal static extern int Lib_SReal_Arb_BernoulliPoly_ui(ref Single res, ref Single x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Single bernpoly(dynamic x, Int32 n)
+        public static Single bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(sreal.t(x), n);
+            return bernpoly(n, sreal.t(x));
         }
 
 
@@ -3810,16 +3810,16 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Single eulerpoly(Single x, Int32 n)
+        public static Single eulerpoly(Int32 n, Single x)
         {
-            SingleC res = sflintc.eulerpoly(x, n);
+            SingleC res = sflintc.eulerpoly(n, x);
             return res.real;
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Single eulerpoly(dynamic x, Int32 n)
+        public static Single eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(sreal.t(x), n);
+            return eulerpoly(n, sreal.t(x));
         }
 
 
@@ -9639,7 +9639,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static SingleC bernpoly(SingleC x, Int32 n)
+        public static SingleC bernpoly(Int32 n, SingleC x)
         {
             var res = new SingleC();
             Lib_SCplx_Acb_BernoulliPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -9649,15 +9649,15 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static SingleC bernpoly(dynamic x, Int32 n)
+        public static SingleC bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(scplx.t(x), n);
+            return bernpoly(n, scplx.t(x));
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static SingleC eulerpoly(SingleC x, Int32 n)
+        public static SingleC eulerpoly(Int32 n, SingleC x)
         {
             var res = new SingleC();
             Lib_SCplx_Acb_EulerPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -9667,9 +9667,9 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static SingleC eulerpoly(dynamic x, Int32 n)
+        public static SingleC eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(scplx.t(x), n);
+            return eulerpoly(n, scplx.t(x));
         }
 
 

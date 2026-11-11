@@ -3776,7 +3776,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Quadruple bernpoly(Quadruple x, Int32 n)
+        public static Quadruple bernpoly(Int32 n, Quadruple x)
         {
             var res = new Quadruple();
             Lib_QReal_Arb_BernoulliPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -3786,9 +3786,9 @@ namespace ArbPrecNet
         internal static extern int Lib_QReal_Arb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Quadruple bernpoly(dynamic x, Int32 n)
+        public static Quadruple bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(qreal.t(x), n);
+            return bernpoly(n, qreal.t(x));
         }
 
 
@@ -3810,16 +3810,16 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Quadruple eulerpoly(Quadruple x, Int32 n)
+        public static Quadruple eulerpoly(Int32 n, Quadruple x)
         {
-            QuadrupleC res = qflintc.eulerpoly(x, n);
+            QuadrupleC res = qflintc.eulerpoly(n, x);
             return res.real;
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Quadruple eulerpoly(dynamic x, Int32 n)
+        public static Quadruple eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(qreal.t(x), n);
+            return eulerpoly(n, qreal.t(x));
         }
 
 
@@ -9666,7 +9666,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static QuadrupleC bernpoly(QuadrupleC x, Int32 n)
+        public static QuadrupleC bernpoly(Int32 n, QuadrupleC x)
         {
             var res = new QuadrupleC();
             Lib_QCplx_Acb_BernoulliPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -9676,15 +9676,15 @@ namespace ArbPrecNet
         internal static extern int Lib_QCplx_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static QuadrupleC bernpoly(dynamic x, Int32 n)
+        public static QuadrupleC bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(qcplx.t(x), n);
+            return bernpoly(n, qcplx.t(x));
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static QuadrupleC eulerpoly(QuadrupleC x, Int32 n)
+        public static QuadrupleC eulerpoly(Int32 n, QuadrupleC x)
         {
             var res = new QuadrupleC();
             Lib_QCplx_Acb_EulerPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -9694,9 +9694,9 @@ namespace ArbPrecNet
         internal static extern int Lib_QCplx_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static QuadrupleC eulerpoly(dynamic x, Int32 n)
+        public static QuadrupleC eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(qcplx.t(x), n);
+            return eulerpoly(n, qcplx.t(x));
         }
 
 

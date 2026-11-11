@@ -2,16 +2,6 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="BoostMpfr2" />
-	<File name="BoostEigenMixed.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="185" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Include\BoostMpfr.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10389" topLine="209" />
-		</Cursor>
-	</File>
 	<File name="BoostEigenMatrixReal.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="4760" topLine="66" />
@@ -41,9 +31,44 @@
 			<Collapse line="430" />
 		</Folding>
 	</File>
+	<File name="Include\BoostMpfr2.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="260" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Include\libBoostEigen.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="79" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="BoostEigenFFTW.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3583" topLine="96" />
+		</Cursor>
+	</File>
+	<File name="SparseTripletList.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1413" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="Include\libBoostEigenDense.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="690" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="Include\mpAny.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="105" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="BoostMpfr.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="39987" topLine="1076" />
+		</Cursor>
+	</File>
+	<File name="BoostEigenMaps1.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2178" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="BoostEigenMatrixCplx.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -78,14 +103,14 @@
 			<Collapse line="403" />
 		</Folding>
 	</File>
-	<File name="Include\libBoostEigen.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Include\BoostMpfr.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="79" topLine="0" />
+			<Cursor1 position="10389" topLine="209" />
 		</Cursor>
 	</File>
-	<File name="SparseTripletList.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="BoostEigenMixed.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1413" topLine="30" />
+			<Cursor1 position="185" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Include\MpAnyEigen.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="2229" zoom_1="0" zoom_2="0">
@@ -93,24 +118,9 @@
 			<Cursor1 position="16948" topLine="770" />
 		</Cursor>
 	</File>
-	<File name="BoostEigenMaps1.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Include\libEigenSparse.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2178" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="BoostMpfr2.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="331" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Include\BoostMpfr2.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="260" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="BoostMpfr.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="39987" topLine="1076" />
+			<Cursor1 position="32" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="BoostEigenLinAlgNew.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -118,19 +128,9 @@
 			<Cursor1 position="32" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Include\libBoostEigenDense.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="BoostMpfr2.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="690" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="BoostEigenFFTW.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3583" topLine="96" />
-		</Cursor>
-	</File>
-	<File name="Include\libEigenSparse.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="32" topLine="0" />
+			<Cursor1 position="331" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Include\mp_BoostEigenConstants.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">

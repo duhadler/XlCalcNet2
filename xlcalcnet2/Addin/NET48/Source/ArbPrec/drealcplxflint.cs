@@ -3782,7 +3782,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Double bernpoly(Double x, Int32 n)
+        public static Double bernpoly(Int32 n, Double x)
         {
             ArbPrec.Init(); Double res = 0.0;
             Lib_FReal_Arb_BernoulliPoly_ui(ref res, ref x, n);
@@ -3792,9 +3792,9 @@ namespace ArbPrecNet
         internal static extern int Lib_FReal_Arb_BernoulliPoly_ui(ref Double res, ref Double x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Double bernpoly(dynamic x, Int32 n)
+        public static Double bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(dreal.t(x), n);
+            return bernpoly(n, dreal.t(x));
         }
 
 
@@ -3816,16 +3816,16 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Double eulerpoly(Double x, Int32 n)
+        public static Double eulerpoly(Int32 n, Double x)
         {
-            Complex res = dflintc.eulerpoly(x, n);
+            Complex res = dflintc.eulerpoly(n, x);
             return res.Real;
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Double eulerpoly(dynamic x, Int32 n)
+        public static Double eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(dreal.t(x), n);
+            return eulerpoly(n, dreal.t(x));
         }
 
 
@@ -9872,6 +9872,10 @@ namespace ArbPrecNet
 
 
 
+
+
+
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bose_einstein/*' />
         public static Complex bose_einstein(Complex s, Complex z)
         {
@@ -10007,7 +10011,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static Complex bernpoly(Complex x, Int32 n)
+        public static Complex bernpoly(Int32 n, Complex x)
         {
             ArbPrec.Init();
             var res = new fcplx_t();
@@ -10019,15 +10023,15 @@ namespace ArbPrecNet
         internal static extern int Lib_FCplx_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static Complex bernpoly(dynamic x, Int32 n)
+        public static Complex bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(dcplx.t(x), n);
+            return bernpoly(n, dcplx.t(x));
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Complex eulerpoly(Complex x, Int32 n)
+        public static Complex eulerpoly(Int32 n, Complex x)
         {
             ArbPrec.Init();
             var res = new fcplx_t();
@@ -10039,9 +10043,9 @@ namespace ArbPrecNet
         internal static extern int Lib_FCplx_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Complex eulerpoly(dynamic x, Int32 n)
+        public static Complex eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(dcplx.t(x), n);
+            return eulerpoly(n, dcplx.t(x));
         }
 
 

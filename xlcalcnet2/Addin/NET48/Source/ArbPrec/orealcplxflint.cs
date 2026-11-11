@@ -3807,7 +3807,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Octuple bernpoly(Octuple x, Int32 n)
+        public static Octuple bernpoly(Int32 n, Octuple x)
         {
             var res = new Octuple();
             Lib_OReal_Arb_BernoulliPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -3817,9 +3817,9 @@ namespace ArbPrecNet
         internal static extern int Lib_OReal_Arb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernoulli/*' />
-        public static Octuple bernpoly(dynamic x, Int32 n)
+        public static Octuple bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(oreal.t(x), n);
+            return bernpoly(n, oreal.t(x));
         }
 
 
@@ -3841,16 +3841,16 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Octuple eulerpoly(Octuple x, Int32 n)
+        public static Octuple eulerpoly(Int32 n, Octuple x)
         {
-            OctupleC res = oflintc.eulerpoly(x, n);
+            OctupleC res = oflintc.eulerpoly(n, x);
             return res.real;
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static Octuple eulerpoly(dynamic x, Int32 n)
+        public static Octuple eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(oreal.t(x), n);
+            return eulerpoly(n, oreal.t(x));
         }
 
 
@@ -9708,7 +9708,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static OctupleC bernpoly(OctupleC x, Int32 n)
+        public static OctupleC bernpoly(Int32 n, OctupleC x)
         {
             var res = new OctupleC();
             Lib_OCplx_Acb_BernoulliPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -9718,15 +9718,15 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_BernoulliPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/bernpoly/*' />
-        public static OctupleC bernpoly(dynamic x, Int32 n)
+        public static OctupleC bernpoly(Int32 n, dynamic x)
         {
-            return bernpoly(ocplx.t(x), n);
+            return bernpoly(n, ocplx.t(x));
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static OctupleC eulerpoly(OctupleC x, Int32 n)
+        public static OctupleC eulerpoly(Int32 n, OctupleC x    )
         {
             var res = new OctupleC();
             Lib_OCplx_Acb_EulerPoly_ui(res.mpPtr, x.mpPtr, n);
@@ -9736,9 +9736,9 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_EulerPoly_ui(IntPtr res, IntPtr x, Int32 n);
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/eulerpoly/*' />
-        public static OctupleC eulerpoly(dynamic x, Int32 n)
+        public static OctupleC eulerpoly(Int32 n, dynamic x)
         {
-            return eulerpoly(ocplx.t(x), n);
+            return eulerpoly(n, ocplx.t(x));
         }
 
 

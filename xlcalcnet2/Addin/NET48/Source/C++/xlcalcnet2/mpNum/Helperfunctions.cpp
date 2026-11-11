@@ -4423,14 +4423,24 @@ void _acb_clausen_cos(acb_t res, const acb_t s, const acb_t z, slong prec)
 
 
 
+//void _acb_clausen2(acb_t res, const acb_t z, slong prec)
+//{
+//    acb_t s; acb_t z1; acb_init(s); acb_init(z1);
+//    acb_set_si(s, 2);
+//    acb_mul_onei(z1, z);
+//    acb_exp(z1, z1, prec);
+//    acb_polylog(res, s, z1, prec);
+//    acb_clear(s); acb_clear(z1);
+//}
+
+
+
 void _acb_clausen2(acb_t res, const acb_t z, slong prec)
 {
-    acb_t s; acb_t z1; acb_init(s); acb_init(z1);
+    acb_t s; acb_init(s);
     acb_set_si(s, 2);
-    acb_mul_onei(z1, z);
-    acb_exp(z1, z1, prec);
-    acb_polylog(res, s, z1, prec);
-    acb_clear(s); acb_clear(z1);
+    _acb_clausen_sin(res, s, z, prec);
+    acb_clear(s);
 }
 
 
@@ -4548,18 +4558,35 @@ void acb_euler_poly_ui_(acb_t res, const acb_t z, int32_t n, slong prec)
 
 
 
+//void _acb_hyperfac(acb_t res, const acb_t z, slong prec)
+//{
+//    acb_t z1; acb_t z2; acb_t z3; acb_t z4;
+//    acb_init(z1); acb_init(z2); acb_init(z3); acb_init(z4);
+//    acb_add_si(z1, z, 1, prec);
+//    acb_gamma(z2, z1, prec);
+//    acb_barnes_g(z3, z1, prec);
+//    acb_pow(z4, z2, z, prec);
+//    acb_div(res, z4, z3, prec);
+//    acb_clear(z1); acb_clear(z2); acb_clear(z3); acb_clear(z4);
+//}
+
+
+
 void _acb_hyperfac(acb_t res, const acb_t z, slong prec)
 {
     acb_t z1; acb_t z2; acb_t z3; acb_t z4;
     acb_init(z1); acb_init(z2); acb_init(z3); acb_init(z4);
+
     acb_add_si(z1, z, 1, prec);
-    acb_gamma(z2, z1, prec);
+    acb_lgamma(z2, z1, prec);
+    acb_mul(z2, z2, z, prec);
+    acb_exp(z4, z2, prec);
+
     acb_barnes_g(z3, z1, prec);
-    acb_pow(z4, z2, z, prec);
+    //acb_pow(z4, z2, z, prec);
     acb_div(res, z4, z3, prec);
     acb_clear(z1); acb_clear(z2); acb_clear(z3); acb_clear(z4);
 }
-
 
 
 void _acb_superfac(acb_t res, const acb_t z, slong prec)
