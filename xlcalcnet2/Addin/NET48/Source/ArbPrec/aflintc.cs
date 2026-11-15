@@ -6607,7 +6607,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static ArbC besselpoly(ArbC n, ArbC x, bool scaled = false)
+        public static ArbC besselpoly(ArbC n, ArbC x)
         {
             if (aflintc.iszero(x))
             {
@@ -6622,9 +6622,9 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static ArbC besselpoly(dynamic n, dynamic x, bool scaled = false)
+        public static ArbC besselpoly(dynamic n, dynamic x)
         {
-            return besselpoly(aflintc.t(n), aflintc.t(x), scaled);
+            return besselpoly(aflintc.t(n), aflintc.t(x));
         }
 
 
@@ -6637,7 +6637,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static ArbC besseltheta(ArbC n, ArbC x, bool scaled = false)
+        public static ArbC besseltheta(ArbC n, ArbC x)
         {
             if (aflintc.iszero(x))
             {
@@ -6652,9 +6652,9 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static ArbC besseltheta(dynamic n, dynamic x, bool scaled = false)
+        public static ArbC besseltheta(dynamic n, dynamic x)
         {
-            return besseltheta(aflintc.t(n), aflintc.t(x), scaled);
+            return besseltheta(aflintc.t(n), aflintc.t(x));
         }
 
 

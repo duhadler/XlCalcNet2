@@ -4462,30 +4462,30 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static Single besselpoly(Single nu, Single x, bool scaled = false)
+        public static Single besselpoly(Single nu, Single x)
         {
-            return aflint.SRealViaArbS2Bool1(aflint.besselpoly, nu, x, scaled);
+            return aflint.SRealViaArbS2(aflint.besselpoly, nu, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static Single besselpoly(dynamic nu, dynamic x, bool scaled = false)
+        public static Single besselpoly(dynamic nu, dynamic x)
         {
-            return besselpoly(sreal.t(nu), sreal.t(x), scaled);
+            return besselpoly(sreal.t(nu), sreal.t(x));
         }
 
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static Single besseltheta(Single nu, Single x, bool scaled = false)
+        public static Single besseltheta(Single nu, Single x)
         {
-            return aflint.SRealViaArbS2Bool1(aflint.besseltheta, nu, x, scaled);
+            return aflint.SRealViaArbS2(aflint.besseltheta, nu, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static Single besseltheta(dynamic nu, dynamic x, bool scaled = false)
+        public static Single besseltheta(dynamic nu, dynamic x)
         {
-            return besseltheta(sreal.t(nu), sreal.t(x), scaled);
+            return besseltheta(sreal.t(nu), sreal.t(x));
         }
 
 
@@ -4628,57 +4628,57 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
-        public static SingleC hankel_h1(Single v, Single x)
+        public static SingleC hankel_h1(Single v, Single x, bool scaled = false)
         {
             return bessel_jv(v, x) + scplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
-        public static SingleC hankel_h1(dynamic v, dynamic x)
+        public static SingleC hankel_h1(dynamic v, dynamic x, bool scaled = false)
         {
-            return hankel_h1(sreal.t(v), sreal.t(x));
+            return hankel_h1(sreal.t(v), sreal.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
-        public static SingleC hankel_h2(Single v, Single x)
+        public static SingleC hankel_h2(Single v, Single x, bool scaled = false)
         {
             return bessel_jv(v, x) - scplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
-        public static SingleC hankel_h2(dynamic v, dynamic x)
+        public static SingleC hankel_h2(dynamic v, dynamic x, bool scaled = false)
         {
-            return hankel_h2(sreal.t(v), sreal.t(x));
+            return hankel_h2(sreal.t(v), sreal.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
-        public static SingleC sph_hankel_h1(int n, Single x)
+        public static SingleC sph_hankel_h1(int n, Single x, bool scaled = false)
         {
             return sph_bessel_jn(n, x) + scplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
-        public static SingleC sph_hankel_h1(int n, dynamic x)
+        public static SingleC sph_hankel_h1(int n, dynamic x, bool scaled = false)
         {
-            return sph_hankel_h1(n, sreal.t(x));
+            return sph_hankel_h1(n, sreal.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
-        public static SingleC sph_hankel_h2(int n, Single x)
+        public static SingleC sph_hankel_h2(int n, Single x, bool scaled = false)
         {
             return sph_bessel_jn(n, x) - scplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
-        public static SingleC sph_hankel_h2(int n, dynamic x)
+        public static SingleC sph_hankel_h2(int n, dynamic x, bool scaled = false)
         {
-            return sph_hankel_h2(n, sreal.t(x));
+            return sph_hankel_h2(n, sreal.t(x), scaled);
         }
 
 
@@ -10247,15 +10247,15 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static SingleC besselpoly(SingleC n, SingleC x, bool scaled = false)
+        public static SingleC besselpoly(SingleC n, SingleC x)
         {
-            return aflintc.SCplxViaArbCS2Bool1(aflintc.besselpoly, n, x, scaled);
+            return aflintc.SCplxViaArbCS2(aflintc.besselpoly, n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static SingleC besselpoly(dynamic n, dynamic x, bool scaled = false)
+        public static SingleC besselpoly(dynamic n, dynamic x)
         {
-            return besselpoly(scplx.t(n), scplx.t(x), scaled);
+            return besselpoly(scplx.t(n), scplx.t(x));
         }
 
 
@@ -10263,15 +10263,15 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static SingleC besseltheta(SingleC n, SingleC x, bool scaled = false)
+        public static SingleC besseltheta(SingleC n, SingleC x)
         {
-            return aflintc.SCplxViaArbCS2Bool1(aflintc.besseltheta, n, x, scaled);
+            return aflintc.SCplxViaArbCS2(aflintc.besseltheta, n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static SingleC besseltheta(dynamic n, dynamic x, bool scaled = false)
+        public static SingleC besseltheta(dynamic n, dynamic x)
         {
-            return besseltheta(scplx.t(n), scplx.t(x), scaled);
+            return besseltheta(scplx.t(n), scplx.t(x));
         }
 
 

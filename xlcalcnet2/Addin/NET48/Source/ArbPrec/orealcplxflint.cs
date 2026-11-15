@@ -4494,30 +4494,30 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static Octuple besselpoly(Octuple nu, Octuple x, bool scaled = false)
+        public static Octuple besselpoly(Octuple nu, Octuple x)
         {
-            return aflint.ORealViaArbS2Bool1(aflint.besselpoly, nu, x, scaled);
+            return aflint.ORealViaArbS2(aflint.besselpoly, nu, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static Octuple besselpoly(dynamic nu, dynamic x, bool scaled = false)
+        public static Octuple besselpoly(dynamic nu, dynamic x)
         {
-            return besselpoly(oreal.t(nu), oreal.t(x), scaled);
+            return besselpoly(oreal.t(nu), oreal.t(x));
         }
 
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static Octuple besseltheta(Octuple nu, Octuple x, bool scaled = false)
+        public static Octuple besseltheta(Octuple nu, Octuple x)
         {
-            return aflint.ORealViaArbS2Bool1(aflint.besseltheta, nu, x, scaled);
+            return aflint.ORealViaArbS2(aflint.besseltheta, nu, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static Octuple besseltheta(dynamic nu, dynamic x, bool scaled = false)
+        public static Octuple besseltheta(dynamic nu, dynamic x)
         {
-            return besseltheta(oreal.t(nu), oreal.t(x), scaled);
+            return besseltheta(oreal.t(nu), oreal.t(x));
         }
 
 
@@ -4665,57 +4665,57 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
-        public static OctupleC hankel_h1(Octuple v, Octuple x)
+        public static OctupleC hankel_h1(Octuple v, Octuple x, bool scaled = false)
         {
             return bessel_jv(v, x) + ocplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
-        public static OctupleC hankel_h1(dynamic v, dynamic x)
+        public static OctupleC hankel_h1(dynamic v, dynamic x, bool scaled = false)
         {
-            return hankel_h1(oreal.t(v), oreal.t(x));
+            return hankel_h1(oreal.t(v), oreal.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
-        public static OctupleC hankel_h2(Octuple v, Octuple x)
+        public static OctupleC hankel_h2(Octuple v, Octuple x, bool scaled = false)
         {
             return bessel_jv(v, x) - ocplx.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
-        public static OctupleC hankel_h2(dynamic v, dynamic x)
+        public static OctupleC hankel_h2(dynamic v, dynamic x, bool scaled = false)
         {
-            return hankel_h2(oreal.t(v), oreal.t(x));
+            return hankel_h2(oreal.t(v), oreal.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
-        public static OctupleC sph_hankel_h1(int n, Octuple x)
+        public static OctupleC sph_hankel_h1(int n, Octuple x, bool scaled = false)
         {
             return sph_bessel_jn(n, x) + ocplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
-        public static OctupleC sph_hankel_h1(int n, dynamic x)
+        public static OctupleC sph_hankel_h1(int n, dynamic x, bool scaled = false)
         {
-            return sph_hankel_h1(n, oreal.t(x));
+            return sph_hankel_h1(n, oreal.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
-        public static OctupleC sph_hankel_h2(int n, Octuple x)
+        public static OctupleC sph_hankel_h2(int n, Octuple x, bool scaled = false)
         {
             return sph_bessel_jn(n, x) - ocplx.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
-        public static OctupleC sph_hankel_h2(int n, dynamic x)
+        public static OctupleC sph_hankel_h2(int n, dynamic x, bool scaled = false)
         {
-            return sph_hankel_h2(n, oreal.t(x));
+            return sph_hankel_h2(n, oreal.t(x), scaled);
         }
 
 
@@ -10322,15 +10322,15 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static OctupleC besselpoly(OctupleC n, OctupleC x, bool scaled = false)
+        public static OctupleC besselpoly(OctupleC n, OctupleC x)
         {
-            return aflintc.OCplxViaArbCS2Bool1(aflintc.besselpoly, n, x, scaled);
+            return aflintc.OCplxViaArbCS2(aflintc.besselpoly, n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besselpoly/*' />
-        public static OctupleC besselpoly(dynamic n, dynamic x, bool scaled = false)
+        public static OctupleC besselpoly(dynamic n, dynamic x)
         {
-            return besselpoly(ocplx.t(n), ocplx.t(x), scaled);
+            return besselpoly(ocplx.t(n), ocplx.t(x));
         }
 
 
@@ -10338,15 +10338,15 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static OctupleC besseltheta(OctupleC n, OctupleC x, bool scaled = false)
+        public static OctupleC besseltheta(OctupleC n, OctupleC x)
         {
-            return aflintc.OCplxViaArbCS2Bool1(aflintc.besseltheta, n, x, scaled);
+            return aflintc.OCplxViaArbCS2(aflintc.besseltheta, n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/besseltheta/*' />
-        public static OctupleC besseltheta(dynamic n, dynamic x, bool scaled = false)
+        public static OctupleC besseltheta(dynamic n, dynamic x)
         {
-            return besseltheta(ocplx.t(n), ocplx.t(x), scaled);
+            return besseltheta(ocplx.t(n), ocplx.t(x));
         }
 
 

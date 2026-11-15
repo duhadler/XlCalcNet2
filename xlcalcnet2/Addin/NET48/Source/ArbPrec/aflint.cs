@@ -6309,7 +6309,7 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/besselpoly/*' />
-        public static Arb besselpoly(Arb n, Arb x, bool scaled = false)
+        public static Arb besselpoly(Arb n, Arb x)
         {
             if (!isinteger(n)) return nan;
             if (x == 0.0) return t(1.0);
@@ -6320,24 +6320,24 @@ namespace ArbPrecNet
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/besselpoly/*' />
-        public static Arb besselpoly(dynamic n, dynamic x, bool scaled = false)
+        public static Arb besselpoly(dynamic n, dynamic x)
         {
-            return besselpoly(t(n), t(x), scaled);
+            return besselpoly(t(n), t(x));
         }
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/besseltheta/*' />
-        public static Arb besseltheta(Arb n, Arb x, bool scaled = false)
+        public static Arb besseltheta(Arb n, Arb x)
         {
-            var res = aflintc.besseltheta(aflintc.t(n), aflintc.t(x), scaled);
+            var res = aflintc.besseltheta(aflintc.t(n), aflintc.t(x));
             return res.real;
         }
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/besseltheta/*' />
-        public static Arb besseltheta(dynamic n, dynamic x, bool scaled = false)
+        public static Arb besseltheta(dynamic n, dynamic x)
         {
-            return besseltheta(t(n), t(x), scaled);
+            return besseltheta(t(n), t(x));
         }
 
 
@@ -6483,57 +6483,57 @@ namespace ArbPrecNet
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
-        public static ArbC hankel_h1(Arb v, Arb x)
+        public static ArbC hankel_h1(Arb v, Arb x, bool scaled = false)
         {
             return bessel_jv(v, x) + aflintc.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h1/*' />
-        public static ArbC hankel_h1(dynamic v, dynamic x)
+        public static ArbC hankel_h1(dynamic v, dynamic x, bool scaled = false)
         {
-            return hankel_h1(aflint.t(v), aflint.t(x));
+            return hankel_h1(aflint.t(v), aflint.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
-        public static ArbC hankel_h2(Arb v, Arb x)
+        public static ArbC hankel_h2(Arb v, Arb x, bool scaled = false)
         {
             return bessel_jv(v, x) - aflintc.onej * bessel_yv(v, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hankel_h2/*' />
-        public static ArbC hankel_h2(dynamic v, dynamic x)
+        public static ArbC hankel_h2(dynamic v, dynamic x, bool scaled = false)
         {
-            return hankel_h2(aflint.t(v), aflint.t(x));
+            return hankel_h2(aflint.t(v), aflint.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
-        public static ArbC sph_hankel_h1(int n, Arb x)
+        public static ArbC sph_hankel_h1(int n, Arb x, bool scaled = false)
         {
             return sph_bessel_jn(n, x) + aflintc.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h1/*' />
-        public static ArbC sph_hankel_h1(int n, dynamic x)
+        public static ArbC sph_hankel_h1(int n, dynamic x, bool scaled = false)
         {
-            return sph_hankel_h1(n, aflint.t(x));
+            return sph_hankel_h1(n, aflint.t(x), scaled);
         }
 
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
-        public static ArbC sph_hankel_h2(int n, Arb x)
+        public static ArbC sph_hankel_h2(int n, Arb x, bool scaled = false)
         {
             return sph_bessel_jn(n, x) - aflintc.onej * sph_bessel_yn(n, x);
         }
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_hankel_h2/*' />
-        public static ArbC sph_hankel_h2(int n, dynamic x)
+        public static ArbC sph_hankel_h2(int n, dynamic x, bool scaled = false)
         {
-            return sph_hankel_h2(n, aflint.t(x));
+            return sph_hankel_h2(n, aflint.t(x), scaled);
         }
 
 
