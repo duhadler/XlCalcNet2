@@ -5275,6 +5275,22 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static ExtendedC faddeeva(Extended x)
+        {
+            return eflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static ExtendedC faddeeva(dynamic x)
+        {
+            return faddeeva(ereal.t(x));
+        }
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Extended fresnel_s(Extended x)
@@ -5592,6 +5608,38 @@ namespace ArbPrecNet
         {
             return coulomb_g(ereal.t(l), ereal.t(eta), ereal.t(x));
         }
+
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ExtendedC coulomb_hplus(Extended l, Extended eta, Extended x)
+        {
+            return coulomb_g(l, eta, x) + ecplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ExtendedC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(ereal.t(l), ereal.t(eta), ereal.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ExtendedC coulomb_hminus(Extended l, Extended eta, Extended x)
+        {
+            return coulomb_g(l, eta, x) - ecplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ExtendedC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(ereal.t(l), ereal.t(eta), ereal.t(x));
+        }
+
+
 
 
 
@@ -11361,8 +11409,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static ExtendedC coulomb_hpos(ExtendedC l, ExtendedC eta, ExtendedC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ExtendedC coulomb_hplus(ExtendedC l, ExtendedC eta, ExtendedC x)
         {
             var res = new ExtendedC();
             Lib_XCplx_Acb_CoulombHpos(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11372,17 +11420,17 @@ namespace ArbPrecNet
         internal static extern int Lib_XCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static ExtendedC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ExtendedC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(ecplx.t(l), ecplx.t(eta), ecplx.t(x));
+            return coulomb_hplus(ecplx.t(l), ecplx.t(eta), ecplx.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static ExtendedC coulomb_hneg(ExtendedC l, ExtendedC eta, ExtendedC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ExtendedC coulomb_hminus(ExtendedC l, ExtendedC eta, ExtendedC x)
         {
             var res = new ExtendedC();
             Lib_XCplx_Acb_CoulombHneg(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11392,10 +11440,10 @@ namespace ArbPrecNet
         internal static extern int Lib_XCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static ExtendedC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ExtendedC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(ecplx.t(l), ecplx.t(eta), ecplx.t(x));
+            return coulomb_hminus(ecplx.t(l), ecplx.t(eta), ecplx.t(x));
         }
 
 

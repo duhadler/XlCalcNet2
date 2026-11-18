@@ -6023,6 +6023,22 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static MpfrC faddeeva(Mpfr x)
+        {
+            return mflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static MpfrC faddeeva(dynamic x)
+        {
+            return faddeeva(mreal.t(x));
+        }
+
+
+
+
+
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Mpfr fresnel_s(Mpfr x)
         {
@@ -6336,6 +6352,34 @@ namespace ArbPrecNet
         public static Mpfr coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(mflint.t(l), mflint.t(eta), mflint.t(x));
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static MpfrC coulomb_hplus(Mpfr l, Mpfr eta, Mpfr x)
+        {
+            return coulomb_g(l, eta, x) + mcplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static MpfrC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(mreal.t(l), mreal.t(eta), mreal.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static MpfrC coulomb_hminus(Mpfr l, Mpfr eta, Mpfr x)
+        {
+            return coulomb_g(l, eta, x) - mcplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static MpfrC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(mreal.t(l), mreal.t(eta), mreal.t(x));
         }
 
 
@@ -12662,8 +12706,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static MpfrC coulomb_hpos(MpfrC l, MpfrC eta, MpfrC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static MpfrC coulomb_hplus(MpfrC l, MpfrC eta, MpfrC x)
         {
             var res = new MpfrC();
             Lib_Mpfc_Acb_CoulombHpos(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -12673,17 +12717,17 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static MpfrC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static MpfrC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(mflintc.t(l), mflintc.t(eta), mflintc.t(x));
+            return coulomb_hplus(mflintc.t(l), mflintc.t(eta), mflintc.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static MpfrC coulomb_hneg(MpfrC l, MpfrC eta, MpfrC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static MpfrC coulomb_hminus(MpfrC l, MpfrC eta, MpfrC x)
         {
             var res = new MpfrC();
             Lib_Mpfc_Acb_CoulombHneg(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -12693,10 +12737,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Mpfc_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static MpfrC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static MpfrC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(mflintc.t(l), mflintc.t(eta), mflintc.t(x));
+            return coulomb_hminus(mflintc.t(l), mflintc.t(eta), mflintc.t(x));
         }
 
 

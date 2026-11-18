@@ -5330,6 +5330,22 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static OctupleC faddeeva(Octuple x)
+        {
+            return oflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static OctupleC faddeeva(dynamic x)
+        {
+            return faddeeva(oreal.t(x));
+        }
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Octuple fresnel_s(Octuple x)
@@ -5645,6 +5661,34 @@ namespace ArbPrecNet
         public static Octuple coulomb_g(dynamic l, dynamic eta, dynamic x)
         {
             return coulomb_g(oreal.t(l), oreal.t(eta), oreal.t(x));
+        }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static OctupleC coulomb_hplus(Octuple l, Octuple eta, Octuple x)
+        {
+            return coulomb_g(l, eta, x) + ocplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static OctupleC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(oreal.t(l), oreal.t(eta), oreal.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static OctupleC coulomb_hminus(Octuple l, Octuple eta, Octuple x)
+        {
+            return coulomb_g(l, eta, x) - ocplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static OctupleC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(oreal.t(l), oreal.t(eta), oreal.t(x));
         }
 
 
@@ -11407,8 +11451,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static OctupleC coulomb_hpos(OctupleC l, OctupleC eta, OctupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static OctupleC coulomb_hplus(OctupleC l, OctupleC eta, OctupleC x)
         {
             var res = new OctupleC();
             Lib_OCplx_Acb_CoulombHpos(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11418,17 +11462,17 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static OctupleC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static OctupleC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
+            return coulomb_hplus(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static OctupleC coulomb_hneg(OctupleC l, OctupleC eta, OctupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static OctupleC coulomb_hminus(OctupleC l, OctupleC eta, OctupleC x)
         {
             var res = new OctupleC();
             Lib_OCplx_Acb_CoulombHneg(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11438,10 +11482,10 @@ namespace ArbPrecNet
         internal static extern int Lib_OCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static OctupleC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static OctupleC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
+            return coulomb_hminus(ocplx.t(l), ocplx.t(eta), ocplx.t(x));
         }
 
 

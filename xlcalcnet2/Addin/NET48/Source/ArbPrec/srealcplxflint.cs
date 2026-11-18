@@ -5280,6 +5280,20 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static SingleC faddeeva(Single x)
+        {
+            return sflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static SingleC faddeeva(dynamic x)
+        {
+            return faddeeva(sreal.t(x));
+        }
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Single fresnel_s(Single x)
@@ -5596,6 +5610,35 @@ namespace ArbPrecNet
         {
             return coulomb_g(sreal.t(l), sreal.t(eta), sreal.t(x));
         }
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static SingleC coulomb_hplus(Single l, Single eta, Single x)
+        {
+            return coulomb_g(l, eta, x) + scplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static SingleC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(sreal.t(l), sreal.t(eta), sreal.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static SingleC coulomb_hminus(Single l, Single eta, Single x)
+        {
+            return coulomb_g(l, eta, x) - scplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static SingleC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(sreal.t(l), sreal.t(eta), sreal.t(x));
+        }
+
 
 
 
@@ -11395,8 +11438,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static SingleC coulomb_hpos(SingleC l, SingleC eta, SingleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static SingleC coulomb_hplus(SingleC l, SingleC eta, SingleC x)
         {
             var res = new SingleC();
             Lib_SCplx_Acb_CoulombHpos(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11406,17 +11449,17 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static SingleC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static SingleC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(scplx.t(l), scplx.t(eta), scplx.t(x));
+            return coulomb_hplus(scplx.t(l), scplx.t(eta), scplx.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static SingleC coulomb_hneg(SingleC l, SingleC eta, SingleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static SingleC coulomb_hminus(SingleC l, SingleC eta, SingleC x)
         {
             var res = new SingleC();
             Lib_SCplx_Acb_CoulombHneg(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11426,10 +11469,10 @@ namespace ArbPrecNet
         internal static extern int Lib_SCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static SingleC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static SingleC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(scplx.t(l), scplx.t(eta), scplx.t(x));
+            return coulomb_hminus(scplx.t(l), scplx.t(eta), scplx.t(x));
         }
 
 

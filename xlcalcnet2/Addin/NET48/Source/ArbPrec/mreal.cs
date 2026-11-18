@@ -6352,11 +6352,15 @@ namespace ArbPrecNet
         public static Mpfr hyperg_1f1r(Mpfr a, Mpfr b, Mpfr x)
         {
             var res = new Mpfr();
-            Lib_Mpfr_Hypergeo1F1r(res.mpPtr, a.mpPtr, b.mpPtr, x.mpPtr, ArbPrec.GetDps());
+            if ((b <= 0) && isinteger(b))
+            {
+                var n = abs(-b);
+                res = rising_factorial(a, n + 1) * pow(x, n + 1) / gamma(n + 2);
+                res *= hyperg_1f1(a + n + 1, n + 2, x);
+            }
+            else res = hyperg_1f1(a, b, x) / gamma(b);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_Hypergeo1F1r", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Mpfr_Hypergeo1F1r(IntPtr res, IntPtr a, IntPtr b, IntPtr x, uint dps);
 
 
         /// <include file="docs.xml" path='docs/members[@name="Boost"]/hyperg_1f1r/*' />
@@ -6367,23 +6371,53 @@ namespace ArbPrecNet
 
 
 
-
-        /// <include file="docs.xml" path='docs/members[@name="Boost"]/log_hyperg_1f1/*' />
-        public static Mpfr log_hyperg_1f1(Mpfr a, Mpfr b, Mpfr x)
+        internal static Mpfr hyperg_u_(Mpfr a, Mpfr b, Mpfr z)
         {
-            var res = new Mpfr();
-            Lib_Mpfr_LogHypergeo1F1(res.mpPtr, a.mpPtr, b.mpPtr, x.mpPtr, ArbPrec.GetDps());
+            var res1 = (gamma(1 - b) / gamma(a - b + 1)) * hyperg_1f1(a, b, z);
+            var res2 = (gamma(b - 1) / gamma(a)) * pow(z, 1 - b) * hyperg_1f1(a - b + 1, 2 - b, z);
+            return res1 + res2;
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
+        public static Mpfr hyperg_u(Mpfr a, Mpfr b, Mpfr z)
+        {
+            Mpfr res = nan;
+            if (isinteger(b))
+            {
+                Mpfr h = sqrt(epsilon());
+                Mpfr res1 = hyperg_u_(a, b - h, z);
+                Mpfr res2 = hyperg_u_(a, b + h, z);
+                res = (res2 + res1) / (2);
+            }
+            else res = hyperg_u_(a, b, z);
             return res;
         }
-        [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_LogHypergeo1F1", CallingConvention = CallingConvention.Cdecl)]
-        internal static extern void Lib_Mpfr_LogHypergeo1F1(IntPtr res, IntPtr a, IntPtr b, IntPtr x, uint dps);
 
-
-        /// <include file="docs.xml" path='docs/members[@name="Boost"]/log_hyperg_1f1/*' />
-        public static Mpfr log_hyperg_1f1(dynamic a, dynamic b, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hyperg_u/*' />
+        public static Mpfr hyperg_u(dynamic a, dynamic b, dynamic z)
         {
-            return log_hyperg_1f1(mreal.t(a), mreal.t(b), mreal.t(x));
+            return hyperg_u(t(a), t(b), t(z));
         }
+
+
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/log_hyperg_1f1/*' />
+        //public static Mpfr log_hyperg_1f1(Mpfr a, Mpfr b, Mpfr x)
+        //{
+        //    var res = new Mpfr();
+        //    Lib_Mpfr_LogHypergeo1F1(res.mpPtr, a.mpPtr, b.mpPtr, x.mpPtr, ArbPrec.GetDps());
+        //    return res;
+        //}
+        //[DllImport(ArbPrec.mpNum, EntryPoint = "Lib_Mpfr_LogHypergeo1F1", CallingConvention = CallingConvention.Cdecl)]
+        //internal static extern void Lib_Mpfr_LogHypergeo1F1(IntPtr res, IntPtr a, IntPtr b, IntPtr x, uint dps);
+
+
+        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/log_hyperg_1f1/*' />
+        //public static Mpfr log_hyperg_1f1(dynamic a, dynamic b, dynamic x)
+        //{
+        //    return log_hyperg_1f1(mreal.t(a), mreal.t(b), mreal.t(x));
+        //}
 
 
 
@@ -6550,7 +6584,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static Mpfr hermite_he(int n, Mpfr x)
         {
-            return exp2(-n / 2) * hermite_h(n, x / sqrt(2));
+            return exp2(-n * 0.5) * hermite_h(n, x / sqrt(2));
         }
 
 

@@ -6009,42 +6009,6 @@ namespace ArbPrecNet
 
 
 
-
-
-
-
-        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_ine/*' />
-        //public static ArbC sph_bessel_ine(ArbC n, ArbC x)
-        //{
-        //    return sph_bessel_in(n, x) * exp(-abs(x.real));
-        //}
-
-        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_ine/*' />
-        //public static ArbC sph_bessel_ine(dynamic n, dynamic x)
-        //{
-        //    return sph_bessel_ine(aflintc.t(n), aflintc.t(x));
-        //}
-
-
-
-
-        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_kne/*' />
-        //public static ArbC sph_bessel_kne(ArbC n, ArbC x)
-        //{
-        //    return sph_bessel_kn(n, x) * exp(x);
-        //}
-
-        ///// <include file="docs.xml" path='docs/members[@name="Boost"]/sph_bessel_kne/*' />
-        //public static ArbC sph_bessel_kne(dynamic n, dynamic x)
-        //{
-        //    return sph_bessel_kne(aflintc.t(n), aflintc.t(x));
-        //}
-
-
-
-
-
-
         #endregion
 
 
@@ -6818,8 +6782,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static ArbC coulomb_hpos(ArbC l, ArbC eta, ArbC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ArbC coulomb_hplus(ArbC l, ArbC eta, ArbC x)
         {
             var res = new ArbC();
             Lib_Acb_Acb_CoulombHpos(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -6829,17 +6793,17 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static ArbC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ArbC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
+            return coulomb_hplus(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static ArbC coulomb_hneg(ArbC l, ArbC eta, ArbC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ArbC coulomb_hminus(ArbC l, ArbC eta, ArbC x)
         {
             var res = new ArbC();
             Lib_Acb_Acb_CoulombHneg(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -6849,10 +6813,10 @@ namespace ArbPrecNet
         internal static extern int Lib_Acb_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static ArbC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ArbC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
+            return coulomb_hminus(aflintc.t(l), aflintc.t(eta), aflintc.t(x));
         }
 
 

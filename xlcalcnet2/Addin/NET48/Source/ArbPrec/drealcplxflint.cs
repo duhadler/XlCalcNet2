@@ -5303,6 +5303,22 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static Complex faddeeva(Double x)
+        {
+            return dflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static Complex faddeeva(dynamic x)
+        {
+            return faddeeva(dreal.t(x));
+        }
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Double fresnel_s(Double x)
@@ -5619,6 +5635,37 @@ namespace ArbPrecNet
         {
             return coulomb_g(dreal.t(l), dreal.t(eta), dreal.t(x));
         }
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static Complex coulomb_hplus(Double l, Double eta, Double x)
+        {
+            return coulomb_g(l, eta, x) + dcplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static Complex coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(dreal.t(l), dreal.t(eta), dreal.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static Complex coulomb_hminus(Double l, Double eta, Double x)
+        {
+            return coulomb_g(l, eta, x) - dcplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static Complex coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(dreal.t(l), dreal.t(eta), dreal.t(x));
+        }
+
+
 
 
 
@@ -11714,7 +11761,7 @@ namespace ArbPrecNet
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/hermite_he/*' />
         public static Complex hermite_he(dynamic n, dynamic x)
         {
-            return hermite_h(dcplx.t(n), dcplx.t(x));
+            return hermite_he(dcplx.t(n), dcplx.t(x));
         }
 
 
@@ -11811,8 +11858,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static Complex coulomb_hpos(Complex l, Complex eta, Complex x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static Complex coulomb_hplus(Complex l, Complex eta, Complex x)
         {
             ArbPrec.Init();
             var res = new fcplx_t();
@@ -11825,17 +11872,17 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FCplx_Acb_CoulombHpos", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_FCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static Complex coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static Complex coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(dcplx.t(l), dcplx.t(eta), dcplx.t(x));
+            return coulomb_hplus(dcplx.t(l), dcplx.t(eta), dcplx.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static Complex coulomb_hneg(Complex l, Complex eta, Complex x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static Complex coulomb_hminus(Complex l, Complex eta, Complex x)
         {
             ArbPrec.Init();
             var res = new fcplx_t();
@@ -11848,10 +11895,10 @@ namespace ArbPrecNet
         [DllImport(ArbPrec.mpNum, EntryPoint = "Lib_FCplx_Acb_CoulombHneg", CallingConvention = CallingConvention.Cdecl)]
         internal static extern int Lib_FCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static Complex coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static Complex coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(dcplx.t(l), dcplx.t(eta), dcplx.t(x));
+            return coulomb_hminus(dcplx.t(l), dcplx.t(eta), dcplx.t(x));
         }
 
 

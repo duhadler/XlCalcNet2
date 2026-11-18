@@ -777,8 +777,8 @@ namespace ArbPrecNet
 
         internal const int mp_cplxfunc3_coulomb_f = 1011;
         internal const int mp_cplxfunc3_coulomb_g = 1012;
-        internal const int mp_cplxfunc3_coulomb_hpos = 1013;
-        internal const int mp_cplxfunc3_coulomb_hneg = 1014;
+        internal const int mp_cplxfunc3_coulomb_hplus = 1013;
+        internal const int mp_cplxfunc3_coulomb_hminus = 1014;
 
         internal const int mp_cplxfunc3_lerch_phi = 1015;
 

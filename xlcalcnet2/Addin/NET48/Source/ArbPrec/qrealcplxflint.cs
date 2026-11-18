@@ -5294,6 +5294,22 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static QuadrupleC faddeeva(Quadruple x)
+        {
+            return qflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static QuadrupleC faddeeva(dynamic x)
+        {
+            return faddeeva(qreal.t(x));
+        }
+
+
+
+
+
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/fresnel_s/*' />
         public static Quadruple fresnel_s(Quadruple x)
@@ -5610,6 +5626,37 @@ namespace ArbPrecNet
         {
             return coulomb_g(qreal.t(l), qreal.t(eta), qreal.t(x));
         }
+
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static QuadrupleC coulomb_hplus(Quadruple l, Quadruple eta, Quadruple x)
+        {
+            return coulomb_g(l, eta, x) + qcplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static QuadrupleC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(qreal.t(l), qreal.t(eta), qreal.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static QuadrupleC coulomb_hminus(Quadruple l, Quadruple eta, Quadruple x)
+        {
+            return coulomb_g(l, eta, x) - qcplx.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static QuadrupleC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(qreal.t(l), qreal.t(eta), qreal.t(x));
+        }
+
 
 
 
@@ -11382,8 +11429,8 @@ namespace ArbPrecNet
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static QuadrupleC coulomb_hpos(QuadrupleC l, QuadrupleC eta, QuadrupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static QuadrupleC coulomb_hplus(QuadrupleC l, QuadrupleC eta, QuadrupleC x)
         {
             var res = new QuadrupleC();
             Lib_QCplx_Acb_CoulombHpos(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11393,17 +11440,17 @@ namespace ArbPrecNet
         internal static extern int Lib_QCplx_Acb_CoulombHpos(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hpos/*' />
-        public static QuadrupleC coulomb_hpos(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static QuadrupleC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hpos(qcplx.t(l), qcplx.t(eta), qcplx.t(x));
+            return coulomb_hplus(qcplx.t(l), qcplx.t(eta), qcplx.t(x));
         }
 
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static QuadrupleC coulomb_hneg(QuadrupleC l, QuadrupleC eta, QuadrupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static QuadrupleC coulomb_hminus(QuadrupleC l, QuadrupleC eta, QuadrupleC x)
         {
             var res = new QuadrupleC();
             Lib_QCplx_Acb_CoulombHneg(res.mpPtr, l.mpPtr, eta.mpPtr, x.mpPtr);
@@ -11413,10 +11460,10 @@ namespace ArbPrecNet
         internal static extern int Lib_QCplx_Acb_CoulombHneg(IntPtr res, IntPtr l, IntPtr eta, IntPtr x);
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hneg/*' />
-        public static QuadrupleC coulomb_hneg(dynamic l, dynamic eta, dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static QuadrupleC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
         {
-            return coulomb_hneg(qcplx.t(l), qcplx.t(eta), qcplx.t(x));
+            return coulomb_hminus(qcplx.t(l), qcplx.t(eta), qcplx.t(x));
         }
 
 

@@ -7078,6 +7078,35 @@ namespace ArbPrecNet
 
 
 
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ArbC coulomb_hplus(Arb l, Arb eta, Arb x)
+        {
+            return coulomb_g(l, eta, x) + aflintc.onej * coulomb_f(l, eta, x);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hplus/*' />
+        public static ArbC coulomb_hplus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hplus(aflint.t(l), aflint.t(eta), aflint.t(x));
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ArbC coulomb_hminus(Arb l, Arb eta, Arb x)
+        {
+            return coulomb_g(l, eta, x) + aflintc.onej * (-coulomb_f(l, eta, x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/coulomb_hminus/*' />
+        public static ArbC coulomb_hminus(dynamic l, dynamic eta, dynamic x)
+        {
+            return coulomb_hminus(aflint.t(l), aflint.t(eta), aflint.t(x));
+        }
+
+
+
+
 
 
         /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/whittaker_m/*' />
@@ -7306,6 +7335,22 @@ namespace ArbPrecNet
         {
             return dawson(aflint.t(x));
         }
+
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static ArbC faddeeva(Arb x)
+        {
+            return aflintc.faddeeva(x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/faddeeva/*' />    
+        public static ArbC faddeeva(dynamic x)
+        {
+            return faddeeva(aflint.t(x));
+        }
+
 
 
 
