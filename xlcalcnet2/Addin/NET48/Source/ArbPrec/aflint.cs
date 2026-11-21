@@ -8031,6 +8031,21 @@ namespace ArbPrecNet
         }
 
 
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Arb beta_upper(Arb a, Arb b, Arb x)
+        {
+            return ibetac(a, b, x) * beta(a, b);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Arb beta_upper(dynamic a, dynamic b, dynamic x)
+        {
+            return beta_upper(aflint.t(a), aflint.t(b), aflint.t(x));
+        }
+
+
         #endregion
 
 
@@ -8087,59 +8102,59 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Arb airy_gi(Arb x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Arb scorer_gi(Arb x)
         {
             return 1 * airy_bi(x) / 3 - (x * x) * hyperg_1f2(1, aflint.t(4) / 3, aflint.t(5) / 3, x * x * x / 9) / (2 * aflint.pi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Arb airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Arb scorer_gi(dynamic x)
         {
-            return airy_gi(aflint.t(x));
+            return scorer_gi(aflint.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Arb airy_hi(Arb x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Arb scorer_hi(Arb x)
         {
             return 2 * airy_bi(x) / 3 + (x * x) * hyperg_1f2(1, aflint.t(4) / 3, aflint.t(5) / 3, x * x * x / 9) / (2 * aflint.pi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Arb airy_hi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Arb scorer_hi(dynamic x)
         {
-            return airy_hi(aflint.t(x));
+            return scorer_hi(aflint.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Arb airy_gi_prime(Arb x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Arb scorer_gi_prime(Arb x)
         {
             Arb x3 = x * x * x;
             Arb x4 = x3 * x;
             return airy_bi_prime(x) / 3 - 1 / (40 * aflint.pi) * (40 * x * hyperg_1f2(1, aflint.t(4) / 3, aflint.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflint.t(7) / 3, aflint.t(8) / 3, x3 / 9)));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Arb airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Arb scorer_gi_prime(dynamic x)
         {
-            return airy_gi_prime(aflint.t(x));
+            return scorer_gi_prime(aflint.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Arb airy_hi_prime(Arb x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Arb scorer_hi_prime(Arb x)
         {
             Arb x3 = x * x * x;
             Arb x4 = x3 * x;
             return 2 * airy_bi_prime(x) / 3 + 1 / (40 * aflint.pi) * (40 * x * hyperg_1f2(1, aflint.t(4) / 3, aflint.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflint.t(7) / 3, aflint.t(8) / 3, x3 / 9)));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Arb airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Arb scorer_hi_prime(dynamic x)
         {
-            return airy_hi_prime(aflint.t(x));
+            return scorer_hi_prime(aflint.t(x));
         }
 
 

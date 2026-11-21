@@ -7757,60 +7757,60 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static ArbC airy_gi(ArbC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static ArbC scorer_gi(ArbC x)
         {
             return 1 * airy_bi(x) / 3 - (x * x) * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x * x * x / 9) / (2 * aflint.pi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static ArbC airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static ArbC scorer_gi(dynamic x)
         {
-            return airy_gi(aflintc.t(x));
+            return scorer_gi(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static ArbC airy_hi(ArbC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static ArbC scorer_hi(ArbC x)
         {
             return 2 * airy_bi(x) / 3 + (x * x) * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x * x * x / 9) / (2 * aflint.pi);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static ArbC airy_hi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static ArbC scorer_hi(dynamic x)
         {
-            return airy_hi(aflintc.t(x));
+            return scorer_hi(aflintc.t(x));
         }
 
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static ArbC airy_gi_prime(ArbC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static ArbC scorer_gi_prime(ArbC x)
         {
             ArbC x3 = x * x * x;
             ArbC x4 = x3 * x;
             return airy_bi_prime(x) / 3 - 1 / (40 * aflint.pi) * (40 * x * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflintc.t(7) / 3, aflintc.t(8) / 3, x3 / 9)));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static ArbC airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static ArbC scorer_gi_prime(dynamic x)
         {
-            return airy_gi_prime(aflintc.t(x));
+            return scorer_gi_prime(aflintc.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static ArbC airy_hi_prime(ArbC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static ArbC scorer_hi_prime(ArbC x)
         {
             ArbC x3 = x * x * x;
             ArbC x4 = x3 * x;
             return 2 * airy_bi_prime(x) / 3 + 1 / (40 * aflint.pi) * (40 * x * hyperg_1f2(1, aflintc.t(4) / 3, aflintc.t(5) / 3, x3 / 9) + (3 * x4 * hyperg_1f2(2, aflintc.t(7) / 3, aflintc.t(8) / 3, x3 / 9)));
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static ArbC airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static ArbC scorer_hi_prime(dynamic x)
         {
-            return airy_hi_prime(aflintc.t(x));
+            return scorer_hi_prime(aflintc.t(x));
         }
 
 

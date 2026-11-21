@@ -6140,6 +6140,25 @@ namespace ArbPrecNet
         }
 
 
+
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Quadruple beta_upper(Quadruple a, Quadruple b, Quadruple x)
+        {
+            return ibetac(a, b, x) * beta(a, b);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Quadruple beta_upper(dynamic a, dynamic b, dynamic x)
+        {
+            return beta_upper(qreal.t(a), qreal.t(b), qreal.t(x));
+        }
+
+
+
+
         #endregion
 
 
@@ -6196,55 +6215,55 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Quadruple airy_gi(Quadruple x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Quadruple scorer_gi(Quadruple x)
         {
-            return aflint.QRealViaArbS1(aflint.airy_gi, x);
+            return aflint.QRealViaArbS1(aflint.scorer_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Quadruple airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Quadruple scorer_gi(dynamic x)
         {
-            return airy_gi(qreal.t(x));
-        }
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Quadruple airy_hi(Quadruple x)
-        {
-            return aflint.QRealViaArbS1(aflint.airy_hi, x);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Quadruple airy_hi(dynamic x)
-        {
-            return airy_hi(qreal.t(x));
+            return scorer_gi(qreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Quadruple airy_gi_prime(Quadruple x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Quadruple scorer_hi(Quadruple x)
         {
-            return aflint.QRealViaArbS1(aflint.airy_gi_prime, x);
+            return aflint.QRealViaArbS1(aflint.scorer_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Quadruple airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Quadruple scorer_hi(dynamic x)
         {
-            return airy_gi_prime(qreal.t(x));
+            return scorer_hi(qreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Quadruple airy_hi_prime(Quadruple x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Quadruple scorer_gi_prime(Quadruple x)
         {
-            return aflint.QRealViaArbS1(aflint.airy_hi_prime, x);
+            return aflint.QRealViaArbS1(aflint.scorer_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Quadruple airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Quadruple scorer_gi_prime(dynamic x)
         {
-            return airy_hi_prime(qreal.t(x));
+            return scorer_gi_prime(qreal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Quadruple scorer_hi_prime(Quadruple x)
+        {
+            return aflint.QRealViaArbS1(aflint.scorer_hi_prime, x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Quadruple scorer_hi_prime(dynamic x)
+        {
+            return scorer_hi_prime(qreal.t(x));
         }
 
 
@@ -12041,55 +12060,55 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static QuadrupleC airy_gi(QuadrupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static QuadrupleC scorer_gi(QuadrupleC x)
         {
-            return aflintc.QCplxViaArbCS1(aflintc.airy_gi, x);
+            return aflintc.QCplxViaArbCS1(aflintc.scorer_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static QuadrupleC airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static QuadrupleC scorer_gi(dynamic x)
         {
-            return airy_gi(qcplx.t(x));
-        }
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static QuadrupleC airy_hi(QuadrupleC x)
-        {
-            return aflintc.QCplxViaArbCS1(aflintc.airy_hi, x);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static QuadrupleC airy_hi(dynamic x)
-        {
-            return airy_hi(qcplx.t(x));
+            return scorer_gi(qcplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static QuadrupleC airy_gi_prime(QuadrupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static QuadrupleC scorer_hi(QuadrupleC x)
         {
-            return aflintc.QCplxViaArbCS1(aflintc.airy_gi_prime, x);
+            return aflintc.QCplxViaArbCS1(aflintc.scorer_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static QuadrupleC airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static QuadrupleC scorer_hi(dynamic x)
         {
-            return airy_gi_prime(qcplx.t(x));
+            return scorer_hi(qcplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static QuadrupleC airy_hi_prime(QuadrupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static QuadrupleC scorer_gi_prime(QuadrupleC x)
         {
-            return aflintc.QCplxViaArbCS1(aflintc.airy_hi_prime, x);
+            return aflintc.QCplxViaArbCS1(aflintc.scorer_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static QuadrupleC airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static QuadrupleC scorer_gi_prime(dynamic x)
         {
-            return airy_hi_prime(qcplx.t(x));
+            return scorer_gi_prime(qcplx.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static QuadrupleC scorer_hi_prime(QuadrupleC x)
+        {
+            return aflintc.QCplxViaArbCS1(aflintc.scorer_hi_prime, x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static QuadrupleC scorer_hi_prime(dynamic x)
+        {
+            return scorer_hi_prime(qcplx.t(x));
         }
 
 

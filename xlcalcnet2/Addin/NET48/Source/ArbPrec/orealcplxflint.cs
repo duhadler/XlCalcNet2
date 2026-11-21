@@ -6175,6 +6175,25 @@ namespace ArbPrecNet
         }
 
 
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Octuple beta_upper(Octuple a, Octuple b, Octuple x)
+        {
+            return ibetac(a, b, x) * beta(a, b);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Octuple beta_upper(dynamic a, dynamic b, dynamic x)
+        {
+            return beta_upper(oreal.t(a), oreal.t(b), oreal.t(x));
+        }
+
+
+
+
+
         #endregion
 
 
@@ -6230,55 +6249,55 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Octuple airy_gi(Octuple x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Octuple scorer_gi(Octuple x)
         {
-            return aflint.ORealViaArbS1(aflint.airy_gi, x);
+            return aflint.ORealViaArbS1(aflint.scorer_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Octuple airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Octuple scorer_gi(dynamic x)
         {
-            return airy_gi(oreal.t(x));
-        }
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Octuple airy_hi(Octuple x)
-        {
-            return aflint.ORealViaArbS1(aflint.airy_hi, x);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Octuple airy_hi(dynamic x)
-        {
-            return airy_hi(oreal.t(x));
+            return scorer_gi(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Octuple airy_gi_prime(Octuple x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Octuple scorer_hi(Octuple x)
         {
-            return aflint.ORealViaArbS1(aflint.airy_gi_prime, x);
+            return aflint.ORealViaArbS1(aflint.scorer_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Octuple airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Octuple scorer_hi(dynamic x)
         {
-            return airy_gi_prime(oreal.t(x));
+            return scorer_hi(oreal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Octuple airy_hi_prime(Octuple x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Octuple scorer_gi_prime(Octuple x)
         {
-            return aflint.ORealViaArbS1(aflint.airy_hi_prime, x);
+            return aflint.ORealViaArbS1(aflint.scorer_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Octuple airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Octuple scorer_gi_prime(dynamic x)
         {
-            return airy_hi_prime(oreal.t(x));
+            return scorer_gi_prime(oreal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Octuple scorer_hi_prime(Octuple x)
+        {
+            return aflint.ORealViaArbS1(aflint.scorer_hi_prime, x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Octuple scorer_hi_prime(dynamic x)
+        {
+            return scorer_hi_prime(oreal.t(x));
         }
 
 
@@ -12062,55 +12081,55 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static OctupleC airy_gi(OctupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static OctupleC scorer_gi(OctupleC x)
         {
-            return aflintc.OCplxViaArbCS1(aflintc.airy_gi, x);
+            return aflintc.OCplxViaArbCS1(aflintc.scorer_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static OctupleC airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static OctupleC scorer_gi(dynamic x)
         {
-            return airy_gi(ocplx.t(x));
-        }
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static OctupleC airy_hi(OctupleC x)
-        {
-            return aflintc.OCplxViaArbCS1(aflintc.airy_hi, x);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static OctupleC airy_hi(dynamic x)
-        {
-            return airy_hi(ocplx.t(x));
+            return scorer_gi(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static OctupleC airy_gi_prime(OctupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static OctupleC scorer_hi(OctupleC x)
         {
-            return aflintc.OCplxViaArbCS1(aflintc.airy_gi_prime, x);
+            return aflintc.OCplxViaArbCS1(aflintc.scorer_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static OctupleC airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static OctupleC scorer_hi(dynamic x)
         {
-            return airy_gi_prime(ocplx.t(x));
+            return scorer_hi(ocplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static OctupleC airy_hi_prime(OctupleC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static OctupleC scorer_gi_prime(OctupleC x)
         {
-            return aflintc.OCplxViaArbCS1(aflintc.airy_hi_prime, x);
+            return aflintc.OCplxViaArbCS1(aflintc.scorer_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static OctupleC airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static OctupleC scorer_gi_prime(dynamic x)
         {
-            return airy_hi_prime(ocplx.t(x));
+            return scorer_gi_prime(ocplx.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static OctupleC scorer_hi_prime(OctupleC x)
+        {
+            return aflintc.OCplxViaArbCS1(aflintc.scorer_hi_prime, x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static OctupleC scorer_hi_prime(dynamic x)
+        {
+            return scorer_hi_prime(ocplx.t(x));
         }
 
 

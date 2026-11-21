@@ -6125,6 +6125,25 @@ namespace ArbPrecNet
         }
 
 
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Extended beta_upper(Extended a, Extended b, Extended x)
+        {
+            return ibetac(a, b, x) * beta(a, b);
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/beta_upper/*' />
+        public static Extended beta_upper(dynamic a, dynamic b, dynamic x)
+        {
+            return beta_upper(ereal.t(a), ereal.t(b), ereal.t(x));
+        }
+
+
+
+
+
         #endregion
 
 
@@ -6181,55 +6200,55 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Extended airy_gi(Extended x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Extended scorer_gi(Extended x)
         {
-            return aflint.ERealViaArbS1(aflint.airy_gi, x);
+            return aflint.ERealViaArbS1(aflint.scorer_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static Extended airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static Extended scorer_gi(dynamic x)
         {
-            return airy_gi(ereal.t(x));
-        }
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Extended airy_hi(Extended x)
-        {
-            return aflint.ERealViaArbS1(aflint.airy_hi, x);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static Extended airy_hi(dynamic x)
-        {
-            return airy_hi(ereal.t(x));
+            return scorer_gi(ereal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Extended airy_gi_prime(Extended x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Extended scorer_hi(Extended x)
         {
-            return aflint.ERealViaArbS1(aflint.airy_gi_prime, x);
+            return aflint.ERealViaArbS1(aflint.scorer_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static Extended airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static Extended scorer_hi(dynamic x)
         {
-            return airy_gi_prime(ereal.t(x));
+            return scorer_hi(ereal.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Extended airy_hi_prime(Extended x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Extended scorer_gi_prime(Extended x)
         {
-            return aflint.ERealViaArbS1(aflint.airy_hi_prime, x);
+            return aflint.ERealViaArbS1(aflint.scorer_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static Extended airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static Extended scorer_gi_prime(dynamic x)
         {
-            return airy_hi_prime(ereal.t(x));
+            return scorer_gi_prime(ereal.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Extended scorer_hi_prime(Extended x)
+        {
+            return aflint.ERealViaArbS1(aflint.scorer_hi_prime, x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static Extended scorer_hi_prime(dynamic x)
+        {
+            return scorer_hi_prime(ereal.t(x));
         }
 
 
@@ -12022,55 +12041,55 @@ namespace ArbPrecNet
         #region Scorer functions
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static ExtendedC airy_gi(ExtendedC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static ExtendedC scorer_gi(ExtendedC x)
         {
-            return aflintc.ECplxViaArbCS1(aflintc.airy_gi, x);
+            return aflintc.ECplxViaArbCS1(aflintc.scorer_gi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi/*' />
-        public static ExtendedC airy_gi(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi/*' />
+        public static ExtendedC scorer_gi(dynamic x)
         {
-            return airy_gi(ecplx.t(x));
-        }
-
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static ExtendedC airy_hi(ExtendedC x)
-        {
-            return aflintc.ECplxViaArbCS1(aflintc.airy_hi, x);
-        }
-
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi/*' />
-        public static ExtendedC airy_hi(dynamic x)
-        {
-            return airy_hi(ecplx.t(x));
+            return scorer_gi(ecplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static ExtendedC airy_gi_prime(ExtendedC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static ExtendedC scorer_hi(ExtendedC x)
         {
-            return aflintc.ECplxViaArbCS1(aflintc.airy_gi_prime, x);
+            return aflintc.ECplxViaArbCS1(aflintc.scorer_hi, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_gi_prime/*' />
-        public static ExtendedC airy_gi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi/*' />
+        public static ExtendedC scorer_hi(dynamic x)
         {
-            return airy_gi_prime(ecplx.t(x));
+            return scorer_hi(ecplx.t(x));
         }
 
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static ExtendedC airy_hi_prime(ExtendedC x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static ExtendedC scorer_gi_prime(ExtendedC x)
         {
-            return aflintc.ECplxViaArbCS1(aflintc.airy_hi_prime, x);
+            return aflintc.ECplxViaArbCS1(aflintc.scorer_gi_prime, x);
         }
 
-        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/airy_hi_prime/*' />
-        public static ExtendedC airy_hi_prime(dynamic x)
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_gi_prime/*' />
+        public static ExtendedC scorer_gi_prime(dynamic x)
         {
-            return airy_hi_prime(ecplx.t(x));
+            return scorer_gi_prime(ecplx.t(x));
+        }
+
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static ExtendedC scorer_hi_prime(ExtendedC x)
+        {
+            return aflintc.ECplxViaArbCS1(aflintc.scorer_hi_prime, x);
+        }
+
+        /// <include file="docs.xml" path='docs/members[@name="ScalarFunctions"]/scorer_hi_prime/*' />
+        public static ExtendedC scorer_hi_prime(dynamic x)
+        {
+            return scorer_hi_prime(ecplx.t(x));
         }
 
 
